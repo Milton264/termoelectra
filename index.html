@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Refrigeración y Climatización | Termoelectra</title>
-  <meta name="description" content="Instalación, reparación y mantenimiento de refrigeración, frío industrial, cámaras frigoríficas, aire acondicionado, calefacción y aerotermia.">
+  <meta name="description" content="Instalación, reparación y mantenimiento de refrigeración, frío industrial, cámaras frigoríficas y climatización comercial con servicio técnico propio.">
   <meta name="theme-color" content="#073b57">
-  <link rel="preload" as="image" href="assets/industrial-real.webp" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/climatizacion-interior.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="imagenes-cliente-nuevas/n2-sala-ammonia.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="imagenes-cliente-nuevas/n6-aerotermia-sala.webp" fetchpriority="high">
   <style>
     :root{
       --navy:#073b57;
@@ -125,8 +125,8 @@
     .area-card::before{content:"";position:absolute;z-index:-2;inset:0;background-position:center;background-size:cover;transition:transform .6s ease}
     .area-card:hover::before{transform:scale(1.04)}
     .area-card::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(3,31,45,.05),rgba(3,31,45,.92))}
-    .area-card.refrigeration::before{background-image:url("assets/industrial-real.webp")}
-    .area-card.climate::before{background-image:url("assets/climatizacion-interior.webp")}
+    .area-card.refrigeration::before{background-image:url("imagenes-cliente-nuevas/n2-sala-ammonia.webp")}
+    .area-card.climate::before{background-image:url("imagenes-cliente-nuevas/n6-aerotermia-sala.webp")}
     .area-label{align-self:flex-start;margin-bottom:auto;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--navy);font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
     .area-card h3{font-size:clamp(2rem,4vw,3.2rem)}
     .area-card p{max-width:510px;color:#e5f3f7}
@@ -135,16 +135,15 @@
     .area-link{display:inline-flex;align-items:center;gap:10px;font-weight:900}
     .area-link i{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--cyan);font-style:normal}
 
-      display:grid;grid-template-columns:1.12fr .88fr;min-height:620px;overflow:hidden;
-      border:1px solid rgba(150,226,246,.26);border-radius:32px;background:#073b57;box-shadow:0 26px 70px rgba(2,28,41,.24);
+    .capability-strip{position:relative;z-index:5;margin-top:-38px;padding:0 0 38px}
+    .capability-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;
+      border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);
     }
-    .visual-caption{position:absolute;z-index:2;right:30px;bottom:28px;left:30px;color:#fff}
-    .visual-caption span{font-size:.75rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#b4ecfb}
-    .visual-caption strong{display:block;margin-top:6px;font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:-.04em}
-      width:100%;padding:14px 16px;display:flex;align-items:center;gap:12px;
-      border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.05);
-      color:#fff;text-align:left;font-weight:900;cursor:pointer;transition:.2s ease;
-    }
+    .capability-item{min-height:118px;padding:24px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
+    .capability-item:last-child{border-right:0}
+    .capability-item strong{display:block;margin-bottom:4px;color:var(--navy);font-size:1.06rem}
+    .capability-item span{color:var(--muted);font-size:.91rem}
 
     /* Services */
     .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -158,6 +157,31 @@
     .service-icon svg{width:27px;height:27px}
     .service-card p{margin-bottom:0}
     .service-card small{margin-top:auto;padding-top:18px;color:var(--blue);font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+
+    .service-map-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:stretch}
+    .service-map{
+      overflow:hidden;border:1px solid var(--line);border-radius:30px;background:#fff;
+      box-shadow:0 20px 55px rgba(5,55,82,.1);
+    }
+    .service-map-media{position:relative;height:285px;overflow:hidden;background:var(--navy)}
+    .service-map-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,31,45,.08),rgba(3,31,45,.78))}
+    .service-map-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+    .service-map:hover .service-map-media img{transform:scale(1.035)}
+    .service-map-media div{position:absolute;z-index:1;right:26px;bottom:24px;left:26px;color:#fff}
+    .service-map-media small{display:block;margin-bottom:6px;color:#bdecf8;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    .service-map-media h3{margin:0;font-size:clamp(2rem,3.6vw,3rem)}
+    .service-map-body{padding:12px 26px 28px}
+    .service-row{
+      display:grid;grid-template-columns:38px 1fr 34px;gap:12px;align-items:center;
+      min-height:75px;border-bottom:1px solid var(--line);
+    }
+    .service-row:last-of-type{border-bottom:0}
+    .service-row b{color:#80cfe5;font-size:.78rem;letter-spacing:.08em}
+    .service-row strong{color:var(--navy);font-size:.98rem;line-height:1.3}
+    .service-row i{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--ice-2);color:var(--navy-2);font-style:normal}
+    .service-map-link{margin-top:20px;display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-weight:900}
+    .solution-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+    .solution-tags span{padding:7px 10px;border-radius:999px;background:var(--ice-2);color:var(--navy-2);font-size:.76rem;font-weight:850}
 
     /* Certifications */
     .cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
@@ -210,6 +234,10 @@
       .hero-panel strong{grid-column:1/-1}
       .hero-panel a{padding:14px}
       .split-title,.faq-wrap{grid-template-columns:1fr;gap:22px}
+      .capability-grid{grid-template-columns:1fr 1fr}
+      .capability-item:nth-child(2){border-right:0}
+      .capability-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .service-map-grid{grid-template-columns:1fr}
       .service-grid{grid-template-columns:repeat(2,1fr)}
       .cert-grid{grid-template-columns:repeat(3,1fr)}
       .cert:last-child{grid-column:2/3}
@@ -223,14 +251,20 @@
       .hero{min-height:930px;padding:128px 0 58px;align-items:flex-end}
       .hero-media{grid-template-columns:1fr}
       .hero-media figure:first-child{display:none}
+      .hero-media figure:last-child img{object-position:72% center}
       .hero::before{background:linear-gradient(180deg,rgba(3,28,42,.48),rgba(3,28,42,.97) 68%)}
-      .hero h1{font-size:clamp(3.1rem,14vw,5rem)}
+      .hero h1{font-size:clamp(2.7rem,11.7vw,4rem)}
       .hero-tags{margin:22px 0 28px}
+      .hero-tag{padding:7px 10px;font-size:.76rem}
       .hero-panel{grid-template-columns:1fr;padding:15px}
       .hero-panel strong{grid-column:auto}
       .hero-panel a{padding:11px 8px}
       .area-grid{grid-template-columns:1fr}
       .area-card{min-height:440px;padding:24px}
+      .capability-strip{margin-top:-24px;padding-bottom:24px}
+      .capability-grid{border-radius:20px}
+      .capability-item{min-height:104px;padding:19px}
+      .service-map-media{height:245px}
       .service-grid{grid-template-columns:1fr}
       .service-card{min-height:245px}
       .cert-grid{grid-template-columns:1fr 1fr}
@@ -253,10 +287,15 @@
       .shell{width:calc(100% - 22px)}
       .section{padding:64px 0}
       .hero{min-height:900px}
-      .hero h1{font-size:clamp(2.8rem,14vw,4.1rem)}
+      .hero h1{font-size:clamp(2.65rem,11.5vw,3.65rem)}
       .hero-copy > p{font-size:1rem}
       .btns .btn{width:100%}
       .area-card{min-height:410px}
+      .capability-grid{grid-template-columns:1fr}
+      .capability-item,.capability-item:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}
+      .capability-item:last-child{border-bottom:0}
+      .service-map-body{padding:10px 18px 22px}
+      .service-row{grid-template-columns:32px 1fr 30px;gap:8px}
       .cert-grid{grid-template-columns:1fr}
       .cert:last-child{grid-column:auto}
     }
@@ -327,8 +366,8 @@
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <figure><img src="assets/industrial-real.webp" width="1600" height="1200" alt=""></figure>
-        <figure><img src="assets/climatizacion-interior.webp" width="1600" height="1200" alt=""></figure>
+        <figure><img src="imagenes-cliente-nuevas/n2-sala-ammonia.webp" width="1600" height="1600" alt=""></figure>
+        <figure><img src="imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" alt=""></figure>
       </div>
       <div class="snow-field" id="snowField" aria-hidden="true"></div>
       <div class="shell hero-grid">
@@ -348,6 +387,22 @@
             <a class="btn btn-light" href="#servicios">Ver Servicios</a>
             <a class="btn btn-outline" href="#contacto">Solicitar Información</a>
           </div>
+        </div>
+        <aside class="hero-panel" aria-label="Acceso a las áreas principales">
+          <strong>Elige tu Área</strong>
+          <a href="./refrigeracion/index.html"><span>Refrigeración Industrial y Comercial</span><span>01</span></a>
+          <a href="./climatizacion/index.html"><span>Climatización Comercial</span><span>02</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="capability-strip" aria-label="Resumen de capacidades">
+      <div class="shell">
+        <div class="capability-grid">
+          <div class="capability-item"><strong>Servicio Técnico Propio</strong><span>Atención directa para Refrigeración y Climatización.</span></div>
+          <div class="capability-item"><strong>Instalación</strong><span>Sistemas comerciales e industriales.</span></div>
+          <div class="capability-item"><strong>Reparación</strong><span>Diagnóstico e intervención sobre equipos.</span></div>
+          <div class="capability-item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
         </div>
       </div>
     </section>
@@ -383,44 +438,35 @@
     <section class="section" aria-labelledby="services-title">
       <div class="shell">
         <span class="eyebrow">Áreas de Trabajo</span>
-        <h2 id="services-title">Servicios Organizados para Encontrar lo que Necesitas.</h2>
-        <p class="intro">Instalación, reparación y mantenimiento de Refrigeración y Climatización, organizados para que encuentres justo lo que tu negocio o tu hogar necesita.</p>
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 6h14v12H5zM8 9h8M8 13h5"/></svg></span>
-            <h3>Frío Industrial</h3>
-            <p>Instalación, Reparación y Mantenimiento para naves y procesos de producción que requieren control térmico.</p>
-            <small>Refrigeración</small>
+        <h2 id="services-title">Todo el Servicio Técnico, Ordenado por Especialidad.</h2>
+        <p class="intro">La Home resume las mismas áreas definidas para Refrigeración y Climatización, con acceso directo a la información completa de cada especialidad.</p>
+        <div class="service-map-grid">
+          <article class="service-map reveal">
+            <div class="service-map-media">
+              <img src="imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" alt="Técnica de Termoelectra trabajando en un equipo de refrigeración" loading="lazy" decoding="async">
+              <div><small>Área 01</small><h3>Refrigeración</h3></div>
+            </div>
+            <div class="service-map-body">
+              <a class="service-row" href="./refrigeracion/index.html#industrial"><b>01</b><strong>Frío Industrial</strong><i>→</i></a>
+              <a class="service-row" href="./refrigeracion/index.html#camaras"><b>02</b><strong>Instalación de Cámaras Frigoríficas</strong><i>→</i></a>
+              <a class="service-row" href="./refrigeracion/index.html#camaras"><b>03</b><strong>Reparación de Cámaras Frigoríficas</strong><i>→</i></a>
+              <a class="service-row" href="./refrigeracion/index.html#camaras"><b>04</b><strong>Mantenimiento de Cámaras Frigoríficas</strong><i>→</i></a>
+              <a class="service-row" href="./refrigeracion/index.html#comercial"><b>05</b><strong>Refrigeración Comercial</strong><i>→</i></a>
+              <a class="service-map-link" href="./refrigeracion/index.html">Ver Refrigeración Completa <span>→</span></a>
+            </div>
           </article>
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 5v14M16 5v14"/></svg></span>
-            <h3>Cámaras Frigoríficas</h3>
-            <p>Diseño, Instalación y Mantenimiento de Cámaras de Refrigeración industriales y comerciales.</p>
-            <small>Refrigeración</small>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9h18v9H3zM6 6h12v3M8 13h8"/></svg></span>
-            <h3>Refrigeración Comercial</h3>
-            <p>Servicios de Refrigeración para comercios, supermercados, hipermercados y empresas de alimentación.</p>
-            <small>Refrigeración</small>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 6l14 12M19 6 5 18"/></svg></span>
-            <h3>Aire Acondicionado</h3>
-            <p>Instalación, Reparación y Mantenimiento de sistemas de Aire Acondicionado.</p>
-            <small>Climatización</small>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4M5.6 5.6l2.8 2.8M3 12h4M17 12h4M6 18h12M8 15h8"/></svg></span>
-            <h3>Calefacción</h3>
-            <p>Calefacción integrada dentro de las soluciones de Climatización de Termoelectra.</p>
-            <small>Climatización</small>
-          </article>
-          <article class="service-card reveal">
-            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15c4-7 9-9 16-10-1 7-4 12-12 13M8 18c2-3 5-5 9-8"/></svg></span>
-            <h3>Aerotermia</h3>
-            <p>Tecnología que aprovecha la energía del aire exterior para Climatización y producción de agua caliente.</p>
-            <small>Climatización</small>
+          <article class="service-map reveal">
+            <div class="service-map-media">
+              <img src="imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" alt="Sala técnica de climatización y aerotermia de Termoelectra" loading="lazy" decoding="async">
+              <div><small>Área 02</small><h3>Climatización</h3></div>
+            </div>
+            <div class="service-map-body">
+              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>01</b><strong>Instalación de Climatización Comercial</strong><i>→</i></a>
+              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>02</b><strong>Reparación de Climatización Comercial</strong><i>→</i></a>
+              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>03</b><strong>Mantenimiento de Climatización</strong><i>→</i></a>
+              <div class="solution-tags" aria-label="Soluciones de climatización"><span>Aire Acondicionado</span><span>Calefacción</span><span>Aerotermia</span></div>
+              <a class="service-map-link" href="./climatizacion/index.html">Ver Climatización Completa <span>→</span></a>
+            </div>
           </article>
         </div>
       </div>
