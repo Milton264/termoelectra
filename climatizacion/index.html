@@ -599,6 +599,35 @@
   .shell{width:min(var(--max),calc(100% - 60px))}
 }
 </style>
+<style>
+/* ===== PATCH v5: fotografías completas y altura equilibrada ===== */
+.detail-media > img{position:absolute;inset:0}
+.detail-media.media-complete{isolation:isolate;background:#0a4965}
+.detail-media.media-complete::before{
+  content:"";position:absolute;inset:-28px;z-index:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  filter:blur(22px) saturate(.72);opacity:.46;transform:scale(1.08);
+}
+.detail-media.media-air::before{background-image:url('../imagenes-cliente-nuevas/n5-tecnica-real.webp')}
+.detail-media.media-aero::before{background-image:url('../imagenes-cliente-nuevas/n6-aerotermia-sala.webp')}
+.detail-media.media-complete img{
+  z-index:1;padding:10px;object-fit:contain;background:transparent;
+}
+.detail-media.media-complete .detail-badge{z-index:2}
+.detail-card:hover .detail-media.media-complete img{transform:none}
+
+.gallery-item{background:#0a4965}
+.gallery-item img{object-fit:contain;background:#0a4965}
+
+@media(max-width:760px){
+  .detail-media.media-complete img{padding:7px}
+}
+@media(min-width:1360px){
+  .detail-card:not(.reverse) .detail-media .detail-badge{
+    left:calc((100vw - var(--page-bleed))/2 + 66px);
+  }
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -695,8 +724,8 @@
         </div>
         <div class="detail-stack">
           <article class="detail-card reveal" id="aire-acondicionado">
-            <div class="detail-media">
-              <img src="climatizacion-assets/tecnico-comercio.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra instalando aire acondicionado en un comercio">
+            <div class="detail-media media-complete media-air">
+              <img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" loading="lazy" alt="Técnica de Termoelectra comprobando un sistema de climatización con manómetros">
               <span class="detail-badge">Aire Acondicionado</span>
             </div>
             <div class="detail-copy">
@@ -731,8 +760,8 @@
           </article>
 
           <article class="detail-card reveal" id="aerotermia">
-            <div class="detail-media">
-              <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización para aprovechar la energía del aire">
+            <div class="detail-media media-complete media-aero">
+              <img src="../imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" loading="lazy" alt="Sistema integral de aerotermia y climatización revisado por un técnico de Termoelectra">
               <span class="detail-badge">Aerotermia</span>
             </div>
             <div class="detail-copy">

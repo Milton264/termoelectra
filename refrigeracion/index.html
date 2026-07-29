@@ -3568,6 +3568,62 @@ header.is-scrolled{
 .svc-media img{width:100%;height:auto;aspect-ratio:4/3;max-height:620px;object-fit:cover}
 @media(max-width:760px){.svc-media img{max-height:420px}}
 </style>
+<style>
+/* ===== PATCH 4: encuadres completos sin franjas blancas ===== */
+.hero-title .w:first-child{display:block}
+.hero-title{max-width:900px}
+.hero-title .w.hl{animation:wordUp .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-title .w:nth-child(2){animation-delay:.3s}
+.hero-title .w:nth-child(3){animation-delay:.42s}
+
+.slide.fit-complete{isolation:isolate;background:#073e59}
+.slide.fit-complete::before{
+  content:"";position:absolute;inset:-24px;z-index:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  filter:blur(20px) saturate(.75);opacity:.48;transform:scale(1.08);
+}
+.slide-industrial::before{background-image:url('../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp')}
+.slide-freezing::before{background-image:url('../imagenes-cliente-nuevas/n8-camara-congelacion.webp')}
+.slide-commercial::before{background-image:url('camara-comercial.webp')}
+.slide.fit-complete img{
+  position:relative;z-index:1;display:block;width:100%;height:330px;
+  padding:10px;object-fit:contain;filter:saturate(.94) contrast(1.03);
+}
+.slide.fit-complete::after{z-index:2}
+.slide.fit-complete .cap{z-index:3}
+
+.svc-media.fit-complete{background:#073e59}
+.svc-media.fit-complete img{
+  height:100%!important;max-height:none;aspect-ratio:auto;
+  padding:10px;object-fit:contain!important;background:#073e59;
+}
+
+/* Galería compacta: cada foto conserva su proporción y el fondo azul absorbe las diferencias. */
+#comercial + .alt .gallery{
+  display:block;columns:3 300px;column-gap:12px;
+}
+#comercial + .alt .gallery a,
+#comercial + .alt .gallery a:nth-child(1),
+#comercial + .alt .gallery a:nth-child(4),
+#comercial + .alt .gallery a:nth-child(7){
+  display:inline-block;width:100%;height:auto!important;margin:0 0 12px;
+  break-inside:avoid;grid-column:auto!important;grid-row:auto!important;
+  background:#073e59;
+}
+#comercial + .alt .gallery a img{
+  display:block;width:100%;height:auto!important;object-fit:contain;
+  background:#073e59;
+}
+@media(max-width:760px){
+  .hero-title{max-width:100%}
+  .slide.fit-complete img{height:150px;padding:6px}
+  .slide.fit-complete:first-child img{height:210px}
+  #comercial + .alt .gallery{columns:2 145px}
+}
+@media(max-width:430px){
+  #comercial + .alt .gallery{columns:1}
+}
+</style>
 </head>
 <body>
 
@@ -3592,7 +3648,7 @@ header.is-scrolled{
 <section class="hero">
   <div class="snow" id="snow"></div>
   <div class="hero-inner">
-    <h1 class="hero-title"><span class="w">Refrigeración</span> <span class="w hl">Industrial</span> <span class="w hl">y</span> <span class="w hl">Comercial</span></h1>
+    <h1 class="hero-title"><span class="w">Refrigeración</span> <span class="w hl">para Cada</span> <span class="w hl">Espacio.</span></h1>
     <p class="reveal d2">Instalación, reparación y mantenimiento de Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial. SAT propio para Frío Industrial con intervención técnica en menos de 24 horas.</p>
     <div class="hero-btns reveal d3">
       <a href="#contacto" class="btn btn-primary">Contactar</a>
@@ -3665,10 +3721,9 @@ header.is-scrolled{
   </div>
   <div class="carousel">
     <div class="track" id="track">
-      <div class="slide"><img src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" alt="Cámara frigorífica industrial con estanterías de almacenaje y control técnico" loading="lazy" decoding="async" width="600" height="314"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
-      <!-- TODO: sustituir por foto real o IA de cámara de congelación cuando el cliente la envíe -->
-      <div class="slide"><img src="camara-congelacion.webp" alt="Evaporadores de una cámara de congelación" loading="lazy" decoding="async" width="1200" height="1600"><span class="cap"><small>Congelación</small>Cámara de Congelación</span></div>
-      <div class="slide"><img src="camara-comercial.webp" alt="Cámara frigorífica comercial de 5 puertas de vidrio con logo Termoelectra" loading="lazy" decoding="async" width="1600" height="1120"><span class="cap"><small>Comercial</small>Cámara Comercial</span></div>
+      <div class="slide fit-complete slide-industrial"><img src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" alt="Cámara frigorífica industrial con estanterías de almacenaje y control técnico" loading="lazy" decoding="async" width="600" height="314"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
+      <div class="slide fit-complete slide-freezing"><img src="../imagenes-cliente-nuevas/n8-camara-congelacion.webp" alt="Interior de una cámara de congelación con estanterías y evaporador" loading="lazy" decoding="async" width="1600" height="1123"><span class="cap"><small>Congelación</small>Cámara de Congelación</span></div>
+      <div class="slide fit-complete slide-commercial"><img src="camara-comercial.webp" alt="Cámara frigorífica comercial de 5 puertas de vidrio con logo Termoelectra" loading="lazy" decoding="async" width="1600" height="1120"><span class="cap"><small>Comercial</small>Cámara Comercial</span></div>
     </div>
   </div>
 </section>
@@ -3676,7 +3731,7 @@ header.is-scrolled{
 <section class="alt">
   <div class="wrap">
     <div class="svc reveal" id="instalacion-camaras-frigorificas">
-      <div class="svc-media">
+      <div class="svc-media fit-complete">
         <img src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" alt="Técnico de Termoelectra comprobando una cámara frigorífica industrial con mercancía almacenada" loading="lazy" decoding="async" width="1600" height="1600">
         <span class="media-index" aria-hidden="true">01</span>
         <span class="media-scan" aria-hidden="true"></span>
@@ -3697,8 +3752,8 @@ header.is-scrolled{
       </div>
     </div>
     <div class="svc rev reveal" id="reparacion-camaras-frigorificas">
-      <div class="svc-media">
-        <img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" alt="Técnica de Termoelectra realizando una comprobación con manómetros en un equipo de refrigeración" loading="lazy" decoding="async" width="1197" height="1600">
+      <div class="svc-media fit-complete">
+        <img src="camara-industrial.webp" alt="Técnico de Termoelectra reparando un equipo de refrigeración profesional" loading="lazy" decoding="async" width="1080" height="1920">
         <span class="media-index" aria-hidden="true">02</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Servicio técnico propio</span>
@@ -3719,7 +3774,7 @@ header.is-scrolled{
       </div>
     </div>
     <div class="svc reveal" id="mantenimiento-camaras-frigorificas">
-      <div class="svc-media">
+      <div class="svc-media fit-complete">
         <img src="mantenimiento.webp" alt="Mantenimiento preventivo de cámaras de refrigeración" loading="lazy" decoding="async" width="1200" height="1600">
         <span class="media-index" aria-hidden="true">03</span>
         <span class="media-scan" aria-hidden="true"></span>
