@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Climatización, Aire Acondicionado, Calefacción y Aerotermia | Termoelectra</title>
+  <meta name="description" content="Climatización, aire acondicionado, calefacción y aerotermia. Instalación, reparación y mantenimiento con servicio técnico propio de Termoelectra.">
+  <meta name="theme-color" content="#073b57">
+  <meta name="color-scheme" content="light">
+  <link rel="preload" as="image" href="climatizacion-assets/climatizacion-interior.webp" fetchpriority="high">
+  <style>
+    :root{
+      --navy:#073b57;
+      --navy-2:#0b5674;
+      --navy-3:#062f46;
+      --ice:#f4fbfd;
+      --ice-2:#e3f5fb;
+      --cyan:#20a8d2;
+      --cyan-2:#7bdcf2;
+      --red:#d82735;
+      --ink:#092f49;
+      --muted:#557086;
+      --white:#fff;
+      --green:#20cf68;
+      --line:#c8e7f1;
+      --shadow:0 22px 58px rgba(7,59,87,.13);
+      --radius:30px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:102px}
+    body{
+      margin:0;
+      overflow-x:hidden;
+      color:var(--ink);
+      background:var(--ice);
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    body.menu-open{overflow:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    button{color:inherit}
+    :focus-visible{outline:3px solid var(--cyan-2);outline-offset:4px}
+
+    .skip-link{
+      position:fixed;left:16px;top:-80px;z-index:9999;
+      padding:12px 18px;border-radius:999px;background:var(--white);color:var(--navy);
+      font-weight:800;box-shadow:var(--shadow);transition:top .2s ease;
+    }
+    .skip-link:focus{top:16px}
+    .shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .section{position:relative;padding:88px 0;overflow:hidden}
+    .section.light{background:var(--ice)}
+    .section.white{background:var(--white)}
+    .section.dark{
+      color:var(--white);
+      background:
+        radial-gradient(circle at 82% 12%,rgba(68,190,226,.21),transparent 28%),
+        linear-gradient(135deg,var(--navy-3),var(--navy-2));
+    }
+    .section.dark::before{
+      content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;
+      background-image:radial-gradient(circle,rgba(255,255,255,.65) 1px,transparent 1.5px);
+      background-size:36px 36px;
+      mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);
+    }
+    .section > .shell{position:relative;z-index:1}
+    .section-head{max-width:760px;margin-bottom:38px}
+    .section-head.center{text-align:center;margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:12px;margin-bottom:15px;
+      color:#058ebd;font-size:.75rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;
+    }
+    .eyebrow::before{content:"";width:38px;height:3px;border-radius:9px;background:linear-gradient(90deg,var(--red),var(--cyan))}
+    .dark .eyebrow{color:#a8ebfa}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:-.045em}
+    h2{margin-bottom:17px;font-size:clamp(2.25rem,5vw,4.35rem);line-height:.98}
+    h3{margin-bottom:10px;font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.08}
+    p{margin-bottom:18px;font-size:1.05rem;line-height:1.75;color:var(--muted)}
+    .dark p{color:#d5eaf2}
+    .lead{max-width:720px;font-size:clamp(1.04rem,1.5vw,1.2rem)}
+
+    /* Header */
+    .site-header{
+      position:fixed;z-index:1000;top:0;left:0;width:100%;padding:13px 18px;
+      transition:padding .25s ease,background .25s ease;
+    }
+    .site-header.scrolled{padding-block:8px;background:rgba(7,59,87,.28);backdrop-filter:blur(12px)}
+    .nav{
+      width:min(1340px,100%);min-height:70px;margin:auto;padding:9px 14px 9px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:25px;
+      border:1px solid rgba(32,168,210,.25);border-radius:24px;
+      background:rgba(255,255,255,.96);box-shadow:0 14px 42px rgba(3,43,64,.14);
+    }
+    .brand{display:flex;align-items:center;flex:0 0 auto}
+    .brand img{width:184px;height:50px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{
+      position:relative;padding:14px 18px;border-radius:999px;
+      color:var(--navy);font-size:.94rem;font-weight:800;transition:background .2s,color .2s;
+    }
+    .nav-links a:hover,.nav-links a.active{background:var(--ice-2)}
+    .nav-links a.active::after{
+      content:"";position:absolute;left:50%;bottom:7px;width:18px;height:2px;
+      border-radius:10px;background:var(--cyan);transform:translateX(-50%);
+    }
+    .nav-links .contact-link{padding-inline:24px;background:linear-gradient(135deg,var(--navy-2),var(--cyan));color:#fff}
+    .nav-links .contact-link:hover{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff}
+    .menu-toggle{
+      display:none;width:50px;height:50px;border:1px solid var(--line);border-radius:50%;
+      background:var(--ice);cursor:pointer;place-items:center;
+    }
+    .menu-toggle span,.menu-toggle::before,.menu-toggle::after{
+      content:"";display:block;width:22px;height:2px;border-radius:8px;background:var(--navy);transition:.25s ease;
+    }
+    .menu-toggle span{margin:5px 0}
+    .menu-toggle.active span{opacity:0}
+    .menu-toggle.active::before{transform:translateY(7px) rotate(45deg)}
+    .menu-toggle.active::after{transform:translateY(-7px) rotate(-45deg)}
+    .menu-overlay{
+      position:fixed;inset:0;z-index:998;opacity:0;pointer-events:none;
+      background:rgba(2,14,22,.64);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+      transition:opacity .3s ease;
+    }
+    .menu-overlay.on{opacity:1;pointer-events:auto}
+
+    /* Hero */
+    .hero{
+      position:relative;min-height:790px;display:flex;align-items:flex-end;padding:160px 0 82px;
+      color:#fff;background:var(--navy);
+      isolation:isolate;overflow:hidden;
+    }
+    .hero-media,.hero-media::before,.hero-media::after{position:absolute;inset:0}
+    .hero-media{z-index:-3}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.78) contrast(1.03)}
+    .hero-media::before{
+      content:"";z-index:1;background:
+        linear-gradient(90deg,rgba(3,39,58,.96) 0%,rgba(3,43,64,.84) 44%,rgba(3,43,64,.27) 76%,rgba(3,43,64,.45) 100%);
+    }
+    .hero-media::after{
+      content:"";z-index:2;background:linear-gradient(0deg,rgba(4,47,69,.86),transparent 44%);
+    }
+    .air-particles{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .air-particles i{
+      position:absolute;left:-15%;width:105px;height:2px;border-radius:100%;
+      background:linear-gradient(90deg,transparent,rgba(161,234,250,.85),transparent);
+      animation:air-drift var(--duration,10s) linear infinite;
+      animation-delay:var(--delay,0s);opacity:.65;
+    }
+    .air-particles i:nth-child(1){top:24%;--duration:11s;--delay:-2s}
+    .air-particles i:nth-child(2){top:38%;--duration:14s;--delay:-7s;width:160px}
+    .air-particles i:nth-child(3){top:55%;--duration:9s;--delay:-4s;width:90px}
+    .air-particles i:nth-child(4){top:70%;--duration:13s;--delay:-10s;width:135px}
+    @keyframes air-drift{to{transform:translateX(125vw) translateY(-28px)}}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) 370px;align-items:end;gap:55px}
+    .hero-copy{max-width:810px}
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:10px 16px;
+      border:1px solid rgba(193,239,249,.52);border-radius:999px;background:rgba(4,50,72,.38);
+      color:#d9f8ff;font-size:.78rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+    .hero-kicker svg{width:18px;height:18px;stroke:var(--cyan-2)}
+    .hero h1{max-width:900px;margin-bottom:24px;font-size:clamp(3.45rem,7.1vw,7.2rem);line-height:.86}
+    .hero h1 span{display:block}
+    .hero h1 .ice-text{color:#b9effb}
+    .hero-copy > p{max-width:745px;margin-bottom:30px;color:#f0fbff;font-size:clamp(1.08rem,1.6vw,1.25rem);line-height:1.65}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      min-height:54px;padding:0 23px;border:0;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      font-size:.96rem;font-weight:900;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:#fff;color:var(--navy);box-shadow:0 12px 30px rgba(0,0,0,.18)}
+    .btn-primary:hover{box-shadow:0 16px 36px rgba(0,0,0,.24)}
+    .btn-whatsapp{background:var(--green);color:#fff}
+    .btn svg{width:20px;height:20px}
+    .hero-proof{
+      align-self:end;padding:25px;border:1px solid rgba(199,239,248,.3);border-radius:27px;
+      background:rgba(4,49,72,.68);backdrop-filter:blur(13px);box-shadow:0 20px 50px rgba(0,0,0,.2);
+    }
+    .hero-proof strong{display:block;margin-bottom:16px;color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+    .proof-row{display:grid;grid-template-columns:56px 1fr;align-items:center;gap:13px;padding:13px 0;border-top:1px solid rgba(255,255,255,.14)}
+    .proof-row:first-of-type{border-top:0}
+    .proof-icon{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(166,233,249,.13);border:1px solid rgba(166,233,249,.25)}
+    .proof-icon svg{width:25px;height:25px;stroke:#a7ebf9}
+    .proof-row b{display:block;margin-bottom:3px;font-size:.96rem}
+    .proof-row span{color:#bcd7e1;font-size:.84rem;line-height:1.4}
+
+    /* Three services */
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{
+      position:relative;min-height:520px;border-radius:var(--radius);overflow:hidden;isolation:isolate;
+      box-shadow:0 24px 55px rgba(0,35,51,.26);
+    }
+    .service-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+    .service-card:hover img{transform:scale(1.035)}
+    .service-card::before{
+      content:"";position:absolute;z-index:1;inset:0;
+      background:linear-gradient(0deg,rgba(2,40,59,.98) 0%,rgba(2,40,59,.75) 38%,rgba(2,40,59,.08) 72%);
+    }
+    .service-content{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:28px}
+    .service-number{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:16px;border-radius:13px;background:#fff;color:var(--navy);font-weight:900}
+    .service-card h3{font-size:1.7rem;color:#fff}
+    .service-card p{margin-bottom:0;color:#d7eef5;font-size:.95rem;line-height:1.55}
+    .service-label{position:absolute;z-index:2;top:18px;right:18px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--navy);font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+
+    /* Stable visual explorer */
+    .explorer{
+      display:grid;grid-template-columns:minmax(0,1.15fr) minmax(350px,.85fr);
+      height:540px;border-radius:34px;overflow:hidden;background:var(--navy);box-shadow:var(--shadow);
+    }
+    .explorer-media{position:relative;min-width:0;background:#dceff5;overflow:hidden}
+    .explorer-media img{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--focus,center);
+      opacity:0;transform:scale(1.025);transition:opacity .4s ease,transform .7s ease;
+    }
+    .explorer-media img.active{opacity:1;transform:scale(1)}
+    .explorer-media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,39,58,.72),transparent 48%)}
+    .explorer-caption{position:absolute;z-index:2;left:30px;bottom:26px;color:#fff}
+    .explorer-caption small{display:block;margin-bottom:7px;color:#a9eaf9;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .explorer-caption strong{font-size:clamp(1.8rem,3.2vw,3rem);letter-spacing:-.05em}
+    .explorer-panel{display:flex;flex-direction:column;justify-content:center;padding:44px;color:#fff}
+    .explorer-panel .eyebrow{margin-bottom:12px}
+    .explorer-panel h3{margin-bottom:16px;font-size:clamp(2rem,3vw,3.1rem)}
+    .explorer-panel > p{min-height:87px;margin-bottom:25px;color:#d0e8f1}
+    .explorer-tabs{display:grid;gap:10px}
+    .explorer-tab{
+      width:100%;min-height:56px;padding:8px 14px;border:1px solid rgba(192,231,241,.24);border-radius:14px;
+      display:grid;grid-template-columns:42px 1fr;align-items:center;text-align:left;
+      background:rgba(255,255,255,.05);color:#fff;cursor:pointer;font-weight:850;transition:.2s ease;
+    }
+    .explorer-tab span{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(103,211,237,.12);color:#9be6f7;font-size:.74rem}
+    .explorer-tab:hover{border-color:#78d9ee;background:rgba(255,255,255,.09)}
+    .explorer-tab.active{background:#fff;color:var(--navy);border-color:#fff}
+    .explorer-tab.active span{background:var(--ice-2);color:var(--navy)}
+
+    /* Service detail */
+    .detail-stack{display:grid;gap:22px}
+    .detail-card{
+      display:grid;grid-template-columns:1fr 1.08fr;min-height:440px;border:1px solid var(--line);
+      border-radius:32px;overflow:hidden;background:#fff;box-shadow:0 17px 45px rgba(7,59,87,.08);
+    }
+    .detail-card.reverse{grid-template-columns:1.08fr 1fr}
+    .detail-card.reverse .detail-media{order:2}
+    .detail-media{position:relative;min-height:440px;overflow:hidden;background:var(--ice-2)}
+    .detail-media img{width:100%;height:100%;object-fit:cover}
+    .detail-badge{position:absolute;left:24px;bottom:24px;padding:11px 17px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--navy);font-size:.8rem;font-weight:900;box-shadow:0 10px 25px rgba(0,35,51,.14)}
+    .detail-copy{display:flex;flex-direction:column;justify-content:center;padding:46px}
+    .detail-copy h3{font-size:clamp(1.8rem,3vw,2.8rem)}
+    .check-list{list-style:none;margin:5px 0 0;padding:0}
+    .check-list li{position:relative;padding:12px 0 12px 34px;border-top:1px solid #d8e8ee;color:var(--ink);line-height:1.45}
+    .check-list li:first-child{border-top:0}
+    .check-list li::before{
+      content:"✓";position:absolute;left:0;top:11px;width:22px;height:22px;border-radius:50%;
+      display:grid;place-items:center;background:var(--navy);color:#fff;font-size:.76rem;font-weight:900;
+    }
+    .text-illustration{
+      position:relative;min-height:440px;display:grid;place-items:center;overflow:hidden;
+      background:linear-gradient(145deg,#e8f8fc,#cdeef7);
+    }
+    .heat-unit{position:relative;width:min(330px,78%);aspect-ratio:1.18;border-radius:30px;background:#fff;box-shadow:0 25px 50px rgba(7,59,87,.16)}
+    .heat-unit::before{content:"";position:absolute;left:11%;right:11%;top:10%;height:13%;border-radius:12px;background:linear-gradient(90deg,#e6f2f6,#f8fcfd)}
+    .fan{position:absolute;left:50%;top:56%;width:145px;height:145px;border:13px solid #d9edf3;border-radius:50%;transform:translate(-50%,-50%);animation:fan-spin 9s linear infinite}
+    .fan::before,.fan::after{content:"";position:absolute;left:50%;top:50%;width:104px;height:25px;border-radius:100%;background:linear-gradient(90deg,var(--cyan),var(--navy-2));transform:translate(-50%,-50%) rotate(38deg)}
+    .fan::after{transform:translate(-50%,-50%) rotate(128deg)}
+    .fan-center{position:absolute;left:50%;top:56%;width:34px;height:34px;border:8px solid #fff;border-radius:50%;background:var(--red);transform:translate(-50%,-50%);z-index:2}
+    .flow-ring{position:absolute;inset:-28px;border:2px dashed rgba(32,168,210,.54);border-radius:42px;animation:ring 14s linear infinite}
+    @keyframes fan-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    @keyframes ring{to{transform:rotate(-360deg)}}
+
+    /* Interactive circuit */
+    .climate-lab{
+      display:grid;grid-template-columns:.78fr 1.22fr;gap:30px;align-items:stretch;
+      min-height:570px;padding:24px;border:1px solid rgba(151,225,243,.26);border-radius:34px;
+      background:rgba(255,255,255,.07);box-shadow:0 28px 60px rgba(0,25,37,.2);
+    }
+    .lab-copy{display:flex;flex-direction:column;justify-content:center;padding:28px}
+    .lab-copy h3{font-size:clamp(2rem,3.8vw,3.55rem)}
+    .mode-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 22px}
+    .mode-button{min-height:52px;border:1px solid rgba(184,232,243,.28);border-radius:13px;background:rgba(255,255,255,.06);color:#fff;font-weight:850;cursor:pointer}
+    .mode-button:hover,.mode-button.active{background:#fff;color:var(--navy)}
+    .lab-note{min-height:86px;padding:17px;border-left:3px solid var(--cyan-2);background:rgba(255,255,255,.06);border-radius:0 14px 14px 0}
+    .lab-note strong{display:block;margin-bottom:5px;color:#fff}
+    .lab-note p{margin:0;color:#cde6ef;font-size:.94rem;line-height:1.55}
+    .system-visual{
+      --flow:#6bdcf5;position:relative;min-height:520px;border-radius:25px;overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 47%,rgba(69,194,225,.18),transparent 34%),
+        linear-gradient(145deg,#052e44,#0a4d69);
+    }
+    .system-visual[data-mode="heat"]{--flow:#f38267}
+    .system-visual[data-mode="aero"]{--flow:#8cd7b0}
+    .room-outline{position:absolute;left:9%;right:9%;top:11%;bottom:11%;border:2px solid rgba(255,255,255,.35);border-top-width:7px}
+    .room-outline::before{content:"";position:absolute;left:49%;top:0;bottom:0;border-left:1px solid rgba(255,255,255,.19)}
+    .visual-device{
+      position:absolute;width:120px;height:72px;border-radius:15px;background:#eef9fc;box-shadow:0 15px 35px rgba(0,0,0,.28);
+    }
+    .visual-device::after{content:"";position:absolute;left:15px;right:15px;bottom:12px;height:6px;border-radius:5px;background:var(--flow);box-shadow:0 0 16px var(--flow)}
+    .device-in{left:17%;top:20%}
+    .device-out{right:15%;bottom:18%;width:126px;height:126px}
+    .device-out::before{
+      content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;border:7px solid #bfdde7;border-radius:50%;
+      transform:translate(-50%,-50%);background:conic-gradient(from 0deg,var(--flow),transparent,var(--flow),transparent);
+      animation:fan-spin 5s linear infinite;
+    }
+    .device-out::after{bottom:9px}
+    .flow-path{position:absolute;height:4px;border-radius:99px;background:linear-gradient(90deg,transparent,var(--flow),transparent);box-shadow:0 0 15px var(--flow);animation:flow-pulse 2.3s ease-in-out infinite}
+    .flow-path.a{left:32%;top:31%;width:45%;transform:rotate(14deg)}
+    .flow-path.b{left:27%;top:60%;width:48%;transform:rotate(-11deg);animation-delay:-.7s}
+    .flow-path.c{left:43%;top:45%;width:30%;transform:rotate(90deg);animation-delay:-1.3s}
+    @keyframes flow-pulse{0%,100%{opacity:.24;filter:blur(1px)}50%{opacity:1;filter:blur(0)}}
+    .air-dot{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--flow);box-shadow:0 0 18px var(--flow);animation:dot-float 4s ease-in-out infinite}
+    .air-dot:nth-of-type(1){left:39%;top:28%}
+    .air-dot:nth-of-type(2){left:57%;top:40%;animation-delay:-1s}
+    .air-dot:nth-of-type(3){left:66%;top:57%;animation-delay:-2s}
+    .air-dot:nth-of-type(4){left:39%;top:67%;animation-delay:-3s}
+    @keyframes dot-float{50%{transform:translateY(-16px) scale(1.25);opacity:.65}}
+    .visual-label{position:absolute;padding:8px 11px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(0,29,43,.6);color:#e9fbff;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .label-in{left:13%;top:11%}
+    .label-out{right:12%;bottom:8%}
+    .mode-symbol{position:absolute;left:50%;top:50%;font-size:4.2rem;transform:translate(-50%,-50%);filter:drop-shadow(0 10px 22px rgba(0,0,0,.35));transition:transform .25s}
+    .system-visual:hover .mode-symbol{transform:translate(-50%,-50%) scale(1.08)}
+
+    /* Process */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--line);box-shadow:var(--shadow)}
+    .process-card{position:relative;min-height:260px;padding:30px 25px;background:#fff}
+    .process-number{display:block;margin-bottom:22px;color:var(--cyan);font-size:2.7rem;font-weight:950;letter-spacing:-.06em}
+    .process-card h3{font-size:1.25rem}
+    .process-card p{margin:0;font-size:.94rem;line-height:1.58}
+    .process-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--red),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+    .process-card:hover::after{transform:scaleX(1)}
+
+    /* Gallery */
+    .gallery-three{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:15px}
+    .gallery-item{position:relative;height:390px;border-radius:26px;overflow:hidden;background:#0b405b}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease,filter .45s ease}
+    .gallery-item:hover img{transform:scale(1.035);filter:brightness(.83)}
+    .gallery-item span{
+      position:absolute;left:18px;bottom:18px;padding:9px 13px;border-radius:999px;
+      background:rgba(255,255,255,.93);color:var(--navy);font-size:.76rem;font-weight:900;
+    }
+
+    /* Certifications */
+    .cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .cert-card{min-height:180px;padding:24px;border:1px solid rgba(196,235,244,.22);border-radius:21px;background:rgba(255,255,255,.07)}
+    .cert-card b{display:block;margin-bottom:10px;color:#fff;font-size:1.17rem}
+    .cert-card p{margin:0;color:#cfe6ee;font-size:.86rem;line-height:1.5}
+    .cert-icon{width:38px;height:38px;margin-bottom:18px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--navy);font-weight:950}
+    .cert-section .cert-card{border-color:var(--line);background:#fff;box-shadow:0 12px 34px rgba(7,59,87,.07)}
+    .cert-section .cert-card b{color:var(--navy)}
+    .cert-section .cert-card p{color:var(--muted)}
+    .cert-section .cert-icon{background:var(--navy);color:#fff}
+
+    /* FAQ */
+    .faq-layout{display:grid;grid-template-columns:.65fr 1.35fr;gap:55px;align-items:start}
+    .faq-intro{position:sticky;top:120px}
+    .faq-list{display:grid;gap:11px}
+    .faq-item{border:1px solid var(--line);border-radius:19px;background:#fff;overflow:hidden;box-shadow:0 8px 24px rgba(7,59,87,.045)}
+    .faq-q{
+      width:100%;min-height:78px;padding:17px 19px 17px 24px;border:0;
+      display:grid;grid-template-columns:1fr 48px;align-items:center;gap:18px;
+      background:transparent;text-align:left;color:var(--navy);font-weight:900;cursor:pointer;
+    }
+    .faq-plus{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:1.55rem;line-height:1;transition:transform .25s,background .25s}
+    .faq-item.open .faq-plus{transform:rotate(45deg);background:var(--red)}
+    .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+    .faq-a > div{overflow:hidden}
+    .faq-a p{padding:0 82px 0 24px;margin:0;font-size:.96rem}
+    .faq-item.open .faq-a{grid-template-rows:1fr}
+    .faq-item.open .faq-a p{padding-bottom:23px}
+
+    /* Contact and footer */
+    .contact-panel{
+      display:grid;grid-template-columns:1.08fr .92fr;border-radius:36px;overflow:hidden;
+      background:#fff;color:var(--navy);box-shadow:0 28px 65px rgba(0,25,37,.23);
+    }
+    .contact-copy{padding:52px}
+    .contact-copy h2{font-size:clamp(2.45rem,4.6vw,4.6rem)}
+    .contact-list{list-style:none;margin:26px 0 0;padding:0}
+    .contact-list li{display:grid;grid-template-columns:105px 1fr;gap:15px;padding:13px 0;border-top:1px solid #d9e9ee}
+    .contact-list span{color:var(--muted);font-size:.84rem;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+    .contact-list a{font-weight:900}
+    .contact-actions{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:45px;background:linear-gradient(145deg,var(--ice-2),#fff)}
+    .contact-actions .btn{width:100%}
+    .contact-actions .btn-primary{background:var(--navy);color:#fff}
+    footer{padding:60px 0 110px;background:#052f45;color:#fff}
+    .footer-grid{display:grid;grid-template-columns:1.25fr .7fr .9fr;gap:55px}
+    .footer-brand-card{width:250px;margin-bottom:22px;padding:17px 20px;border-radius:18px;background:#fff}
+    .footer-brand-card img{width:100%;height:66px;object-fit:contain}
+    .footer-about p{max-width:480px;color:#b9d5df}
+    .footer-col h3{font-size:1rem;letter-spacing:0}
+    .footer-col ul{list-style:none;margin:0;padding:0}
+    .footer-col li{margin:12px 0;color:#b9d5df}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{margin-top:42px;padding-top:24px;border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;gap:25px;color:#9dbcc7;font-size:.83rem}
+
+    /* Floating and mobile actions */
+    .wa-float{
+      position:fixed;z-index:900;right:25px;bottom:25px;width:62px;height:62px;border:5px solid rgba(255,255,255,.9);
+      border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;
+      box-shadow:0 12px 33px rgba(32,207,104,.38);transition:transform .2s;
+    }
+    .wa-float:hover{transform:scale(1.06)}
+    .wa-float svg{width:30px;height:30px;fill:currentColor}
+    .mobile-bar{display:none}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal.delay{transition-delay:.12s}
+
+    @media(max-width:1000px){
+      .nav-links{
+        position:fixed;z-index:1002;inset:0 0 auto auto;
+        width:min(88vw,390px);height:100dvh;min-height:100vh;
+        padding:108px 28px 120px;overflow-y:auto;overscroll-behavior:contain;
+        display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;
+        border-left:1px solid var(--line);border-radius:0;
+        background:radial-gradient(circle at 100% 0,rgba(32,168,210,.12),transparent 19rem),#fff;
+        box-shadow:-24px 0 70px rgba(4,24,40,.24);
+        transform:translate3d(105%,0,0);
+        transition:transform .42s cubic-bezier(.2,.75,.2,1);
+        isolation:isolate;
+      }
+      .nav-links::before{
+        content:"";position:absolute;left:28px;right:28px;top:82px;height:1px;
+        background:linear-gradient(90deg,var(--red),var(--cyan),transparent);
+      }
+      .nav-links.open{transform:translate3d(0,0,0)}
+      .nav-links a{
+        position:relative;width:100%;padding:18px;border-bottom:1px solid var(--line);
+        border-radius:0!important;background:transparent;color:var(--navy)!important;
+        font-size:1.05rem;
+      }
+      .nav-links a:not(.contact-link)::after{
+        content:"›";display:block;position:absolute;right:10px;top:50%;
+        width:auto;height:auto;background:none;color:var(--cyan);font-size:1.45rem;
+        transform:translateY(-50%);
+      }
+      .nav-links a.active{background:var(--ice-2)}
+      .nav-links a.active::after{background:none}
+      .nav-links .contact-link{
+        margin-top:18px;padding:17px 22px!important;border:0;border-radius:999px!important;
+        background:linear-gradient(135deg,var(--navy-2),var(--cyan));color:#fff!important;text-align:center;
+      }
+      .menu-toggle{
+        z-index:1004;display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:0;
+      }
+      .menu-toggle.active{
+        position:fixed;top:25px;right:22px;width:48px;height:48px;
+        border:1px solid var(--line);border-radius:50%;background:#fff;
+        box-shadow:0 10px 30px rgba(4,24,40,.12);
+      }
+      body.menu-open .mobile-bar,
+      body.menu-open .wa-float{opacity:0;pointer-events:none}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:18px}
+      .hero-proof strong{grid-column:1/-1}
+      .proof-row{grid-template-columns:46px 1fr;padding:10px;border-top:0;border-left:1px solid rgba(255,255,255,.14)}
+      .proof-row:first-of-type{border-left:0}
+      .proof-icon{width:42px;height:42px}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .service-card:last-child{grid-column:1/-1;min-height:420px}
+      .explorer{grid-template-columns:1.05fr .95fr}
+      .detail-card,.detail-card.reverse{grid-template-columns:1fr 1fr}
+      .climate-lab{grid-template-columns:1fr}
+      .system-visual{min-height:430px}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .cert-grid{grid-template-columns:repeat(3,1fr)}
+      .cert-card:nth-child(4),.cert-card:nth-child(5){grid-column:span 1}
+      .faq-layout{grid-template-columns:1fr}
+      .faq-intro{position:static}
+    }
+
+    @media(max-width:760px){
+      html{scroll-padding-top:88px}
+      .shell{width:min(100% - 28px,var(--max))}
+      .section{padding:64px 0}
+      h2{font-size:clamp(2.15rem,11vw,3.25rem)}
+      p{font-size:1rem}
+      .site-header{padding:9px}
+      .nav{min-height:68px;padding:8px 9px 8px 13px;border-radius:20px}
+      .brand img{width:166px;height:48px}
+      .menu-toggle{width:48px;height:48px}
+      .nav-links.open{transform:translate3d(0,0,0)}
+      .hero{min-height:auto;padding:138px 0 46px}
+      .hero-media::before{background:linear-gradient(0deg,rgba(3,39,58,.98),rgba(3,43,64,.6) 100%)}
+      .hero h1{font-size:clamp(3rem,15vw,5rem);line-height:.9}
+      .hero-actions .btn{width:100%}
+      .hero-proof{grid-template-columns:1fr;padding:15px}
+      .hero-proof strong{margin:0 0 7px 5px}
+      .proof-row{border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+      .service-grid{grid-template-columns:1fr}
+      .service-card,.service-card:last-child{grid-column:auto;min-height:420px}
+      .explorer{height:auto;grid-template-columns:1fr}
+      .explorer-media{height:310px;min-height:310px}
+      .explorer-panel{min-height:390px;padding:28px 22px}
+      .explorer-panel > p{min-height:0}
+      .explorer-caption{left:20px;bottom:18px}
+      .explorer-tab{min-height:52px}
+      .detail-stack{gap:16px}
+      .detail-card,.detail-card.reverse{grid-template-columns:1fr;min-height:0}
+      .detail-card.reverse .detail-media{order:0}
+      .detail-media,.text-illustration{min-height:310px;height:310px}
+      .detail-copy{padding:29px 23px}
+      .detail-copy h3{font-size:2rem}
+      .check-list{display:grid;gap:8px;margin-top:10px}
+      .check-list li{
+        padding:14px 16px 14px 45px;border:1px solid #d7e9ef;border-radius:14px;background:#f8fdfe;
+      }
+      .check-list li::before{left:14px;top:13px}
+      .climate-lab{padding:12px}
+      .lab-copy{padding:22px 14px 5px}
+      .mode-controls{grid-template-columns:1fr}
+      .system-visual{min-height:360px}
+      .visual-device{width:92px;height:58px}
+      .device-out{width:94px;height:94px}
+      .device-out::before{width:51px;height:51px}
+      .mode-symbol{font-size:3rem}
+      .process-grid{grid-template-columns:1fr;gap:1px}
+      .process-card{min-height:0;padding:23px}
+      .process-number{display:inline-block;margin:0 12px 0 0;font-size:1.65rem}
+      .process-card h3{display:inline}
+      .process-card p{margin-top:12px}
+      .gallery-three{grid-template-columns:1fr}
+      .gallery-item{height:300px}
+      .cert-grid{grid-template-columns:1fr}
+      .cert-card{min-height:0}
+      .faq-q{grid-template-columns:1fr 44px;padding-left:18px}
+      .faq-plus{width:42px;height:42px}
+      .faq-a p{padding-left:18px;padding-right:18px}
+      .contact-panel{grid-template-columns:1fr}
+      .contact-copy,.contact-actions{padding:29px 23px}
+      .contact-list li{grid-template-columns:1fr;gap:5px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .footer-brand-card{width:230px}
+      .footer-bottom{flex-direction:column}
+      .wa-float{display:none}
+      .mobile-bar{
+        position:fixed;z-index:1100;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));
+        display:grid;grid-template-columns:1fr 1.15fr;gap:8px;padding:8px;border:1px solid var(--line);
+        border-radius:20px;background:rgba(255,255,255,.96);box-shadow:0 14px 40px rgba(4,39,58,.22);
+        backdrop-filter:blur(10px);
+      }
+      .mobile-bar a{min-height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:9px;color:#fff;font-weight:900}
+      .mobile-bar .call{background:var(--navy-2)}
+      .mobile-bar .wa{background:var(--green)}
+      .mobile-bar svg{width:22px;height:22px}
+      footer{padding-bottom:110px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/shared-header.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header shared-header" id="siteHeader">
+    <nav class="nav shared-nav" aria-label="Navegación principal">
+      <a class="brand shared-brand" href="../index.html" aria-label="Termoelectra, inicio">
+        <img class="shared-logo" src="climatizacion-assets/logo-termoelectra.webp" width="420" height="157" alt="Termoelectra">
+      </a>
+      <div class="nav-links shared-nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="../refrigeracion/index.html">Refrigeración</a>
+        <a class="active is-current" href="./index.html" aria-current="page">Climatización</a>
+        <a class="contact-link shared-contact" href="#contacto">Contacto</a>
+      </div>
+      <button class="menu-toggle shared-menu" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="menu-overlay shared-menu-overlay" id="menuOverlay"></div>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" alt="">
+      </div>
+      <div class="air-particles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M5 6l14 12M19 6L5 18"/></svg>
+            Instalación · Reparación · Mantenimiento
+          </div>
+          <h1 id="hero-title"><span>Climatización</span><span class="ice-text">para Cada Espacio.</span></h1>
+          <p>Aire acondicionado, calefacción y aerotermia con instalación, reparación y mantenimiento. Consulta cada necesidad de climatización con el servicio técnico propio.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#servicios">Ver soluciones</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+        <aside class="hero-proof" aria-label="Áreas de climatización">
+          <strong>Áreas de servicio</strong>
+          <div class="proof-row">
+            <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M6 7l12 10M18 7 6 17"/></svg></div>
+            <div><b>Aire Acondicionado</b><span>Instalación, reparación y mantenimiento.</span></div>
+          </div>
+          <div class="proof-row">
+            <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22c4 0 7-3 7-7 0-5-4-7-4-12-4 2-7 6-7 11 0 0-2-2-3-3-1 6 2 11 7 11Z"/></svg></div>
+            <div><b>Calefacción</b><span>Climatización para los meses de frío.</span></div>
+          </div>
+          <div class="proof-row">
+            <div class="proof-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 11a8 8 0 1 1-3-6.2M20 4v7h-7"/></svg></div>
+            <div><b>Aerotermia</b><span>Energía del aire para climatización.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section white" id="servicios">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Climatización Termoelectra</span>
+          <h2>Tres Formas de Trabajar el Confort Térmico.</h2>
+          <p class="lead">Instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Equipo exterior de aire acondicionado instalado en cubierta">
+            <span class="service-label">Climatización</span>
+            <div class="service-content"><span class="service-number">01</span><h3>Aire Acondicionado</h3><p>Instalación, reparación y mantenimiento de sistemas de aire acondicionado.</p></div>
+          </article>
+          <article class="service-card reveal delay">
+            <img src="climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" loading="lazy" alt="Interior climatizado con difusión de aire desde el techo">
+            <span class="service-label">Confort</span>
+            <div class="service-content"><span class="service-number">02</span><h3>Calefacción</h3><p>Calefacción integrada dentro de las soluciones de climatización de Termoelectra.</p></div>
+          </article>
+          <article class="service-card reveal">
+            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización conectadas a conductos">
+            <span class="service-label">Energía del aire</span>
+            <div class="service-content"><span class="service-number">03</span><h3>Aerotermia</h3><p>Tecnología que aprovecha la energía del aire exterior para climatización y producción de agua caliente.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" aria-labelledby="explorer-title">
+      <div class="shell">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Explorador visual</span>
+          <h2 id="explorer-title">Encuentra la Solución de Climatización que Necesitas.</h2>
+          <p class="lead">Selecciona un área para conocer los servicios de Aire Acondicionado, Calefacción y Aerotermia.</p>
+        </div>
+        <div class="explorer reveal" id="serviceExplorer">
+          <div class="explorer-media" aria-live="polite">
+            <img class="active" data-explorer-image="air" style="--focus:center 48%" src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" alt="Equipos exteriores de aire acondicionado">
+            <img data-explorer-image="heat" style="--focus:center 48%" src="climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" loading="lazy" alt="Interior con sistema de climatización">
+            <img data-explorer-image="aero" style="--focus:center 50%" src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores asociadas a un sistema de climatización">
+            <div class="explorer-caption"><small id="explorerArea">Área 01</small><strong id="explorerCaption">Aire Acondicionado</strong></div>
+          </div>
+          <div class="explorer-panel">
+            <span class="eyebrow">Selecciona un área</span>
+            <h3 id="explorerHeading">Aire Acondicionado</h3>
+            <p id="explorerText">Instalación, reparación y mantenimiento de sistemas de aire acondicionado como parte del servicio de climatización.</p>
+            <div class="explorer-tabs" role="tablist" aria-label="Áreas de climatización">
+              <button class="explorer-tab active" type="button" role="tab" aria-selected="true" data-explorer="air"><span>01</span>Aire Acondicionado</button>
+              <button class="explorer-tab" type="button" role="tab" aria-selected="false" data-explorer="heat"><span>02</span>Calefacción</button>
+              <button class="explorer-tab" type="button" role="tab" aria-selected="false" data-explorer="aero"><span>03</span>Aerotermia</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="climatizacion">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Servicio de Climatización</span>
+          <h2>Instalación, Reparación y Mantenimiento.</h2>
+          <p class="lead">Revisa las principales áreas de climatización y los servicios disponibles para cada sistema.</p>
+        </div>
+        <div class="detail-stack">
+          <article class="detail-card reveal" id="aire-acondicionado">
+            <div class="detail-media">
+              <img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Sistema exterior de aire acondicionado">
+              <span class="detail-badge">Aire Acondicionado</span>
+            </div>
+            <div class="detail-copy">
+              <span class="eyebrow">Climatización</span>
+              <h3>Aire Acondicionado</h3>
+              <p>Termoelectra incluye el aire acondicionado dentro de sus servicios de instalación, reparación y mantenimiento de sistemas de climatización.</p>
+              <ul class="check-list">
+                <li>Instalación de sistemas de aire acondicionado</li>
+                <li>Reparación de equipos de climatización</li>
+                <li>Mantenimiento de aire acondicionado</li>
+                <li>Consulta directa con el servicio técnico propio</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="detail-card reverse reveal" id="calefaccion">
+            <div class="text-illustration" role="img" aria-label="Ilustración animada de una unidad de climatización">
+              <div class="heat-unit" aria-hidden="true"><div class="flow-ring"></div><div class="fan"></div><div class="fan-center"></div></div>
+            </div>
+            <div class="detail-copy">
+              <span class="eyebrow">Temperatura interior</span>
+              <h3>Calefacción</h3>
+              <p>La calefacción forma parte de las soluciones de climatización indicadas por Termoelectra, junto con el aire acondicionado y la aerotermia.</p>
+              <ul class="check-list">
+                <li>Instalación dentro de proyectos de climatización</li>
+                <li>Reparación y mantenimiento de sistemas</li>
+                <li>Valoración de la solución según cada instalación</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="detail-card reveal" id="aerotermia">
+            <div class="detail-media">
+              <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización para aprovechar la energía del aire">
+              <span class="detail-badge">Aerotermia</span>
+            </div>
+            <div class="detail-copy">
+              <span class="eyebrow">Energía del aire</span>
+              <h3>Aerotermia</h3>
+              <p>La aerotermia aprovecha la energía del aire exterior para climatización y producción de agua caliente. Su conveniencia depende de las características y necesidades concretas de cada instalación.</p>
+              <ul class="check-list">
+                <li>Climatización mediante energía del aire exterior</li>
+                <li>Producción de agua caliente</li>
+                <li>Estudio de la necesidad concreta de cada espacio</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="recorrido">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Recorrido interactivo</span>
+          <h2>El Aire, el Equipo y el Control Trabajan como un Sistema.</h2>
+          <p class="lead">Selecciona una opción y conoce de forma visual el funcionamiento general de cada sistema.</p>
+        </div>
+        <div class="climate-lab reveal">
+          <div class="lab-copy">
+            <span class="eyebrow">Elige un modo</span>
+            <h3 id="labHeading">Aire Acondicionado</h3>
+            <p>Activa cada opción y observa cómo cambia el recorrido visual del sistema.</p>
+            <div class="mode-controls" role="group" aria-label="Modos del recorrido">
+              <button class="mode-button active" type="button" data-mode="cool">Aire</button>
+              <button class="mode-button" type="button" data-mode="heat">Calor</button>
+              <button class="mode-button" type="button" data-mode="aero">Aerotermia</button>
+            </div>
+            <div class="lab-note" aria-live="polite">
+              <strong id="labTitle">Climatización del ambiente</strong>
+              <p id="labText">El sistema mueve y trata el aire para ajustar las condiciones interiores según la instalación.</p>
+            </div>
+          </div>
+          <div class="system-visual" id="systemVisual" data-mode="cool" aria-hidden="true">
+            <div class="room-outline"></div>
+            <div class="visual-device device-in"></div>
+            <div class="visual-device device-out"></div>
+            <div class="flow-path a"></div><div class="flow-path b"></div><div class="flow-path c"></div>
+            <i class="air-dot"></i><i class="air-dot"></i><i class="air-dot"></i><i class="air-dot"></i>
+            <span class="visual-label label-in">Unidad interior</span>
+            <span class="visual-label label-out">Unidad exterior</span>
+            <span class="mode-symbol" id="modeSymbol">❄</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="proceso">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Cómo solicitar el servicio</span>
+          <h2>De la Consulta a la Actuación Técnica.</h2>
+          <p class="lead">Cuéntanos qué sistema tienes y si necesitas instalación, reparación o mantenimiento.</p>
+        </div>
+        <div class="process-grid reveal">
+          <article class="process-card"><span class="process-number">01</span><h3>Consulta</h3><p>Indica si necesitas instalación, reparación o mantenimiento y describe el sistema de climatización.</p></article>
+          <article class="process-card"><span class="process-number">02</span><h3>Revisión</h3><p>El servicio técnico puede valorar las necesidades y características concretas de la instalación.</p></article>
+          <article class="process-card"><span class="process-number">03</span><h3>Actuación</h3><p>La intervención se plantea según el servicio solicitado: instalación, reparación o mantenimiento.</p></article>
+          <article class="process-card"><span class="process-number">04</span><h3>Mantenimiento</h3><p>El mantenimiento forma parte de los servicios de climatización indicados por Termoelectra.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="trabajos">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fotografías reales</span>
+          <h2>Climatización Vista desde Tres Puntos.</h2>
+          <p class="lead">Equipos exteriores, distribución de aire y revisión técnica en distintos puntos de una instalación.</p>
+        </div>
+        <div class="gallery-three">
+          <figure class="gallery-item reveal">
+            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización">
+            <span>Equipos de Climatización</span>
+          </figure>
+          <figure class="gallery-item reveal delay">
+            <img src="climatizacion-assets/conductos-exterior.webp" width="900" height="1200" loading="lazy" alt="Conductos de climatización instalados en el exterior">
+            <span>Distribución de Aire</span>
+          </figure>
+          <figure class="gallery-item reveal">
+            <img src="climatizacion-assets/revision-tecnica.webp" width="1400" height="1050" loading="lazy" alt="Instrumento utilizado durante una revisión técnica">
+            <span>Revisión Técnica</span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white cert-section" id="certificaciones" aria-labelledby="cert-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Acreditaciones</span>
+          <h2 id="cert-title">Nuestras Certificaciones.</h2>
+          <p class="lead">Acreditaciones profesionales para instalaciones térmicas, frío industrial, gas y manipulación de gases fluorados.</p>
+        </div>
+        <div class="cert-grid">
+          <article class="cert-card reveal"><span class="cert-icon">✓</span><b>RITE</b><p>Empresa instaladora y mantenedora de instalaciones térmicas en edificios.</p></article>
+          <article class="cert-card reveal"><span class="cert-icon">✓</span><b>REIF</b><p>Empresa instaladora y mantenedora de frío industrial (Nivel 1).</p></article>
+          <article class="cert-card reveal"><span class="cert-icon">✓</span><b>IGII - B</b><p>Empresa instaladora de gas en instalaciones comunes en edificios.</p></article>
+          <article class="cert-card reveal"><span class="cert-icon">✓</span><b>Gases Fluorados</b><p>Manipulación de gases fluorados: todas las cargas.</p></article>
+          <article class="cert-card reveal"><span class="cert-icon">✓</span><b>RASIC</b><p>N.º 00500538.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="faq">
+      <div class="shell faq-layout">
+        <div class="faq-intro reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>FAQ</h2>
+          <p>Resolvemos las dudas más comunes sobre Climatización, Aire Acondicionado, Calefacción y Aerotermia.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿Qué tipo de sistemas instaláis?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>La información de Termoelectra incluye sistemas de refrigeración industrial y comercial, cámaras frigoríficas, aire acondicionado, calefacción y aerotermia.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿Qué es la aerotermia y por qué puede ser una opción?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>La aerotermia aprovecha la energía del aire exterior para climatización y producción de agua caliente. Su conveniencia depende de las características y necesidades concretas de cada instalación.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿La climatización puede ayudar con la eficiencia energética?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>El dimensionamiento, el uso y el mantenimiento influyen en el funcionamiento de un sistema. La valoración concreta debe hacerse a partir de la instalación y de sus necesidades.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿Qué servicios de climatización ofrecéis?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>Instalación, reparación y mantenimiento de sistemas de climatización, incluyendo aire acondicionado, calefacción y aerotermia.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿En qué zonas trabajáis?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>Consulta la disponibilidad del servicio en tu ubicación directamente con Termoelectra por teléfono o WhatsApp.</p></div></div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button" aria-expanded="false"><span>¿Puedo solicitar mantenimiento además de instalación?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><div><p>Sí. El mantenimiento y la reparación figuran junto a la instalación dentro de los servicios de climatización de Termoelectra.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="contacto">
+      <div class="shell">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <span class="eyebrow">Contacto</span>
+            <h2>Cuéntanos Qué Necesitas Climatizar.</h2>
+            <p>Indica si buscas aire acondicionado, calefacción, aerotermia, reparación o mantenimiento.</p>
+            <ul class="contact-list">
+              <li><span>Teléfono</span><a href="tel:+34651097393">651 09 73 93</a></li>
+              <li><span>Email</span><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
+              <li><span>Horario</span><b>Lun. a Vi. de 8h a 18h</b></li>
+            </ul>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-whatsapp" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+              Enviar WhatsApp
+            </a>
+            <a class="btn btn-primary" href="tel:+34651097393">Llamar a Termoelectra</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand-card"><img src="climatizacion-assets/logo-termoelectra.webp" width="420" height="157" loading="lazy" alt="Termoelectra"></div>
+          <p>Especialistas en refrigeración y climatización. Instalación, reparación y mantenimiento con servicio técnico propio.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Climatización</h3>
+          <ul>
+            <li><a href="#aire-acondicionado">Aire Acondicionado</a></li>
+            <li><a href="#calefaccion">Calefacción</a></li>
+            <li><a href="#aerotermia">Aerotermia</a></li>
+            <li><a href="#certificaciones">Certificaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
+            <li><a href="tel:+34651097393">651 09 73 93</a></li>
+            <li>Lun. a Vi. de 8h a 18h</li>
+            <li><a href="https://wa.me/34651097393">Enviar WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Termoelectra</span>
+        <span>Aviso Legal · Política de Cookies · Política de Privacidad</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n." aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+  </a>
+
+  <div class="mobile-bar" aria-label="Contacto rápido">
+    <a class="call" href="tel:+34651097393">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+      Llamar
+    </a>
+    <a class="wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    (() => {
+      const header = document.getElementById('siteHeader');
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const menuOverlay = document.getElementById('menuOverlay');
+
+      const closeMenu = () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        menuOverlay.classList.remove('on');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+        document.body.classList.remove('menu-open');
+      };
+
+      menuToggle.addEventListener('click', () => {
+        const open = !navLinks.classList.contains('open');
+        navLinks.classList.toggle('open', open);
+        menuToggle.classList.toggle('active', open);
+        menuOverlay.classList.toggle('on', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        document.body.classList.toggle('menu-open', open);
+      });
+
+      menuOverlay.addEventListener('click', closeMenu);
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      window.addEventListener('resize', () => { if (window.innerWidth > 1000) closeMenu(); });
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive:true });
+
+      const explorerData = {
+        air: {
+          area:'Área 01',
+          title:'Aire Acondicionado',
+          text:'Instalación, reparación y mantenimiento de sistemas de aire acondicionado como parte del servicio de climatización.'
+        },
+        heat: {
+          area:'Área 02',
+          title:'Calefacción',
+          text:'La calefacción forma parte de las soluciones de climatización indicadas por Termoelectra.'
+        },
+        aero: {
+          area:'Área 03',
+          title:'Aerotermia',
+          text:'Tecnología que aprovecha la energía del aire exterior para climatización y producción de agua caliente.'
+        }
+      };
+
+      const explorerButtons = document.querySelectorAll('[data-explorer]');
+      const explorerImages = document.querySelectorAll('[data-explorer-image]');
+      const explorerArea = document.getElementById('explorerArea');
+      const explorerCaption = document.getElementById('explorerCaption');
+      const explorerHeading = document.getElementById('explorerHeading');
+      const explorerText = document.getElementById('explorerText');
+
+      explorerButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const key = button.dataset.explorer;
+          const item = explorerData[key];
+          explorerButtons.forEach(current => {
+            const active = current === button;
+            current.classList.toggle('active', active);
+            current.setAttribute('aria-selected', String(active));
+          });
+          explorerImages.forEach(image => image.classList.toggle('active', image.dataset.explorerImage === key));
+          explorerArea.textContent = item.area;
+          explorerCaption.textContent = item.title;
+          explorerHeading.textContent = item.title;
+          explorerText.textContent = item.text;
+        });
+      });
+
+      const labData = {
+        cool: {
+          heading:'Aire Acondicionado',
+          title:'Climatización del ambiente',
+          text:'El sistema mueve y trata el aire para ajustar las condiciones interiores según la instalación.',
+          symbol:'❄'
+        },
+        heat: {
+          heading:'Calefacción',
+          title:'Aporte de calor',
+          text:'El sistema conecta sus unidades para aportar calor al espacio según las necesidades de la instalación.',
+          symbol:'☀'
+        },
+        aero: {
+          heading:'Aerotermia',
+          title:'Energía del aire exterior',
+          text:'La aerotermia aprovecha energía del aire para climatización y producción de agua caliente.',
+          symbol:'↻'
+        }
+      };
+      const systemVisual = document.getElementById('systemVisual');
+      const labHeading = document.getElementById('labHeading');
+      const labTitle = document.getElementById('labTitle');
+      const labText = document.getElementById('labText');
+      const modeSymbol = document.getElementById('modeSymbol');
+      document.querySelectorAll('.mode-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const mode = button.dataset.mode;
+          const item = labData[mode];
+          document.querySelectorAll('.mode-button').forEach(current => current.classList.toggle('active', current === button));
+          systemVisual.dataset.mode = mode;
+          labHeading.textContent = item.heading;
+          labTitle.textContent = item.title;
+          labText.textContent = item.text;
+          modeSymbol.textContent = item.symbol;
+        });
+      });
+
+      document.querySelectorAll('.faq-q').forEach(button => {
+        button.addEventListener('click', () => {
+          const item = button.closest('.faq-item');
+          const open = !item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(current => {
+            current.classList.remove('open');
+            current.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          });
+          item.classList.toggle('open', open);
+          button.setAttribute('aria-expanded', String(open));
+        });
+      });
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold:.12, rootMargin:'0px 0px -40px' });
+        document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+      } else {
+        document.querySelectorAll('.reveal').forEach(element => element.classList.add('visible'));
+      }
+    })();
+  </script>
+</body>
+</html>
