@@ -268,6 +268,25 @@
     }
   </style>
   <link rel="stylesheet" href="assets/shared-header.css">
+<style>
+/* ===== PATCH: dinamismo home ===== */
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;z-index:1400;background:linear-gradient(90deg,#c22033,#0a8ac2);pointer-events:none}
+.hero-inner{grid-template-columns:1fr!important;max-width:900px}
+@media(prefers-reduced-motion:no-preference){
+  .split-title h2,.section h2{position:relative}
+  .split-title h2::after{content:"";position:absolute;left:0;bottom:-10px;width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,#c22033,#0a8ac2);transform:scaleX(0);transform-origin:left;transition:transform .85s cubic-bezier(.2,.7,.2,1) .25s}
+  .reveal.in .split-title h2::after,.split-title h2.in::after{transform:scaleX(1)}
+  .area-card,.service-card{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .area-card:hover,.service-card:hover{transform:translateY(-7px);box-shadow:0 20px 48px rgba(6,40,70,.18)}
+  .btn{position:relative;overflow:hidden}
+  .btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);transition:left .7s ease}
+  .btn:hover::after{left:130%}
+  .area-grid .area-card:nth-child(2){transition-delay:.1s}
+  .service-grid .service-card:nth-child(2){transition-delay:.09s}
+  .service-grid .service-card:nth-child(3){transition-delay:.18s}
+  .service-grid .service-card:nth-child(4){transition-delay:.27s}
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -313,11 +332,6 @@
             <a class="btn btn-outline" href="#contacto">Solicitar Información</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Accesos directos">
-          <strong>Elige un Área</strong>
-          <a href="./refrigeracion/index.html"><span>Refrigeración</span><span>→</span></a>
-          <a href="./climatizacion/index.html"><span>Climatización</span><span>→</span></a>
-        </aside>
       </div>
     </section>
 
@@ -569,5 +583,17 @@
       }
     })();
   </script>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var bar=document.createElement('div');bar.id='scrollProgress';document.body.appendChild(bar);
+  var dh=0,t=false;function m(){dh=document.documentElement.scrollHeight-innerHeight}
+  m();addEventListener('resize',m,{passive:true});
+  addEventListener('scroll',function(){
+    if(t)return;t=true;
+    requestAnimationFrame(function(){bar.style.width=(dh?Math.min(100,scrollY/dh*100):0)+'%';t=false});
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
