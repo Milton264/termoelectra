@@ -555,6 +555,27 @@
     }
   </style>
   <link rel="stylesheet" href="../assets/shared-header.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "name": "Termoelectra", "url": "https://termoelectra.es/climatizacion", "telephone": "+34651097393", "email": "info@termoelectra.es", "description": "Empresa de climatización comercial: instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia con servicio técnico propio.", "areaServed": ["Granollers", "Vallès Oriental", "Maresme", "Barcelona"], "openingHours": "Mo-Fr 08:00-18:00"}</script>
+<style>
+/* ===== PATCH: dinamismo + nota SEO ===== */
+#scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;z-index:1400;background:linear-gradient(90deg,#c22033,#0a8ac2);pointer-events:none}
+.detail-note{margin-top:18px;padding:16px 20px;border-left:3px solid #35b6e0;background:rgba(53,182,224,.07);border-radius:0 12px 12px 0;font-size:.95rem;line-height:1.65}
+.detail-note strong{color:#0a5f86}
+.section.dark .detail-note strong{color:#9feaff}
+@media(prefers-reduced-motion:no-preference){
+  .section-head h2{position:relative}
+  .section-head h2::after{content:"";position:absolute;left:0;bottom:-10px;width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,#c22033,#0a8ac2);transform:scaleX(0);transform-origin:left;transition:transform .85s cubic-bezier(.2,.7,.2,1) .25s}
+  .section-head.in h2::after,.section-head.reveal.in h2::after{transform:scaleX(1)}
+  .detail-card,.service-card,.work-card{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .detail-card:hover,.service-card:hover,.work-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(6,40,70,.16)}
+  .detail-media img,.service-card img,.work-card img{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+  .detail-media:hover img,.service-card:hover img,.work-card:hover img{transform:scale(1.05)}
+  .service-grid .service-card:nth-child(2){transition-delay:.09s}
+  .service-grid .service-card:nth-child(3){transition-delay:.18s}
+  .btn,.cta{position:relative;overflow:hidden}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué tipo de sistemas instaláis?", "acceptedAnswer": {"@type": "Answer", "text": "La información de Termoelectra incluye sistemas de refrigeración industrial y comercial, cámaras frigoríficas, aire acondicionado, calefacción y aerotermia."}}, {"@type": "Question", "name": "¿Qué es la aerotermia y por qué puede ser una opción?", "acceptedAnswer": {"@type": "Answer", "text": "La aerotermia aprovecha la energía del aire exterior para climatización y producción de agua caliente. Su conveniencia depende de las características y necesidades concretas de cada instalación."}}, {"@type": "Question", "name": "¿La climatización puede ayudar con la eficiencia energética?", "acceptedAnswer": {"@type": "Answer", "text": "El dimensionamiento, el uso y el mantenimiento influyen en el funcionamiento de un sistema. La valoración concreta debe hacerse a partir de la instalación y de sus necesidades."}}, {"@type": "Question", "name": "¿Qué servicios de climatización ofrecéis?", "acceptedAnswer": {"@type": "Answer", "text": "Instalación, reparación y mantenimiento de sistemas de climatización, incluyendo aire acondicionado, calefacción y aerotermia."}}, {"@type": "Question", "name": "¿En qué zonas trabajáis?", "acceptedAnswer": {"@type": "Answer", "text": "Consulta la disponibilidad del servicio en tu ubicación directamente con Termoelectra por teléfono o WhatsApp."}}, {"@type": "Question", "name": "¿Puedo solicitar mantenimiento además de instalación?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El mantenimiento y la reparación figuran junto a la instalación dentro de los servicios de climatización de Termoelectra."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -620,11 +641,11 @@
         <div class="section-head reveal">
           <span class="eyebrow">Climatización Termoelectra</span>
           <h2>Tres Formas de Trabajar el Confort Térmico.</h2>
-          <p class="lead">Instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia.</p>
+          <p class="lead">Como empresa de climatización comercial realizamos la instalación de climatización comercial, la reparación de climatización comercial y el mantenimiento de climatización comercial: aire acondicionado, calefacción y aerotermia con servicio técnico propio.</p>
         </div>
         <div class="service-grid">
           <article class="service-card reveal">
-            <img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Equipo exterior de aire acondicionado instalado en cubierta">
+            <img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Técnico de Termoelectra realizando mantenimiento de aire acondicionado en un restaurante">
             <span class="service-label">Climatización</span>
             <div class="service-content"><span class="service-number">01</span><h3>Aire Acondicionado</h3><p>Instalación, reparación y mantenimiento de sistemas de aire acondicionado.</p></div>
           </article>
@@ -642,45 +663,17 @@
       </div>
     </section>
 
-    <section class="section dark" aria-labelledby="explorer-title">
-      <div class="shell">
-        <div class="section-head center reveal">
-          <span class="eyebrow">Explorador visual</span>
-          <h2 id="explorer-title">Encuentra la Solución de Climatización que Necesitas.</h2>
-          <p class="lead">Selecciona un área para conocer los servicios de Aire Acondicionado, Calefacción y Aerotermia.</p>
-        </div>
-        <div class="explorer reveal" id="serviceExplorer">
-          <div class="explorer-media" aria-live="polite">
-            <img class="active" data-explorer-image="air" style="--focus:center 48%" src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" alt="Equipos exteriores de aire acondicionado">
-            <img data-explorer-image="heat" style="--focus:center 48%" src="climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" loading="lazy" alt="Interior con sistema de climatización">
-            <img data-explorer-image="aero" style="--focus:center 50%" src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores asociadas a un sistema de climatización">
-            <div class="explorer-caption"><small id="explorerArea">Área 01</small><strong id="explorerCaption">Aire Acondicionado</strong></div>
-          </div>
-          <div class="explorer-panel">
-            <span class="eyebrow">Selecciona un área</span>
-            <h3 id="explorerHeading">Aire Acondicionado</h3>
-            <p id="explorerText">Instalación, reparación y mantenimiento de sistemas de aire acondicionado como parte del servicio de climatización.</p>
-            <div class="explorer-tabs" role="tablist" aria-label="Áreas de climatización">
-              <button class="explorer-tab active" type="button" role="tab" aria-selected="true" data-explorer="air"><span>01</span>Aire Acondicionado</button>
-              <button class="explorer-tab" type="button" role="tab" aria-selected="false" data-explorer="heat"><span>02</span>Calefacción</button>
-              <button class="explorer-tab" type="button" role="tab" aria-selected="false" data-explorer="aero"><span>03</span>Aerotermia</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section light" id="climatizacion">
       <div class="shell">
         <div class="section-head reveal">
           <span class="eyebrow">Servicio de Climatización</span>
-          <h2>Instalación, Reparación y Mantenimiento.</h2>
+          <h2>Instalación, Reparación y Mantenimiento de Climatización Comercial.</h2>
           <p class="lead">Revisa las principales áreas de climatización y los servicios disponibles para cada sistema.</p>
         </div>
         <div class="detail-stack">
           <article class="detail-card reveal" id="aire-acondicionado">
             <div class="detail-media">
-              <img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Sistema exterior de aire acondicionado">
+              <img src="climatizacion-assets/tecnico-comercio.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra instalando aire acondicionado en un comercio">
               <span class="detail-badge">Aire Acondicionado</span>
             </div>
             <div class="detail-copy">
@@ -693,6 +686,7 @@
                 <li>Mantenimiento de aire acondicionado</li>
                 <li>Consulta directa con el servicio técnico propio</li>
               </ul>
+              <p class="detail-note"><strong>Aire Acondicionado Comercial:</strong> realizamos la instalación de aire acondicionado comercial, la reparación de aire acondicionado y el mantenimiento de aire acondicionado para locales y negocios. Ante cualquier avería de aire acondicionado, nuestro servicio técnico de aire acondicionado (SAT de climatización) responde con rapidez.</p>
             </div>
           </article>
 
@@ -709,6 +703,7 @@
                 <li>Reparación y mantenimiento de sistemas</li>
                 <li>Valoración de la solución según cada instalación</li>
               </ul>
+              <p class="detail-note"><strong>Calefacción Comercial:</strong> instalación de calefacción comercial, reparación de calefacción y mantenimiento de calefacción integrados en tu sistema de climatización, con un único interlocutor técnico.</p>
             </div>
           </article>
 
@@ -726,6 +721,7 @@
                 <li>Producción de agua caliente</li>
                 <li>Estudio de la necesidad concreta de cada espacio</li>
               </ul>
+              <p class="detail-note"><strong>Aerotermia:</strong> instalación de aerotermia y mantenimiento de aerotermia para climatización eficiente y producción de agua caliente. Ofrecemos contrato de mantenimiento de climatización para empresas y comercios.</p>
             </div>
           </article>
         </div>
@@ -797,11 +793,11 @@
             <span>Equipos de Climatización</span>
           </figure>
           <figure class="gallery-item reveal delay">
-            <img src="climatizacion-assets/conductos-exterior.webp" width="900" height="1200" loading="lazy" alt="Conductos de climatización instalados en el exterior">
+            <img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra en mantenimiento de climatización de un centro comercial">
             <span>Distribución de Aire</span>
           </figure>
           <figure class="gallery-item reveal">
-            <img src="climatizacion-assets/revision-tecnica.webp" width="1400" height="1050" loading="lazy" alt="Instrumento utilizado durante una revisión técnica">
+            <img src="climatizacion-assets/tecnico-panel.webp" width="1000" height="1500" loading="lazy" alt="Técnicos de Termoelectra revisando el panel de control de una instalación de climatización">
             <span>Revisión Técnica</span>
           </figure>
         </div>
@@ -1074,5 +1070,17 @@
       }
     })();
   </script>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var bar=document.createElement('div');bar.id='scrollProgress';document.body.appendChild(bar);
+  var dh=0,t=false;function m(){dh=document.documentElement.scrollHeight-innerHeight}
+  m();addEventListener('resize',m,{passive:true});
+  addEventListener('scroll',function(){
+    if(t)return;t=true;
+    requestAnimationFrame(function(){bar.style.width=(dh?Math.min(100,scrollY/dh*100):0)+'%';t=false});
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
