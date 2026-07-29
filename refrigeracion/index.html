@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial · Termoelectra">
 <meta property="og:description" content="Instalación, reparación, SAT y mantenimiento de frío industrial, cámaras frigoríficas y equipos de refrigeración comercial.">
-<link rel="preload" as="image" href="Foto principal.JPG">
+<link rel="preload" as="image" href="hero-operarios.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-b
 .burger.x span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(11,58,102,.94) 0%,rgba(18,80,140,.86) 55%,rgba(10,138,194,.7) 100%),url('Foto principal.JPG') center/cover;color:#fff}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(11,58,102,.94) 0%,rgba(18,80,140,.86) 55%,rgba(10,138,194,.7) 100%),url('hero-operarios.webp') center/cover;color:#fff}
 .hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 65% 60%,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 82% 25%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 40% 80%,rgba(255,255,255,.3),transparent);background-size:280px 280px;opacity:.6;animation:drift 32s linear infinite}
 @keyframes drift{from{background-position:0 0}to{background-position:280px 280px}}
 .hero-inner{max-width:1240px;margin:0 auto;padding:140px 32px 90px;position:relative;z-index:2;width:100%}
@@ -97,14 +97,6 @@ header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-b
 
 /* CIFRAS */
 /* CIFRAS a pantalla completa sobre imagen */
-.stats{position:relative;min-height:88vh;display:flex;align-items:center;background:url('P5120016.JPG') center/cover fixed;color:#fff;overflow:hidden}
-.stats-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,32,.86),rgba(11,58,102,.82))}
-.stats-inner{position:relative;max-width:1240px;margin:0 auto;width:100%;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:60px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
-.stat:last-child{border-right:0}
-.stat .num{font-family:'Sora',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:800;display:block;line-height:1;color:#fff;letter-spacing:-.03em}
-.stat .num .u{color:var(--cian-cl)}
-.stat .lbl{font-size:.9rem;color:rgba(255,255,255,.82);margin-top:16px;letter-spacing:.08em;text-transform:uppercase}
 
 /* CINTA DE SECTORES */
 .marquee{background:var(--azul);overflow:hidden;padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
@@ -249,10 +241,6 @@ footer li a:hover{color:var(--cian-cl)}
 .lb-prev{left:6px}.lb-next{right:6px}
 
 /* WhatsApp flotante */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:900;width:60px;height:60px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,.5);transition:.3s;animation:wapulse 2.5s infinite}
-.wa-float:hover{transform:scale(1.1)}
-.wa-float svg{width:34px;height:34px;fill:#fff}
-@keyframes wapulse{0%{box-shadow:0 8px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 8px 30px rgba(37,211,102,.5),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 8px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,0)}}
 
 @media(max-width:900px){
   .nav{padding:14px 22px}
@@ -267,9 +255,6 @@ footer li a:hover{color:var(--cian-cl)}
   .svc,.svc.rev .svc-media{grid-template-columns:1fr;order:0;gap:34px}
   .svc.rev .svc-body{order:2}
   .svc-media img{height:330px}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.12)}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
   .g-big{grid-column:span 2;grid-row:span 1}
   .foot-grid{grid-template-columns:1fr;gap:32px}
@@ -278,11 +263,6 @@ footer li a:hover{color:var(--cian-cl)}
   .contact-box{grid-template-columns:1fr}
   .contact-info{padding:40px 28px}
   .contact-form{padding:36px 28px}
-  .stats{background-attachment:scroll;min-height:auto}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat{padding:40px 20px}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.14)}
   .steps{grid-template-columns:1fr;gap:18px}
   .steps::before{display:none}
 }
@@ -401,7 +381,7 @@ header{
   background-image:
     linear-gradient(90deg,rgba(4,24,40,.99) 0%,rgba(5,35,58,.96) 41%,rgba(5,35,58,.72) 61%,rgba(4,24,40,.18) 100%),
     linear-gradient(0deg,rgba(4,24,40,.38),rgba(4,24,40,.02)),
-    url('Foto principal.JPG');
+    url('hero-operarios.webp');
   background-position:center,right center;
   background-size:cover;
 }
@@ -493,56 +473,6 @@ header{
 .scroll-ind{bottom:42px}
 
 /* Cifras: una pausa visual contundente */
-.stats{
-  min-height:700px;
-  padding:100px 38px;
-  background-image:url('P1010063i.JPG');
-  background-position:center;
-  background-attachment:scroll;
-}
-.stats-overlay{
-  background:
-    linear-gradient(90deg,rgba(4,24,40,.96),rgba(7,50,78,.82)),
-    linear-gradient(0deg,rgba(4,24,40,.55),transparent);
-}
-.stats::before{
-  content:"";
-  position:absolute;
-  z-index:2;
-  top:90px;
-  left:max(38px,calc((100% - 1224px)/2));
-  width:84px;
-  height:5px;
-  border-radius:20px;
-  background:linear-gradient(90deg,var(--rojo) 0 42%,var(--cian-cl) 42%);
-}
-.stats-inner{
-  max-width:1224px;
-  gap:14px;
-}
-.stat{
-  min-height:280px;
-  padding:48px 28px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:24px;
-  background:rgba(7,31,52,.46);
-  box-shadow:inset 0 1px rgba(255,255,255,.08);
-  backdrop-filter:blur(9px);
-}
-.stat:last-child{border-right:1px solid rgba(255,255,255,.15)}
-.stat .num{font-size:clamp(3.4rem,6vw,5.6rem)}
-.stat .num .u{color:var(--cian-cl)}
-.stat .lbl{
-  max-width:180px;
-  margin:18px auto 0;
-  color:rgba(255,255,255,.72);
-  font-size:.75rem;
-  line-height:1.55;
-  letter-spacing:.12em;
-}
 
 .marquee{
   padding:22px 0;
@@ -919,13 +849,6 @@ footer{
 }
 .foot-bottom{max-width:1224px;text-align:left}
 
-.wa-float{
-  right:26px;
-  bottom:26px;
-  width:62px;
-  height:62px;
-  border:4px solid #fff;
-}
 .lb{backdrop-filter:blur(14px)}
 .lb img{box-shadow:0 28px 100px rgba(0,0,0,.4)}
 
@@ -939,9 +862,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .certs{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step:nth-child(even){transform:none}
-  .stats-inner{grid-template-columns:repeat(2,1fr);gap:14px}
-  .stat,.stat:last-child{border:1px solid rgba(255,255,255,.15)}
-  .stats{min-height:760px}
 }
 
 @media(max-width:900px){
@@ -961,7 +881,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     min-height:850px;
     background-image:
       linear-gradient(90deg,rgba(4,24,40,.96),rgba(5,35,58,.82)),
-      url('Foto principal.JPG');
+      url('hero-operarios.webp');
     background-position:64% center;
   }
   .hero-inner{padding:150px 22px 100px}
@@ -1000,10 +920,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .hero{min-height:810px}
   .hero h1{font-size:clamp(2.7rem,14vw,4rem)}
   .hero .eyebrow{font-size:.68rem}
-  .stats{min-height:auto;padding:120px 18px 70px}
-  .stats::before{left:22px;top:72px}
-  .stats-inner{grid-template-columns:1fr}
-  .stat{min-height:210px}
   .sec-title{font-size:clamp(2.1rem,11vw,3.2rem)}
   .gallery{grid-template-columns:1fr;grid-auto-rows:240px}
   .gallery a,.gallery a:nth-child(1),.gallery a:nth-child(4),.gallery a:nth-child(7){
@@ -1016,8 +932,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .faq-q{font-size:.96rem}
   .contact-info,.contact-form{padding:38px 22px}
   footer{padding-inline:22px}
-  .wa-float{width:56px;height:56px;right:18px;bottom:18px}
-  .wa-float svg{width:28px;height:28px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1094,7 +1008,7 @@ header.is-scrolled{
   background:
     linear-gradient(90deg,#041824 0%,rgba(4,24,36,.72) 20%,rgba(4,24,36,.05) 56%),
     linear-gradient(0deg,rgba(4,24,36,.58),transparent 48%),
-    url('Foto principal.JPG') 58% center/cover no-repeat;
+    url('hero-operarios.webp') 58% center/cover no-repeat;
   clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
   mask-image:none;
   transform:translate3d(0,var(--hero-shift,0px),0) scale(1.035);
@@ -1163,43 +1077,6 @@ header.is-scrolled{
 .hero .btn-primary:hover{background:#fff;color:var(--azul)}
 
 /* 2. Cifras como panel de control técnico */
-.stats-inner{position:relative}
-.stats-inner::before{
-  content:"";
-  position:absolute;
-  inset:-22px;
-  z-index:-1;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:34px;
-}
-.stat{
-  position:relative;
-  overflow:hidden;
-}
-.stat::before{
-  content:"";
-  position:absolute;
-  top:20px;
-  right:20px;
-  width:8px;
-  height:8px;
-  border:1px solid rgba(126,217,239,.9);
-  border-radius:50%;
-  box-shadow:0 0 0 6px rgba(126,217,239,.08);
-}
-.stat::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:0;
-  width:74px;
-  height:74px;
-  opacity:.15;
-  background:
-    linear-gradient(135deg,transparent 48%,var(--cian-cl) 49% 51%,transparent 52%),
-    linear-gradient(45deg,transparent 48%,var(--cian-cl) 49% 51%,transparent 52%);
-  background-size:16px 16px;
-}
 
 /* 3. Servicios editoriales con imagen sticky */
 @media(min-width:1001px){
@@ -1465,7 +1342,6 @@ header.is-scrolled{
     -webkit-backdrop-filter:blur(7px);
   }
   body.menu-open .mobile-actions,
-  body.menu-open .wa-float{opacity:0;pointer-events:none}
 
   .hero{
     min-height:880px;
@@ -1477,7 +1353,7 @@ header.is-scrolled{
     background:
       linear-gradient(180deg,rgba(4,24,36,.56),rgba(4,24,36,.97) 76%),
       linear-gradient(90deg,rgba(4,24,36,.72),transparent),
-      url('Foto principal.JPG') 60% center/cover no-repeat;
+      url('hero-operarios.webp') 60% center/cover no-repeat;
   }
   .hero::after{
     left:22px;
@@ -1508,7 +1384,6 @@ header.is-scrolled{
   .lb-prev{left:calc(50% - 70px)}
   .lb-next{right:calc(50% - 70px)}
 
-  .wa-float{display:none}
   .mobile-actions{
     position:fixed;
     z-index:890;
@@ -1621,7 +1496,7 @@ header.is-scrolled{
   background:
     linear-gradient(90deg,rgba(5,42,66,.96) 0%,rgba(9,66,98,.88) 46%,rgba(9,66,98,.3) 78%,rgba(5,42,66,.18) 100%),
     linear-gradient(0deg,rgba(5,42,66,.58),transparent 48%),
-    url('Foto principal.JPG') 58% center/cover no-repeat;
+    url('hero-operarios.webp') 58% center/cover no-repeat;
 }
 .hero::before{
   content:"";
@@ -1749,51 +1624,6 @@ header.is-scrolled{
 }
 
 /* Cifras congeladas */
-.stats{
-  background-position:center;
-}
-.stats-overlay{
-  background:
-    linear-gradient(100deg,rgba(7,53,79,.94),rgba(19,109,145,.74)),
-    linear-gradient(0deg,rgba(4,45,68,.42),transparent);
-}
-.stats::before{
-  background:linear-gradient(90deg,#e5faff,var(--cian-cl),#fff);
-  box-shadow:0 0 16px rgba(155,234,255,.45);
-}
-.stats-inner::before{
-  border-color:rgba(213,247,255,.22);
-  box-shadow:inset 0 0 40px rgba(195,241,252,.04);
-}
-.stat{
-  border-color:rgba(216,248,255,.25);
-  background:linear-gradient(145deg,rgba(222,248,255,.16),rgba(7,66,95,.36));
-  box-shadow:
-    inset 0 1px rgba(255,255,255,.2),
-    0 22px 55px rgba(0,39,58,.16);
-}
-.stat:last-child{border-color:rgba(216,248,255,.25)}
-.stat::before{
-  content:"❄";
-  top:18px;
-  right:20px;
-  width:auto;
-  height:auto;
-  border:0;
-  color:rgba(205,246,255,.72);
-  font-size:1rem;
-  box-shadow:none;
-}
-.stat::after{
-  right:-24px;
-  bottom:-28px;
-  width:120px;
-  height:120px;
-  border:1px solid rgba(203,245,255,.12);
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(212,248,255,.12),transparent 66%);
-}
-.stat .num .u{color:var(--cian-cl)}
 
 .marquee{
   background:linear-gradient(90deg,#0c496b,#167da6,#0c496b);
@@ -1944,7 +1774,7 @@ footer{background:#073047}
     background:
       linear-gradient(180deg,rgba(6,49,73,.5),rgba(6,49,73,.96) 77%),
       linear-gradient(90deg,rgba(6,49,73,.66),transparent),
-      url('Foto principal.JPG') 60% center/cover no-repeat;
+      url('hero-operarios.webp') 60% center/cover no-repeat;
   }
   .hero::before{
     background:radial-gradient(circle at 75% 18%,rgba(226,250,255,.2),transparent 17rem);
@@ -1989,10 +1819,6 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
 .hero p{max-width:790px;margin-bottom:28px;font-size:1.05rem;line-height:1.7}
 .hero-btns{gap:10px}
 
-.stats{min-height:430px;padding:62px 32px;background-attachment:scroll}
-.stats-inner{max-width:1180px}
-.stat{min-height:190px;padding:28px 18px}
-.stat .num{font-size:clamp(2.9rem,5vw,4.5rem)}
 
 .carousel-head{max-width:1240px;padding:72px 32px 12px}
 .carousel-head h2{font-size:clamp(2rem,3.7vw,3.45rem);line-height:1.04}
@@ -2086,7 +1912,7 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
     background:
       linear-gradient(180deg,rgba(6,49,73,.48),rgba(6,49,73,.96) 76%),
       linear-gradient(90deg,rgba(6,49,73,.6),transparent),
-      url('Foto principal.JPG') 58% center/cover no-repeat;
+      url('hero-operarios.webp') 58% center/cover no-repeat;
   }
   .hero-inner{padding:102px 17px 62px}
   .hero h1{
@@ -2104,17 +1930,6 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   .sec-title{font-size:clamp(1.9rem,8.5vw,2.6rem);margin-bottom:14px}
   .sec-lead{font-size:.96rem;line-height:1.65}
 
-  .stats{min-height:0;padding:48px 16px}
-  .stats-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .stat{
-    min-height:140px;
-    padding:20px 10px;
-    border:1px solid rgba(216,248,255,.25)!important;
-    border-radius:16px;
-  }
-  .stat .num{font-size:2.65rem}
-  .stat .lbl{font-size:.7rem;line-height:1.35}
-  .stat::before{top:10px;right:12px;font-size:.75rem}
 
   .marquee{padding:12px 0}
   .marquee-track{gap:20px}
@@ -2356,7 +2171,6 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
     overflow-x:hidden;
   }
   .hero,
-  .stats,
   .marquee,
   body > section,
   footer{
@@ -3679,6 +3493,15 @@ header.is-scrolled{
 }
 </script>
 <link rel="stylesheet" href="../assets/shared-header.css">
+<style>
+/* ===== PATCH: ancho completo (feedback del cliente — diseño full width) ===== */
+:root{--page-max:min(1780px,96vw)}
+.wrap,
+.hero-inner,
+.carousel-head,
+.foot-grid,
+.foot-bottom{max-width:var(--page-max)}
+</style>
 </head>
 <body>
 
@@ -3714,14 +3537,6 @@ header.is-scrolled{
   <div class="scroll-ind"><span></span></div>
 </section>
 
-<div class="stats" id="stats">
-  <div class="stats-overlay"></div>
-  <div class="stats-inner">
-    <div class="stat reveal"><span class="num" data-count="24"></span><span class="lbl">Horas · SAT de Frío Industrial</span></div>
-    <div class="stat reveal d1"><span class="num">RITE</span><span class="lbl">Instalaciones térmicas</span></div>
-    <div class="stat reveal d2"><span class="num">REIF</span><span class="lbl">Frío Industrial · Nivel 1</span></div>
-    <div class="stat reveal d3"><span class="num">RASIC</span><span class="lbl">Registro Nº 00500538</span></div>
-  </div>
 </div>
 
 <!-- CINTA DE SECTORES -->
@@ -3750,8 +3565,8 @@ header.is-scrolled{
         </div>
       </div>
       <div class="svc-media reveal d2">
-        <img src="foto frio industrial.jpg" alt="Instalación de frío industrial con compresores y evaporadores" loading="lazy" decoding="async">
-        <span class="tag">Sala de máquinas industrial</span>
+        <img src="frio-industrial-tecnico.webp" alt="Técnico de Termoelectra revisando una instalación de frío industrial" loading="lazy" decoding="async" width="600" height="600">
+        <span class="tag">Servicio técnico propio</span>
       </div>
     </div>
     <aside class="cold-system-visual reveal" aria-label="Recurso visual del funcionamiento de un sistema frigorífico">
@@ -3786,9 +3601,10 @@ header.is-scrolled{
   </div>
   <div class="carousel">
     <div class="track" id="track">
-      <div class="slide"><img src="P1010037.JPG" alt="Montaje de cámara frigorífica industrial" loading="lazy" decoding="async"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
-      <div class="slide"><img src="P1010021.JPG" alt="Evaporadores de una cámara de congelación" loading="lazy" decoding="async"><span class="cap"><small>Congelación</small>Cámara de Congelación</span></div>
-      <div class="slide"><img src="frio comercial.jpeg" alt="Cámara frigorífica comercial terminada" loading="lazy" decoding="async"><span class="cap"><small>Comercial</small>Cámara Comercial</span></div>
+      <div class="slide"><img src="camara-industrial.webp" alt="Cámara frigorífica industrial con almacenaje en palets" loading="lazy" decoding="async" width="1400" height="934"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
+      <!-- TODO: sustituir por foto real o IA de cámara de congelación cuando el cliente la envíe -->
+      <div class="slide"><img src="camara-congelacion.webp" alt="Evaporadores de una cámara de congelación" loading="lazy" decoding="async" width="1200" height="1600"><span class="cap"><small>Congelación</small>Cámara de Congelación</span></div>
+      <div class="slide"><img src="camara-comercial.webp" alt="Interior de una cámara frigorífica comercial con producto expuesto" loading="lazy" decoding="async" width="1176" height="882"><span class="cap"><small>Comercial</small>Cámara Comercial</span></div>
     </div>
   </div>
 </section>
@@ -3797,7 +3613,7 @@ header.is-scrolled{
   <div class="wrap">
     <div class="svc reveal" id="instalacion-camaras-frigorificas">
       <div class="svc-media">
-        <img src="P1010037.JPG" alt="Instalación de una cámara frigorífica a medida" loading="lazy" decoding="async">
+        <img src="instalacion-camaras-tecnico.webp" alt="Operarios de Termoelectra trabajando en una instalación frigorífica" loading="lazy" decoding="async" width="600" height="314">
         <span class="media-index" aria-hidden="true">01</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Instalación a medida</span>
@@ -3818,7 +3634,7 @@ header.is-scrolled{
     </div>
     <div class="svc rev reveal" id="reparacion-camaras-frigorificas">
       <div class="svc-media">
-        <img src="foto SAT.jpg" alt="Servicio técnico y reparación de cámara frigorífica" loading="lazy" decoding="async">
+        <img src="sat-reparacion.webp" alt="Servicio técnico y reparación de cámara frigorífica" loading="lazy" decoding="async" width="1200" height="2000">
         <span class="media-index" aria-hidden="true">02</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Servicio técnico propio</span>
@@ -3840,7 +3656,7 @@ header.is-scrolled{
     </div>
     <div class="svc reveal" id="mantenimiento-camaras-frigorificas">
       <div class="svc-media">
-        <img src="Mantenimiento.jpg" alt="Mantenimiento preventivo de cámaras de refrigeración" loading="lazy" decoding="async">
+        <img src="mantenimiento.webp" alt="Mantenimiento preventivo de cámaras de refrigeración" loading="lazy" decoding="async" width="1200" height="1600">
         <span class="media-index" aria-hidden="true">03</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Mantenimiento preventivo y correctivo</span>
@@ -3895,7 +3711,7 @@ header.is-scrolled{
   <div class="wrap">
     <div class="svc rev">
       <div class="svc-media reveal">
-        <img src="frio comercial.jpeg" alt="Cámara de refrigeración comercial con estanterías y evaporadores" loading="lazy" decoding="async">
+        <img src="refrigeracion-comercial-tecnico.webp" alt="Técnico de Termoelectra revisando la climatización de un local comercial" loading="lazy" decoding="async" width="1400" height="788">
         <span class="tag">Supermercados e hipermercados</span>
       </div>
       <div class="svc-body">
@@ -3918,17 +3734,17 @@ header.is-scrolled{
 <section class="alt">
   <div class="wrap">
     <span class="eyebrow-sec reveal">Nuestros trabajos</span>
-    <h2 class="sec-title reveal d1">Instalaciones Reales de Refrigeración y Frío Industrial</h2>
-    <p class="sec-lead reveal d2">Una selección visual de instalaciones y equipos de Refrigeración y Frío Industrial. Haz clic en cualquier imagen para ampliarla.</p>
+    <h2 class="sec-title reveal d1">Nuestro Equipo de Refrigeración y Frío Industrial</h2>
+    <p class="sec-lead reveal d2">Así trabaja nuestro equipo técnico en instalaciones de Refrigeración, Frío Industrial y Climatización. Haz clic en cualquier imagen para ampliarla.</p>
     <div class="gallery reveal">
-      <a class="g-big" data-lb="P1010063i.JPG"><img src="P1010063i.JPG" alt="Instalación frigorífica industrial en cubierta" loading="lazy" decoding="async"></a>
-      <a data-lb="25 marzo 106.JPG"><img src="25 marzo 106.JPG" alt="Sala de máquinas de frío industrial" loading="lazy" decoding="async"></a>
-      <a data-lb="P5240892.JPG"><img src="P5240892.JPG" alt="Enfriadora industrial instalada en cubierta" loading="lazy" decoding="async"></a>
-      <a class="g-wide" data-lb="P1010057.JPG"><img src="P1010057.JPG" alt="Colectores y bombas de una instalación industrial" loading="lazy" decoding="async"></a>
-      <a data-lb="P1010068.JPG"><img src="P1010068.JPG" alt="Conductos de una instalación frigorífica" loading="lazy" decoding="async"></a>
-      <a data-lb="P2070033.JPG"><img src="P2070033.JPG" alt="Equipo empleado en servicio técnico de refrigeración" loading="lazy" decoding="async"></a>
-      <a data-lb="fotos movil 098.jpg"><img src="fotos movil 098.jpg" alt="Mantenimiento de una unidad exterior" loading="lazy" decoding="async"></a>
-      <a data-lb="frio comercial.jpeg"><img src="frio comercial.jpeg" alt="Cámara frigorífica comercial terminada" loading="lazy" decoding="async"></a>
+      <a class="g-big" data-lb="equipo-termoelectra.webp"><img src="equipo-termoelectra.webp" alt="Equipo técnico de Termoelectra junto a su vehículo de servicio" loading="lazy" decoding="async" width="1400" height="788"></a>
+      <a data-lb="galeria-condensadores.webp"><img src="galeria-condensadores.webp" alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" loading="lazy" decoding="async" width="600" height="600"></a>
+      <a data-lb="galeria-valvulas.webp"><img src="galeria-valvulas.webp" alt="Técnico de Termoelectra trabajando en válvulas de una instalación frigorífica" loading="lazy" decoding="async" width="600" height="600"></a>
+      <a class="g-wide" data-lb="galeria-tecnico-cubierta.webp"><img src="galeria-tecnico-cubierta.webp" alt="Técnico de Termoelectra realizando mantenimiento de climatización en un centro comercial" loading="lazy" decoding="async" width="1200" height="675"></a>
+      <a data-lb="galeria-revision-tecnica.webp"><img src="galeria-revision-tecnica.webp" alt="Técnicos de Termoelectra revisando el panel de control de una instalación" loading="lazy" decoding="async" width="1000" height="1500"></a>
+      <a data-lb="galeria-tecnico-local.webp"><img src="galeria-tecnico-local.webp" alt="Técnico de Termoelectra en mantenimiento de climatización de un local" loading="lazy" decoding="async" width="900" height="1350"></a>
+      <a class="g-wide" data-lb="galeria-tablet.webp"><img src="galeria-tablet.webp" alt="Técnico de Termoelectra realizando una revisión técnica de frío industrial" loading="lazy" decoding="async" width="600" height="314"></a>
+      <a data-lb="galeria-tecnico-tienda.webp"><img src="galeria-tecnico-tienda.webp" alt="Técnico de Termoelectra instalando climatización en un comercio" loading="lazy" decoding="async" width="900" height="1350"></a>
     </div>
   </div>
 </section>
@@ -3947,7 +3763,7 @@ header.is-scrolled{
     </div>
     <article class="service-showcase reveal" aria-label="Explorador visual de los servicios de refrigeración">
       <div class="showcase-visual" id="showcaseVisual">
-        <img id="showcaseImage" src="foto frio industrial.jpg" alt="Instalación de Frío Industrial" loading="lazy" decoding="async">
+        <img id="showcaseImage" src="sala-maquinas.webp" alt="Sala de máquinas de una instalación de Frío Industrial" loading="lazy" decoding="async" width="1400" height="1050">
         <span class="showcase-scan" aria-hidden="true"></span>
         <span class="showcase-corner c1" aria-hidden="true"></span>
         <span class="showcase-corner c2" aria-hidden="true"></span>
@@ -4011,7 +3827,7 @@ header.is-scrolled{
 <footer>
   <div class="foot-grid">
     <div>
-      <img class="foot-logo-real" src="Logo_TERMOELECTRA.jpg" alt="Termoelectra" loading="lazy" decoding="async">
+      <img class="foot-logo-real" src="footer-logo.webp" alt="Termoelectra" loading="lazy" decoding="async" width="420" height="157">
       <p>Somos especialistas en refrigeración, frío industrial y climatización. Instalación, reparación y mantenimiento con servicio técnico propio.</p>
     </div>
     <div>
@@ -4036,7 +3852,6 @@ header.is-scrolled{
   <div class="foot-bottom">© 2025 Termoelectra Refrigeración · Aviso Legal · Política de Cookies · Política de Privacidad</div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/34651097393" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <div class="mobile-actions" aria-label="Acciones rápidas">
   <a class="mobile-call" href="tel:651097393">
@@ -4231,8 +4046,8 @@ const showcaseData={
     caption:'Frío Industrial',
     title:'Refrigeración y Frío Industrial',
     text:'Instalación y mantenimiento de sistemas de Refrigeración Industrial para naves y procesos productivos, además de reparación y SAT propio.',
-    image:'foto frio industrial.jpg',
-    alt:'Instalación de Frío Industrial',
+    image:'sala-maquinas.webp',
+    alt:'Sala de máquinas de una instalación de Frío Industrial',
     position:'50% 50%'
   },
   camaras:{
@@ -4240,8 +4055,8 @@ const showcaseData={
     caption:'Cámaras Frigoríficas',
     title:'Cámaras de Refrigeración',
     text:'Diseño, instalación y mantenimiento de Cámaras de Refrigeración industriales y comerciales, junto con servicio técnico para averías.',
-    image:'P1010037.JPG',
-    alt:'Instalación de una Cámara Frigorífica',
+    image:'camara-industrial.webp',
+    alt:'Cámara Frigorífica industrial con almacenaje en palets',
     position:'50% 45%'
   },
   comercial:{
@@ -4249,8 +4064,8 @@ const showcaseData={
     caption:'Refrigeración Comercial',
     title:'Frío Comercial',
     text:'Soluciones de Refrigeración Comercial para comercios, supermercados e hipermercados, con reparación, mantenimiento y servicio técnico propio.',
-    image:'frio comercial.jpeg',
-    alt:'Cámara de Refrigeración Comercial',
+    image:'camara-comercial.webp',
+    alt:'Interior de una Cámara de Refrigeración Comercial',
     position:'50% 50%'
   }
 };
