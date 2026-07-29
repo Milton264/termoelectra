@@ -3563,6 +3563,11 @@ header.is-scrolled{
   .svc-media.reveal,.svc.reveal > .svc-media{clip-path:inset(9% 11% 9% 11% round 30px 0 0 30px)}
 }
 </style>
+<style>
+/* ===== PATCH 3: tamaño controlado de medias ===== */
+.svc-media img{width:100%;height:auto;aspect-ratio:4/3;max-height:620px;object-fit:cover}
+@media(max-width:760px){.svc-media img{max-height:420px}}
+</style>
 </head>
 <body>
 
@@ -3626,7 +3631,7 @@ header.is-scrolled{
         </div>
       </div>
       <div class="svc-media reveal d2">
-        <img src="frio-industrial-tecnico.webp" alt="Técnicos revisando una instalación de frío industrial" loading="lazy" decoding="async" width="1100" height="1571">
+        <img src="frio-industrial-tecnico.webp" alt="Técnicos revisando una instalación de frío industrial" loading="lazy" decoding="async" width="1100" height="1913">
         <span class="tag">Servicio técnico propio</span>
       </div>
     </div>
@@ -3662,7 +3667,7 @@ header.is-scrolled{
   </div>
   <div class="carousel">
     <div class="track" id="track">
-      <div class="slide"><img src="camara-industrial.webp" alt="Cámara frigorífica industrial de gran volumen con estanterías de almacenaje" loading="lazy" decoding="async" width="1400" height="1127"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
+      <div class="slide"><img src="camara-industrial.webp" alt="Cámara frigorífica industrial de gran volumen con estanterías de almacenaje" loading="lazy" decoding="async" width="1400" height="1256"><span class="cap"><small>Industrial</small>Cámara Frigorífica Industrial</span></div>
       <!-- TODO: sustituir por foto real o IA de cámara de congelación cuando el cliente la envíe -->
       <div class="slide"><img src="camara-congelacion.webp" alt="Evaporadores de una cámara de congelación" loading="lazy" decoding="async" width="1200" height="1600"><span class="cap"><small>Congelación</small>Cámara de Congelación</span></div>
       <div class="slide"><img src="camara-comercial.webp" alt="Cámara frigorífica comercial con estanterías de acero inoxidable" loading="lazy" decoding="async" width="1400" height="934"><span class="cap"><small>Comercial</small>Cámara Comercial</span></div>
@@ -3674,7 +3679,7 @@ header.is-scrolled{
   <div class="wrap">
     <div class="svc reveal" id="instalacion-camaras-frigorificas">
       <div class="svc-media">
-        <img src="instalacion-camaras-tecnico.webp" alt="Operario trabajando en la instalación de equipos frigoríficos" loading="lazy" decoding="async" width="1300" height="1103">
+        <img src="instalacion-camaras-tecnico.webp" alt="Operario trabajando en la instalación de equipos frigoríficos" loading="lazy" decoding="async" width="1300" height="1149">
         <span class="media-index" aria-hidden="true">01</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Instalación a medida</span>
@@ -3799,7 +3804,7 @@ header.is-scrolled{
     <p class="sec-lead reveal d2">Así trabaja nuestro equipo técnico en instalaciones de Refrigeración, Frío Industrial y Climatización. Haz clic en cualquier imagen para ampliarla.</p>
     <div class="gallery reveal">
       <a class="g-big" data-lb="equipo-termoelectra.webp"><img src="equipo-termoelectra.webp" alt="Equipo técnico de Termoelectra junto a su vehículo de servicio" loading="lazy" decoding="async" width="1400" height="788"></a>
-      <a data-lb="galeria-condensadores.webp"><img src="galeria-condensadores.webp" alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" loading="lazy" decoding="async" width="1000" height="1587"></a>
+      <a data-lb="galeria-condensadores.webp"><img src="galeria-condensadores.webp" alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" loading="lazy" decoding="async" width="1000" height="1785"></a>
       <a data-lb="galeria-valvulas.webp"><img src="galeria-valvulas.webp" alt="Técnico de Termoelectra en un almacén frigorífico industrial" loading="lazy" decoding="async" width="1100" height="1100"></a>
       <a class="g-wide" data-lb="galeria-tecnico-cubierta.webp"><img src="galeria-tecnico-cubierta.webp" alt="Técnico de Termoelectra realizando mantenimiento de climatización en un centro comercial" loading="lazy" decoding="async" width="1200" height="675"></a>
       <a data-lb="galeria-revision-tecnica.webp"><img src="galeria-revision-tecnica.webp" alt="Técnicos de Termoelectra revisando el panel de control de una instalación" loading="lazy" decoding="async" width="1000" height="1500"></a>
