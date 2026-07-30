@@ -3944,6 +3944,12 @@ header.is-scrolled{
   background:transparent!important;
 }
 #comercial + .alt .gallery.reveal a{opacity:1!important;transform:none!important}
+#industrial .cold-system-visual{
+  margin-top:40px;
+  border:0;
+  background:linear-gradient(145deg,#fff,#edf9fd);
+  box-shadow:0 20px 56px rgba(5,69,96,.12);
+}
 
 @media(max-width:1000px){
   #industrial .svc{grid-template-columns:1fr 1fr;gap:24px}
@@ -4069,6 +4075,28 @@ header.is-scrolled{
         <figure><img src="archivo-condensadores-cubierta.webp" alt="Unidades condensadoras de refrigeración instaladas en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></figure>
         <figure><img src="archivo-bombas-industriales.webp" alt="Bombas y tuberías de una instalación de frío industrial" loading="lazy" decoding="async" width="1600" height="1200"></figure>
         <span class="tag">Refrigeración Industrial</span>
+      </div>
+    </div>
+
+    <div class="cold-system-visual reveal" aria-labelledby="cold-system-title">
+      <div class="cold-system-copy">
+        <small>Recorrido interactivo</small>
+        <h3 id="cold-system-title">El Recorrido del Sistema Frigorífico</h3>
+        <p id="systemDescription">Dentro de la cámara, el evaporador absorbe calor y ayuda a mantener el recinto a la temperatura configurada.</p>
+        <div class="system-controls" role="tablist" aria-label="Etapas del sistema frigorífico">
+          <button class="system-control" type="button" role="tab" aria-selected="true" data-system-step="camara"><span>01</span>Cámara</button>
+          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="compresion"><span>02</span>Compresión</button>
+          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="condensacion"><span>03</span>Condensación</button>
+          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="control"><span>04</span>Control</button>
+        </div>
+      </div>
+      <div class="cold-system-media" id="coldSystemMedia" data-active="camara">
+        <img src="ciclo-frigorifico-3d.webp" width="1600" height="900" alt="Representación visual del recorrido de un sistema frigorífico" loading="lazy" decoding="async">
+        <button class="cold-node n1 is-active" type="button" data-system-step="camara" aria-label="Seleccionar cámara"><span>Cámara</span></button>
+        <button class="cold-node n2" type="button" data-system-step="compresion" aria-label="Seleccionar compresión"><span>Compresión</span></button>
+        <button class="cold-node n3" type="button" data-system-step="condensacion" aria-label="Seleccionar condensación"><span>Condensación</span></button>
+        <button class="cold-node n4" type="button" data-system-step="control" aria-label="Seleccionar control"><span>Control</span></button>
+        <div class="system-readout" aria-live="polite"><small id="systemKicker">01 · ABSORCIÓN</small><strong id="systemLabel">Cámara</strong></div>
       </div>
     </div>
   </div>
