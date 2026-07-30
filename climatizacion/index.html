@@ -656,6 +656,28 @@
 .detail-media.media-complete img,.detail-media>img{
   inset:0;width:100%;height:100%;padding:0!important;object-fit:cover!important;background:transparent!important;border-radius:0!important;
 }
+.detail-media.media-pair{
+  display:grid!important;
+  grid-template-columns:1.16fr .84fr;
+  gap:6px;
+  padding:0!important;
+  overflow:hidden;
+  background:#fff!important;
+}
+.detail-media.media-pair figure{
+  position:relative;
+  min-width:0;
+  height:100%;
+  margin:0;
+  overflow:hidden;
+}
+.detail-media.media-pair figure img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
 .detail-card:hover .detail-media img{transform:scale(1.025)}
 .detail-copy{padding:46px 48px;align-self:center}
 .detail-copy h3{font-size:clamp(2rem,3.6vw,3.2rem)}
@@ -664,6 +686,24 @@
 .gallery-item{height:auto;aspect-ratio:4/5;border:0;background:transparent!important;border-radius:24px;box-shadow:0 16px 40px rgba(3,34,51,.18)}
 .gallery-item img{width:100%;height:100%;object-fit:cover!important;background:transparent!important}
 .gallery-item:first-child img{object-position:center}
+.gallery-item.gallery-extra{display:none}
+.gallery-three.is-expanded .gallery-extra{display:block}
+.gallery-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  margin:24px auto 0;
+  padding:12px 24px;
+  border:0;
+  border-radius:999px;
+  background:#fff;
+  color:#073c58;
+  font:800 .88rem/1.1 Inter,system-ui,sans-serif;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,24,38,.18);
+}
+.gallery-toggle:hover{background:#bcefff;transform:translateY(-2px)}
 .contact-panel{max-width:1120px;margin-inline:auto}
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}
@@ -683,6 +723,7 @@
   .detail-card,.detail-card.reverse{display:flex;flex-direction:column;min-height:0}
   .detail-card.reverse .detail-media{order:0}
   .detail-card .detail-media,.detail-card.reverse .detail-media{width:100%;min-height:0;height:auto;aspect-ratio:4/3}
+  .detail-media.media-pair{grid-template-columns:1.12fr .88fr}
   .detail-copy{padding:28px 22px}
   .gallery-three{grid-template-columns:1fr}
   .gallery-item{aspect-ratio:4/3}
@@ -759,8 +800,9 @@
         </div>
         <div class="detail-stack">
           <article class="detail-card reveal" id="instalacion-climatizacion-comercial">
-            <div class="detail-media media-complete">
-              <img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Técnico de Termoelectra instalando y revisando climatización comercial en un restaurante">
+            <div class="detail-media media-complete media-pair">
+              <figure><img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Técnico de Termoelectra instalando y revisando climatización comercial en un restaurante"></figure>
+              <figure><img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Unidad de aire acondicionado de una instalación de climatización"></figure>
               <span class="detail-badge">01 · Instalación</span>
             </div>
             <div class="detail-copy">
@@ -778,8 +820,9 @@
           </article>
 
           <article class="detail-card reverse reveal" id="reparacion-climatizacion-comercial">
-            <div class="detail-media media-complete">
-              <img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" loading="lazy" alt="Técnica de Termoelectra comprobando un sistema de climatización comercial con manómetros">
+            <div class="detail-media media-complete media-pair">
+              <figure><img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" loading="lazy" alt="Técnica de Termoelectra comprobando un sistema de climatización comercial con manómetros"></figure>
+              <figure><img src="../refrigeracion/galeria-revision-grille.webp" width="1100" height="1121" loading="lazy" alt="Revisión técnica de una salida de aire en un espacio comercial"></figure>
               <span class="detail-badge">02 · Reparación</span>
             </div>
             <div class="detail-copy">
@@ -797,8 +840,9 @@
           </article>
 
           <article class="detail-card reveal" id="mantenimiento-climatizacion">
-            <div class="detail-media media-complete">
-              <img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra realizando mantenimiento de climatización comercial">
+            <div class="detail-media media-complete media-pair">
+              <figure><img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra realizando mantenimiento de climatización comercial"></figure>
+              <figure><img src="climatizacion-assets/tecnico-comercio.webp" width="1000" height="1500" loading="lazy" alt="Técnico revisando un sistema de climatización en un comercio"></figure>
               <span class="detail-badge">03 · Mantenimiento</span>
             </div>
             <div class="detail-copy">
@@ -825,7 +869,7 @@
           <h2>Sistemas y Trabajo Técnico.</h2>
           <p class="lead">Una selección compacta de aerotermia, distribución de aire y revisión técnica.</p>
         </div>
-        <div class="gallery-three">
+        <div class="gallery-three" id="climateGallery">
           <figure class="gallery-item reveal">
             <img src="../imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" loading="lazy" alt="Sistema integral de aerotermia revisado por Termoelectra">
             <span>Aerotermia</span>
@@ -838,7 +882,20 @@
             <img src="climatizacion-assets/tecnico-panel.webp" width="1000" height="1500" loading="lazy" alt="Técnicos de Termoelectra revisando el panel de control de una instalación de climatización">
             <span>Revisión Técnica</span>
           </figure>
+          <figure class="gallery-item gallery-extra">
+            <img src="../refrigeracion/galeria-tecnico-tienda.webp" width="900" height="1350" loading="lazy" alt="Técnico revisando una unidad interior de climatización">
+            <span>Mantenimiento de Climatización</span>
+          </figure>
+          <figure class="gallery-item gallery-extra">
+            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1600" height="1200" loading="lazy" alt="Unidades exteriores de climatización">
+            <span>Equipos de Climatización</span>
+          </figure>
+          <figure class="gallery-item gallery-extra">
+            <img src="climatizacion-assets/conductos-exterior.webp" width="1600" height="1200" loading="lazy" alt="Conductos exteriores de una instalación de climatización">
+            <span>Distribución de Aire</span>
+          </figure>
         </div>
+        <button class="gallery-toggle" id="climateGalleryToggle" type="button" aria-expanded="false" aria-controls="climateGallery">Ver más fotografías</button>
       </div>
     </section>
 
@@ -1038,6 +1095,17 @@
           button.setAttribute('aria-expanded', String(open));
         });
       });
+
+      const climateGallery = document.getElementById('climateGallery');
+      const climateGalleryToggle = document.getElementById('climateGalleryToggle');
+      if (climateGallery && climateGalleryToggle) {
+        climateGalleryToggle.addEventListener('click', () => {
+          const expanded = climateGalleryToggle.getAttribute('aria-expanded') === 'true';
+          climateGalleryToggle.setAttribute('aria-expanded', String(!expanded));
+          climateGalleryToggle.textContent = expanded ? 'Ver más fotografías' : 'Ver menos fotografías';
+          climateGallery.classList.toggle('is-expanded', !expanded);
+        });
+      }
 
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const snowField = document.getElementById('snowField');
