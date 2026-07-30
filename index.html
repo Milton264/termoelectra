@@ -476,6 +476,74 @@
   .compact-submit{width:100%}
 }
 </style>
+
+<style>
+/* ===== AJUSTE 2: menos márgenes, CTA realmente compacto y animación CSS ===== */
+@media(min-width:1001px){
+  .shell{width:calc(100% - 64px)!important;max-width:1680px!important}
+  .nav{width:calc(100% - 64px)!important;max-width:1680px!important}
+  .section{padding:82px 0}
+  .section-heading,.cert-grid,.faq-wrap,.contact-card{max-width:none!important}
+  .service-map-grid{max-width:none!important}
+  .faq-wrap{grid-template-columns:minmax(280px,.58fr) minmax(0,1.42fr)}
+}
+#contacto{padding:36px 0!important}
+#contacto>.shell{width:calc(100% - 64px)!important;max-width:1680px!important}
+#contacto .compact-contact{
+  width:100%;max-width:none!important;margin:0!important;padding:24px 118px 24px 32px!important;
+  grid-template-columns:minmax(260px,.72fr) minmax(620px,1.28fr)!important;
+  gap:28px!important;border-radius:22px!important;
+}
+#contacto .compact-contact h2{font-size:clamp(1.65rem,2.35vw,2.45rem)!important;line-height:1.02}
+.compact-contact-form{grid-template-columns:minmax(180px,1fr) minmax(180px,1fr) auto!important;gap:10px!important}
+.compact-field input,.compact-submit{height:48px!important}
+.compact-submit{padding-inline:22px!important}
+
+/* Animación decorativa CSS del CTA: no utiliza imágenes. */
+@keyframes teContactPulse{
+  0%,100%{transform:translateY(-50%) scale(.92);opacity:.34}
+  50%{transform:translateY(-50%) scale(1.06);opacity:.72}
+}
+@keyframes teContactSweep{
+  0%{transform:translateY(-50%) translateX(24px);opacity:0}
+  28%{opacity:.75}
+  72%{opacity:.75}
+  100%{transform:translateY(-50%) translateX(-42px);opacity:0}
+}
+.compact-contact{position:relative;isolation:isolate;overflow:hidden;min-height:0!important;height:auto!important}
+.compact-contact::before{
+  content:"";position:absolute;z-index:0;right:-82px;top:50%;width:205px;aspect-ratio:1;
+  border:2px solid rgba(142,232,250,.42);border-radius:50%;
+  box-shadow:0 0 0 30px rgba(142,232,250,.09),0 0 0 62px rgba(142,232,250,.045);
+  animation:teContactPulse 3.8s ease-in-out infinite;pointer-events:none;
+}
+.compact-contact::after{
+  content:"";position:absolute;z-index:0;right:24px;top:50%;width:105px;height:3px;border-radius:99px;
+  background:linear-gradient(90deg,transparent,rgba(177,244,255,.95),transparent);
+  box-shadow:0 0 14px rgba(177,244,255,.65);
+  animation:teContactSweep 2.7s ease-in-out infinite;pointer-events:none;
+}
+.compact-contact>*{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.compact-contact::before,.compact-contact::after{animation:none!important}}
+
+@media(max-width:1000px){
+  .shell,.nav{width:calc(100% - 36px)!important;max-width:none!important}
+  #contacto>.shell{width:calc(100% - 36px)!important}
+  #contacto .compact-contact{padding:26px 92px 26px 26px!important;grid-template-columns:1fr!important}
+  .compact-contact-form{grid-template-columns:1fr 1fr auto!important}
+}
+@media(max-width:760px){
+  .shell,.nav{width:calc(100% - 24px)!important}
+  .section{padding:58px 0}
+  #contacto{padding:24px 0!important}
+  #contacto>.shell{width:calc(100% - 24px)!important}
+  #contacto .compact-contact{padding:24px 20px!important;border-radius:18px!important}
+  .compact-contact-form{grid-template-columns:1fr!important}
+  .compact-contact::before{right:-118px;width:190px;opacity:.55}
+  .compact-contact::after{display:none}
+}
+</style>
+
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al Contenido</a>
