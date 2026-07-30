@@ -757,6 +757,85 @@
 }
 @media(prefers-reduced-motion:reduce){.snow-field{display:none}}
 </style>
+
+<style>
+/* ===== AJUSTE SOLICITADO: servicios full width, zig-zag y CTA compacto ===== */
+.snow-field,.snowflake{display:none!important}
+
+#servicios{padding:78px 0 0;background:#fff}
+#servicios>.shell{width:100%;max-width:none}
+#servicios .section-head{
+  width:min(1180px,calc(100% - 48px));
+  margin:0 auto 46px;
+}
+#servicios .detail-stack{gap:0}
+#servicios .detail-card,
+#servicios .detail-card.reverse{
+  width:100%;max-width:none;margin:0;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  min-height:560px;border:0;border-radius:0;box-shadow:none;
+}
+#servicios .detail-card:nth-child(odd){background:#fff}
+#servicios .detail-card:nth-child(even){background:#eaf5f9}
+#servicios .detail-card:not(.reverse) .detail-copy{order:1}
+#servicios .detail-card:not(.reverse) .detail-media{order:2}
+#servicios .detail-card.reverse .detail-media{order:1}
+#servicios .detail-card.reverse .detail-copy{order:2}
+#servicios .detail-card .detail-media,
+#servicios .detail-card.reverse .detail-media{
+  min-height:560px;border-radius:0!important;box-shadow:none;background:#d9edf4!important;
+}
+#servicios .detail-copy{
+  padding:clamp(38px,5.5vw,86px);
+  background:inherit;
+}
+#servicios .detail-media.media-triptych{gap:7px}
+
+#contacto{padding:68px 0}
+.compact-contact{
+  max-width:1120px;margin-inline:auto;padding:34px 38px;
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(520px,1.15fr);
+  align-items:center;gap:34px;
+  border:1px solid var(--line);border-radius:24px;
+  background:linear-gradient(135deg,#073b57,#0b668c);color:#fff;
+  box-shadow:0 18px 46px rgba(7,59,87,.16);
+}
+.compact-contact .eyebrow{color:#b9effb;margin-bottom:10px}
+.compact-contact h2{margin-bottom:10px;font-size:clamp(1.8rem,3vw,2.8rem)}
+.compact-contact p{margin:0;color:#d8eef5;font-size:.98rem}
+.compact-contact-form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}
+.compact-field label{display:block;margin:0 0 7px;color:#dff6fc;font-size:.76rem;font-weight:850;letter-spacing:.04em}
+.compact-field input{
+  width:100%;height:52px;padding:0 15px;border:1px solid rgba(255,255,255,.38);
+  border-radius:12px;background:#fff;color:var(--ink);outline:none;
+}
+.compact-field input:focus{border-color:#8ce6f7;box-shadow:0 0 0 4px rgba(123,220,242,.2)}
+.compact-submit{
+  height:52px;padding:0 24px;border:0;border-radius:12px;
+  background:#fff;color:var(--navy);font-weight:900;cursor:pointer;
+}
+.compact-submit:hover{background:#dff7fc}
+
+@media(max-width:900px){
+  #servicios .detail-card,#servicios .detail-card.reverse{grid-template-columns:1fr 1fr;min-height:500px}
+  #servicios .detail-card .detail-media,#servicios .detail-card.reverse .detail-media{min-height:500px}
+  #servicios .detail-copy{padding:36px 28px}
+  .compact-contact{grid-template-columns:1fr;padding:30px 26px}
+  .compact-contact-form{grid-template-columns:1fr 1fr auto}
+}
+@media(max-width:760px){
+  #servicios{padding-top:56px}
+  #servicios .section-head{width:calc(100% - 28px);margin-bottom:34px}
+  #servicios .detail-card,#servicios .detail-card.reverse{display:flex;flex-direction:column;min-height:0}
+  #servicios .detail-card .detail-media,#servicios .detail-card.reverse .detail-media{
+    order:0!important;width:100%;min-height:0;height:auto;aspect-ratio:4/3;
+  }
+  #servicios .detail-copy{order:1!important;padding:30px 22px 38px}
+  .compact-contact{padding:28px 20px;border-radius:20px}
+  .compact-contact-form{grid-template-columns:1fr}
+  .compact-submit{width:100%}
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -783,7 +862,6 @@
         <img src="climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" alt="">
       </div>
       <div class="air-particles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="snow-field" id="snowField" aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy">
           <div class="hero-kicker">
@@ -966,24 +1044,23 @@
 
     <section class="section white" id="contacto">
       <div class="shell">
-        <div class="contact-panel reveal">
-          <div class="contact-copy">
+        <div class="compact-contact reveal">
+          <div class="compact-contact-copy">
             <span class="eyebrow">Contacto</span>
             <h2>Cuéntanos Qué Necesitas Climatizar.</h2>
-            <p>Indica si buscas aire acondicionado, calefacción, aerotermia, reparación o mantenimiento.</p>
-            <ul class="contact-list">
-              <li><span>Teléfono</span><a href="tel:+34651097393">651 09 73 93</a></li>
-              <li><span>Email</span><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
-              <li><span>Disponibilidad</span><b>Consultar para cada servicio</b></li>
-            </ul>
+            <p>Déjanos tu nombre y teléfono y contactaremos contigo.</p>
           </div>
-          <div class="contact-actions">
-            <a class="btn btn-whatsapp" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
-              Enviar WhatsApp
-            </a>
-            <a class="btn btn-primary" href="tel:+34651097393">Llamar a Termoelectra</a>
-          </div>
+          <form class="compact-contact-form" id="climateContactForm" novalidate>
+            <div class="compact-field">
+              <label for="climateName">Nombre</label>
+              <input id="climateName" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required>
+            </div>
+            <div class="compact-field">
+              <label for="climatePhone">Teléfono</label>
+              <input id="climatePhone" name="telefono" type="tel" placeholder="Teléfono" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <button class="compact-submit" type="submit">Enviar</button>
+          </form>
         </div>
       </div>
     </section>
@@ -1177,22 +1254,6 @@
       }
 
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const snowField = document.getElementById('snowField');
-      if (snowField && !reducedMotion) {
-        const snowFragment = document.createDocumentFragment();
-        for (let index = 0; index < 34; index += 1) {
-          const flake = document.createElement('span');
-          flake.className = 'snowflake';
-          flake.textContent = index % 3 === 0 ? '❄' : '•';
-          flake.style.left = `${Math.random() * 100}%`;
-          flake.style.fontSize = `${7 + Math.random() * 11}px`;
-          flake.style.animationDuration = `${9 + Math.random() * 10}s`;
-          flake.style.animationDelay = `${-Math.random() * 14}s`;
-          flake.style.setProperty('--drift', `${-45 + Math.random() * 90}px`);
-          snowFragment.appendChild(flake);
-        }
-        snowField.appendChild(snowFragment);
-      }
       if (!reducedMotion && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
@@ -1218,6 +1279,24 @@
     if(t)return;t=true;
     requestAnimationFrame(function(){bar.style.width=(dh?Math.min(100,scrollY/dh*100):0)+'%';t=false});
   },{passive:true});
+})();
+</script>
+
+<script>
+(() => {
+  const form = document.getElementById('climateContactForm');
+  if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = document.getElementById('climateName').value.trim();
+    const phone = document.getElementById('climatePhone').value.trim();
+    if (!name || !phone) {
+      alert('Por favor indica tu nombre y teléfono.');
+      return;
+    }
+    const message = `Hola Termoelectra, quiero solicitar información sobre climatización.\n\nNombre: ${name}\nTeléfono: ${phone}`;
+    window.open(`https://wa.me/34651097393?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+  });
 })();
 </script>
 </body>
