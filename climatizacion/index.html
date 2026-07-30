@@ -656,22 +656,35 @@
 .detail-media.media-complete img,.detail-media>img{
   inset:0;width:100%;height:100%;padding:0!important;object-fit:cover!important;background:transparent!important;border-radius:0!important;
 }
-.detail-media.media-pair{
+.detail-media.media-triptych{
   display:grid!important;
-  grid-template-columns:1.16fr .84fr;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:minmax(0,.4fr) minmax(0,.6fr);
   gap:6px;
   padding:0!important;
   overflow:hidden;
   background:#fff!important;
 }
-.detail-media.media-pair figure{
+.detail-media.media-triptych figure{
   position:relative;
   min-width:0;
-  height:100%;
+  min-height:0;
   margin:0;
   overflow:hidden;
 }
-.detail-media.media-pair figure img{
+.detail-media.media-triptych figure:first-child{
+  grid-column:1/-1;
+  grid-row:1;
+}
+.detail-media.media-triptych figure:nth-child(2){
+  grid-column:1;
+  grid-row:2;
+}
+.detail-media.media-triptych figure:nth-child(3){
+  grid-column:2;
+  grid-row:2;
+}
+.detail-media.media-triptych figure img{
   position:absolute!important;
   inset:0!important;
   width:100%!important;
@@ -683,7 +696,7 @@
 .detail-copy h3{font-size:clamp(2rem,3.6vw,3.2rem)}
 .detail-note{padding:14px 18px}
 .gallery-three{grid-template-columns:repeat(3,1fr);gap:18px;max-width:1120px;margin-inline:auto}
-.gallery-item{height:auto;aspect-ratio:4/5;border:0;background:transparent!important;border-radius:24px;box-shadow:0 16px 40px rgba(3,34,51,.18)}
+.gallery-item{height:auto;aspect-ratio:3/4;border:0;background:transparent!important;border-radius:24px;box-shadow:0 16px 40px rgba(3,34,51,.18)}
 .gallery-item img{width:100%;height:100%;object-fit:cover!important;background:transparent!important}
 .gallery-item:first-child img{object-position:center}
 .gallery-item.gallery-extra{display:none}
@@ -717,16 +730,22 @@
   .shell{width:min(100% - 28px,var(--max))}
   .section{padding:56px 0}
   .hero{min-height:820px;padding:122px 0 74px}
+  .hero-media{background:#052f45}
+  .hero-media img{display:block;height:42%;object-position:center 38%}
+  .hero-media::before{background:linear-gradient(180deg,rgba(3,39,58,.4),rgba(3,39,58,.98) 65%)}
   .hero-copy{text-align:center;margin-inline:auto}
   .hero-kicker,.hero-actions{justify-content:center}
   .hero h1{font-size:clamp(2.75rem,12vw,4.2rem)}
   .detail-card,.detail-card.reverse{display:flex;flex-direction:column;min-height:0}
   .detail-card.reverse .detail-media{order:0}
-  .detail-card .detail-media,.detail-card.reverse .detail-media{width:100%;min-height:0;height:auto;aspect-ratio:4/3}
-  .detail-media.media-pair{grid-template-columns:1.12fr .88fr}
+  .detail-card .detail-media,.detail-card.reverse .detail-media{width:100%;min-height:0;height:auto;aspect-ratio:3/4}
+  .detail-media.media-triptych{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:minmax(0,.4fr) minmax(0,.6fr);
+  }
   .detail-copy{padding:28px 22px}
   .gallery-three{grid-template-columns:1fr}
-  .gallery-item{aspect-ratio:4/3}
+  .gallery-item{aspect-ratio:3/4}
 }
 @media(prefers-reduced-motion:reduce){.snow-field{display:none}}
 </style>
@@ -800,9 +819,10 @@
         </div>
         <div class="detail-stack">
           <article class="detail-card reveal" id="instalacion-climatizacion-comercial">
-            <div class="detail-media media-complete media-pair">
-              <figure><img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Técnico de Termoelectra instalando y revisando climatización comercial en un restaurante"></figure>
-              <figure><img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Unidad de aire acondicionado de una instalación de climatización"></figure>
+            <div class="detail-media media-complete media-triptych">
+              <figure><img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Servicio técnico de climatización en un restaurante"></figure>
+              <figure><img src="../refrigeracion/galeria-tecnico-local.webp" width="900" height="1350" loading="lazy" alt="Técnico de Termoelectra revisando una unidad de climatización comercial"></figure>
+              <figure><img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de una instalación de climatización comercial"></figure>
               <span class="detail-badge">01 · Instalación</span>
             </div>
             <div class="detail-copy">
@@ -820,9 +840,10 @@
           </article>
 
           <article class="detail-card reverse reveal" id="reparacion-climatizacion-comercial">
-            <div class="detail-media media-complete media-pair">
+            <div class="detail-media media-complete media-triptych">
+              <figure><img src="../refrigeracion/galeria-tecnico-cubierta.webp" width="1200" height="675" loading="lazy" alt="Técnico revisando equipos exteriores de climatización"></figure>
               <figure><img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" loading="lazy" alt="Técnica de Termoelectra comprobando un sistema de climatización comercial con manómetros"></figure>
-              <figure><img src="../refrigeracion/galeria-revision-grille.webp" width="1100" height="1121" loading="lazy" alt="Revisión técnica de una salida de aire en un espacio comercial"></figure>
+              <figure><img src="../refrigeracion/galeria-tecnico-tienda.webp" width="900" height="1350" loading="lazy" alt="Técnico revisando una unidad interior de climatización"></figure>
               <span class="detail-badge">02 · Reparación</span>
             </div>
             <div class="detail-copy">
@@ -840,7 +861,8 @@
           </article>
 
           <article class="detail-card reveal" id="mantenimiento-climatizacion">
-            <div class="detail-media media-complete media-pair">
+            <div class="detail-media media-complete media-triptych">
+              <figure><img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Equipos exteriores de una instalación de climatización"></figure>
               <figure><img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra realizando mantenimiento de climatización comercial"></figure>
               <figure><img src="climatizacion-assets/tecnico-comercio.webp" width="1000" height="1500" loading="lazy" alt="Técnico revisando un sistema de climatización en un comercio"></figure>
               <span class="detail-badge">03 · Mantenimiento</span>
@@ -883,15 +905,15 @@
             <span>Revisión Técnica</span>
           </figure>
           <figure class="gallery-item gallery-extra">
-            <img src="../refrigeracion/galeria-tecnico-tienda.webp" width="900" height="1350" loading="lazy" alt="Técnico revisando una unidad interior de climatización">
-            <span>Mantenimiento de Climatización</span>
+            <img src="../refrigeracion/galeria-revision-grille.webp" width="1100" height="1121" loading="lazy" alt="Revisión de una salida de aire en un espacio comercial">
+            <span>Revisión de Climatización</span>
           </figure>
           <figure class="gallery-item gallery-extra">
-            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1600" height="1200" loading="lazy" alt="Unidades exteriores de climatización">
+            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización">
             <span>Equipos de Climatización</span>
           </figure>
           <figure class="gallery-item gallery-extra">
-            <img src="climatizacion-assets/conductos-exterior.webp" width="1600" height="1200" loading="lazy" alt="Conductos exteriores de una instalación de climatización">
+            <img src="climatizacion-assets/conductos-exterior.webp" width="900" height="1200" loading="lazy" alt="Conductos exteriores de una instalación de climatización">
             <span>Distribución de Aire</span>
           </figure>
         </div>

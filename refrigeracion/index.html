@@ -3824,6 +3824,46 @@ header.is-scrolled{
   grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
   grid-template-rows:minmax(0,1fr);
 }
+.svc-media.media-mosaic.media-stack{
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:minmax(0,1.15fr) minmax(0,.85fr);
+}
+.svc-media.media-mosaic.industrial-mosaic{
+  grid-template-columns:minmax(0,.45fr) minmax(0,.55fr);
+  grid-template-rows:minmax(0,1.3fr) repeat(2,minmax(0,1fr));
+}
+.media-mosaic.industrial-mosaic figure:first-child{
+  grid-column:1/-1;
+  grid-row:1!important;
+}
+.media-mosaic.industrial-mosaic figure:nth-child(2){
+  grid-column:2;
+  grid-row:2/4;
+}
+.media-mosaic.industrial-mosaic figure:nth-child(3){
+  grid-column:1;
+  grid-row:2;
+}
+.media-mosaic.industrial-mosaic figure:nth-child(4){
+  grid-column:1;
+  grid-row:3;
+}
+.svc-media.media-mosaic.media-triptych{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:minmax(0,.4fr) minmax(0,.6fr);
+}
+.media-mosaic.media-triptych figure:first-child{
+  grid-column:1/-1;
+  grid-row:1!important;
+}
+.media-mosaic.media-triptych figure:nth-child(2){
+  grid-column:1;
+  grid-row:2;
+}
+.media-mosaic.media-triptych figure:nth-child(3){
+  grid-column:2;
+  grid-row:2;
+}
 .media-mosaic figure{
   position:relative;
   min-width:0;
@@ -3832,6 +3872,7 @@ header.is-scrolled{
   overflow:hidden;
 }
 .media-mosaic:not(.duo) figure:first-child{grid-row:1/-1}
+.media-mosaic.media-stack figure:first-child{grid-row:auto}
 .svc-media.media-mosaic figure img{
   position:absolute!important;
   inset:0;
@@ -3839,6 +3880,7 @@ header.is-scrolled{
   height:100%!important;
   min-height:0!important;
   max-height:none!important;
+  aspect-ratio:auto!important;
   object-fit:cover!important;
   background:transparent!important;
 }
@@ -3866,16 +3908,54 @@ header.is-scrolled{
 }
 .gallery-toggle:hover{transform:translateY(-2px);background:#0a6e91}
 
+/* Galería proporcional: cada orientación conserva su encuadre sin franjas vacías. */
+#comercial + .alt .gallery{
+  display:block;
+  column-count:4;
+  column-gap:14px;
+  max-width:1180px;
+  margin:34px auto 0;
+}
+#comercial + .alt .gallery a,
+#comercial + .alt .gallery a:nth-child(1),
+#comercial + .alt .gallery a:nth-child(4),
+#comercial + .alt .gallery a:nth-child(7){
+  display:block;
+  width:100%;
+  height:auto!important;
+  margin:0 0 14px;
+  aspect-ratio:4/3;
+  break-inside:avoid;
+  grid-column:auto!important;
+  grid-row:auto!important;
+  border:0;
+  border-radius:18px;
+  background:transparent!important;
+}
+#comercial + .alt .gallery a.g-portrait{aspect-ratio:3/4}
+#comercial + .alt .gallery a.g-tall{aspect-ratio:9/16}
+#comercial + .alt .gallery a.g-square{aspect-ratio:1}
+#comercial + .alt .gallery a.g-landscape-wide{aspect-ratio:16/9}
+#comercial + .alt .gallery a img{
+  width:100%;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center;
+  background:transparent!important;
+}
+#comercial + .alt .gallery.reveal a{opacity:1!important;transform:none!important}
+
 @media(max-width:1000px){
   #industrial .svc{grid-template-columns:1fr 1fr;gap:24px}
   .industrial-service-grid{grid-template-columns:1fr}
   #industrial .svc-media,#industrial .svc-media img{min-height:680px}
   .camera-seo-grid{grid-template-columns:1fr}
+  #comercial + .alt .gallery{column-count:3}
 }
 @media(max-width:760px){
   #industrial .wrap{padding-top:48px;padding-bottom:48px}
   #industrial .svc{display:flex;flex-direction:column}
-  #industrial .svc-media{order:-1;min-height:0;aspect-ratio:4/3;border-radius:22px}
+  #industrial .svc-media{order:-1;min-height:0;aspect-ratio:3/4;border-radius:22px}
   #industrial .svc-media img{min-height:0}
   .industrial-service{min-height:0}
   .camera-seo-grid{margin-top:20px}
@@ -3889,6 +3969,24 @@ header.is-scrolled{
     grid-template-rows:repeat(2,minmax(0,1fr));
   }
   .media-mosaic.duo figure:first-child{grid-row:1/-1}
+  .svc-media.media-mosaic.media-stack{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1.15fr) minmax(0,.85fr);
+  }
+  .media-mosaic.media-stack figure:first-child{grid-row:auto}
+  .svc-media.media-mosaic.media-triptych{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:minmax(0,.4fr) minmax(0,.6fr);
+    aspect-ratio:3/4;
+  }
+  .svc-media.media-mosaic.media-stack{
+    grid-template-rows:repeat(2,minmax(0,1fr));
+    aspect-ratio:1;
+  }
+  #comercial + .alt .gallery{column-count:2}
+}
+@media(max-width:380px){
+  #comercial + .alt .gallery{column-count:1}
 }
 </style>
 </head>
@@ -3965,10 +4063,11 @@ header.is-scrolled{
         </div>
         <p class="seo-detail reveal"><strong>Empresa de Frío Industrial:</strong> cada proyecto se revisa para concretar si requiere instalación de frío industrial, mantenimiento de frío industrial, reparación de frío industrial o atención del SAT de frío industrial. Así, el servicio queda vinculado a las características reales de cada sistema de refrigeración industrial.</p>
       </div>
-      <div class="svc-media media-mosaic reveal d2">
+      <div class="svc-media media-mosaic industrial-mosaic reveal d2">
         <figure><img src="../assets/industrial-real.webp" alt="Equipos de una instalación de refrigeración industrial" loading="lazy" decoding="async" width="1280" height="900"></figure>
         <figure><img src="archivo-sala-maquinas-azul.webp" alt="Sala de máquinas de refrigeración industrial del archivo de Termoelectra" loading="lazy" decoding="async" width="1200" height="1600"></figure>
         <figure><img src="archivo-condensadores-cubierta.webp" alt="Unidades condensadoras de refrigeración instaladas en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></figure>
+        <figure><img src="archivo-bombas-industriales.webp" alt="Bombas y tuberías de una instalación de frío industrial" loading="lazy" decoding="async" width="1600" height="1200"></figure>
         <span class="tag">Refrigeración Industrial</span>
       </div>
     </div>
@@ -4010,7 +4109,8 @@ header.is-scrolled{
 <section class="alt">
   <div class="wrap">
     <div class="svc reveal" id="instalacion-camaras-frigorificas">
-      <div class="svc-media fit-complete media-mosaic duo">
+      <div class="svc-media fit-complete media-mosaic media-triptych">
+        <figure><img src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" alt="Cámara frigorífica industrial con estanterías" loading="lazy" decoding="async" width="600" height="314"></figure>
         <figure><img src="instalacion-camaras-tecnico.webp" alt="Técnico comprobando una instalación de cámara frigorífica industrial" loading="lazy" decoding="async" width="1188" height="2048"></figure>
         <figure><img src="archivo-evaporador-industrial.webp" alt="Evaporador de una instalación frigorífica industrial" loading="lazy" decoding="async" width="1200" height="1600"></figure>
         <span class="media-index" aria-hidden="true">01</span>
@@ -4032,7 +4132,8 @@ header.is-scrolled{
       </div>
     </div>
     <div class="svc rev reveal" id="reparacion-camaras-frigorificas">
-      <div class="svc-media fit-complete media-mosaic duo">
+      <div class="svc-media fit-complete media-mosaic media-triptych">
+        <figure><img src="sala-maquinas.webp" alt="Sala de máquinas de una instalación de refrigeración" loading="lazy" decoding="async" width="1400" height="1050"></figure>
         <figure><img src="camara-industrial.webp" alt="Técnico de Termoelectra reparando un equipo de refrigeración profesional" loading="lazy" decoding="async" width="1080" height="1920"></figure>
         <figure><img src="archivo-sat-herramientas.webp" alt="Herramientas y equipos para servicio técnico de refrigeración" loading="lazy" decoding="async" width="960" height="1600"></figure>
         <span class="media-index" aria-hidden="true">02</span>
@@ -4055,9 +4156,10 @@ header.is-scrolled{
       </div>
     </div>
     <div class="svc reveal" id="mantenimiento-camaras-frigorificas">
-      <div class="svc-media fit-complete media-mosaic duo">
+      <div class="svc-media fit-complete media-mosaic media-triptych">
+        <figure><img src="archivo-control-refrigeracion.webp" alt="Panel de control de una instalación frigorífica" loading="lazy" decoding="async" width="1600" height="1200"></figure>
         <figure><img src="mantenimiento.webp" alt="Mantenimiento preventivo de cámaras de refrigeración" loading="lazy" decoding="async" width="1200" height="1600"></figure>
-        <figure><img src="archivo-control-refrigeracion.webp" alt="Panel de control de una instalación de refrigeración" loading="lazy" decoding="async" width="1600" height="1200"></figure>
+        <figure><img src="sat-reparacion.webp" alt="Equipos y herramientas utilizados en el servicio técnico de refrigeración" loading="lazy" decoding="async" width="1200" height="2000"></figure>
         <span class="media-index" aria-hidden="true">03</span>
         <span class="media-scan" aria-hidden="true"></span>
         <span class="tag">Mantenimiento preventivo y correctivo</span>
@@ -4082,9 +4184,9 @@ header.is-scrolled{
 <section id="comercial">
   <div class="wrap">
     <div class="svc rev">
-      <div class="svc-media media-mosaic duo reveal">
+      <div class="svc-media media-mosaic media-stack reveal">
         <figure><img src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" alt="Cámara frigorífica comercial con puertas de vidrio instalada por Termoelectra" loading="lazy" decoding="async" width="1600" height="1120"></figure>
-        <figure><img src="refrigeracion-comercial-tecnico.webp" alt="Técnico revisando un equipo de refrigeración comercial" loading="lazy" decoding="async" width="1200" height="1604"></figure>
+        <figure><img src="galeria-tablet.webp" alt="Instalación de refrigeración con seguimiento técnico" loading="lazy" decoding="async" width="600" height="314"></figure>
         <span class="tag">Equipos de Refrigeración Comercial</span>
       </div>
       <div class="svc-body">
@@ -4110,22 +4212,22 @@ header.is-scrolled{
     <h2 class="sec-title reveal d1">Nuestro Equipo de Refrigeración y Frío Industrial</h2>
     <p class="sec-lead reveal d2">Así trabaja nuestro equipo técnico en instalaciones de Refrigeración, Frío Industrial y Cámaras Frigoríficas. Haz clic en cualquier imagen para ampliarla.</p>
     <div class="gallery reveal" id="galleryWork">
-      <a class="g-big" data-lb="tecnica-real.webp"><img src="tecnica-real.webp" alt="Técnica de Termoelectra realizando un servicio de mantenimiento en un restaurante" loading="lazy" decoding="async" width="1200" height="1604"></a>
-      <a data-lb="galeria-condensadores.webp"><img src="galeria-condensadores.webp" alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" loading="lazy" decoding="async" width="1000" height="1785"></a>
-      <a data-lb="galeria-valvulas.webp"><img src="galeria-valvulas.webp" alt="Técnico de Termoelectra en un almacén frigorífico industrial" loading="lazy" decoding="async" width="1100" height="1100"></a>
-      <a class="g-wide" data-lb="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp"><img src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" alt="Cámara frigorífica industrial con estanterías y control técnico" loading="lazy" decoding="async" width="600" height="314"></a>
-      <a data-lb="galeria-revision-tecnica.webp"><img src="galeria-revision-tecnica.webp" alt="Técnicos de Termoelectra revisando el panel de control de una instalación" loading="lazy" decoding="async" width="1000" height="1500"></a>
-      <a data-lb="../imagenes-cliente-nuevas/n1-camara-nave.webp"><img src="../imagenes-cliente-nuevas/n1-camara-nave.webp" alt="Técnico de Termoelectra interviniendo en un equipo de refrigeración de una nave" loading="lazy" decoding="async" width="1600" height="1600"></a>
-      <a class="g-wide" data-lb="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp"><img src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" alt="Cámara frigorífica comercial con puertas de vidrio" loading="lazy" decoding="async" width="1600" height="1120"></a>
-      <a data-lb="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp"><img src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" alt="Técnico de Termoelectra comprobando una cámara frigorífica industrial" loading="lazy" decoding="async" width="1600" height="1600"></a>
-      <a class="gallery-extra" data-lb="equipo-termoelectra.webp"><img src="equipo-termoelectra.webp" alt="Equipo técnico de Termoelectra" loading="lazy" decoding="async" width="1400" height="788"></a>
-      <a class="gallery-extra" data-lb="archivo-sala-maquinas-azul.webp"><img src="archivo-sala-maquinas-azul.webp" alt="Sala de máquinas de refrigeración industrial" loading="lazy" decoding="async" width="1200" height="1600"></a>
-      <a class="gallery-extra g-wide" data-lb="archivo-condensadores-cubierta.webp"><img src="archivo-condensadores-cubierta.webp" alt="Condensadores de refrigeración instalados en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></a>
-      <a class="gallery-extra" data-lb="archivo-bombas-industriales.webp"><img src="archivo-bombas-industriales.webp" alt="Bombas y tuberías de una instalación industrial" loading="lazy" decoding="async" width="1600" height="1200"></a>
-      <a class="gallery-extra" data-lb="archivo-conductos-cubierta.webp"><img src="archivo-conductos-cubierta.webp" alt="Conductos técnicos instalados en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></a>
-      <a class="gallery-extra g-wide" data-lb="archivo-tuberias-industriales.webp"><img src="archivo-tuberias-industriales.webp" alt="Tuberías aisladas de una instalación frigorífica industrial" loading="lazy" decoding="async" width="1600" height="1200"></a>
-      <a class="gallery-extra" data-lb="archivo-unidad-industrial.webp"><img src="archivo-unidad-industrial.webp" alt="Unidad de refrigeración industrial del archivo de Termoelectra" loading="lazy" decoding="async" width="1600" height="1200"></a>
-      <a class="gallery-extra" data-lb="refrigeracion-comercial-tecnico.webp"><img src="refrigeracion-comercial-tecnico.webp" alt="Revisión técnica de refrigeración comercial" loading="lazy" decoding="async" width="1200" height="1604"></a>
+      <a class="g-portrait" data-lb="tecnica-real.webp"><img src="tecnica-real.webp" alt="Técnica de Termoelectra realizando un servicio de mantenimiento en un restaurante" loading="lazy" decoding="async" width="1200" height="1604"></a>
+      <a class="g-tall" data-lb="galeria-condensadores.webp"><img src="galeria-condensadores.webp" alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" loading="lazy" decoding="async" width="1000" height="1785"></a>
+      <a class="g-square" data-lb="galeria-valvulas.webp"><img src="galeria-valvulas.webp" alt="Técnico de Termoelectra en un almacén frigorífico industrial" loading="lazy" decoding="async" width="1100" height="1100"></a>
+      <a class="g-landscape-wide" data-lb="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp"><img src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" alt="Cámara frigorífica industrial con estanterías y control técnico" loading="lazy" decoding="async" width="600" height="314"></a>
+      <a class="g-portrait" data-lb="galeria-revision-tecnica.webp"><img src="galeria-revision-tecnica.webp" alt="Técnicos de Termoelectra revisando el panel de control de una instalación" loading="lazy" decoding="async" width="1000" height="1500"></a>
+      <a class="g-square" data-lb="../imagenes-cliente-nuevas/n1-camara-nave.webp"><img src="../imagenes-cliente-nuevas/n1-camara-nave.webp" alt="Técnico de Termoelectra interviniendo en un equipo de refrigeración de una nave" loading="lazy" decoding="async" width="1600" height="1600"></a>
+      <a class="g-landscape" data-lb="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp"><img src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" alt="Cámara frigorífica comercial con puertas de vidrio" loading="lazy" decoding="async" width="1600" height="1120"></a>
+      <a class="g-square" data-lb="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp"><img src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" alt="Técnico de Termoelectra comprobando una cámara frigorífica industrial" loading="lazy" decoding="async" width="1600" height="1600"></a>
+      <a class="gallery-extra g-landscape-wide" data-lb="equipo-termoelectra.webp"><img src="equipo-termoelectra.webp" alt="Equipo técnico de Termoelectra" loading="lazy" decoding="async" width="1400" height="788"></a>
+      <a class="gallery-extra g-portrait" data-lb="archivo-sala-maquinas-azul.webp"><img src="archivo-sala-maquinas-azul.webp" alt="Sala de máquinas de refrigeración industrial" loading="lazy" decoding="async" width="1200" height="1600"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-condensadores-cubierta.webp"><img src="archivo-condensadores-cubierta.webp" alt="Condensadores de refrigeración instalados en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-bombas-industriales.webp"><img src="archivo-bombas-industriales.webp" alt="Bombas y tuberías de una instalación industrial" loading="lazy" decoding="async" width="1600" height="1200"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-conductos-cubierta.webp"><img src="archivo-conductos-cubierta.webp" alt="Conductos técnicos instalados en cubierta" loading="lazy" decoding="async" width="1600" height="1200"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-tuberias-industriales.webp"><img src="archivo-tuberias-industriales.webp" alt="Tuberías aisladas de una instalación frigorífica industrial" loading="lazy" decoding="async" width="1600" height="1200"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-unidad-industrial.webp"><img src="archivo-unidad-industrial.webp" alt="Unidad de refrigeración industrial del archivo de Termoelectra" loading="lazy" decoding="async" width="1600" height="1200"></a>
+      <a class="gallery-extra g-landscape" data-lb="archivo-control-refrigeracion.webp"><img src="archivo-control-refrigeracion.webp" alt="Panel de control de una instalación de refrigeración" loading="lazy" decoding="async" width="1600" height="1200"></a>
     </div>
     <button class="gallery-toggle" id="galleryToggle" type="button" aria-expanded="false" aria-controls="galleryWork">Ver más fotografías</button>
   </div>
