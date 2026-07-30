@@ -4161,6 +4161,156 @@ header.is-scrolled{
 }
 </style>
 
+<style>
+
+/* ===== CORRECCIÓN V3: CTA compacto con animación visible hecha en CSS ===== */
+.compact-contact::before,.compact-contact::after{display:none!important}
+#contacto{min-height:0!important;padding:28px 0!important}
+#contacto .contact-box.compact-contact,
+#contacto .compact-contact{
+  min-height:0!important;height:auto!important;max-height:none!important;
+  width:100%!important;max-width:none!important;margin:0!important;
+  padding:22px 24px 22px 32px!important;
+  display:grid!important;
+  grid-template-columns:minmax(250px,.78fr) minmax(520px,1.35fr) 150px!important;
+  align-items:center!important;gap:24px!important;
+  border-radius:22px!important;overflow:hidden!important;
+}
+.compact-contact-copy{min-width:0}
+#contacto .compact-contact h2{margin:0 0 8px!important;font-size:clamp(1.6rem,2.2vw,2.35rem)!important;line-height:1.02!important}
+#contacto .compact-contact p{margin:0!important;line-height:1.55!important}
+.compact-contact-form{
+  min-width:0!important;display:grid!important;
+  grid-template-columns:minmax(170px,1fr) minmax(170px,1fr) auto!important;
+  gap:10px!important;align-items:end!important;
+}
+.compact-field input,.compact-submit{height:48px!important}
+.compact-submit{padding-inline:22px!important;white-space:nowrap}
+.contact-motion{
+  position:relative!important;z-index:2!important;justify-self:end!important;
+  width:142px!important;height:94px!important;display:block!important;
+  overflow:visible!important;pointer-events:none!important;
+}
+.motion-fan{
+  position:absolute;right:8px;top:50%;width:76px;height:76px;
+  border:2px solid rgba(203,246,255,.72);border-radius:50%;
+  transform:translateY(-50%);box-shadow:0 0 0 10px rgba(159,231,247,.08),0 0 24px rgba(114,221,244,.22);
+}
+.motion-fan::before{
+  content:"";position:absolute;inset:8px;border-radius:50%;
+  background:conic-gradient(from 0deg,
+    transparent 0 7%,rgba(207,248,255,.92) 8% 27%,transparent 28% 39%,
+    rgba(207,248,255,.92) 40% 59%,transparent 60% 72%,
+    rgba(207,248,255,.92) 73% 92%,transparent 93% 100%);
+  animation:teFanSpin 3.2s linear infinite;
+}
+.motion-fan::after{
+  content:"";position:absolute;left:50%;top:50%;width:15px;height:15px;border-radius:50%;
+  background:#e9fbff;box-shadow:0 0 16px rgba(194,244,255,.95);transform:translate(-50%,-50%);
+}
+.motion-ring{
+  position:absolute;right:0;top:50%;border:1px solid rgba(153,231,248,.38);border-radius:50%;
+  transform:translateY(-50%);animation:teRingPulse 2.5s ease-out infinite;
+}
+.ring-one{width:92px;height:92px}
+.ring-two{right:-16px;width:124px;height:124px;animation-delay:1.25s}
+.motion-stream{
+  position:absolute;left:0;height:3px;border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(213,249,255,.96),transparent);
+  filter:drop-shadow(0 0 5px rgba(180,239,252,.72));
+  animation:teAirStream 2.1s ease-in-out infinite;
+}
+.stream-one{top:27px;width:68px}
+.stream-two{top:46px;width:86px;animation-delay:.48s}
+.stream-three{top:65px;width:58px;animation-delay:.96s}
+@keyframes teFanSpin{to{transform:rotate(360deg)}}
+@keyframes teRingPulse{
+  0%{opacity:.15;transform:translateY(-50%) scale(.78)}
+  55%{opacity:.64}
+  100%{opacity:0;transform:translateY(-50%) scale(1.16)}
+}
+@keyframes teAirStream{
+  0%{opacity:0;transform:translateX(-22px) scaleX(.65)}
+  35%,70%{opacity:.9}
+  100%{opacity:0;transform:translateX(38px) scaleX(1.08)}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-fan::before,.motion-ring,.motion-stream{animation:none!important}
+}
+@media(max-width:1120px){
+  #contacto .contact-box.compact-contact,#contacto .compact-contact{
+    grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr) 112px!important;
+    gap:18px!important;padding-right:20px!important;
+  }
+  .contact-motion{width:104px!important;transform:scale(.84);transform-origin:right center}
+}
+@media(max-width:900px){
+  #contacto .contact-box.compact-contact,#contacto .compact-contact{
+    grid-template-columns:1fr!important;padding:24px 112px 24px 24px!important;
+  }
+  .compact-contact-form{grid-template-columns:1fr 1fr auto!important}
+  .contact-motion{position:absolute!important;right:12px;top:50%;transform:translateY(-50%) scale(.8)}
+}
+@media(max-width:700px){
+  #contacto{padding:20px 0!important}
+  #contacto .contact-box.compact-contact,#contacto .compact-contact{
+    padding:22px 18px!important;border-radius:18px!important;
+  }
+  .compact-contact-form{grid-template-columns:1fr!important}
+  .compact-submit{width:100%!important}
+  .contact-motion{display:none!important}
+}
+
+
+/* ===== CORRECCIÓN V3: Refrigeración realmente amplia en las zonas señaladas ===== */
+@media(min-width:1001px){
+  #industrial>.wrap{
+    width:calc(100% - 64px)!important;max-width:1680px!important;
+    margin-inline:auto!important;padding-left:0!important;padding-right:0!important;
+  }
+  #industrial .cold-system-visual{
+    width:100%!important;max-width:none!important;margin:32px 0 0!important;
+    grid-template-columns:minmax(330px,.72fr) minmax(0,1.48fr)!important;
+    min-height:470px!important;border-radius:28px!important;
+  }
+  #industrial .cold-system-copy{padding:44px 46px!important}
+  #industrial .cold-system-media{min-height:470px!important;height:100%!important}
+  #industrial .cold-system-media img{height:100%!important;object-fit:cover!important}
+
+  #camaras .carousel-head{
+    width:calc(100% - 64px)!important;max-width:1680px!important;
+    margin-inline:auto!important;padding:66px 0 28px!important;
+  }
+  #camaras .carousel-head h2{max-width:1320px!important;margin-inline:auto!important}
+  #camaras .carousel-head p{max-width:1040px!important;margin-inline:auto!important}
+  #camaras .camera-seo-grid{
+    width:100%!important;max-width:none!important;margin:30px 0 0!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;
+  }
+  #camaras .camera-seo-card{min-height:150px!important;padding:24px!important}
+  #camaras .carousel{padding:8px 0 68px!important}
+  #camaras .track{
+    width:calc(100% - 64px)!important;max-width:1680px!important;margin-inline:auto!important;
+    padding:0!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:22px!important;overflow:visible!important;
+  }
+  #camaras .slide,#camaras .slide.fit-complete{
+    width:100%!important;min-width:0!important;max-width:none!important;flex:none!important;
+    aspect-ratio:16/10!important;border-radius:22px!important;
+  }
+}
+@media(max-width:1000px){
+  #industrial .cold-system-visual{width:100%!important;max-width:none!important;margin-inline:0!important}
+  #camaras .camera-seo-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:760px){
+  #industrial .cold-system-visual{border-radius:20px!important}
+  #industrial .cold-system-copy{padding:26px 20px!important}
+  #camaras .carousel-head{width:calc(100% - 28px)!important;padding-left:0!important;padding-right:0!important}
+  #camaras .track{width:calc(100% - 28px)!important;margin-inline:auto!important;padding:0!important;display:grid!important;grid-template-columns:1fr!important}
+}
+
+</style>
 </head>
 <body>
 
@@ -4445,6 +4595,14 @@ header.is-scrolled{
         </div>
         <button class="compact-submit" id="cfSend" type="submit">Enviar</button>
       </form>
+      <div class="contact-motion" aria-hidden="true">
+        <span class="motion-stream stream-one"></span>
+        <span class="motion-stream stream-two"></span>
+        <span class="motion-stream stream-three"></span>
+        <span class="motion-ring ring-one"></span>
+        <span class="motion-ring ring-two"></span>
+        <span class="motion-fan"></span>
+      </div>
     </div>
   </div>
 </section>
