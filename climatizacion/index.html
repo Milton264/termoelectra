@@ -718,6 +718,8 @@
 }
 .gallery-toggle:hover{background:#bcefff;transform:translateY(-2px)}
 .contact-panel{max-width:1120px;margin-inline:auto}
+.climate-lab{border:0}
+.gallery-section-head{margin-top:82px}
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr}
   .hero-copy{max-width:760px}
@@ -744,6 +746,12 @@
     grid-template-rows:minmax(0,.4fr) minmax(0,.6fr);
   }
   .detail-copy{padding:28px 22px}
+  .climate-lab{padding:12px}
+  .lab-copy{padding:23px 12px 10px}
+  .mode-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .mode-button{padding:0 4px;font-size:.72rem}
+  .system-visual{min-height:360px}
+  .gallery-section-head{margin-top:58px}
   .gallery-three{grid-template-columns:1fr}
   .gallery-item{aspect-ratio:3/4}
 }
@@ -887,6 +895,41 @@
     <section class="section dark" id="trabajos">
       <div class="shell">
         <div class="section-head reveal">
+          <span class="eyebrow">Climatización interactiva</span>
+          <h2>Tres Formas de Climatizar un Espacio.</h2>
+          <p class="lead">Selecciona aire acondicionado, calefacción o aerotermia para ver cómo cambia el recorrido visual del sistema.</p>
+        </div>
+        <div class="climate-lab reveal">
+          <div class="lab-copy">
+            <span class="eyebrow" id="labHeading">Aire Acondicionado</span>
+            <h3 id="labTitle">Climatización del Ambiente</h3>
+            <div class="mode-controls" aria-label="Modos de climatización">
+              <button class="mode-button active" type="button" data-mode="cool" aria-pressed="true">Aire</button>
+              <button class="mode-button" type="button" data-mode="heat" aria-pressed="false">Calefacción</button>
+              <button class="mode-button" type="button" data-mode="aero" aria-pressed="false">Aerotermia</button>
+            </div>
+            <div class="lab-note" aria-live="polite">
+              <strong>Lectura del Sistema</strong>
+              <p id="labText">El sistema mueve y trata el aire para ajustar las condiciones interiores según la instalación.</p>
+            </div>
+          </div>
+          <div class="system-visual" id="systemVisual" data-mode="cool" aria-hidden="true">
+            <div class="room-outline"></div>
+            <div class="visual-device device-in"></div>
+            <div class="visual-device device-out"></div>
+            <span class="flow-path a"></span>
+            <span class="flow-path b"></span>
+            <span class="flow-path c"></span>
+            <i class="air-dot"></i>
+            <i class="air-dot"></i>
+            <i class="air-dot"></i>
+            <i class="air-dot"></i>
+            <span class="visual-label label-in">Interior</span>
+            <span class="visual-label label-out">Exterior</span>
+            <span class="mode-symbol" id="modeSymbol">❄</span>
+          </div>
+        </div>
+        <div class="section-head reveal gallery-section-head">
           <span class="eyebrow">Fotografías reales</span>
           <h2>Sistemas y Trabajo Técnico.</h2>
           <p class="lead">Una selección compacta de aerotermia, distribución de aire y revisión técnica.</p>
@@ -1096,7 +1139,11 @@
         button.addEventListener('click', () => {
           const mode = button.dataset.mode;
           const item = labData[mode];
-          document.querySelectorAll('.mode-button').forEach(current => current.classList.toggle('active', current === button));
+          document.querySelectorAll('.mode-button').forEach(current => {
+            const active = current === button;
+            current.classList.toggle('active', active);
+            current.setAttribute('aria-pressed', String(active));
+          });
           systemVisual.dataset.mode = mode;
           labHeading.textContent = item.heading;
           labTitle.textContent = item.title;
