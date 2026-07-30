@@ -6,8 +6,7 @@
   <title>Refrigeración y Climatización | Termoelectra</title>
   <meta name="description" content="Instalación, reparación y mantenimiento de refrigeración, frío industrial, cámaras frigoríficas y climatización comercial con servicio técnico propio.">
   <meta name="theme-color" content="#073b57">
-  <link rel="preload" as="image" href="imagenes-cliente-nuevas/n2-sala-ammonia.webp" fetchpriority="high">
-  <link rel="preload" as="image" href="imagenes-cliente-nuevas/n6-aerotermia-sala.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="climatizacion/climatizacion-assets/climatizacion-interior.webp" fetchpriority="high">
   <style>
     :root{
       --navy:#073b57;
@@ -343,6 +342,44 @@
   .service-card:hover .service-icon{transform:scale(1.12) rotate(-4deg)}
 }
 </style>
+<style>
+/* ===== RECONSTRUCCIÓN FINAL: home centrada, compacta y sin duplicidades ===== */
+.shell{width:min(1280px,calc(100% - 48px))}
+.section{padding:80px 0}
+.hero{min-height:780px;padding:142px 0 92px}
+.hero-media{display:block}
+.hero-media figure{position:absolute;inset:0}
+.hero-media figure::after{background:linear-gradient(90deg,rgba(3,28,42,.96) 0%,rgba(3,32,48,.85) 48%,rgba(3,32,48,.38) 100%)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero-grid{display:block}
+.hero-copy{max-width:900px;margin-inline:auto;text-align:center}
+.hero h1,.hero-copy>p{margin-inline:auto}
+.hero-tags,.btns{justify-content:center}
+.capability-strip{margin-top:-42px}
+.section-heading{max-width:900px;margin:0 auto 42px;text-align:center}
+.section-heading .intro{margin:0 auto}
+.service-map-grid{grid-template-columns:1fr 1fr;max-width:1120px;margin-inline:auto}
+.service-map-media{height:300px}
+.service-map-body{padding:14px 28px 28px}
+.cert-grid{max-width:1180px;margin-inline:auto}
+.faq-wrap{max-width:1180px;margin-inline:auto;grid-template-columns:.72fr 1.28fr}
+.contact-card{max-width:1180px;margin-inline:auto}
+@media(max-width:1000px){
+  .service-map-grid{grid-template-columns:1fr}
+  .hero-copy{max-width:760px}
+}
+@media(max-width:760px){
+  .shell{width:min(100% - 28px,1280px)}
+  .section{padding:58px 0}
+  .hero{min-height:820px;padding:122px 0 82px;align-items:center}
+  .hero-media figure:first-child{display:block}
+  .hero-media img{object-position:64% center}
+  .hero::before{background:linear-gradient(180deg,rgba(3,28,42,.55),rgba(3,28,42,.96) 66%)}
+  .hero h1{font-size:clamp(2.75rem,12vw,4.35rem)}
+  .service-map-media{height:245px}
+  .faq-wrap{gap:28px}
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -366,8 +403,7 @@
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <figure><img src="imagenes-cliente-nuevas/n2-sala-ammonia.webp" width="1600" height="1600" alt=""></figure>
-        <figure><img src="imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" alt=""></figure>
+        <figure><img src="climatizacion/climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" alt=""></figure>
       </div>
       <div class="snow-field" id="snowField" aria-hidden="true"></div>
       <div class="shell hero-grid">
@@ -388,11 +424,6 @@
             <a class="btn btn-outline" href="#contacto">Solicitar Información</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Acceso a las áreas principales">
-          <strong>Elige tu Área</strong>
-          <a href="./refrigeracion/index.html"><span>Refrigeración Industrial y Comercial</span><span>01</span></a>
-          <a href="./climatizacion/index.html"><span>Climatización Comercial</span><span>02</span></a>
-        </aside>
       </div>
     </section>
 
@@ -407,39 +438,13 @@
       </div>
     </section>
 
-    <section class="section" id="servicios" aria-labelledby="areas-title">
+    <section class="section" id="servicios" aria-labelledby="services-title">
       <div class="shell">
-        <div class="split-title">
-          <div>
-            <span class="eyebrow">Servicios</span>
-            <h2 id="areas-title">Dos Áreas, un Mismo Servicio Técnico.</h2>
-          </div>
-          <p>Termoelectra reúne soluciones completas de Refrigeración y Climatización: frío industrial, cámaras frigoríficas, aire acondicionado, calefacción y aerotermia, con instalación, reparación y mantenimiento propios.</p>
+        <div class="section-heading">
+          <span class="eyebrow">Áreas de Trabajo</span>
+          <h2 id="services-title">Servicios Ordenados por Especialidad.</h2>
+          <p class="intro">Un resumen claro de las áreas definidas en Refrigeración y Climatización, con acceso directo a cada servicio.</p>
         </div>
-        <div class="area-grid">
-          <article class="area-card refrigeration reveal">
-            <span class="area-label">Área 01</span>
-            <h3>Refrigeración</h3>
-            <p>Soluciones de Refrigeración Comercial e Industrial, junto con Cámaras Frigoríficas y servicio técnico.</p>
-            <div class="area-list"><span>Frío Industrial</span><span>Cámaras Frigoríficas</span><span>Frío Comercial</span></div>
-            <a class="area-link" href="./refrigeracion/index.html">Explorar Refrigeración <i>→</i></a>
-          </article>
-          <article class="area-card climate reveal">
-            <span class="area-label">Área 02</span>
-            <h3>Climatización</h3>
-            <p>Instalación, Reparación y Mantenimiento de Aire Acondicionado, Calefacción y Aerotermia.</p>
-            <div class="area-list"><span>Aire Acondicionado</span><span>Calefacción</span><span>Aerotermia</span></div>
-            <a class="area-link" href="./climatizacion/index.html">Explorar Climatización <i>→</i></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="services-title">
-      <div class="shell">
-        <span class="eyebrow">Áreas de Trabajo</span>
-        <h2 id="services-title">Todo el Servicio Técnico, Ordenado por Especialidad.</h2>
-        <p class="intro">La Home resume las mismas áreas definidas para Refrigeración y Climatización, con acceso directo a la información completa de cada especialidad.</p>
         <div class="service-map-grid">
           <article class="service-map reveal">
             <div class="service-map-media">
@@ -461,9 +466,9 @@
               <div><small>Área 02</small><h3>Climatización</h3></div>
             </div>
             <div class="service-map-body">
-              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>01</b><strong>Instalación de Climatización Comercial</strong><i>→</i></a>
-              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>02</b><strong>Reparación de Climatización Comercial</strong><i>→</i></a>
-              <a class="service-row" href="./climatizacion/index.html#climatizacion"><b>03</b><strong>Mantenimiento de Climatización</strong><i>→</i></a>
+              <a class="service-row" href="./climatizacion/index.html#instalacion-climatizacion-comercial"><b>01</b><strong>Instalación de Climatización Comercial</strong><i>→</i></a>
+              <a class="service-row" href="./climatizacion/index.html#reparacion-climatizacion-comercial"><b>02</b><strong>Reparación de Climatización Comercial</strong><i>→</i></a>
+              <a class="service-row" href="./climatizacion/index.html#mantenimiento-climatizacion"><b>03</b><strong>Mantenimiento de Climatización</strong><i>→</i></a>
               <div class="solution-tags" aria-label="Soluciones de climatización"><span>Aire Acondicionado</span><span>Calefacción</span><span>Aerotermia</span></div>
               <a class="service-map-link" href="./climatizacion/index.html">Ver Climatización Completa <span>→</span></a>
             </div>

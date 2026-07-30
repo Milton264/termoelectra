@@ -13,9 +13,6 @@
 <meta property="og:title" content="Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial · Termoelectra">
 <meta property="og:description" content="Instalación, reparación, SAT y mantenimiento de frío industrial, cámaras frigoríficas y equipos de refrigeración comercial.">
 <link rel="preload" as="image" href="hero-operarios.webp" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --azul:#0b3a66;        /* azul corporativo profundo */
@@ -3624,6 +3621,72 @@ header.is-scrolled{
   #comercial + .alt .gallery{columns:1}
 }
 </style>
+<style>
+/* ===== RECONSTRUCCIÓN FINAL: cinco servicios, imágenes limpias y ritmo compacto ===== */
+.wrap,.carousel-head,.foot-grid,.foot-bottom{max-width:1280px}
+.wrap{padding:78px 32px}
+.carousel-head{padding:76px 32px 34px;text-align:center;margin-inline:auto}
+.carousel-head .eyebrow-sec{justify-content:center}
+.carousel-head h2{max-width:940px;margin-inline:auto;font-size:clamp(2.3rem,4.6vw,4.2rem)}
+.carousel-head p{max-width:760px;margin-inline:auto}
+.hero-inner{max-width:900px;margin-inline:auto;text-align:center}
+.hero-btns{justify-content:center}
+.svc{gap:42px;margin-bottom:24px;grid-template-columns:minmax(0,1fr) minmax(340px,.82fr)}
+.svc.rev{grid-template-columns:minmax(340px,.82fr) minmax(0,1fr)}
+.svc-media,.svc-media.fit-complete{min-height:500px;margin:0!important;border:0;border-radius:24px;background:transparent!important;box-shadow:0 18px 48px rgba(5,49,74,.13)}
+.svc-media::before,.svc-media::after,.svc-media .media-scan{display:none}
+.svc-media img,.svc-media.fit-complete img{
+  width:100%;height:100%!important;min-height:500px;max-height:none;padding:0!important;
+  aspect-ratio:auto;object-fit:cover!important;background:transparent!important;
+}
+.svc-media .tag{left:18px!important}
+.track{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;
+  max-width:1280px;margin-inline:auto;padding:0 32px 78px;overflow:visible;
+}
+.slide,.slide.fit-complete{width:auto;min-width:0;aspect-ratio:16/10;border:0;background:transparent!important;border-radius:22px}
+.slide.fit-complete::before{display:none}
+.slide img,.slide.fit-complete img{position:absolute;inset:0;width:100%;height:100%!important;padding:0;object-fit:cover!important;background:transparent!important}
+.slide::after{background:linear-gradient(180deg,transparent 42%,rgba(3,35,51,.88))}
+#comercial + .alt .gallery{
+  display:grid;columns:auto;grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;gap:14px;
+  max-width:1180px;margin:34px auto 0;
+}
+#comercial + .alt .gallery a,
+#comercial + .alt .gallery a:nth-child(1),
+#comercial + .alt .gallery a:nth-child(4),
+#comercial + .alt .gallery a:nth-child(7){
+  display:block;width:auto;height:auto!important;margin:0;aspect-ratio:4/3;
+  grid-column:auto!important;grid-row:auto!important;border:0;border-radius:20px;background:transparent!important;
+}
+#comercial + .alt .gallery a.g-wide{grid-column:auto!important;aspect-ratio:4/3}
+#comercial + .alt .gallery a img{width:100%;height:100%!important;object-fit:cover;background:transparent!important}
+#comercial + .alt .gallery a.g-wide img{object-position:center}
+#comercial + .alt .gallery.reveal a{opacity:1!important;transform:none!important}
+@media(max-width:1000px){
+  .svc,.svc.rev{grid-template-columns:1fr 1fr;gap:28px}
+  .svc-media,.svc-media.fit-complete,.svc-media img,.svc-media.fit-complete img{min-height:450px}
+  #comercial + .alt .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .wrap{padding:56px 18px}
+  .carousel-head{padding:56px 18px 28px}
+  .track{grid-template-columns:1fr;padding:0 18px 56px}
+  .slide,.slide.fit-complete{aspect-ratio:16/10}
+  .slide.fit-complete img,.slide.fit-complete:first-child img{height:100%!important;padding:0}
+  .svc,.svc.rev{display:flex;flex-direction:column;gap:0}
+  .svc.rev .svc-media{order:0}
+  .svc-media,.svc-media.fit-complete{width:100%;min-height:0;aspect-ratio:4/3;border-radius:22px 22px 0 0}
+  .svc-media img,.svc-media.fit-complete img{min-height:0}
+  .svc-body{padding:28px 4px 10px}
+  #comercial + .alt .gallery{grid-template-columns:1fr 1fr}
+  #comercial + .alt .gallery a.g-wide{grid-column:auto!important}
+}
+@media(max-width:430px){
+  #comercial + .alt .gallery{grid-template-columns:1fr}
+  #comercial + .alt .gallery a.g-wide{grid-column:auto!important}
+}
+</style>
 </head>
 <body>
 
@@ -3689,27 +3752,6 @@ header.is-scrolled{
         <span class="tag">Servicio técnico propio</span>
       </div>
     </div>
-    <aside class="cold-system-visual reveal" aria-label="Recurso visual del funcionamiento de un sistema frigorífico">
-      <div class="cold-system-copy">
-        <small>Recorrido interactivo</small>
-        <h3>El frío es un sistema, no una sola máquina.</h3>
-        <p id="systemDescription">Dentro de la cámara, el evaporador absorbe calor y ayuda a mantener el recinto a la temperatura configurada.</p>
-        <div class="system-controls" role="tablist" aria-label="Partes del recorrido frigorífico">
-          <button class="system-control" type="button" role="tab" aria-selected="true" data-system-step="camara"><span>01</span>Cámara</button>
-          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="compresion"><span>02</span>Compresión</button>
-          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="condensacion"><span>03</span>Condensación</button>
-          <button class="system-control" type="button" role="tab" aria-selected="false" data-system-step="control"><span>04</span>Control</button>
-        </div>
-      </div>
-      <div class="cold-system-media" id="coldSystemMedia" data-active="camara">
-        <img src="ciclo-frigorifico-3d.webp" alt="Ilustración tridimensional del ciclo de refrigeración industrial" loading="lazy" decoding="async" width="1600" height="900">
-        <button class="cold-node n1 is-active" type="button" data-system-step="camara" aria-label="Mostrar Cámara"><span>Cámara</span></button>
-        <button class="cold-node n2" type="button" data-system-step="compresion" aria-label="Mostrar Compresión"><span>Compresión</span></button>
-        <button class="cold-node n3" type="button" data-system-step="condensacion" aria-label="Mostrar Condensación"><span>Condensación</span></button>
-        <button class="cold-node n4" type="button" data-system-step="control" aria-label="Mostrar Control"><span>Control</span></button>
-        <div class="system-readout" aria-live="polite"><small id="systemKicker">01 · ABSORCIÓN</small><strong id="systemLabel">Cámara</strong></div>
-      </div>
-    </aside>
   </div>
 </section>
 
@@ -3799,33 +3841,6 @@ header.is-scrolled{
   </div>
 </section>
 
-<!-- PROCESO -->
-<section class="process-sec">
-  <div class="wrap">
-    <span class="eyebrow-sec reveal">Servicios de Refrigeración</span>
-    <h2 class="sec-title reveal d1">Instalación, Reparación, Mantenimiento y SAT</h2>
-    <p class="sec-lead reveal d2">Las principales áreas de servicio descritas por Termoelectra para Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial.</p>
-    <div class="steps">
-      <article class="step reveal open">
-        <button class="step-toggle" type="button" aria-expanded="true"><span class="step-num">01</span><span class="step-title">Instalación</span><span class="step-plus" aria-hidden="true">+</span></button>
-        <div class="step-detail"><p>Instalación de sistemas de Frío Industrial y Cámaras Frigoríficas adaptados a las necesidades de cada cliente.</p></div>
-      </article>
-      <article class="step reveal d1">
-        <button class="step-toggle" type="button" aria-expanded="false"><span class="step-num">02</span><span class="step-title">Reparación</span><span class="step-plus" aria-hidden="true">+</span></button>
-        <div class="step-detail"><p>Reparación de equipos de Refrigeración Industrial y atención de averías en Cámaras Frigoríficas.</p></div>
-      </article>
-      <article class="step reveal d2">
-        <button class="step-toggle" type="button" aria-expanded="false"><span class="step-num">03</span><span class="step-title">Mantenimiento</span><span class="step-plus" aria-hidden="true">+</span></button>
-        <div class="step-detail"><p>Mantenimiento preventivo y correctivo de Cámaras de Refrigeración y equipos de Frío Industrial.</p></div>
-      </article>
-      <article class="step reveal d3">
-        <button class="step-toggle" type="button" aria-expanded="false"><span class="step-num">04</span><span class="step-title">SAT Propio</span><span class="step-plus" aria-hidden="true">+</span></button>
-        <div class="step-detail"><p>Servicio SAT propio para Frío Industrial con intervención técnica en menos de 24 horas.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section id="comercial">
   <div class="wrap">
     <div class="svc rev">
@@ -3868,55 +3883,6 @@ header.is-scrolled{
   </div>
 </section>
 
-<section id="certificaciones">
-  <div class="wrap">
-    <span class="eyebrow-sec reveal">Garantía y normativa</span>
-    <h2 class="sec-title reveal d1">Nuestras Certificaciones</h2>
-    <p class="sec-lead reveal d2">En Termoelectra disponemos de todas las certificaciones necesarias que nos acreditan como empresa profesional para realizar instalaciones, mantenimiento y reparaciones con total garantía de calidad y cumplimiento normativo.</p>
-    <div class="certs reveal">
-      <div class="cert"><div class="cn">RITE</div><p>Empresa instaladora y mantenedora de instalaciones térmicas en edificios.</p></div>
-      <div class="cert"><div class="cn">REIF</div><p>Empresa instaladora y mantenedora de frío industrial (Nivel 1).</p></div>
-      <div class="cert"><div class="cn">IGII-B</div><p>Empresa instaladora de gas en instalaciones comunes en edificios.</p></div>
-      <div class="cert"><div class="cn">Gases fluorados</div><p>Manipulación de gases fluorados — todas las cargas.</p></div>
-      <div class="cert"><div class="cn">RASIC</div><p>Nº 00500538.</p></div>
-    </div>
-    <article class="service-showcase reveal" aria-label="Explorador visual de los servicios de refrigeración">
-      <div class="showcase-visual" id="showcaseVisual">
-        <img id="showcaseImage" src="sala-maquinas.webp" alt="Sala de máquinas de una instalación de Frío Industrial" loading="lazy" decoding="async" width="1400" height="1050">
-        <span class="showcase-scan" aria-hidden="true"></span>
-        <span class="showcase-corner c1" aria-hidden="true"></span>
-        <span class="showcase-corner c2" aria-hidden="true"></span>
-        <div class="showcase-caption"><small id="showcaseIndex">ÁREA 01</small><strong id="showcaseCaption">Frío Industrial</strong></div>
-      </div>
-      <div class="showcase-panel">
-        <small>Explorador visual</small>
-        <h3 id="showcaseTitle">Refrigeración y Frío Industrial</h3>
-        <p id="showcaseText">Instalación y mantenimiento de sistemas de Refrigeración Industrial para naves y procesos productivos, además de reparación y SAT propio.</p>
-        <div class="showcase-tabs" role="tablist" aria-label="Seleccionar área de servicio">
-          <button type="button" role="tab" aria-selected="true" data-showcase="industrial"><span>01</span>Frío Industrial</button>
-          <button type="button" role="tab" aria-selected="false" data-showcase="camaras"><span>02</span>Cámaras Frigoríficas</button>
-          <button type="button" role="tab" aria-selected="false" data-showcase="comercial"><span>03</span>Refrigeración Comercial</button>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <span class="eyebrow-sec reveal">Preguntas frecuentes</span>
-    <h2 class="sec-title reveal d1">FAQ</h2>
-    <div class="reveal d2">
-      <div class="faq-item"><button class="faq-q">¿Qué tipo de sistemas instaláis?</button><div class="faq-a"><p>Instalamos, reparamos y mantenemos sistemas de Refrigeración Industrial, Cámaras Frigoríficas y Refrigeración Comercial. Para cualquier otra necesidad de climatización, consulta directamente con Termoelectra.</p></div></div>
-      <div class="faq-item"><button class="faq-q">¿Qué es la aerotermia y por qué es una buena opción?</button><div class="faq-a"><p>La aerotermia aprovecha energía del aire exterior para climatización y producción de agua caliente. Su conveniencia depende de las características y necesidades concretas de cada instalación.</p></div></div>
-      <div class="faq-item"><button class="faq-q">¿Ayudáis con la eficiencia energética y el ahorro?</button><div class="faq-a"><p>El mantenimiento preventivo y correctivo ayuda a conservar el funcionamiento de los equipos. En Cámaras de Refrigeración, un buen mantenimiento favorece la eficiencia energética, el ahorro y la seguridad alimentaria.</p></div></div>
-      <div class="faq-item"><button class="faq-q">¿Qué servicios ofrecéis exactamente?</button><div class="faq-a"><p>Instalación, reparación y mantenimiento de Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial, además de SAT propio para Frío Industrial.</p></div></div>
-      <div class="faq-item"><button class="faq-q">¿En qué zonas trabajáis?</button><div class="faq-a"><p>Damos servicio en nuestra zona de actuación habitual. Contáctanos indicándonos tu ubicación y te confirmamos la disponibilidad y los plazos de intervención.</p></div></div>
-      <div class="faq-item"><button class="faq-q">¿Qué ventajas tiene contratar instalación y mantenimiento con la misma empresa?</button><div class="faq-a"><p>Permite centralizar la información de la instalación y su mantenimiento con un mismo equipo. Las condiciones y el alcance concreto dependen del servicio contratado.</p></div></div>
-    </div>
-  </div>
-</section>
-
 <section id="contacto">
   <div class="wrap">
     <div class="contact-box reveal">
@@ -3955,7 +3921,7 @@ header.is-scrolled{
         <li><a href="#industrial">Frío Industrial</a></li>
         <li><a href="#camaras">Cámaras Frigoríficas</a></li>
         <li><a href="#comercial">Refrigeración Comercial</a></li>
-        <li><a href="#certificaciones">Mantenimiento</a></li>
+        <li><a href="#mantenimiento-camaras-frigorificas">Mantenimiento</a></li>
       </ul>
     </div>
     <div>
@@ -3986,7 +3952,7 @@ header.is-scrolled{
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería de proyectos">
   <button class="lb-close" id="lbClose" aria-label="Cerrar imagen">×</button>
   <button class="lb-nav lb-prev" id="lbPrev">‹</button>
-    <img id="lbImg" alt="">
+    <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="1" height="1">
   <button class="lb-nav lb-next" id="lbNext">›</button>
   <div class="lb-meta" aria-live="polite">
     <span class="lb-count" id="lbCount"></span>
