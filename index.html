@@ -351,6 +351,34 @@
 .hero-media figure{position:absolute;inset:0}
 .hero-media figure::after{background:linear-gradient(90deg,rgba(3,28,42,.96) 0%,rgba(3,32,48,.85) 48%,rgba(3,32,48,.38) 100%)}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.home-energy-flow{position:absolute;z-index:-2;inset:0;overflow:hidden;pointer-events:none}
+.home-energy-flow::after{
+  content:"";position:absolute;left:50%;top:48%;width:min(74vw,980px);aspect-ratio:1;
+  border-radius:50%;background:radial-gradient(circle,rgba(102,218,244,.16),transparent 66%);
+  transform:translate(-50%,-50%);animation:homeEnergyPulse 6s ease-in-out infinite alternate;
+}
+.home-energy-flow span{
+  position:absolute;left:-24%;width:clamp(120px,17vw,260px);height:2px;border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(170,239,255,.9),transparent);
+  box-shadow:0 0 14px rgba(126,224,246,.55);opacity:0;
+  animation:homeEnergyStream var(--stream-time,11s) linear infinite;
+  animation-delay:var(--stream-delay,0s);
+}
+.home-energy-flow span:nth-child(1){top:19%;--stream-time:11s;--stream-delay:-3s}
+.home-energy-flow span:nth-child(2){top:34%;--stream-time:14s;--stream-delay:-9s;width:190px}
+.home-energy-flow span:nth-child(3){top:52%;--stream-time:9s;--stream-delay:-5s;width:135px}
+.home-energy-flow span:nth-child(4){top:68%;--stream-time:13s;--stream-delay:-11s;background:linear-gradient(90deg,transparent,rgba(226,76,91,.76),rgba(163,229,247,.78),transparent)}
+.home-energy-flow span:nth-child(5){top:82%;--stream-time:16s;--stream-delay:-7s;width:220px}
+@keyframes homeEnergyStream{
+  0%{transform:translate3d(-8vw,22px,0) skewX(-14deg);opacity:0}
+  12%{opacity:.7}
+  78%{opacity:.45}
+  100%{transform:translate3d(150vw,-34px,0) skewX(-14deg);opacity:0}
+}
+@keyframes homeEnergyPulse{
+  from{opacity:.35;transform:translate(-50%,-50%) scale(.88)}
+  to{opacity:.8;transform:translate(-50%,-50%) scale(1.08)}
+}
 .hero-grid{display:block}
 .hero-copy{max-width:900px;margin-inline:auto;text-align:center}
 .hero h1,.hero-copy>p{margin-inline:auto}
@@ -405,6 +433,7 @@
       <div class="hero-media" aria-hidden="true">
         <figure><img src="climatizacion/climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" alt=""></figure>
       </div>
+      <div class="home-energy-flow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <div class="snow-field" id="snowField" aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy">
