@@ -793,6 +793,476 @@
     }
   </style>
 
+
+  <style id="unified-hero-v5">
+    /* =========================================================
+       V5 · CABECERA + HERO UNIFICADOS EN LAS TRES PÁGINAS
+       Mismo sistema visual; solo cambia el contenido de cada área.
+       ========================================================= */
+    .shared-header,
+    .site-header.shared-header{
+      position:fixed!important;
+      top:0!important;
+      right:0!important;
+      left:0!important;
+      z-index:1200!important;
+      width:auto!important;
+      padding:14px 18px 0!important;
+      background:transparent!important;
+      border:0!important;
+      border-radius:0!important;
+      box-shadow:none!important;
+      transform:translateY(0);
+      transition:transform .28s ease,padding .25s ease!important;
+    }
+    .shared-header.is-hidden{transform:translateY(-120%)!important}
+    .shared-header .shared-nav{
+      width:min(1540px,100%)!important;
+      max-width:1540px!important;
+      min-height:72px!important;
+      margin:0 auto!important;
+      padding:9px 11px 9px 16px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:space-between!important;
+      gap:24px!important;
+      border:1px solid rgba(124,221,243,.27)!important;
+      border-radius:19px!important;
+      background:linear-gradient(100deg,rgba(3,35,52,.95),rgba(6,86,113,.92))!important;
+      box-shadow:0 18px 48px rgba(0,25,39,.24)!important;
+      backdrop-filter:blur(18px)!important;
+      -webkit-backdrop-filter:blur(18px)!important;
+    }
+    .shared-header.scrolled .shared-nav,
+    .shared-header.is-scrolled .shared-nav{
+      background:linear-gradient(100deg,rgba(3,31,47,.98),rgba(5,75,99,.97))!important;
+      box-shadow:0 12px 34px rgba(0,23,36,.3)!important;
+    }
+    .shared-header .shared-brand{
+      width:148px!important;
+      min-width:148px!important;
+      height:50px!important;
+      padding:7px 13px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:flex-start!important;
+      border:1px solid rgba(255,255,255,.7)!important;
+      border-radius:13px!important;
+      background:#fff!important;
+      box-shadow:none!important;
+    }
+    .shared-header .shared-logo,
+    .shared-header .nav-logo.shared-logo{
+      width:116px!important;
+      max-width:116px!important;
+      height:35px!important;
+      max-height:35px!important;
+      object-fit:contain!important;
+      object-position:left center!important;
+      padding:0!important;
+      margin:0!important;
+      background:transparent!important;
+      border-radius:0!important;
+    }
+    .shared-header .shared-nav-links{
+      display:flex!important;
+      align-items:center!important;
+      justify-content:flex-end!important;
+      gap:5px!important;
+      margin:0!important;
+    }
+    .shared-header .shared-nav-links a,
+    .shared-header .shared-nav-links a:not(.nav-cta){
+      min-height:44px!important;
+      padding:0 17px!important;
+      display:inline-flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      border:1px solid transparent!important;
+      border-radius:12px!important;
+      background:transparent!important;
+      color:#fff!important;
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
+      font-size:.9rem!important;
+      font-weight:850!important;
+      line-height:1!important;
+      box-shadow:none!important;
+      text-shadow:none!important;
+      transition:background .2s ease,border-color .2s ease,transform .2s ease!important;
+    }
+    .shared-header .shared-nav-links a::after{display:none!important}
+    .shared-header .shared-nav-links a:hover{
+      background:rgba(255,255,255,.1)!important;
+      border-color:rgba(255,255,255,.14)!important;
+      transform:translateY(-1px)!important;
+    }
+    .shared-header .shared-nav-links a.is-current,
+    .shared-header .shared-nav-links a.active,
+    .shared-header .shared-nav-links a[aria-current="page"]{
+      background:rgba(113,218,241,.18)!important;
+      border-color:rgba(135,226,246,.3)!important;
+      color:#dff9ff!important;
+    }
+    .shared-header .shared-nav-links .shared-contact,
+    .shared-header .shared-nav-links .nav-cta.shared-contact,
+    .shared-header .shared-nav-links .contact-link.shared-contact{
+      margin-left:5px!important;
+      padding-inline:21px!important;
+      background:#fff!important;
+      border-color:#fff!important;
+      color:#06334b!important;
+    }
+    .shared-header .shared-nav-links .shared-contact:hover,
+    .shared-header .shared-nav-links .nav-cta.shared-contact:hover,
+    .shared-header .shared-nav-links .contact-link.shared-contact:hover{
+      background:#bceffc!important;
+      border-color:#bceffc!important;
+      color:#052e44!important;
+    }
+    .shared-header .shared-menu{
+      display:none!important;
+      width:46px!important;
+      height:46px!important;
+      padding:10px!important;
+      border:1px solid rgba(255,255,255,.25)!important;
+      border-radius:12px!important;
+      background:rgba(255,255,255,.08)!important;
+      cursor:pointer!important;
+    }
+    .shared-header .shared-menu::before,
+    .shared-header .shared-menu::after{content:none!important}
+    .shared-header .shared-menu span{
+      display:block!important;
+      width:23px!important;
+      height:2px!important;
+      margin:4px auto!important;
+      border-radius:20px!important;
+      background:#fff!important;
+      opacity:1!important;
+      transform:none;
+      transition:transform .25s ease,opacity .2s ease!important;
+    }
+    .shared-header .shared-menu.active span:nth-child(1),
+    .shared-header .shared-menu.x span:nth-child(1){transform:translateY(6px) rotate(45deg)!important}
+    .shared-header .shared-menu.active span:nth-child(2),
+    .shared-header .shared-menu.x span:nth-child(2){opacity:0!important}
+    .shared-header .shared-menu.active span:nth-child(3),
+    .shared-header .shared-menu.x span:nth-child(3){transform:translateY(-6px) rotate(-45deg)!important}
+
+    .unified-hero{
+      --hero-position:center;
+      position:relative;
+      min-height:820px;
+      padding:136px 0 92px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+      color:#fff;
+      background:#04283c;
+    }
+    .unified-hero::before{
+      content:"";
+      position:absolute;
+      z-index:-3;
+      inset:0;
+      background-image:
+        linear-gradient(90deg,rgba(2,27,41,.98) 0%,rgba(3,39,58,.94) 43%,rgba(3,39,58,.64) 66%,rgba(3,35,52,.35) 100%),
+        linear-gradient(0deg,rgba(2,31,47,.45),rgba(2,31,47,.05)),
+        var(--hero-image);
+      background-size:cover;
+      background-position:var(--hero-position);
+      transform:translateY(var(--hero-shift,0));
+      transition:transform .15s linear;
+    }
+    .unified-hero::after{
+      content:"";
+      position:absolute;
+      z-index:-2;
+      inset:0;
+      pointer-events:none;
+      opacity:.21;
+      background-image:
+        linear-gradient(rgba(154,231,249,.18) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(154,231,249,.18) 1px,transparent 1px);
+      background-size:76px 76px;
+      mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.6) 50%,transparent 88%);
+      -webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.6) 50%,transparent 88%);
+    }
+    .unified-hero__glow{
+      position:absolute;
+      z-index:-1;
+      right:-160px;
+      bottom:-260px;
+      width:660px;
+      height:660px;
+      border:1px solid rgba(118,224,246,.28);
+      border-radius:50%;
+      box-shadow:0 0 0 78px rgba(94,210,236,.035),0 0 0 156px rgba(94,210,236,.02);
+      pointer-events:none;
+      animation:unifiedPulse 6s ease-in-out infinite;
+    }
+    .unified-hero__flow{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .unified-hero__flow i{
+      position:absolute;
+      left:-16%;
+      width:140px;
+      height:2px;
+      border-radius:100%;
+      background:linear-gradient(90deg,transparent,rgba(164,235,250,.8),transparent);
+      opacity:.55;
+      animation:unifiedFlow var(--flow-time,12s) linear infinite;
+      animation-delay:var(--flow-delay,0s);
+    }
+    .unified-hero__flow i:nth-child(1){top:24%;--flow-time:12s;--flow-delay:-2s}
+    .unified-hero__flow i:nth-child(2){top:46%;width:190px;--flow-time:16s;--flow-delay:-8s}
+    .unified-hero__flow i:nth-child(3){top:69%;width:110px;--flow-time:10s;--flow-delay:-5s}
+    .unified-hero__inner{
+      width:min(1540px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(330px,.55fr);
+      align-items:center;
+      gap:clamp(42px,6vw,96px);
+    }
+    .unified-hero__copy{max-width:880px}
+    .unified-hero__eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:25px;
+      padding:9px 15px;
+      border:1px solid rgba(173,233,247,.4);
+      border-radius:999px;
+      background:rgba(4,49,72,.42);
+      color:#d8f7ff;
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+    .unified-hero__eyebrow::before{
+      content:"";
+      width:30px;
+      height:3px;
+      border-radius:10px;
+      background:linear-gradient(90deg,#d8273c 0 42%,#74dcef 42%);
+    }
+    .unified-hero h1{
+      max-width:880px;
+      margin:0 0 27px;
+      color:#fff;
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      font-size:clamp(3.65rem,5.6vw,6.65rem);
+      font-weight:900;
+      letter-spacing:-.065em;
+      line-height:.9;
+      text-wrap:balance;
+      text-shadow:0 18px 52px rgba(0,0,0,.27);
+    }
+    .unified-hero h1 span{display:block}
+    .unified-hero h1 .unified-accent{color:#afefff}
+    .unified-hero__copy>p{
+      max-width:760px;
+      margin:0 0 33px;
+      color:rgba(241,251,255,.9);
+      font-size:clamp(1.04rem,1.3vw,1.23rem);
+      line-height:1.7;
+    }
+    .unified-hero__actions{display:flex;flex-wrap:wrap;gap:12px}
+    .unified-hero__button{
+      min-height:55px;
+      padding:0 25px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      font-size:.94rem;
+      font-weight:900;
+      transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+    }
+    .unified-hero__button:hover{transform:translateY(-2px);background:rgba(255,255,255,.15)}
+    .unified-hero__button--primary{
+      border-color:#fff;
+      background:#fff;
+      color:#06354e;
+      box-shadow:0 13px 32px rgba(0,0,0,.18);
+    }
+    .unified-hero__button--primary:hover{background:#dff8ff;color:#052f46}
+    .unified-hero__button--wa{border-color:#20cf68;background:#20cf68;color:#fff}
+    .unified-hero__button svg{width:20px;height:20px;flex:0 0 auto}
+    .unified-hero__panel{
+      width:100%;
+      max-width:390px;
+      justify-self:end;
+      padding:27px;
+      border:1px solid rgba(164,228,243,.34);
+      border-radius:25px;
+      background:linear-gradient(145deg,rgba(4,50,73,.83),rgba(4,43,64,.7));
+      box-shadow:0 24px 58px rgba(0,19,30,.25);
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+    }
+    .unified-hero__panel>strong{
+      display:block;
+      margin-bottom:12px;
+      color:#d8f7ff;
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+    .unified-hero__row{
+      min-height:88px;
+      padding:14px 0;
+      display:grid;
+      grid-template-columns:52px 1fr;
+      align-items:center;
+      gap:14px;
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+    .unified-hero__row:first-of-type{border-top:0}
+    .unified-hero__icon{
+      width:50px;
+      height:50px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(151,226,243,.28);
+      border-radius:15px;
+      background:rgba(119,218,240,.12);
+      color:#a8edfb;
+    }
+    .unified-hero__icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .unified-hero__row b{display:block;margin-bottom:4px;color:#fff;font-size:1rem}
+    .unified-hero__row span{display:block;color:#c5dfe8;font-size:.87rem;line-height:1.45}
+
+    .unified-capability-wrap{
+      position:relative;
+      z-index:6;
+      margin-top:-54px;
+      padding:0 0 44px;
+      background:linear-gradient(to bottom,transparent 0 54px,#fff 54px 100%);
+    }
+    .unified-capability{
+      width:min(1540px,calc(100% - 72px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      overflow:hidden;
+      border:1px solid #c9e8f2;
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 22px 62px rgba(5,55,82,.13);
+    }
+    .unified-capability__item{
+      min-height:112px;
+      padding:23px 24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border-right:1px solid #d6eaf1;
+    }
+    .unified-capability__item:last-child{border-right:0}
+    .unified-capability__item strong{display:block;margin-bottom:5px;color:#073b57;font-size:1.03rem}
+    .unified-capability__item span{color:#5a7486;font-size:.9rem;line-height:1.45}
+
+    @keyframes unifiedFlow{to{transform:translateX(130vw) translateY(-28px)}}
+    @keyframes unifiedPulse{0%,100%{transform:scale(.98);opacity:.68}50%{transform:scale(1.03);opacity:1}}
+
+    @media(max-width:1100px){
+      .unified-hero{min-height:780px}
+      .unified-hero__inner{grid-template-columns:minmax(0,1fr) 330px;gap:38px}
+      .unified-hero h1{font-size:clamp(3.45rem,6.1vw,5.7rem)}
+      .unified-hero__panel{padding:22px}
+    }
+    @media(max-width:900px){
+      .shared-header,
+      .site-header.shared-header{padding:9px 9px 0!important}
+      .shared-header .shared-nav{min-height:66px!important;padding:8px 9px 8px 12px!important;border-radius:16px!important}
+      .shared-header .shared-brand{width:136px!important;min-width:136px!important;height:48px!important}
+      .shared-header .shared-logo,
+      .shared-header .nav-logo.shared-logo{width:108px!important;max-width:108px!important;height:32px!important}
+      .shared-header .shared-menu{display:block!important;flex:0 0 auto!important}
+      .shared-header .shared-nav-links{
+        position:fixed!important;
+        z-index:1302!important;
+        top:0!important;
+        right:0!important;
+        bottom:0!important;
+        width:min(84vw,360px)!important;
+        padding:105px 26px 34px!important;
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        justify-content:flex-start!important;
+        gap:9px!important;
+        background:linear-gradient(160deg,#042a40,#09617f)!important;
+        border-left:1px solid rgba(151,226,243,.25)!important;
+        transform:translateX(105%)!important;
+        transition:transform .32s cubic-bezier(.2,.7,.2,1)!important;
+        box-shadow:-18px 0 48px rgba(0,20,31,.32)!important;
+      }
+      .shared-header .shared-nav-links.open{transform:translateX(0)!important}
+      .shared-header .shared-nav-links a,
+      .shared-header .shared-nav-links a:not(.nav-cta){
+        width:100%!important;
+        min-height:54px!important;
+        justify-content:flex-start!important;
+        padding:0 18px!important;
+        font-size:1.02rem!important;
+      }
+      .shared-header .shared-nav-links .shared-contact,
+      .shared-header .shared-nav-links .nav-cta.shared-contact,
+      .shared-header .shared-nav-links .contact-link.shared-contact{margin:8px 0 0!important;justify-content:center!important}
+      .shared-menu-overlay,
+      .menu-overlay.shared-menu-overlay{
+        position:fixed!important;
+        z-index:1190!important;
+        inset:0!important;
+        background:rgba(1,20,31,.68)!important;
+        backdrop-filter:blur(6px)!important;
+        -webkit-backdrop-filter:blur(6px)!important;
+      }
+      .unified-hero{min-height:auto;padding:118px 0 105px;align-items:flex-start}
+      .unified-hero__inner{width:min(100% - 36px,760px);grid-template-columns:1fr;gap:34px}
+      .unified-hero__copy{max-width:760px}
+      .unified-hero h1{font-size:clamp(3.25rem,10vw,5.25rem)}
+      .unified-hero__panel{max-width:none;justify-self:stretch;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px}
+      .unified-hero__panel>strong{grid-column:1/-1;margin:2px 5px 4px}
+      .unified-hero__row{min-height:0;padding:14px 12px;grid-template-columns:1fr;border:1px solid rgba(255,255,255,.13)!important;border-radius:16px;text-align:left}
+      .unified-hero__icon{width:43px;height:43px}
+      .unified-capability-wrap{margin-top:-42px;background:linear-gradient(to bottom,transparent 0 42px,#fff 42px 100%)}
+      .unified-capability{width:min(100% - 36px,760px);grid-template-columns:repeat(2,1fr)}
+      .unified-capability__item:nth-child(2){border-right:0}
+      .unified-capability__item:nth-child(-n+2){border-bottom:1px solid #d6eaf1}
+    }
+    @media(max-width:620px){
+      .unified-hero{padding-bottom:86px}
+      .unified-hero::before{background-image:linear-gradient(90deg,rgba(2,27,41,.97),rgba(3,39,58,.82)),var(--hero-image);background-position:var(--hero-position)}
+      .unified-hero__inner{width:calc(100% - 28px)}
+      .unified-hero__eyebrow{padding:8px 12px;font-size:.66rem;letter-spacing:.1em}
+      .unified-hero h1{font-size:clamp(2.85rem,14vw,4.45rem);line-height:.92}
+      .unified-hero__copy>p{font-size:1rem;line-height:1.62}
+      .unified-hero__actions{display:grid;grid-template-columns:1fr}
+      .unified-hero__button{width:100%}
+      .unified-hero__panel{grid-template-columns:1fr;padding:15px}
+      .unified-hero__row{grid-template-columns:46px 1fr}
+      .unified-capability{width:calc(100% - 28px);grid-template-columns:1fr}
+      .unified-capability__item{min-height:92px;border-right:0!important;border-bottom:1px solid #d6eaf1!important}
+      .unified-capability__item:last-child{border-bottom:0!important}
+      .unified-capability-wrap{padding-bottom:30px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .unified-hero__flow i,.unified-hero__glow{animation:none!important}
+      .unified-hero::before{transform:none!important}
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -814,42 +1284,45 @@
   <div class="shared-menu-overlay" id="menuOverlay"></div>
 
   <main id="contenido">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <figure><img src="climatizacion/climatizacion-assets/climatizacion-interior.webp" width="1600" height="1200" alt=""></figure>
-      </div>
-      <div class="home-energy-flow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Termoelectra</span>
-          <h1 id="hero-title">Refrigeración y <span class="ice">Climatización.</span></h1>
+    <section class="unified-hero unified-hero--home" aria-labelledby="hero-title" style="--hero-image:url('climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
+      <div class="unified-hero__flow" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="unified-hero__glow" aria-hidden="true"></div>
+      <div class="unified-hero__inner">
+        <div class="unified-hero__copy">
+          <span class="unified-hero__eyebrow">Termoelectra · Servicio Técnico</span>
+          <h1 id="hero-title"><span>Refrigeración y</span><span class="unified-accent">Climatización.</span></h1>
           <p>Instalación, Reparación y Mantenimiento con Servicio Técnico para sistemas de Refrigeración, Frío Industrial y Climatización.</p>
-          <div class="hero-tags" aria-label="Áreas de servicio">
-            <span class="hero-tag">Frío Industrial</span>
-            <span class="hero-tag">Cámaras Frigoríficas</span>
-            <span class="hero-tag">Refrigeración Comercial</span>
-            <span class="hero-tag">Aire Acondicionado</span>
-            <span class="hero-tag">Calefacción</span>
-            <span class="hero-tag">Aerotermia</span>
-          </div>
-          <div class="btns">
-            <a class="btn btn-light" href="#servicios">Ver Servicios</a>
-            <a class="btn btn-outline" href="#contacto">Solicitar Información</a>
+          <div class="unified-hero__actions">
+            <a class="unified-hero__button unified-hero__button--primary" href="#servicios">Ver Servicios</a>
+            <a class="unified-hero__button unified-hero__button--wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>Consultar por WhatsApp</a>
           </div>
         </div>
+        <aside class="unified-hero__panel" aria-label="Áreas de servicio">
+          <strong>Áreas de servicio</strong>
+          <div class="unified-hero__row">
+            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M4 20V8l5 3V7l5 3V4h5v16M3 20h18M7 15h2M12 15h2M17 15h2"/></svg></div>
+            <div><b>Frío Industrial</b><span>Instalación, reparación y mantenimiento técnico.</span></div>
+          </div>
+          <div class="unified-hero__row">
+            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 5v14M16 5v14M4 10h16M11 14h2"/></svg></div>
+            <div><b>Cámaras Frigoríficas</b><span>Soluciones industriales y comerciales.</span></div>
+          </div>
+          <div class="unified-hero__row">
+            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 6l14 12M19 6 5 18M4 12h16"/></svg></div>
+            <div><b>Climatización</b><span>Aire acondicionado, calefacción y aerotermia.</span></div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="capability-strip" aria-label="Resumen de capacidades">
-      <div class="shell">
-        <div class="capability-grid">
-          <div class="capability-item"><strong>Servicio Técnico</strong><span>Atención para Refrigeración y Climatización.</span></div>
-          <div class="capability-item"><strong>Instalación</strong><span>Sistemas comerciales e industriales.</span></div>
-          <div class="capability-item"><strong>Reparación</strong><span>Diagnóstico e intervención sobre equipos.</span></div>
-          <div class="capability-item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
-        </div>
+    <div class="unified-capability-wrap" aria-label="Resumen de servicios">
+      <div class="unified-capability">
+        <div class="unified-capability__item"><strong>Servicio Técnico</strong><span>Atención técnica para cada sistema e instalación.</span></div>
+        <div class="unified-capability__item"><strong>Instalación</strong><span>Soluciones comerciales e industriales.</span></div>
+        <div class="unified-capability__item"><strong>Reparación</strong><span>Diagnóstico e intervención sobre equipos.</span></div>
+        <div class="unified-capability__item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
       </div>
-    </section>
+    </div>
 
     <section class="section" id="servicios" aria-labelledby="services-title">
       <div class="shell">
