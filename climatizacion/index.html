@@ -1005,6 +1005,255 @@
 }
 
 </style>
+  <style id="header-redesign-v4">
+    /* Barra superior compacta: sustituye el contenedor blanco flotante. */
+    .shared-header{
+      position:fixed!important;
+      z-index:1200!important;
+      top:0!important;
+      right:0!important;
+      left:0!important;
+      width:100%!important;
+      padding:0 18px!important;
+      border:0!important;
+      border-radius:0!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      backdrop-filter:none!important;
+      -webkit-backdrop-filter:none!important;
+      transform:none;
+    }
+    .shared-header.scrolled,
+    .shared-header.is-scrolled{
+      top:0!important;
+      padding:0 18px!important;
+      border:0!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      backdrop-filter:none!important;
+      -webkit-backdrop-filter:none!important;
+    }
+    .shared-header .shared-nav{
+      width:100%!important;
+      max-width:1500px!important;
+      min-height:66px!important;
+      margin:0 auto!important;
+      padding:8px 12px 8px 16px!important;
+      border:1px solid rgba(135,222,244,.22)!important;
+      border-top:0!important;
+      border-radius:0 0 22px 22px!important;
+      background:
+        linear-gradient(110deg,rgba(4,34,51,.985),rgba(5,61,84,.975) 58%,rgba(7,103,135,.96))!important;
+      box-shadow:0 14px 34px rgba(2,24,37,.22)!important;
+      backdrop-filter:blur(16px)!important;
+      -webkit-backdrop-filter:blur(16px)!important;
+    }
+    .shared-header .shared-brand{
+      width:158px!important;
+      min-width:158px!important;
+      height:46px!important;
+      padding:5px 12px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:flex-start!important;
+      border:1px solid rgba(255,255,255,.8)!important;
+      border-radius:13px!important;
+      background:rgba(255,255,255,.97)!important;
+      box-shadow:none!important;
+    }
+    .shared-header .shared-logo,
+    .shared-header .nav-logo.shared-logo{
+      width:132px!important;
+      height:36px!important;
+      max-width:132px!important;
+      object-fit:contain!important;
+      object-position:left center!important;
+      padding:0!important;
+      background:transparent!important;
+    }
+    .shared-header .shared-nav-links{
+      gap:4px!important;
+      align-items:center!important;
+    }
+    .shared-header .shared-nav-links a,
+    .shared-header .shared-nav-links a:not(.nav-cta){
+      min-height:42px!important;
+      padding:0 15px!important;
+      display:inline-flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      border:1px solid transparent!important;
+      border-radius:12px!important;
+      background:transparent!important;
+      color:#f4fbfe!important;
+      font-size:.9rem!important;
+      font-weight:800!important;
+      line-height:1!important;
+      box-shadow:none!important;
+    }
+    .shared-header .shared-nav-links a::after{display:none!important}
+    .shared-header .shared-nav-links a:hover{
+      border-color:rgba(166,233,249,.24)!important;
+      background:rgba(255,255,255,.09)!important;
+      color:#fff!important;
+    }
+    .shared-header .shared-nav-links a.is-current,
+    .shared-header .shared-nav-links a.active,
+    .shared-header .shared-nav-links a[aria-current="page"]{
+      border-color:rgba(152,229,247,.28)!important;
+      background:rgba(139,224,244,.16)!important;
+      color:#c9f4ff!important;
+    }
+    .shared-header .shared-nav-links .shared-contact,
+    .shared-header .shared-nav-links .nav-cta.shared-contact,
+    .shared-header .shared-nav-links .contact-link.shared-contact{
+      min-height:44px!important;
+      margin-left:7px!important;
+      padding:0 20px!important;
+      border-color:#fff!important;
+      border-radius:12px!important;
+      background:#fff!important;
+      color:#073b57!important;
+      box-shadow:0 8px 22px rgba(0,0,0,.14)!important;
+    }
+    .shared-header .shared-nav-links .shared-contact:hover{
+      border-color:#9fe8f8!important;
+      background:#9fe8f8!important;
+      color:#052f45!important;
+      transform:translateY(-1px)!important;
+    }
+    .shared-header .shared-menu{
+      width:44px!important;
+      height:44px!important;
+      padding:0!important;
+      border:1px solid rgba(255,255,255,.3)!important;
+      border-radius:12px!important;
+      background:rgba(255,255,255,.1)!important;
+      box-shadow:none!important;
+    }
+    .shared-header .shared-menu span,
+    .shared-header .shared-menu::before,
+    .shared-header .shared-menu::after{
+      background:#fff!important;
+    }
+
+    @media (max-width:1000px){
+      .shared-header,
+      .shared-header.scrolled,
+      .shared-header.is-scrolled{
+        padding:0 10px!important;
+      }
+      .shared-header .shared-nav{
+        min-height:62px!important;
+        padding:7px 8px 7px 10px!important;
+        border-radius:0 0 17px 17px!important;
+      }
+      .shared-header .shared-brand{
+        width:142px!important;
+        min-width:142px!important;
+        height:43px!important;
+        padding:4px 10px!important;
+        border-radius:11px!important;
+      }
+      .shared-header .shared-logo,
+      .shared-header .nav-logo.shared-logo{
+        width:120px!important;
+        max-width:120px!important;
+        height:33px!important;
+      }
+      .shared-header .shared-nav-links{
+        position:fixed!important;
+        top:0!important;
+        right:0!important;
+        bottom:0!important;
+        width:min(84vw,340px)!important;
+        padding:98px 24px 32px!important;
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        justify-content:flex-start!important;
+        gap:9px!important;
+        border-left:1px solid rgba(151,230,248,.18)!important;
+        background:linear-gradient(155deg,#052d43,#075b79)!important;
+        box-shadow:-20px 0 50px rgba(0,0,0,.3)!important;
+        transform:translateX(105%)!important;
+      }
+      .shared-header .shared-nav-links.open{
+        transform:translateX(0)!important;
+      }
+      .shared-header .shared-nav-links a,
+      .shared-header .shared-nav-links a:not(.nav-cta){
+        width:100%!important;
+        min-height:52px!important;
+        padding:0 17px!important;
+        justify-content:flex-start!important;
+        border-color:rgba(255,255,255,.1)!important;
+        background:rgba(255,255,255,.055)!important;
+        color:#fff!important;
+        font-size:1rem!important;
+      }
+      .shared-header .shared-nav-links a.is-current,
+      .shared-header .shared-nav-links a.active,
+      .shared-header .shared-nav-links a[aria-current="page"]{
+        border-color:rgba(169,237,255,.32)!important;
+        background:rgba(169,237,255,.14)!important;
+        color:#c8f3ff!important;
+      }
+      .shared-header .shared-nav-links .shared-contact,
+      .shared-header .shared-nav-links .nav-cta.shared-contact,
+      .shared-header .shared-nav-links .contact-link.shared-contact{
+        width:100%!important;
+        min-height:52px!important;
+        margin:8px 0 0!important;
+        justify-content:center!important;
+        border-color:#fff!important;
+        background:#fff!important;
+        color:#073b57!important;
+      }
+      .shared-header .shared-menu{
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:center!important;
+        justify-content:center!important;
+        gap:5px!important;
+      }
+      .shared-menu-overlay.on,
+      .menu-overlay.on{
+        background:rgba(1,19,29,.68)!important;
+        backdrop-filter:blur(4px)!important;
+        -webkit-backdrop-filter:blur(4px)!important;
+      }
+    }
+
+    @media (max-width:520px){
+      .shared-header,
+      .shared-header.scrolled,
+      .shared-header.is-scrolled{padding:0 6px!important}
+      .shared-header .shared-nav{
+        min-height:58px!important;
+        padding:6px!important;
+        border-radius:0 0 14px 14px!important;
+      }
+      .shared-header .shared-brand{
+        width:128px!important;
+        min-width:128px!important;
+        height:40px!important;
+        padding:4px 8px!important;
+      }
+      .shared-header .shared-logo,
+      .shared-header .nav-logo.shared-logo{
+        width:108px!important;
+        max-width:108px!important;
+        height:31px!important;
+      }
+      .shared-header .shared-menu{
+        width:40px!important;
+        height:40px!important;
+        border-radius:10px!important;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
