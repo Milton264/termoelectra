@@ -1,14 +1,16 @@
 <!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Climatización, Aire Acondicionado, Calefacción y Aerotermia | Termoelectra</title>
-  <meta name="description" content="Climatización, aire acondicionado, calefacción y aerotermia. Instalación, reparación y mantenimiento con servicio técnico de Termoelectra.">
-  <meta name="theme-color" content="#073b57">
-  <meta name="color-scheme" content="light">
-  <link rel="preload" as="image" href="climatizacion-assets/climatizacion-interior.webp" fetchpriority="high">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Climatización, Aire Acondicionado, Calefacción y Aerotermia | Termoelectra</title>
+<meta content="Climatización, aire acondicionado, calefacción y aerotermia. Instalación, reparación y mantenimiento con servicio técnico de Termoelectra." name="description"/>
+<meta content="#073b57" name="theme-color"/>
+<meta content="light" name="color-scheme"/>
+<link as="image" fetchpriority="high" href="climatizacion-assets/climatizacion-interior.webp" rel="preload"/>
+<style>
     :root{
       --navy:#073b57;
       --navy-2:#0b5674;
@@ -554,7 +556,7 @@
       .reveal{opacity:1;transform:none}
     }
   </style>
-  <link rel="stylesheet" href="../assets/shared-header.css">
+<link href="../assets/shared-header.css" rel="stylesheet"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "name": "Termoelectra", "url": "https://termoelectra.es/climatizacion", "telephone": "+34651097393", "email": "info@termoelectra.es", "description": "Empresa de climatización comercial: instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia con servicio técnico."}</script>
 <style>
 /* ===== PATCH: dinamismo + nota SEO ===== */
@@ -757,7 +759,6 @@
 }
 @media(prefers-reduced-motion:reduce){.snow-field{display:none}}
 </style>
-
 <style>
 /* ===== AJUSTE SOLICITADO: servicios full width, zig-zag y CTA compacto ===== */
 .snow-field,.snowflake{display:none!important}
@@ -836,7 +837,6 @@
   .compact-submit{width:100%}
 }
 </style>
-
 <style>
 /* ===== AJUSTE 2: contenido más ancho y CTA compacto con animación CSS ===== */
 @media(min-width:1001px){
@@ -903,7 +903,6 @@
   .compact-contact::after{display:none}
 }
 </style>
-
 <style>
 
 /* ===== CORRECCIÓN V3: CTA compacto con animación visible hecha en CSS ===== */
@@ -1005,7 +1004,7 @@
 }
 
 </style>
-  <style id="header-redesign-v4">
+<style id="header-redesign-v4">
     /* Barra superior compacta: sustituye el contenedor blanco flotante. */
     .shared-header{
       position:fixed!important;
@@ -1253,9 +1252,7 @@
       }
     }
   </style>
-
-
-  <style id="unified-hero-v5">
+<style id="unified-hero-v5">
     /* =========================================================
        V5 · CABECERA + HERO UNIFICADOS EN LAS TRES PÁGINAS
        Mismo sistema visual; solo cambia el contenido de cada área.
@@ -1723,293 +1720,610 @@
       .unified-hero::before{transform:none!important}
     }
   </style>
+<style>
+/* =========================================================
+   PULIDO FINAL SEGÚN ORDEN DE TRABAJO
+   No añade secciones ni sustituye contenido. Corrige escala,
+   respiración visual, recortes y comportamiento responsive.
+   ========================================================= */
+:root{--content-wide:clamp(1180px,92vw,1640px);--safe-side:clamp(18px,3vw,54px)}
+html,body{max-width:100%;overflow-x:hidden}
+.unified-hero{min-height:clamp(690px,82vh,860px)}
+.unified-hero__inner,.unified-hero .shell,.unified-nav{
+  width:min(var(--content-wide),calc(100% - (var(--safe-side) * 2)))!important;
+  max-width:none!important;
+}
+.unified-hero__grid{gap:clamp(28px,4vw,72px)!important}
+.unified-hero h1{font-size:clamp(3.25rem,6.1vw,6.65rem)!important;line-height:.91!important;text-wrap:balance}
+.unified-hero__copy>p{max-width:760px!important;font-size:clamp(1rem,1.22vw,1.2rem)!important}
+.unified-hero__panel{width:min(100%,350px)!important;align-self:center!important}
+.unified-strip{width:min(var(--content-wide),calc(100% - (var(--safe-side) * 2)))!important;max-width:none!important}
 
-</head>
+/* Contenedores: amplios pero legibles; desaparecen los vacíos excesivos */
+.shell,.wrap,.section>.shell,.carousel-head,.foot-grid,.foot-bottom{
+  width:min(var(--content-wide),calc(100% - (var(--safe-side) * 2)))!important;
+  max-width:none!important;
+  margin-inline:auto!important;
+}
+.section{padding-block:clamp(72px,8vw,112px)}
+.section-head{max-width:900px}
+.section-head.center{max-width:980px}
+
+/* Fotografías: proporción estable y sin deformaciones */
+img{image-rendering:auto}
+.service-card img,.area-card img,.detail-media img,.svc-media img,.slide img,.gallery img,.case-card img{
+  object-fit:cover;
+}
+.service-card,.detail-card,.svc-media,.slide,.gallery a{isolation:isolate}
+
+/* Tarjetas y bloques: sombras más sobrias y bordes consistentes */
+.service-card,.detail-card,.explorer,.contact-box,.cta-final,.unified-strip,.unified-hero__panel{
+  box-shadow:0 18px 50px rgba(4,38,58,.12)!important;
+}
+
+/* Evita saltos o desbordes en textos largos y botones */
+h1,h2,h3,p,a,button,label{overflow-wrap:anywhere}
+.btn,.unified-btn,.nav-links a{white-space:nowrap}
+
+/* Formularios compactos: no cambia sus campos ni su función */
+.compact-contact,.contact-compact,.contact-box,.cta-final{
+  min-height:0!important;
+}
+.compact-contact__inner,.contact-compact__inner{
+  width:min(1480px,calc(100% - (var(--safe-side) * 2)))!important;
+  max-width:none!important;
+}
+
+/* Móvil y tablet */
+@media(max-width:1100px){
+  .unified-hero{min-height:auto;padding-bottom:52px!important}
+  .unified-hero__grid{grid-template-columns:minmax(0,1fr) minmax(270px,320px)!important}
+  .unified-hero h1{font-size:clamp(3rem,7.2vw,5.2rem)!important}
+}
+@media(max-width:820px){
+  :root{--safe-side:18px}
+  .unified-hero__grid{grid-template-columns:1fr!important}
+  .unified-hero__panel{width:100%!important;max-width:none!important}
+  .unified-hero h1{font-size:clamp(2.65rem,12vw,4.5rem)!important}
+  .unified-strip{grid-template-columns:1fr 1fr!important}
+  .section{padding-block:68px}
+  .btn,.unified-btn{white-space:normal;text-align:center}
+}
+@media(max-width:560px){
+  .unified-strip{grid-template-columns:1fr!important}
+  .unified-hero__actions,.hero-actions,.hero-btns,.btns{display:grid!important;grid-template-columns:1fr!important}
+  .unified-hero__actions a,.hero-actions a,.hero-btns a,.btns a{width:100%!important}
+  .section{padding-block:56px}
+}
+
+
+/* Climatización: mantiene instalación, reparación y mantenimiento comercial */
+.detail-stack{gap:0!important}
+.detail-card{border-radius:0!important;border-inline:0!important;box-shadow:none!important;min-height:clamp(430px,46vw,620px)!important}
+.detail-card:first-child{border-top:1px solid var(--line)}
+.detail-card:last-child{border-bottom:1px solid var(--line)}
+.detail-media{min-height:inherit!important}
+.detail-copy{padding:clamp(38px,5vw,76px)!important}
+.explorer{width:100%!important;height:clamp(480px,48vw,650px)!important}
+.service-grid{gap:clamp(16px,2vw,28px)!important}
+@media(max-width:900px){.detail-card,.detail-card.reverse{grid-template-columns:1fr!important}.detail-card.reverse .detail-media{order:0!important}.explorer{height:auto!important;grid-template-columns:1fr!important}.explorer-media{min-height:360px}}
+</style><style id="client-v9-final">
+/* =========================================================
+   AJUSTES VISIBLES SOLICITADOS POR CLIENTE · V9
+   Parte de V7 y no altera las secciones aprobadas.
+   ========================================================= */
+
+/* 1. Cabecera blanca: el logotipo se integra sin parche. */
+.shared-header,
+.site-header.shared-header{
+  position:fixed!important;
+  top:0!important;
+  right:0!important;
+  left:0!important;
+  z-index:1500!important;
+  padding:0!important;
+  border:0!important;
+  border-bottom:1px solid rgba(7,59,87,.12)!important;
+  border-radius:0!important;
+  background:rgba(255,255,255,.97)!important;
+  box-shadow:0 10px 30px rgba(4,38,57,.10)!important;
+  backdrop-filter:blur(16px)!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+}
+.shared-nav,
+.site-header .shared-nav{
+  width:min(100% - 48px,1540px)!important;
+  min-height:82px!important;
+  margin:0 auto!important;
+  padding:10px 4px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.shared-brand,
+.site-header .shared-brand{
+  min-width:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.shared-logo,
+.nav-logo.shared-logo,
+.site-header .shared-logo{
+  width:190px!important;
+  height:56px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+.shared-nav-links{gap:8px!important}
+.shared-nav-links a{
+  padding:12px 17px!important;
+  border:0!important;
+  border-radius:999px!important;
+  color:#073b57!important;
+  background:transparent!important;
+  font-size:.9rem!important;
+  font-weight:850!important;
+  box-shadow:none!important;
+}
+.shared-nav-links a:hover,
+.shared-nav-links a.is-current,
+.shared-nav-links a.active{
+  color:#073b57!important;
+  background:#e5f6fb!important;
+}
+.shared-nav-links a::after{display:none!important}
+.shared-contact,
+.nav-cta.shared-contact,
+.contact-link.shared-contact{
+  color:#fff!important;
+  background:#0b83aa!important;
+}
+.shared-contact:hover{background:#073b57!important;color:#fff!important}
+.shared-menu{border-color:#c9e8f2!important;background:#f2fbfd!important}
+.shared-menu span,
+.shared-menu::before,
+.shared-menu::after{background:#073b57!important}
+
+/* 2. Hero común: una sola columna, imagen protagonista y únicamente contacto directo. */
+.unified-hero{
+  min-height:clamp(720px,88vh,900px)!important;
+  padding:148px 0 90px!important;
+  align-items:center!important;
+  background-color:#052f46!important;
+}
+.unified-hero__inner{
+  width:min(100% - 72px,1540px)!important;
+  margin-inline:auto!important;
+  display:block!important;
+}
+.unified-hero__copy{
+  width:min(820px,64vw)!important;
+  max-width:none!important;
+}
+.unified-hero__eyebrow{margin-bottom:25px!important}
+.unified-hero h1{
+  max-width:850px!important;
+  margin-bottom:25px!important;
+  font-size:clamp(3.8rem,6.6vw,7rem)!important;
+  line-height:.9!important;
+  text-wrap:balance!important;
+}
+.unified-hero__copy>p{
+  max-width:760px!important;
+  margin-bottom:32px!important;
+  font-size:clamp(1.04rem,1.35vw,1.23rem)!important;
+  line-height:1.7!important;
+}
+.unified-hero__panel{display:none!important}
+.unified-hero__actions{
+  display:flex!important;
+  grid-template-columns:none!important;
+  flex-wrap:wrap!important;
+  gap:12px!important;
+}
+.unified-hero__button{
+  width:auto!important;
+  min-width:160px!important;
+  min-height:56px!important;
+  padding:0 24px!important;
+  border-radius:999px!important;
+  font-size:.96rem!important;
+  font-weight:900!important;
+}
+.unified-hero__button--wa{
+  color:#fff!important;
+  border-color:#20cf68!important;
+  background:#20cf68!important;
+  box-shadow:0 13px 30px rgba(32,207,104,.23)!important;
+}
+.unified-hero__button--wa:hover{background:#18b95b!important}
+.unified-hero__button--phone{
+  color:#073b57!important;
+  border-color:#fff!important;
+  background:#fff!important;
+  box-shadow:0 13px 30px rgba(0,0,0,.14)!important;
+}
+.unified-hero__button--phone:hover{color:#fff!important;background:#0b83aa!important;border-color:#0b83aa!important}
+.unified-hero__button svg{width:20px!important;height:20px!important}
+
+/* Más fotografía y menos velo en Home. */
+.unified-hero--home::before{
+  background-image:
+    linear-gradient(90deg,rgba(2,27,41,.88) 0%,rgba(3,39,58,.72) 43%,rgba(3,39,58,.18) 76%,rgba(3,39,58,.22) 100%),
+    var(--hero-image)!important;
+  background-position:var(--hero-position)!important;
+  background-size:cover!important;
+}
+
+/* Refrigeración y Climatización conservan legibilidad sin ocultar la foto. */
+.unified-hero--refrigeracion::before,
+.unified-hero--climatizacion::before{
+  background-image:
+    linear-gradient(90deg,rgba(2,27,41,.92) 0%,rgba(3,39,58,.72) 47%,rgba(3,39,58,.16) 78%,rgba(3,39,58,.22) 100%),
+    var(--hero-image)!important;
+  background-position:var(--hero-position)!important;
+  background-size:cover!important;
+}
+
+/* 3. Slider de cámaras: tres imágenes ordenadas y con mejor uso horizontal. */
+.carousel-head{
+  max-width:1540px!important;
+  padding-right:clamp(28px,4vw,72px)!important;
+  padding-left:clamp(28px,4vw,72px)!important;
+}
+.carousel .track{
+  gap:18px!important;
+  padding-right:clamp(28px,4vw,72px)!important;
+  padding-left:clamp(28px,4vw,72px)!important;
+}
+.carousel .slide{
+  flex:1 0 min(31.5vw,510px)!important;
+  min-width:330px!important;
+  aspect-ratio:16/10!important;
+  height:auto!important;
+  border-radius:22px!important;
+}
+.carousel .slide img{height:100%!important;object-fit:cover!important}
+/* El logotipo impreso en la foto comercial ya no toca el borde superior. */
+.carousel .slide-commercial{
+  padding-top:16px!important;
+  background:#fff!important;
+}
+.carousel .slide-commercial img{
+  height:calc(100% - 16px)!important;
+  border-radius:14px 14px 0 0!important;
+}
+
+/* 4. FAQ de Home: usa todo el ancho y evita la gran zona vacía. */
+.unified-home-faq.faq-wrap{
+  grid-template-columns:1fr!important;
+  gap:30px!important;
+}
+.unified-home-faq .faq-intro{
+  max-width:800px!important;
+}
+.unified-home-faq .faq-list{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  align-items:start!important;
+}
+.unified-home-faq .faq-item{height:max-content!important}
+
+@media(max-width:1000px){
+  .shared-nav{width:min(100% - 30px,1540px)!important}
+  .unified-hero{min-height:760px!important;padding-top:132px!important}
+  .unified-hero__inner{width:min(100% - 44px,920px)!important}
+  .unified-hero__copy{width:min(760px,84vw)!important}
+  .unified-hero h1{font-size:clamp(3.4rem,8vw,5.7rem)!important}
+  .carousel .slide{flex-basis:min(58vw,520px)!important}
+}
+
+@media(max-width:760px){
+  .shared-header,.site-header.shared-header{background:#fff!important}
+  .shared-nav{width:calc(100% - 24px)!important;min-height:70px!important;padding:7px 0!important}
+  .shared-logo,.nav-logo.shared-logo,.site-header .shared-logo{width:154px!important;height:48px!important}
+  .shared-nav-links{
+    top:70px!important;
+    right:12px!important;
+    bottom:auto!important;
+    width:calc(100% - 24px)!important;
+    max-width:none!important;
+    padding:18px!important;
+    border:1px solid #d5ebf2!important;
+    border-radius:20px!important;
+    background:#fff!important;
+    box-shadow:0 22px 55px rgba(4,38,57,.18)!important;
+  }
+  .shared-nav-links a{width:100%!important;text-align:center!important}
+  .unified-hero{
+    min-height:auto!important;
+    padding:112px 0 72px!important;
+    align-items:flex-end!important;
+  }
+  .unified-hero__inner{width:calc(100% - 28px)!important}
+  .unified-hero__copy{width:100%!important}
+  .unified-hero h1{font-size:clamp(2.9rem,14vw,4.45rem)!important;line-height:.92!important}
+  .unified-hero__copy>p{font-size:1rem!important;line-height:1.62!important}
+  .unified-hero__actions{display:grid!important;grid-template-columns:1fr!important}
+  .unified-hero__button{width:100%!important;min-width:0!important}
+  .unified-hero--home::before,
+  .unified-hero--refrigeracion::before,
+  .unified-hero--climatizacion::before{
+    background-image:
+      linear-gradient(180deg,rgba(2,27,41,.42) 0%,rgba(2,27,41,.82) 48%,rgba(2,27,41,.97) 100%),
+      var(--hero-image)!important;
+  }
+  .carousel .track{padding-inline:16px!important}
+  .carousel .slide{flex:0 0 86vw!important;min-width:0!important;aspect-ratio:4/3!important}
+  .unified-home-faq .faq-list{grid-template-columns:1fr!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .unified-hero__flow i{animation:none!important}
+}
+</style><meta content="v9-2026-08-04-visible-client-fixes" name="termoelectra-build"/></head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header shared-header" id="siteHeader">
+<nav aria-label="Navegación principal" class="nav shared-nav">
+<a aria-label="Termoelectra, inicio" class="brand shared-brand" href="../index.html">
+<img alt="Termoelectra" class="shared-logo" decoding="async" height="157" loading="eager" src="climatizacion-assets/logo-termoelectra.webp" width="420"/>
+</a>
+<div class="nav-links shared-nav-links" id="navLinks">
+<a href="../index.html">Home</a>
+<a href="../refrigeracion/index.html">Refrigeración</a>
+<a aria-current="page" class="active is-current" href="./index.html">Climatización</a>
+<a class="contact-link shared-contact" href="#contacto">Contacto</a>
+</div>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle shared-menu" id="menuToggle" type="button"><span></span><span></span><span></span></button>
+</nav>
+</header>
+<div class="menu-overlay shared-menu-overlay" id="menuOverlay"></div>
+<main id="contenido">
+<section aria-labelledby="hero-title" class="unified-hero unified-hero--climatizacion" style="--hero-image:url('climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
+<div aria-hidden="true" class="unified-hero__flow"><i></i><i></i><i></i></div>
+<div aria-hidden="true" class="unified-hero__glow"></div>
+<div class="unified-hero__inner">
+<div class="unified-hero__copy">
+<span class="unified-hero__eyebrow">Climatización · Servicio Técnico</span>
+<h1 id="hero-title"><span>Climatización</span><span class="unified-accent">para Cada Espacio.</span></h1>
+<p>Aire acondicionado, calefacción y aerotermia con instalación, reparación y mantenimiento, según las necesidades de cada espacio.</p>
+<div class="unified-hero__actions"><a aria-label="Contactar por WhatsApp" class="unified-hero__button unified-hero__button--wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n."><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"></path></svg>WhatsApp</a><a aria-label="Llamar al 651 09 73 93" class="unified-hero__button unified-hero__button--phone" href="tel:+34651097393"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"></path></svg>651 09 73 93</a></div>
+</div>
 
-  <header class="site-header shared-header" id="siteHeader">
-    <nav class="nav shared-nav" aria-label="Navegación principal">
-      <a class="brand shared-brand" href="../index.html" aria-label="Termoelectra, inicio">
-        <img class="shared-logo" src="climatizacion-assets/logo-termoelectra.webp" width="420" height="157" alt="Termoelectra">
-      </a>
-      <div class="nav-links shared-nav-links" id="navLinks">
-        <a href="../index.html">Home</a>
-        <a href="../refrigeracion/index.html">Refrigeración</a>
-        <a class="active is-current" href="./index.html" aria-current="page">Climatización</a>
-        <a class="contact-link shared-contact" href="#contacto">Contacto</a>
-      </div>
-      <button class="menu-toggle shared-menu" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
-    </nav>
-  </header>
-  <div class="menu-overlay shared-menu-overlay" id="menuOverlay"></div>
-
-  <main id="contenido">
-    <section class="unified-hero unified-hero--climatizacion" aria-labelledby="hero-title" style="--hero-image:url('climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
-      <div class="unified-hero__flow" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="unified-hero__glow" aria-hidden="true"></div>
-      <div class="unified-hero__inner">
-        <div class="unified-hero__copy">
-          <span class="unified-hero__eyebrow">Climatización · Servicio Técnico</span>
-          <h1 id="hero-title"><span>Climatización</span><span class="unified-accent">para Cada Espacio.</span></h1>
-          <p>Aire acondicionado, calefacción y aerotermia con instalación, reparación y mantenimiento, según las necesidades de cada espacio.</p>
-          <div class="unified-hero__actions">
-            <a class="unified-hero__button unified-hero__button--primary" href="#servicios">Ver Soluciones</a>
-            <a class="unified-hero__button unified-hero__button--wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>Consultar por WhatsApp</a>
-          </div>
-        </div>
-        <aside class="unified-hero__panel" aria-label="Áreas de climatización">
-          <strong>Áreas de climatización</strong>
-          <div class="unified-hero__row">
-            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 6l14 12M19 6 5 18M4 12h16"/></svg></div>
-            <div><b>Aire Acondicionado</b><span>Instalación, reparación y mantenimiento.</span></div>
-          </div>
-          <div class="unified-hero__row">
-            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M12 22c4 0 7-3 7-7 0-5-4-7-4-12-4 2-7 6-7 11 0 0-2-2-3-3-1 6 2 11 7 11Z"/></svg></div>
-            <div><b>Calefacción</b><span>Climatización para los meses de frío.</span></div>
-          </div>
-          <div class="unified-hero__row">
-            <div class="unified-hero__icon"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-3-6.2M20 4v7h-7"/></svg></div>
-            <div><b>Aerotermia</b><span>Energía del aire para climatización.</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="unified-capability-wrap" aria-label="Resumen de servicios">
-      <div class="unified-capability">
-        <div class="unified-capability__item"><strong>Servicio Técnico</strong><span>Atención técnica para cada sistema e instalación.</span></div>
-        <div class="unified-capability__item"><strong>Instalación</strong><span>Soluciones comerciales e industriales.</span></div>
-        <div class="unified-capability__item"><strong>Reparación</strong><span>Diagnóstico e intervención sobre equipos.</span></div>
-        <div class="unified-capability__item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
-      </div>
-    </div>
-
-    <section class="section light" id="servicios">
-      <div class="shell">
-        <div class="section-head reveal">
-          <span class="eyebrow">Servicio de Climatización</span>
-          <h2>Instalación, Reparación y Mantenimiento de Climatización Comercial.</h2>
-          <p class="lead">Tres servicios claramente separados para aire acondicionado, calefacción y aerotermia, con atención del servicio técnico.</p>
-        </div>
-        <div class="detail-stack">
-          <article class="detail-card reveal" id="instalacion-climatizacion-comercial">
-            <div class="detail-media media-complete media-triptych">
-              <figure><img src="climatizacion-assets/tecnico-restaurante.webp" width="1400" height="788" loading="lazy" alt="Servicio técnico de climatización en un restaurante"></figure>
-              <figure><img src="../refrigeracion/galeria-tecnico-local.webp" width="900" height="1350" loading="lazy" alt="Técnico de Termoelectra revisando una unidad de climatización comercial"></figure>
-              <figure><img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de una instalación de climatización comercial"></figure>
-              <span class="detail-badge">01 · Instalación</span>
-            </div>
-            <div class="detail-copy">
-              <span class="eyebrow">Climatización Comercial</span>
-              <h3>Instalación de Climatización Comercial</h3>
-              <p>La instalación de climatización comercial se estudia según el tipo de espacio y las características de la instalación. Esta área incluye climatización para locales, oficinas, restaurantes y naves industriales.</p>
-              <ul class="check-list">
-                <li>Instalación de aire acondicionado comercial</li>
-                <li>Climatización para locales y oficinas</li>
-                <li>Climatización para restaurantes</li>
-                <li>Climatización para naves industriales</li>
-              </ul>
-              <p class="detail-note"><strong>Instalación:</strong> Termoelectra reúne información para quienes buscan instaladores de climatización comercial, una empresa de climatización comercial o una empresa de climatización industrial. El alcance se concreta según las necesidades del proyecto.</p>
-            </div>
-          </article>
-
-          <article class="detail-card reverse reveal" id="reparacion-climatizacion-comercial">
-            <div class="detail-media media-complete media-triptych">
-              <figure><img src="../refrigeracion/galeria-tecnico-cubierta.webp" width="1200" height="675" loading="lazy" alt="Técnico revisando equipos exteriores de climatización"></figure>
-              <figure><img src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197" height="1600" loading="lazy" alt="Técnica de Termoelectra comprobando un sistema de climatización comercial con manómetros"></figure>
-              <figure><img src="../refrigeracion/galeria-tecnico-tienda.webp" width="900" height="1350" loading="lazy" alt="Técnico revisando una unidad interior de climatización"></figure>
-              <span class="detail-badge">02 · Reparación</span>
-            </div>
-            <div class="detail-copy">
-              <span class="eyebrow">Servicio Técnico</span>
-              <h3>Reparación de Climatización Comercial</h3>
-              <p>La reparación de climatización comercial parte de la revisión del equipo y de la incidencia comunicada. El servicio técnico de climatización valora cada caso antes de definir la actuación.</p>
-              <ul class="check-list">
-                <li>Reparar aire acondicionado industrial</li>
-                <li>Avería de climatización industrial</li>
-                <li>Reparación de aire acondicionado comercial</li>
-                <li>Servicio técnico de aire acondicionado industrial</li>
-              </ul>
-              <p class="detail-note"><strong>Reparación:</strong> el SAT de climatización y el técnico de climatización revisan el sistema concreto para definir la reparación correspondiente según el equipo y la instalación.</p>
-            </div>
-          </article>
-
-          <article class="detail-card reveal" id="mantenimiento-climatizacion">
-            <div class="detail-media media-complete media-triptych">
-              <figure><img src="climatizacion-assets/aire-acondicionado.webp" width="1600" height="1200" loading="lazy" alt="Equipos exteriores de una instalación de climatización"></figure>
-              <figure><img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra realizando mantenimiento de climatización comercial"></figure>
-              <figure><img src="climatizacion-assets/tecnico-comercio.webp" width="1000" height="1500" loading="lazy" alt="Técnico revisando un sistema de climatización en un comercio"></figure>
-              <span class="detail-badge">03 · Mantenimiento</span>
-            </div>
-            <div class="detail-copy">
-              <span class="eyebrow">Cuidado Preventivo</span>
-              <h3>Mantenimiento de Climatización</h3>
-              <p>El mantenimiento de climatización se define según el tipo de instalación, los equipos incluidos y el alcance acordado para cada servicio.</p>
-              <ul class="check-list">
-                <li>Mantenimiento de aire acondicionado industrial</li>
-                <li>Contrato de mantenimiento de climatización</li>
-                <li>Mantenimiento de climatización comercial</li>
-                <li>Mantenimiento preventivo de climatización</li>
-              </ul>
-              <p class="detail-note"><strong>Mantenimiento:</strong> como empresa de mantenimiento de climatización, Termoelectra concreta las tareas y la periodicidad de acuerdo con la instalación y las condiciones del servicio.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark" id="trabajos">
-      <div class="shell">
-        <div class="section-head reveal">
-          <span class="eyebrow">Climatización interactiva</span>
-          <h2>Tres Formas de Climatizar un Espacio.</h2>
-          <p class="lead">Selecciona aire acondicionado, calefacción o aerotermia para ver cómo cambia el recorrido visual del sistema.</p>
-        </div>
-        <div class="climate-lab reveal">
-          <div class="lab-copy">
-            <span class="eyebrow" id="labHeading">Aire Acondicionado</span>
-            <h3 id="labTitle">Climatización del Ambiente</h3>
-            <div class="mode-controls" aria-label="Modos de climatización">
-              <button class="mode-button active" type="button" data-mode="cool" aria-pressed="true">Aire</button>
-              <button class="mode-button" type="button" data-mode="heat" aria-pressed="false">Calefacción</button>
-              <button class="mode-button" type="button" data-mode="aero" aria-pressed="false">Aerotermia</button>
-            </div>
-            <div class="lab-note" aria-live="polite">
-              <strong>Lectura del Sistema</strong>
-              <p id="labText">El sistema mueve y trata el aire para ajustar las condiciones interiores según la instalación.</p>
-            </div>
-          </div>
-          <div class="system-visual" id="systemVisual" data-mode="cool" aria-hidden="true">
-            <div class="room-outline"></div>
-            <div class="visual-device device-in"></div>
-            <div class="visual-device device-out"></div>
-            <span class="flow-path a"></span>
-            <span class="flow-path b"></span>
-            <span class="flow-path c"></span>
-            <i class="air-dot"></i>
-            <i class="air-dot"></i>
-            <i class="air-dot"></i>
-            <i class="air-dot"></i>
-            <span class="visual-label label-in">Interior</span>
-            <span class="visual-label label-out">Exterior</span>
-            <span class="mode-symbol" id="modeSymbol">❄</span>
-          </div>
-        </div>
-        <div class="section-head reveal gallery-section-head">
-          <span class="eyebrow">Fotografías reales</span>
-          <h2>Sistemas y Trabajo Técnico.</h2>
-          <p class="lead">Una selección compacta de aerotermia, distribución de aire y revisión técnica.</p>
-        </div>
-        <div class="gallery-three" id="climateGallery">
-          <figure class="gallery-item reveal">
-            <img src="../imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600" height="1433" loading="lazy" alt="Sistema integral de aerotermia revisado por Termoelectra">
-            <span>Aerotermia</span>
-          </figure>
-          <figure class="gallery-item reveal delay">
-            <img src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000" height="1500" loading="lazy" alt="Técnico de Termoelectra en mantenimiento de climatización de un centro comercial">
-            <span>Distribución de Aire</span>
-          </figure>
-          <figure class="gallery-item reveal">
-            <img src="climatizacion-assets/tecnico-panel.webp" width="1000" height="1500" loading="lazy" alt="Técnicos de Termoelectra revisando el panel de control de una instalación de climatización">
-            <span>Revisión Técnica</span>
-          </figure>
-          <figure class="gallery-item gallery-extra">
-            <img src="../refrigeracion/galeria-revision-grille.webp" width="1100" height="1121" loading="lazy" alt="Revisión de una salida de aire en un espacio comercial">
-            <span>Revisión de Climatización</span>
-          </figure>
-          <figure class="gallery-item gallery-extra">
-            <img src="climatizacion-assets/climatizacion-unidades.webp" width="1350" height="1800" loading="lazy" alt="Unidades exteriores de climatización">
-            <span>Equipos de Climatización</span>
-          </figure>
-          <figure class="gallery-item gallery-extra">
-            <img src="climatizacion-assets/conductos-exterior.webp" width="900" height="1200" loading="lazy" alt="Conductos exteriores de una instalación de climatización">
-            <span>Distribución de Aire</span>
-          </figure>
-        </div>
-        <button class="gallery-toggle" id="climateGalleryToggle" type="button" aria-expanded="false" aria-controls="climateGallery">Ver más fotografías</button>
-      </div>
-    </section>
-
-    <section class="section white" id="contacto">
-      <div class="shell">
-        <div class="compact-contact reveal">
-          <div class="compact-contact-copy">
-            <span class="eyebrow">Contacto</span>
-            <h2>Cuéntanos Qué Necesitas Climatizar.</h2>
-            <p>Déjanos tu nombre y teléfono y contactaremos contigo.</p>
-          </div>
-          <form class="compact-contact-form" id="climateContactForm" novalidate>
-            <div class="compact-field">
-              <label for="climateName">Nombre</label>
-              <input id="climateName" name="nombre" type="text" placeholder="Nombre" autocomplete="name" required>
-            </div>
-            <div class="compact-field">
-              <label for="climatePhone">Teléfono</label>
-              <input id="climatePhone" name="telefono" type="tel" placeholder="Teléfono" autocomplete="tel" inputmode="tel" required>
-            </div>
-            <button class="compact-submit" type="submit">Enviar</button>
-          </form>
-          <div class="contact-motion" aria-hidden="true">
-            <span class="motion-stream stream-one"></span>
-            <span class="motion-stream stream-two"></span>
-            <span class="motion-stream stream-three"></span>
-            <span class="motion-ring ring-one"></span>
-            <span class="motion-ring ring-two"></span>
-            <span class="motion-fan"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <div class="footer-brand-card"><img src="climatizacion-assets/logo-termoelectra.webp" width="420" height="157" loading="lazy" alt="Termoelectra"></div>
-          <p>Servicios de refrigeración y climatización. Instalación, reparación y mantenimiento con servicio técnico.</p>
-        </div>
-        <div class="footer-col">
-          <h3>Climatización</h3>
-          <ul>
-            <li><a href="#instalacion-climatizacion-comercial">Instalación</a></li>
-            <li><a href="#reparacion-climatizacion-comercial">Reparación</a></li>
-            <li><a href="#mantenimiento-climatizacion">Mantenimiento</a></li>
-            <li><a href="#trabajos">Sistemas</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contacto</h3>
-          <ul>
-            <li><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
-            <li><a href="tel:+34651097393">651 09 73 93</a></li>
-            <li>Disponibilidad según consulta</li>
-            <li><a href="https://wa.me/34651097393">Enviar WhatsApp</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Termoelectra</span>
-        <span>Aviso Legal · Política de Cookies · Política de Privacidad</span>
-      </div>
-    </div>
-  </footer>
-
-  
-
-  <div class="mobile-bar" aria-label="Contacto rápido">
-    <a class="call" href="tel:+34651097393">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+</div>
+</section>
+<div aria-label="Resumen de servicios" class="unified-capability-wrap">
+<div class="unified-capability">
+<div class="unified-capability__item"><strong>Servicio Técnico</strong><span>Atención técnica para cada sistema e instalación.</span></div>
+<div class="unified-capability__item"><strong>Instalación</strong><span>Soluciones comerciales e industriales.</span></div>
+<div class="unified-capability__item"><strong>Reparación</strong><span>Diagnóstico e intervención sobre equipos.</span></div>
+<div class="unified-capability__item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
+</div>
+</div>
+<section class="section light" id="servicios">
+<div class="shell">
+<div class="section-head reveal">
+<span class="eyebrow">Servicio de Climatización</span>
+<h2>Instalación, Reparación y Mantenimiento de Climatización Comercial.</h2>
+<p class="lead">Tres servicios claramente separados para aire acondicionado, calefacción y aerotermia, con atención del servicio técnico.</p>
+</div>
+<div class="detail-stack">
+<article class="detail-card reveal" id="instalacion-climatizacion-comercial">
+<div class="detail-media media-complete media-triptych">
+<figure><img alt="Servicio técnico de climatización en un restaurante" decoding="async" height="788" loading="eager" src="climatizacion-assets/tecnico-restaurante.webp" width="1400"/></figure>
+<figure><img alt="Técnico de Termoelectra revisando una unidad de climatización comercial" decoding="async" height="1350" loading="lazy" src="../refrigeracion/galeria-tecnico-local.webp" width="900"/></figure>
+<figure><img alt="Unidades exteriores de una instalación de climatización comercial" decoding="async" height="1800" loading="lazy" src="climatizacion-assets/climatizacion-unidades.webp" width="1350"/></figure>
+<span class="detail-badge">01 · Instalación</span>
+</div>
+<div class="detail-copy">
+<span class="eyebrow">Climatización Comercial</span>
+<h3>Instalación de Climatización Comercial</h3>
+<p>La instalación de climatización comercial se estudia según el tipo de espacio y las características de la instalación. Esta área incluye climatización para locales, oficinas, restaurantes y naves industriales.</p>
+<ul class="check-list">
+<li>Instalación de aire acondicionado comercial</li>
+<li>Climatización para locales y oficinas</li>
+<li>Climatización para restaurantes</li>
+<li>Climatización para naves industriales</li>
+</ul>
+<p class="detail-note"><strong>Instalación:</strong> Termoelectra reúne información para quienes buscan instaladores de climatización comercial, una empresa de climatización comercial o una empresa de climatización industrial. El alcance se concreta según las necesidades del proyecto.</p>
+</div>
+</article>
+<article class="detail-card reverse reveal" id="reparacion-climatizacion-comercial">
+<div class="detail-media media-complete media-triptych">
+<figure><img alt="Técnico revisando equipos exteriores de climatización" decoding="async" height="675" loading="lazy" src="../refrigeracion/galeria-tecnico-cubierta.webp" width="1200"/></figure>
+<figure><img alt="Técnica de Termoelectra comprobando un sistema de climatización comercial con manómetros" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n5-tecnica-real.webp" width="1197"/></figure>
+<figure><img alt="Técnico revisando una unidad interior de climatización" decoding="async" height="1350" loading="lazy" src="../refrigeracion/galeria-tecnico-tienda.webp" width="900"/></figure>
+<span class="detail-badge">02 · Reparación</span>
+</div>
+<div class="detail-copy">
+<span class="eyebrow">Servicio Técnico</span>
+<h3>Reparación de Climatización Comercial</h3>
+<p>La reparación de climatización comercial parte de la revisión del equipo y de la incidencia comunicada. El servicio técnico de climatización valora cada caso antes de definir la actuación.</p>
+<ul class="check-list">
+<li>Reparar aire acondicionado industrial</li>
+<li>Avería de climatización industrial</li>
+<li>Reparación de aire acondicionado comercial</li>
+<li>Servicio técnico de aire acondicionado industrial</li>
+</ul>
+<p class="detail-note"><strong>Reparación:</strong> el SAT de climatización y el técnico de climatización revisan el sistema concreto para definir la reparación correspondiente según el equipo y la instalación.</p>
+</div>
+</article>
+<article class="detail-card reveal" id="mantenimiento-climatizacion">
+<div class="detail-media media-complete media-triptych">
+<figure><img alt="Equipos exteriores de una instalación de climatización" decoding="async" height="1200" loading="lazy" src="climatizacion-assets/aire-acondicionado.webp" width="1600"/></figure>
+<figure><img alt="Técnico de Termoelectra realizando mantenimiento de climatización comercial" decoding="async" height="1500" loading="lazy" src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000"/></figure>
+<figure><img alt="Técnico revisando un sistema de climatización en un comercio" decoding="async" height="1500" loading="lazy" src="climatizacion-assets/tecnico-comercio.webp" width="1000"/></figure>
+<span class="detail-badge">03 · Mantenimiento</span>
+</div>
+<div class="detail-copy">
+<span class="eyebrow">Cuidado Preventivo</span>
+<h3>Mantenimiento de Climatización</h3>
+<p>El mantenimiento de climatización se define según el tipo de instalación, los equipos incluidos y el alcance acordado para cada servicio.</p>
+<ul class="check-list">
+<li>Mantenimiento de aire acondicionado industrial</li>
+<li>Contrato de mantenimiento de climatización</li>
+<li>Mantenimiento de climatización comercial</li>
+<li>Mantenimiento preventivo de climatización</li>
+</ul>
+<p class="detail-note"><strong>Mantenimiento:</strong> como empresa de mantenimiento de climatización, Termoelectra concreta las tareas y la periodicidad de acuerdo con la instalación y las condiciones del servicio.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section dark" id="trabajos">
+<div class="shell">
+<div class="section-head reveal">
+<span class="eyebrow">Climatización interactiva</span>
+<h2>Tres Formas de Climatizar un Espacio.</h2>
+<p class="lead">Selecciona aire acondicionado, calefacción o aerotermia para ver cómo cambia el recorrido visual del sistema.</p>
+</div>
+<div class="climate-lab reveal">
+<div class="lab-copy">
+<span class="eyebrow" id="labHeading">Aire Acondicionado</span>
+<h3 id="labTitle">Climatización del Ambiente</h3>
+<div aria-label="Modos de climatización" class="mode-controls">
+<button aria-pressed="true" class="mode-button active" data-mode="cool" type="button">Aire</button>
+<button aria-pressed="false" class="mode-button" data-mode="heat" type="button">Calefacción</button>
+<button aria-pressed="false" class="mode-button" data-mode="aero" type="button">Aerotermia</button>
+</div>
+<div aria-live="polite" class="lab-note">
+<strong>Lectura del Sistema</strong>
+<p id="labText">El sistema mueve y trata el aire para ajustar las condiciones interiores según la instalación.</p>
+</div>
+</div>
+<div aria-hidden="true" class="system-visual" data-mode="cool" id="systemVisual">
+<div class="room-outline"></div>
+<div class="visual-device device-in"></div>
+<div class="visual-device device-out"></div>
+<span class="flow-path a"></span>
+<span class="flow-path b"></span>
+<span class="flow-path c"></span>
+<i class="air-dot"></i>
+<i class="air-dot"></i>
+<i class="air-dot"></i>
+<i class="air-dot"></i>
+<span class="visual-label label-in">Interior</span>
+<span class="visual-label label-out">Exterior</span>
+<span class="mode-symbol" id="modeSymbol">❄</span>
+</div>
+</div>
+<div class="section-head reveal gallery-section-head">
+<span class="eyebrow">Fotografías reales</span>
+<h2>Sistemas y Trabajo Técnico.</h2>
+<p class="lead">Una selección compacta de aerotermia, distribución de aire y revisión técnica.</p>
+</div>
+<div class="gallery-three" id="climateGallery">
+<figure class="gallery-item reveal">
+<img alt="Sistema integral de aerotermia revisado por Termoelectra" decoding="async" height="1433" loading="lazy" src="../imagenes-cliente-nuevas/n6-aerotermia-sala.webp" width="1600"/>
+<span>Aerotermia</span>
+</figure>
+<figure class="gallery-item reveal delay">
+<img alt="Técnico de Termoelectra en mantenimiento de climatización de un centro comercial" decoding="async" height="1500" loading="lazy" src="climatizacion-assets/tecnico-mantenimiento.webp" width="1000"/>
+<span>Distribución de Aire</span>
+</figure>
+<figure class="gallery-item reveal">
+<img alt="Técnicos de Termoelectra revisando el panel de control de una instalación de climatización" decoding="async" height="1500" loading="lazy" src="climatizacion-assets/tecnico-panel.webp" width="1000"/>
+<span>Revisión Técnica</span>
+</figure>
+<figure class="gallery-item gallery-extra">
+<img alt="Revisión de una salida de aire en un espacio comercial" decoding="async" height="1121" loading="lazy" src="../refrigeracion/galeria-revision-grille.webp" width="1100"/>
+<span>Revisión de Climatización</span>
+</figure>
+<figure class="gallery-item gallery-extra">
+<img alt="Unidades exteriores de climatización" decoding="async" height="1800" loading="lazy" src="climatizacion-assets/climatizacion-unidades.webp" width="1350"/>
+<span>Equipos de Climatización</span>
+</figure>
+<figure class="gallery-item gallery-extra">
+<img alt="Conductos exteriores de una instalación de climatización" decoding="async" height="1200" loading="lazy" src="climatizacion-assets/conductos-exterior.webp" width="900"/>
+<span>Distribución de Aire</span>
+</figure>
+</div>
+<button aria-controls="climateGallery" aria-expanded="false" class="gallery-toggle" id="climateGalleryToggle" type="button">Ver más fotografías</button>
+</div>
+</section>
+<section class="section white" id="contacto">
+<div class="shell">
+<div class="compact-contact reveal">
+<div class="compact-contact-copy">
+<span class="eyebrow">Contacto</span>
+<h2>Cuéntanos Qué Necesitas Climatizar.</h2>
+<p>Déjanos tu nombre y teléfono y contactaremos contigo.</p>
+</div>
+<form class="compact-contact-form" id="climateContactForm" novalidate="">
+<div class="compact-field">
+<label for="climateName">Nombre</label>
+<input autocomplete="name" id="climateName" name="nombre" placeholder="Nombre" required="" type="text"/>
+</div>
+<div class="compact-field">
+<label for="climatePhone">Teléfono</label>
+<input autocomplete="tel" id="climatePhone" inputmode="tel" name="telefono" placeholder="Teléfono" required="" type="tel"/>
+</div>
+<button class="compact-submit" type="submit">Enviar</button>
+</form>
+<div aria-hidden="true" class="contact-motion">
+<span class="motion-stream stream-one"></span>
+<span class="motion-stream stream-two"></span>
+<span class="motion-stream stream-three"></span>
+<span class="motion-ring ring-one"></span>
+<span class="motion-ring ring-two"></span>
+<span class="motion-fan"></span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="shell">
+<div class="footer-grid">
+<div class="footer-about">
+<div class="footer-brand-card"><img alt="Termoelectra" decoding="async" height="157" loading="eager" src="climatizacion-assets/logo-termoelectra.webp" width="420"/></div>
+<p>Servicios de refrigeración y climatización. Instalación, reparación y mantenimiento con servicio técnico.</p>
+</div>
+<div class="footer-col">
+<h3>Climatización</h3>
+<ul>
+<li><a href="#instalacion-climatizacion-comercial">Instalación</a></li>
+<li><a href="#reparacion-climatizacion-comercial">Reparación</a></li>
+<li><a href="#mantenimiento-climatizacion">Mantenimiento</a></li>
+<li><a href="#trabajos">Sistemas</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Contacto</h3>
+<ul>
+<li><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
+<li><a href="tel:+34651097393">651 09 73 93</a></li>
+<li>Disponibilidad según consulta</li>
+<li><a href="https://wa.me/34651097393">Enviar WhatsApp</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Termoelectra</span>
+<span>Aviso Legal · Política de Cookies · Política de Privacidad</span>
+</div>
+</div>
+</footer>
+<div aria-label="Contacto rápido" class="mobile-bar">
+<a class="call" href="tel:+34651097393">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg>
       Llamar
     </a>
-    <a class="wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+<a class="wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20climatizaci%C3%B3n.">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"></path></svg>
       WhatsApp
     </a>
-  </div>
-
-  <script>
+</div>
+<script>
     (() => {
       const header = document.getElementById('siteHeader');
       const menuToggle = document.getElementById('menuToggle');
@@ -2178,7 +2492,6 @@
   },{passive:true});
 })();
 </script>
-
 <script>
 (() => {
   const form = document.getElementById('climateContactForm');
