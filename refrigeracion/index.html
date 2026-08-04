@@ -5374,7 +5374,176 @@ h1,h2,h3,p,a,button,label{overflow-wrap:anywhere}
 @media(prefers-reduced-motion:reduce){
   .unified-hero__flow i{animation:none!important}
 }
-</style><meta content="v9-2026-08-04-visible-client-fixes" name="termoelectra-build"/></head>
+</style><meta content="v9-2026-08-04-visible-client-fixes" name="termoelectra-build"/>
+<style id="v10-visual-fixes">
+:root{
+  --v10-bg:#eef4f7;
+  --v10-bg-2:#f5f9fb;
+  --v10-card:#f8fbfd;
+  --v10-line:#d5e5ec;
+  --v10-ink:#073b57;
+  --v10-muted:#5f7787;
+  --v10-brand:#0b83aa;
+  --v10-brand-dark:#063952;
+  --v10-brand-soft:#dff1f7;
+}
+html,body{background:var(--v10-bg)!important}
+main{background:transparent!important}
+.section{background:transparent!important}
+.section-dark{background:linear-gradient(180deg,#0b5374 0%,#073b57 100%)!important}
+.section-dark::after{opacity:.18!important}
+
+/* Cabecera corregida: enlaces visibles y mejor integración con el logo. */
+.shared-header,.site-header.shared-header{
+  background:rgba(255,255,255,.98)!important;
+  border-bottom:1px solid rgba(7,59,87,.10)!important;
+  box-shadow:0 10px 28px rgba(4,38,57,.08)!important;
+}
+.shared-nav,.site-header .shared-nav{
+  width:min(100% - 44px,1540px)!important;
+  min-height:80px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+}
+.shared-nav-links,.site-header .shared-nav-links{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+}
+.shared-nav-links a,.site-header .shared-nav-links a{
+  color:var(--v10-ink)!important;
+  background:transparent!important;
+  border:1px solid transparent!important;
+}
+.shared-nav-links a:hover,
+.shared-nav-links a.is-current,
+.shared-nav-links a.active{
+  color:var(--v10-ink)!important;
+  background:var(--v10-brand-soft)!important;
+  border-color:#c7e0ea!important;
+}
+.shared-contact,.nav-cta.shared-contact,.contact-link.shared-contact{
+  background:var(--v10-brand)!important;
+  color:#fff!important;
+}
+.shared-contact:hover{background:var(--v10-brand-dark)!important;color:#fff!important}
+.shared-menu{background:#eff7fb!important;border-color:#cce2eb!important}
+.shared-menu span,.shared-menu::before,.shared-menu::after{background:var(--v10-ink)!important}
+
+/* Hero y banda inferior: menos contraste blanco puro. */
+.unified-capability,
+.unified-capability__grid,
+.capability-grid{
+  background:rgba(248,251,253,.96)!important;
+  border:1px solid var(--v10-line)!important;
+  box-shadow:0 16px 40px rgba(4,38,57,.10)!important;
+}
+.unified-capability__item,.capability-item{background:transparent!important}
+.unified-capability__item strong,.capability-item strong{color:var(--v10-ink)!important}
+.unified-capability__item span,.capability-item span{color:var(--v10-muted)!important}
+
+/* Superficies internas más suaves y coherentes. */
+.service-map,.service-card,.detail-card,.explorer,.faq-item,.contact-card,.compact-contact,
+.carousel .slide,.gallery-item,.faq-item,.service-map,.service-map-body{
+  box-shadow:0 16px 40px rgba(4,38,57,.10)!important;
+}
+.service-map,.service-card,.detail-card,.explorer,.faq-item,.contact-card,.compact-contact{
+  border:1px solid var(--v10-line)!important;
+}
+.service-map,.service-card,.detail-card,.explorer,.faq-item{
+  background:var(--v10-card)!important;
+}
+.service-row{border-bottom-color:var(--v10-line)!important}
+.solution-tags span{background:#e9f4f8!important;color:var(--v10-ink)!important}
+
+/* Home: evitar el blanco duro entre hero y secciones. */
+#servicios .shell,.section .shell{position:relative}
+#servicios .section-heading,
+#faq-title,
+#contact-title{color:var(--v10-ink)!important}
+#servicios .service-map-grid{margin-top:8px!important}
+#servicios::before,
+#contacto::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0));
+  pointer-events:none;
+}
+
+/* Botones claros suavizados. */
+.gallery-toggle,.btn-light,.service-map-link,
+.compact-submit{
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+.gallery-toggle{
+  background:var(--v10-brand-soft)!important;
+  color:var(--v10-ink)!important;
+  border:1px solid #c5dfe9!important;
+  box-shadow:0 10px 24px rgba(4,38,57,.10)!important;
+}
+.gallery-toggle:hover{background:#f4fbfe!important;transform:translateY(-2px)!important}
+
+/* CTA y footer: misma lógica, sin blanco-azul agresivo. */
+.contact-card.compact-contact,
+.compact-contact{
+  background:linear-gradient(135deg,#0a4d6d 0%,#0d7194 100%)!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+}
+.compact-contact .eyebrow{color:#c8effa!important}
+.compact-contact .eyebrow::before{background:linear-gradient(90deg,#ff4660,#8ce6fb)!important}
+.compact-contact h2,.compact-contact p,.compact-contact-copy p{color:#fff!important}
+.compact-contact-copy p{opacity:.92!important}
+.compact-field label{color:#edf8fc!important}
+.compact-field input{
+  background:rgba(242,248,251,.95)!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  color:var(--v10-ink)!important;
+  box-shadow:none!important;
+}
+.compact-field input::placeholder{color:#6a8291!important}
+.compact-submit{
+  background:#dff1f7!important;
+  color:var(--v10-ink)!important;
+  border:1px solid #bcd8e4!important;
+  box-shadow:none!important;
+}
+.compact-submit:hover{background:#ffffff!important;color:var(--v10-ink)!important}
+.compact-contact .fan-visual,
+.compact-contact .fan-orbit,
+.compact-contact .fan-core{opacity:.82!important}
+
+footer{
+  background:linear-gradient(180deg,#063952 0%,#042c41 100%)!important;
+  color:#fff!important;
+}
+.footer-brand img{
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  border-radius:16px!important;
+  padding:10px!important;
+}
+footer p,footer a,.footer-bottom{color:#c4d9e3!important}
+.footer-bottom{border-top-color:rgba(255,255,255,.12)!important}
+
+/* Móvil */
+@media(max-width:760px){
+  .shared-nav{width:calc(100% - 22px)!important;min-height:70px!important}
+  .shared-nav-links{
+    width:calc(100% - 24px)!important;
+    background:#fff!important;
+    border:1px solid var(--v10-line)!important;
+  }
+  .shared-nav-links a{color:var(--v10-ink)!important}
+  .unified-capability,.capability-grid{border-radius:24px!important}
+  .compact-contact{padding:22px!important}
+  .compact-submit{width:100%!important}
+}
+</style>
+
+</head>
 <body>
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
 <header class="shared-header" id="siteHeader">
