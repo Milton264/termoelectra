@@ -2194,6 +2194,103 @@ header.te-v11-header nav.te-v11-nav div.te-v11-navlinks a.is-active:not(.is-curr
 }
 </style>
 
+
+<style id="v12-logo-footer-fix">
+/* V12: quitar contraste del logo del footer y limpiar el bloque inferior en las 3 páginas. */
+footer .footer-brand-card,
+footer .footer-brand img,
+footer .foot-logo-real,
+footer .footer-brand-card img{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  padding:0!important;
+}
+footer .footer-brand-card{
+  display:block!important;
+  width:auto!important;
+  max-width:none!important;
+  height:auto!important;
+}
+footer .footer-brand img,
+footer .foot-logo-real,
+footer .footer-brand-card img{
+  width:220px!important;
+  max-width:220px!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+footer .footer-brand p{max-width:640px!important}
+footer .footer-grid, footer .foot-grid{align-items:start!important}
+
+/* Refrigeración: restaurar el hero al encuadre original aprobado. */
+.unified-hero--refrigeracion{
+  --hero-image:url('hero-operarios.webp')!important;
+  --hero-position:center center!important;
+  --hero-shift:0px!important;
+}
+
+@media(max-width:760px){
+  footer .footer-brand img,
+  footer .foot-logo-real,
+  footer .footer-brand-card img{
+    width:180px!important;
+    max-width:180px!important;
+  }
+}
+</style>
+
+
+<style id="v13-footer-white">
+/* V13: footer completamente blanco en las tres páginas. */
+footer,
+.site-footer,
+.footer{
+  background:#ffffff!important;
+  color:#073b57!important;
+  border-top:1px solid #dce8ee!important;
+  box-shadow:none!important;
+}
+footer::before,
+footer::after,
+.site-footer::before,
+.site-footer::after{
+  display:none!important;
+}
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer strong,
+footer b,
+footer p,
+footer a,
+footer li,
+footer span,
+footer small,
+footer .footer-bottom,
+footer .foot-bottom{
+  color:#073b57!important;
+}
+footer a:hover{
+  color:#0b83aa!important;
+}
+footer .footer-bottom,
+footer .foot-bottom{
+  border-top-color:#dce8ee!important;
+}
+footer .footer-brand img,
+footer .foot-logo,
+footer .foot-logo-real,
+footer .footer-brand-card,
+footer .footer-brand-card img{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al Contenido</a>
