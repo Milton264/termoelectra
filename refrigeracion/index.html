@@ -6242,6 +6242,167 @@ footer .footer-brand-card img{
 .unified-hero--refrigeracion{--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp')!important;--hero-position:center 42%!important;}
 </style>
 
+<style id="te-motion-polish-v15">
+/* Capa de movimiento profesional v15: no altera contenido, estructura ni paleta. */
+:root{
+  --te-motion-ease:cubic-bezier(.22,.72,.24,1);
+  --te-motion-spring:cubic-bezier(.2,.9,.28,1.18);
+  --te-motion-soft-shadow:0 22px 52px rgba(4,47,70,.12);
+}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+
+/* Indicador de lectura discreto. */
+.te-v15-progress{
+  position:fixed;z-index:99999;inset:0 0 auto 0;height:3px;
+  pointer-events:none;background:transparent;
+}
+.te-v15-progress span{
+  display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left center;
+  background:linear-gradient(90deg,#073b57,#0b83aa,#c22033);
+  box-shadow:0 1px 8px rgba(11,131,170,.28);will-change:transform;
+}
+
+/* Apertura del hero: fotografía y contenido entran con ritmos distintos. */
+.te-motion-ready .unified-hero::before{animation:teV15HeroImage 1.45s var(--te-motion-ease) both}
+.te-motion-ready .unified-hero__eyebrow{animation:teV15HeroUp .72s var(--te-motion-ease) .08s both}
+.te-motion-ready .unified-hero h1{animation:teV15HeroUp .86s var(--te-motion-ease) .16s both}
+.te-motion-ready .unified-hero__copy>p{animation:teV15HeroUp .86s var(--te-motion-ease) .27s both}
+.te-motion-ready .unified-hero__actions{animation:teV15HeroUp .86s var(--te-motion-ease) .38s both}
+.te-motion-ready .unified-capability-wrap{animation:teV15HeroUp .9s var(--te-motion-ease) .5s both}
+.te-motion-ready .unified-capability__item{animation:teV15Capability .72s var(--te-motion-ease) both}
+.te-motion-ready .unified-capability__item:nth-child(1){animation-delay:.56s}
+.te-motion-ready .unified-capability__item:nth-child(2){animation-delay:.63s}
+.te-motion-ready .unified-capability__item:nth-child(3){animation-delay:.70s}
+.te-motion-ready .unified-capability__item:nth-child(4){animation-delay:.77s}
+@keyframes teV15HeroImage{
+  from{opacity:.68;filter:saturate(.78) contrast(.94) brightness(.86)}
+  to{opacity:1;filter:saturate(1) contrast(1) brightness(1)}
+}
+@keyframes teV15HeroUp{
+  from{opacity:0;transform:translate3d(0,28px,0);filter:blur(4px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+@keyframes teV15Capability{
+  from{opacity:0;transform:translate3d(0,18px,0) scale(.985)}
+  to{opacity:1;transform:none}
+}
+
+/* Revelado coherente para elementos que antes aparecían de golpe. */
+.te-motion-item{
+  opacity:0;transform:translate3d(0,24px,0);filter:blur(2px);
+  transition:opacity .78s var(--te-motion-ease),transform .78s var(--te-motion-ease),filter .55s ease;
+  transition-delay:var(--te-delay,0ms);will-change:opacity,transform;
+}
+.te-motion-item.te-motion-left{transform:translate3d(-30px,10px,0)}
+.te-motion-item.te-motion-right{transform:translate3d(30px,10px,0)}
+.te-motion-item.te-motion-in{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+.reveal{transition-delay:var(--te-delay,0ms)!important}
+
+/* Encabezados de sección: línea de énfasis sin cambiar tipografía ni colores. */
+.te-v15-heading{position:relative}
+.te-v15-heading::before{
+  content:"";position:absolute;left:0;bottom:-14px;width:min(92px,22%);height:2px;border-radius:99px;
+  background:linear-gradient(90deg,#c22033,#0b83aa);transform:scaleX(0);transform-origin:left;
+  transition:transform .88s var(--te-motion-ease) .16s;
+}
+.center .te-v15-heading::before,.section-head.center .te-v15-heading::before{left:50%;transform:translateX(-50%) scaleX(0);transform-origin:center}
+.te-v15-heading.te-motion-in::before,.in .te-v15-heading::before,.te-v15-heading.in::before{transform:scaleX(1)}
+.center .te-v15-heading.te-motion-in::before,.section-head.center .te-v15-heading.te-motion-in::before{transform:translateX(-50%) scaleX(1)}
+
+/* Botones con respuesta más refinada. */
+.unified-hero__button,.home-v15-link,.btn,.nav-cta,.shared-contact,.contact-link,
+.detail-toggle,.mode-button,.car-btn,.faq-question,.faq-q{
+  -webkit-tap-highlight-color:transparent;
+}
+.unified-hero__button,.home-v15-link,.btn,.nav-cta,.shared-contact,.contact-link{
+  position:relative;overflow:hidden;isolation:isolate;
+  transition:transform .32s var(--te-motion-ease),box-shadow .32s ease,background-color .25s ease,border-color .25s ease,color .25s ease!important;
+}
+.unified-hero__button::after,.home-v15-link::after,.btn::after,.nav-cta::after,.shared-contact::after,.contact-link::after{
+  content:"";position:absolute;z-index:-1;top:-35%;bottom:-35%;left:-70%;width:38%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.34),transparent);
+  transform:skewX(-18deg);transition:left .72s var(--te-motion-ease);pointer-events:none;
+}
+
+/* Tarjetas y fotografías: profundidad discreta, sin cambiar composición. */
+.home-v15-area,.home-v15-response-card,.home-v15-cert,.home-v15-promise,
+.detail-card,.gallery-item,.camera-seo-card,.slide,.svc,.cert,.step,.faq-item{
+  transition:transform .48s var(--te-motion-ease),box-shadow .48s ease,border-color .35s ease,filter .35s ease!important;
+  will-change:transform;
+}
+.home-v15-area-media,.home-v15-gallery a,.detail-media,.gallery-item,.svc-media,.slide,.gallery a{
+  position:relative;isolation:isolate;
+}
+.home-v15-area-media img,.home-v15-gallery img,.detail-media img,.gallery-item img,.svc-media img,.slide img,.gallery a img{
+  transition:transform .9s var(--te-motion-ease),filter .7s ease!important;
+  will-change:transform;
+}
+.home-v15-area-media::after,.detail-media::after,.svc-media::after,.slide::after,.gallery-item::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.13) 48%,transparent 70%);
+  transform:translateX(-70%);transition:opacity .35s ease,transform .9s var(--te-motion-ease);
+}
+
+/* Menú y navegación: indicación de foco/posición más clara. */
+.te-v11-navlinks a,.shared-nav-links a{position:relative}
+.te-v11-navlinks a:not(.shared-contact)::after,.shared-nav-links a:not(.shared-contact)::after{
+  content:"";position:absolute;left:50%;right:50%;bottom:5px;height:2px;border-radius:99px;
+  background:#0b83aa;transition:left .3s var(--te-motion-ease),right .3s var(--te-motion-ease);
+}
+.te-v11-header{transition:box-shadow .35s ease,background-color .35s ease,transform .35s var(--te-motion-ease)!important}
+.te-v11-header.te-v15-scrolled{box-shadow:0 12px 35px rgba(4,47,70,.11)!important}
+
+/* Formularios: foco visible y serio. */
+input,textarea,select{
+  transition:border-color .25s ease,box-shadow .25s ease,background-color .25s ease,transform .25s ease!important;
+}
+input:focus,textarea:focus,select:focus{
+  outline:none!important;border-color:#0b83aa!important;box-shadow:0 0 0 4px rgba(11,131,170,.12)!important;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .unified-hero__button:hover,.home-v15-link:hover,.btn:hover,.nav-cta:hover,.shared-contact:hover,.contact-link:hover{
+    transform:translateY(-3px);box-shadow:0 16px 34px rgba(4,47,70,.19)!important;
+  }
+  .unified-hero__button:hover::after,.home-v15-link:hover::after,.btn:hover::after,.nav-cta:hover::after,.shared-contact:hover::after,.contact-link:hover::after{left:135%}
+  .te-v11-navlinks a:not(.shared-contact):hover::after,.shared-nav-links a:not(.shared-contact):hover::after,
+  .te-v11-navlinks a.is-current:not(.shared-contact)::after,.shared-nav-links a.is-current:not(.shared-contact)::after{left:14%;right:14%}
+  .home-v15-area:hover,.home-v15-response-card:hover,.home-v15-cert:hover,.home-v15-promise:hover,
+  .detail-card:hover,.camera-seo-card:hover,.slide:hover,.svc:hover,.cert:hover,.step:hover,.faq-item:hover{
+    transform:translateY(-6px);box-shadow:var(--te-motion-soft-shadow)!important;
+  }
+  .home-v15-area:hover img,.home-v15-gallery a:hover img,.detail-card:hover .detail-media img,
+  .gallery-item:hover img,.svc:hover .svc-media img,.slide:hover img,.gallery a:hover img{
+    transform:scale(1.055);filter:saturate(1.04) contrast(1.02);
+  }
+  .home-v15-area:hover .home-v15-area-media::after,.detail-card:hover .detail-media::after,
+  .svc:hover .svc-media::after,.slide:hover::after,.gallery-item:hover::after{
+    opacity:1;transform:translateX(70%);
+  }
+  .faq-question:hover .faq-plus,.faq-q:hover::after{transform:scale(1.08) rotate(4deg)}
+}
+
+@media(max-width:760px){
+  .te-motion-item,.te-motion-item.te-motion-left,.te-motion-item.te-motion-right{transform:translate3d(0,17px,0);filter:none}
+  .te-motion-item.te-motion-in{transform:none}
+  .te-v15-heading::before{bottom:-10px}
+  .te-v15-progress{height:2px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .te-v15-progress{display:none}
+  .te-motion-ready .unified-hero::before,.te-motion-ready .unified-hero__eyebrow,
+  .te-motion-ready .unified-hero h1,.te-motion-ready .unified-hero__copy>p,
+  .te-motion-ready .unified-hero__actions,.te-motion-ready .unified-capability-wrap,
+  .te-motion-ready .unified-capability__item{animation:none!important}
+  .te-motion-item,.te-motion-item.te-motion-left,.te-motion-item.te-motion-right{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+  .te-v15-heading::before{transform:scaleX(1)!important;transition:none!important}
+  *,*::before,*::after{scroll-behavior:auto!important}
+}
+</style>
+
 </head>
 <body>
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
@@ -6932,5 +7093,114 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   }
 })();
 </script>
+<script id="te-motion-polish-script-v15">
+(() => {
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const body = document.body;
+  if (!body || body.dataset.teMotionV15 === 'ready') return;
+  body.dataset.teMotionV15 = 'ready';
+
+  const hero = document.querySelector('.unified-hero');
+  if (hero?.classList.contains('unified-hero--home')) body.classList.add('te-page-home');
+  if (hero?.classList.contains('unified-hero--climatizacion')) body.classList.add('te-page-climatizacion');
+  if (hero?.classList.contains('unified-hero--refrigeracion')) body.classList.add('te-page-refrigeracion');
+
+  requestAnimationFrame(() => body.classList.add('te-motion-ready'));
+
+  // Barra de progreso compartida; se evita duplicarla donde ya existe una.
+  let progressFill = null;
+  if (!document.querySelector('.scroll-progress span')) {
+    const progress = document.createElement('div');
+    progress.className = 'te-v15-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    progress.innerHTML = '<span></span>';
+    document.body.appendChild(progress);
+    progressFill = progress.firstElementChild;
+  }
+
+  const header = document.querySelector('.te-v11-header, #siteHeader, header');
+  const updateScrollUI = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.min(1, Math.max(0, window.scrollY / max));
+    if (progressFill) progressFill.style.transform = `scaleX(${ratio})`;
+    if (header) header.classList.toggle('te-v15-scrolled', window.scrollY > 18);
+  };
+  updateScrollUI();
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  window.addEventListener('resize', updateScrollUI, { passive: true });
+
+  // Títulos principales de cada bloque.
+  const headingSelectors = [
+    '.home-v15-head h2', '.section-head h2', '.sec-title',
+    '.carousel-head h2', '.full-service-section h2', '#contacto h2'
+  ];
+  document.querySelectorAll(headingSelectors.join(',')).forEach(h => h.classList.add('te-v15-heading'));
+
+  // Se respetan los reveal existentes y solo se les asigna ritmo escalonado.
+  document.querySelectorAll('.reveal').forEach((el, index) => {
+    el.style.setProperty('--te-delay', `${Math.min(index % 5, 4) * 70}ms`);
+  });
+
+  const groups = [
+    ['.home-v15-area', 'left'], ['.home-v15-response-card', 'up'],
+    ['.home-v15-cert', 'up'], ['.home-v15-promise', 'up'], ['.faq-item', 'up'],
+    ['.detail-card', 'up'], ['.gallery-item', 'up'], ['.climate-lab', 'up'],
+    ['.camera-seo-card', 'up'], ['.slide', 'up'], ['.svc', 'up'],
+    ['.cert', 'up'], ['.step', 'up'], ['.gallery a', 'up'],
+    ['#contacto form', 'right'], ['#contacto .contact-info', 'left'],
+    ['footer > *', 'up']
+  ];
+
+  const targets = [];
+  groups.forEach(([selector, direction]) => {
+    document.querySelectorAll(selector).forEach((el, index) => {
+      if (el.classList.contains('reveal')) return;
+      if (el.closest('.unified-hero')) return;
+      el.classList.add('te-motion-item');
+      if (direction === 'left') el.classList.add('te-motion-left');
+      if (direction === 'right') el.classList.add('te-motion-right');
+      el.style.setProperty('--te-delay', `${Math.min(index % 5, 4) * 75}ms`);
+      targets.push(el);
+    });
+  });
+
+  // Los títulos reciben la misma entrada aunque no tengan la clase reveal original.
+  document.querySelectorAll('.te-v15-heading').forEach(h => {
+    if (!h.classList.contains('reveal') && !h.closest('.reveal')) {
+      h.classList.add('te-motion-item');
+      targets.push(h);
+    }
+  });
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('te-motion-in'));
+    document.querySelectorAll('.te-v15-heading').forEach(h => h.classList.add('te-motion-in'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, io) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('te-motion-in');
+      if (entry.target.classList.contains('te-v15-heading')) entry.target.classList.add('te-motion-in');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+  [...new Set(targets)].forEach(el => observer.observe(el));
+
+  // Asegura que títulos dentro de wrappers reveal activen su línea al entrar.
+  const headingObserver = new IntersectionObserver((entries, io) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('te-motion-in');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.45 });
+  document.querySelectorAll('.te-v15-heading').forEach(h => headingObserver.observe(h));
+})();
+</script>
+
 </body>
 </html>
