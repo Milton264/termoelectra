@@ -2467,6 +2467,115 @@ footer .footer-brand-card img{
 }
 </style>
 
+
+<style id="home-commercial-v15">
+  .home-v15-section{position:relative;padding:clamp(78px,8vw,132px) 0;overflow:hidden}
+  .home-v15-shell{width:min(calc(100% - 52px),1540px);margin-inline:auto}
+  .home-v15-head{max-width:900px;margin-bottom:44px}
+  .home-v15-head.center{text-align:center;margin-inline:auto}
+  .home-v15-kicker{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;color:#0b83aa;font-size:.75rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+  .home-v15-kicker::before{content:"";width:42px;height:3px;border-radius:99px;background:linear-gradient(90deg,#d8273c,#20a8d2)}
+  .home-v15-section h2{max-width:1050px;margin-bottom:18px;color:#073b57;font-size:clamp(2.5rem,5vw,5.25rem);line-height:.96;letter-spacing:-.055em}
+  .home-v15-lead{max-width:780px;margin:0;color:#587184;font-size:clamp(1.05rem,1.4vw,1.24rem);line-height:1.75}
+
+  /* Dos áreas protagonistas, más amplias y visuales */
+  .home-v15-areas{padding-top:clamp(88px,9vw,145px);background:#f1f6f8}
+  .home-v15-area-stack{display:grid;gap:24px}
+  .home-v15-area{
+    position:relative;min-height:590px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+    overflow:hidden;border:1px solid #d4e6ed;border-radius:34px;background:#fff;box-shadow:0 24px 70px rgba(4,38,57,.12)
+  }
+  .home-v15-area.reverse{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+  .home-v15-area.reverse .home-v15-area-media{order:2}
+  .home-v15-area-media{position:relative;min-height:590px;overflow:hidden;background:#073b57}
+  .home-v15-area-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .home-v15-area:hover .home-v15-area-media img{transform:scale(1.035)}
+  .home-v15-area-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,31,45,.02),rgba(3,31,45,.38))}
+  .home-v15-area-index{position:absolute;z-index:2;top:24px;left:24px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.94);color:#073b57;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+  .home-v15-area-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(38px,5vw,78px)}
+  .home-v15-area-copy h3{max-width:620px;margin-bottom:20px;color:#073b57;font-size:clamp(2.35rem,4vw,4.5rem);line-height:.97;letter-spacing:-.055em}
+  .home-v15-area-copy p{max-width:650px;margin-bottom:26px;color:#587184;font-size:1.08rem;line-height:1.72}
+  .home-v15-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .home-v15-tags span{padding:8px 12px;border-radius:999px;background:#e7f5fa;color:#0b5674;font-size:.78rem;font-weight:850}
+  .home-v15-link{align-self:flex-start;min-height:52px;padding:0 22px;display:inline-flex;align-items:center;gap:12px;border-radius:999px;background:#073b57;color:#fff;font-weight:900;transition:.25s ease}
+  .home-v15-link:hover{transform:translateY(-2px);background:#0b83aa}
+  .home-v15-link i{font-style:normal;font-size:1.2rem}
+
+  /* Bloque de venta: qué resolvemos */
+  .home-v15-response{color:#fff;background:linear-gradient(135deg,#042c41 0%,#07506f 58%,#0b83aa 100%)}
+  .home-v15-response::before{content:"";position:absolute;inset:0;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,#000,transparent 90%)}
+  .home-v15-response .home-v15-shell{position:relative;z-index:1}
+  .home-v15-response-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(42px,8vw,120px);align-items:center}
+  .home-v15-response h2{color:#fff}
+  .home-v15-response .home-v15-lead{color:#cfe5ee}
+  .home-v15-response .home-v15-kicker{color:#bdeffc}
+  .home-v15-response-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .home-v15-response-card{min-height:190px;padding:28px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+  .home-v15-response-card b{display:grid;place-items:center;width:44px;height:44px;margin-bottom:26px;border-radius:14px;background:#fff;color:#073b57;font-size:.82rem}
+  .home-v15-response-card h3{margin-bottom:9px;color:#fff;font-size:1.35rem;letter-spacing:-.035em}
+  .home-v15-response-card p{margin:0;color:#cfe5ee;font-size:.94rem;line-height:1.55}
+
+  /* Galería editorial */
+  .home-v15-work{background:#fff}
+  .home-v15-gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:310px 310px;gap:16px}
+  .home-v15-gallery figure{position:relative;margin:0;overflow:hidden;border-radius:26px;background:#073b57}
+  .home-v15-gallery figure:first-child{grid-row:span 2}
+  .home-v15-gallery figure:last-child{grid-column:span 2}
+  .home-v15-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .7s ease}
+  .home-v15-gallery figure:hover img{transform:scale(1.04);filter:brightness(.8)}
+  .home-v15-gallery figcaption{position:absolute;right:0;bottom:0;left:0;padding:54px 22px 20px;color:#fff;font-weight:850;background:linear-gradient(transparent,rgba(3,31,45,.94))}
+
+  /* Confianza y certificaciones, sin bloque enorme */
+  .home-v15-trust{background:#edf5f8}
+  .home-v15-trust-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(42px,8vw,110px);align-items:center}
+  .home-v15-cert-line{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:hidden;border:1px solid #d5e7ee;border-radius:26px;background:#fff;box-shadow:0 18px 46px rgba(4,38,57,.09)}
+  .home-v15-cert{min-height:165px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #d5e7ee}
+  .home-v15-cert:last-child{border-right:0}
+  .home-v15-cert strong{color:#0b83aa;font-size:1.3rem}
+  .home-v15-cert span{color:#587184;font-size:.84rem;line-height:1.45}
+  .home-v15-promises{display:grid;gap:12px;margin-top:30px}
+  .home-v15-promise{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;padding:18px 0;border-top:1px solid #d8e8ee}
+  .home-v15-promise:first-child{border-top:0}
+  .home-v15-promise i{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#dff3f9;color:#073b57;font-style:normal;font-weight:900}
+  .home-v15-promise b{display:block;margin-bottom:4px;color:#073b57}
+  .home-v15-promise span{color:#587184;font-size:.94rem;line-height:1.55}
+
+  /* FAQ reducido */
+  .home-v15-faq{background:#fff}
+  .home-v15-faq-layout{display:grid;grid-template-columns:minmax(270px,.68fr) minmax(0,1.32fr);gap:clamp(42px,8vw,110px);align-items:start}
+  .home-v15-faq .faq-list{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .home-v15-faq .faq-item{border:1px solid #d5e7ee!important;border-radius:18px!important;background:#f8fbfd!important;overflow:hidden}
+  .home-v15-faq .faq-question{padding:23px 22px!important}
+  .home-v15-faq-note{margin-top:25px;padding:20px;border-radius:20px;background:#e9f6fa;color:#0b5674;font-size:.94rem;line-height:1.6}
+
+  @media(max-width:1080px){
+    .home-v15-area,.home-v15-area.reverse{grid-template-columns:1fr}
+    .home-v15-area.reverse .home-v15-area-media{order:0}
+    .home-v15-area-media{min-height:430px}
+    .home-v15-response-grid,.home-v15-trust-grid,.home-v15-faq-layout{grid-template-columns:1fr}
+    .home-v15-cert-line{grid-template-columns:repeat(3,1fr)}
+    .home-v15-cert:nth-child(3){border-right:0}
+    .home-v15-cert:nth-child(n+4){border-top:1px solid #d5e7ee}
+  }
+  @media(max-width:760px){
+    .home-v15-shell{width:calc(100% - 28px)}
+    .home-v15-section{padding:72px 0}
+    .home-v15-section h2{font-size:clamp(2.4rem,12vw,3.7rem)}
+    .home-v15-area{min-height:0;border-radius:25px}
+    .home-v15-area-media{min-height:310px}
+    .home-v15-area-copy{padding:30px 24px 34px}
+    .home-v15-area-copy h3{font-size:clamp(2.25rem,11vw,3.25rem)}
+    .home-v15-link{width:100%;justify-content:center}
+    .home-v15-response-list{grid-template-columns:1fr}
+    .home-v15-response-card{min-height:0}
+    .home-v15-gallery{grid-template-columns:1fr;grid-template-rows:none}
+    .home-v15-gallery figure,.home-v15-gallery figure:first-child,.home-v15-gallery figure:last-child{grid-column:auto;grid-row:auto;height:300px}
+    .home-v15-cert-line{grid-template-columns:1fr}
+    .home-v15-cert{min-height:120px;border-right:0;border-top:1px solid #d5e7ee}
+    .home-v15-cert:first-child{border-top:0}
+  }
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -2507,92 +2616,114 @@ footer .footer-brand-card img{
 <div class="unified-capability__item"><strong>Mantenimiento</strong><span>Actuaciones preventivas y correctivas.</span></div>
 </div>
 </div>
-<section aria-labelledby="services-title" class="section" id="servicios">
-<div class="shell">
-<div class="section-heading">
-<span class="eyebrow">Áreas de Trabajo</span>
-<h2 id="services-title">Servicios Ordenados por Especialidad.</h2>
-<p class="intro">Un resumen claro de las áreas definidas en Refrigeración y Climatización, con acceso directo a cada servicio.</p>
-</div>
-<div class="service-map-grid">
-<article class="service-map reveal">
-<div class="service-map-media">
-<img alt="Equipo técnico de Termoelectra en un trabajo de refrigeración" decoding="async" height="788" loading="eager" src="refrigeracion/equipo-termoelectra.webp" width="1400"/>
-<div><small>Área 01</small><h3>Refrigeración</h3></div>
-</div>
-<div class="service-map-body">
-<a class="service-row" href="./refrigeracion/index.html#industrial"><b>01</b><strong>Frío Industrial</strong><i>→</i></a>
-<a class="service-row" href="./refrigeracion/index.html#camaras"><b>02</b><strong>Instalación de Cámaras Frigoríficas</strong><i>→</i></a>
-<a class="service-row" href="./refrigeracion/index.html#camaras"><b>03</b><strong>Reparación de Cámaras Frigoríficas</strong><i>→</i></a>
-<a class="service-row" href="./refrigeracion/index.html#camaras"><b>04</b><strong>Mantenimiento de Cámaras Frigoríficas</strong><i>→</i></a>
-<a class="service-row" href="./refrigeracion/index.html#comercial"><b>05</b><strong>Refrigeración Comercial</strong><i>→</i></a>
-<a class="service-map-link" href="./refrigeracion/index.html">Ver Refrigeración Completa <span>→</span></a>
-</div>
-</article>
-<article class="service-map reveal">
-<div class="service-map-media">
-<img alt="Servicio técnico de climatización en un restaurante" decoding="async" height="788" loading="lazy" src="climatizacion/climatizacion-assets/tecnico-restaurante.webp" width="1400"/>
-<div><small>Área 02</small><h3>Climatización</h3></div>
-</div>
-<div class="service-map-body">
-<a class="service-row" href="./climatizacion/index.html#instalacion-climatizacion-comercial"><b>01</b><strong>Instalación de Climatización Comercial</strong><i>→</i></a>
-<a class="service-row" href="./climatizacion/index.html#reparacion-climatizacion-comercial"><b>02</b><strong>Reparación de Climatización Comercial</strong><i>→</i></a>
-<a class="service-row" href="./climatizacion/index.html#mantenimiento-climatizacion"><b>03</b><strong>Mantenimiento de Climatización</strong><i>→</i></a>
-<div aria-label="Soluciones de climatización" class="solution-tags"><span>Aire Acondicionado</span><span>Calefacción</span><span>Aerotermia</span></div>
-<a class="service-map-link" href="./climatizacion/index.html">Ver Climatización Completa <span>→</span></a>
-</div>
-</article>
-</div>
-</div>
+
+<section class="home-v15-section home-v15-areas" id="servicios" aria-labelledby="home-v15-services-title">
+  <div class="home-v15-shell">
+    <div class="home-v15-head">
+      <span class="home-v15-kicker">Dos Áreas, un Mismo Servicio Técnico</span>
+      <h2 id="home-v15-services-title">Soluciones que Mantienen Cada Espacio en Marcha.</h2>
+      <p class="home-v15-lead">Desde una cámara frigorífica hasta la climatización de un local, Termoelectra reúne instalación, reparación y mantenimiento en dos áreas especializadas.</p>
+    </div>
+    <div class="home-v15-area-stack">
+      <article class="home-v15-area reveal">
+        <div class="home-v15-area-media">
+          <img src="refrigeracion/equipo-termoelectra.webp" alt="Equipo técnico de Termoelectra trabajando en una instalación de refrigeración" width="1400" height="788" loading="lazy" decoding="async">
+          <span class="home-v15-area-index">01 · Refrigeración</span>
+        </div>
+        <div class="home-v15-area-copy">
+          <span class="home-v15-kicker">Frío Industrial y Comercial</span>
+          <h3>Refrigeración Preparada para el Trabajo Real.</h3>
+          <p>Instalación y montaje de cámaras frigoríficas, reparación de averías, SAT de frío industrial y mantenimiento de sistemas de refrigeración comercial.</p>
+          <div class="home-v15-tags"><span>Frío Industrial</span><span>Cámaras Frigoríficas</span><span>Refrigeración Comercial</span><span>SAT</span></div>
+          <a class="home-v15-link" href="./refrigeracion/index.html">Explorar Refrigeración <i>→</i></a>
+        </div>
+      </article>
+      <article class="home-v15-area reverse reveal">
+        <div class="home-v15-area-media">
+          <img src="climatizacion/climatizacion-assets/tecnico-restaurante.webp" alt="Técnico de Termoelectra revisando una instalación de climatización comercial" width="1400" height="788" loading="lazy" decoding="async">
+          <span class="home-v15-area-index">02 · Climatización</span>
+        </div>
+        <div class="home-v15-area-copy">
+          <span class="home-v15-kicker">Locales, Oficinas y Espacios Profesionales</span>
+          <h3>Climatización Diseñada para Cada Actividad.</h3>
+          <p>Instalación, reparación y mantenimiento de climatización comercial, aire acondicionado, calefacción y aerotermia según las necesidades de cada espacio.</p>
+          <div class="home-v15-tags"><span>Aire Acondicionado</span><span>Calefacción</span><span>Aerotermia</span><span>Mantenimiento</span></div>
+          <a class="home-v15-link" href="./climatizacion/index.html">Explorar Climatización <i>→</i></a>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
-<section aria-labelledby="cert-title" class="section section-dark">
-<div class="shell">
-<span class="eyebrow">Información de la Empresa</span>
-<h2 id="cert-title">Nuestras Certificaciones.</h2>
-<p class="intro">Certificaciones indicadas en la información actual de Termoelectra.</p>
-<div class="cert-grid">
-<article class="cert reveal"><span class="cert-mark">✓</span><div><h3>RITE</h3><p>Empresa Instaladora y Mantenedora de Instalaciones Térmicas en Edificios.</p></div></article>
-<article class="cert reveal"><span class="cert-mark">✓</span><div><h3>REIF</h3><p>Empresa Instaladora y Mantenedora de Frío Industrial, Nivel 1.</p></div></article>
-<article class="cert reveal"><span class="cert-mark">✓</span><div><h3>IGII-B</h3><p>Empresa Instaladora de Gas en Instalaciones Comunes en Edificios.</p></div></article>
-<article class="cert reveal"><span class="cert-mark">✓</span><div><h3>Gases Fluorados</h3><p>Manipulación de Gases Fluorados. Todas las Cargas.</p></div></article>
-<article class="cert reveal"><span class="cert-mark">✓</span><div><h3>RASIC</h3><p>N.º 00500538.</p></div></article>
-</div>
-</div>
+
+<section class="home-v15-section home-v15-response" aria-labelledby="home-v15-response-title">
+  <div class="home-v15-shell home-v15-response-grid">
+    <div>
+      <span class="home-v15-kicker">Un Servicio de Principio a Fin</span>
+      <h2 id="home-v15-response-title">Cuando un Sistema Importa, Cada Etapa Cuenta.</h2>
+      <p class="home-v15-lead">La Home no necesita enumerar cada detalle técnico: necesita dejar claro que puedes acudir al mismo equipo para poner en marcha, recuperar y conservar una instalación.</p>
+    </div>
+    <div class="home-v15-response-list">
+      <article class="home-v15-response-card reveal"><b>01</b><h3>Instalación</h3><p>Soluciones comerciales e industriales ajustadas a la instalación y al uso previsto.</p></article>
+      <article class="home-v15-response-card reveal"><b>02</b><h3>Reparación</h3><p>Valoración técnica para localizar averías y definir la intervención necesaria.</p></article>
+      <article class="home-v15-response-card reveal"><b>03</b><h3>Mantenimiento</h3><p>Actuaciones preventivas y correctivas adaptadas a cada sistema.</p></article>
+      <article class="home-v15-response-card reveal"><b>04</b><h3>Servicio Técnico</h3><p>Atención especializada en refrigeración, frío industrial y climatización.</p></article>
+    </div>
+  </div>
 </section>
-<section aria-labelledby="faq-title" class="section">
-<div class="shell faq-wrap unified-home-faq">
-<div class="faq-intro">
-<span class="eyebrow">Preguntas Frecuentes</span>
-<h2 id="faq-title">FAQ</h2>
-<p>Respuestas elaboradas únicamente a partir de los servicios descritos por Termoelectra.</p>
-</div>
-<div class="faq-list">
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿Qué Tipo de Sistemas Instaláis?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>Sistemas de Refrigeración, Frío Industrial, Cámaras Frigoríficas y Climatización, incluyendo Aire Acondicionado, Calefacción y Aerotermia.</p></div></div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿Qué Es la Aerotermia y por Qué Es una Buena Opción?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>Es una tecnología que aprovecha la energía del aire exterior para Climatización y producción de agua caliente.</p></div></div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿Ayudáis con la Eficiencia Energética y el Ahorro?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>El mantenimiento de los sistemas ayuda a conservar su rendimiento. El alcance concreto depende del equipo y de la instalación.</p></div></div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿Qué Servicios Ofrecéis Exactamente?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>Instalación, Reparación y Mantenimiento de Refrigeración y Climatización, de acuerdo con los servicios descritos en cada área de la web.</p></div></div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿En Qué Zonas Trabajáis?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>Consulta directamente con Termoelectra para confirmar la disponibilidad del servicio en tu ubicación.</p></div></div>
-</article>
-<article class="faq-item">
-<button aria-expanded="false" class="faq-question" type="button"><span>¿Ofrecéis Instalación y Mantenimiento?</span><span class="faq-plus">+</span></button>
-<div class="faq-answer"><div><p>Sí. Ambos servicios forman parte de la información actual de Refrigeración y Climatización de Termoelectra.</p></div></div>
-</article>
-<article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Realizáis Instalación de Cámaras Frigoríficas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. La sección de Refrigeración contempla instalación y montaje de cámaras frigoríficas industriales y comerciales, según el alcance de cada proyecto.</p></div></div></article><article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Atendéis Averías y Reparación de Cámaras Frigoríficas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. El servicio técnico permite valorar averías de cámaras frigoríficas, reparación de frigorífico industrial y reparación de cuartos fríos.</p></div></div></article><article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Ofrecéis Mantenimiento de Frío Industrial?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. El mantenimiento puede incluir cámaras frigoríficas, frío industrial y refrigeración comercial, con tareas definidas según la instalación.</p></div></div></article><article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Trabajáis con Climatización para Locales y Oficinas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>La sección de Climatización incluye instalación comercial para locales, oficinas, restaurantes y otros espacios profesionales.</p></div></div></article><article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Realizáis Reparación y Mantenimiento de Climatización?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Termoelectra presenta servicios de reparación, servicio técnico y mantenimiento preventivo de climatización comercial.</p></div></div></article></div>
-</div>
+
+<section class="home-v15-section home-v15-work" aria-labelledby="home-v15-work-title">
+  <div class="home-v15-shell">
+    <div class="home-v15-head center">
+      <span class="home-v15-kicker">Instalaciones y Trabajo Técnico</span>
+      <h2 id="home-v15-work-title">La Técnica También Puede Contarse de Forma Visual.</h2>
+      <p class="home-v15-lead">Una selección editorial de cámaras, instalaciones y revisiones técnicas que conecta la Home con las dos páginas especializadas.</p>
+    </div>
+    <div class="home-v15-gallery">
+      <figure class="reveal"><img src="imagenes-cliente-nuevas/n1-camara-nave.webp" alt="Cámara frigorífica industrial en una nave" loading="lazy" decoding="async"><figcaption>Cámaras Frigoríficas Industriales</figcaption></figure>
+      <figure class="reveal"><img src="climatizacion/climatizacion-assets/tecnico-comercio.webp" alt="Técnico trabajando en climatización comercial" loading="lazy" decoding="async"><figcaption>Climatización Comercial</figcaption></figure>
+      <figure class="reveal"><img src="refrigeracion/galeria-revision-tecnica.webp" alt="Revisión técnica de una instalación de refrigeración" loading="lazy" decoding="async"><figcaption>Revisión y Mantenimiento</figcaption></figure>
+      <figure class="reveal"><img src="climatizacion/climatizacion-assets/tecnico-panel.webp" alt="Técnico configurando un panel de climatización" loading="lazy" decoding="async"><figcaption>Control y Servicio Técnico</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="home-v15-section home-v15-trust" aria-labelledby="home-v15-trust-title">
+  <div class="home-v15-shell home-v15-trust-grid">
+    <div>
+      <span class="home-v15-kicker">Confianza Técnica</span>
+      <h2 id="home-v15-trust-title">Preparados para Instalar, Mantener y Reparar.</h2>
+      <p class="home-v15-lead">La confianza no se construye con cifras inventadas, sino mostrando con claridad el alcance del servicio y las acreditaciones indicadas por Termoelectra.</p>
+      <div class="home-v15-promises">
+        <div class="home-v15-promise"><i>✓</i><div><b>Un solo punto de contacto</b><span>Refrigeración y climatización dentro de una misma estructura de servicio técnico.</span></div></div>
+        <div class="home-v15-promise"><i>✓</i><div><b>Intervención según cada instalación</b><span>El alcance se define a partir del sistema, la necesidad y el espacio.</span></div></div>
+        <div class="home-v15-promise"><i>✓</i><div><b>Continuidad después de instalar</b><span>Reparación y mantenimiento disponibles para conservar el funcionamiento.</span></div></div>
+      </div>
+    </div>
+    <div class="home-v15-cert-line" aria-label="Certificaciones de Termoelectra">
+      <div class="home-v15-cert"><strong>RITE</strong><span>Instalaciones térmicas en edificios.</span></div>
+      <div class="home-v15-cert"><strong>REIF</strong><span>Frío industrial, nivel 1.</span></div>
+      <div class="home-v15-cert"><strong>IGII-B</strong><span>Instalaciones comunes de gas.</span></div>
+      <div class="home-v15-cert"><strong>Gases Fluorados</strong><span>Manipulación en todas las cargas.</span></div>
+      <div class="home-v15-cert"><strong>RASIC</strong><span>N.º 00500538.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="home-v15-section home-v15-faq" aria-labelledby="faq-title">
+  <div class="home-v15-shell home-v15-faq-layout">
+    <div>
+      <span class="home-v15-kicker">Antes de Contactar</span>
+      <h2 id="faq-title">Cuatro Respuestas Claras.</h2>
+      <p class="home-v15-lead">Dejamos únicamente las dudas que realmente ayudan a decidir. El detalle técnico permanece en Refrigeración y Climatización.</p>
+      <div class="home-v15-faq-note">¿Tu consulta es más específica? El formulario final y WhatsApp permiten indicar directamente el tipo de instalación o avería.</div>
+    </div>
+    <div class="faq-list">
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Qué servicios ofrece Termoelectra?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Instalación, reparación y mantenimiento de refrigeración, frío industrial, cámaras frigoríficas y climatización comercial.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Trabajáis con proyectos comerciales e industriales?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Las páginas especializadas contemplan instalaciones comerciales e industriales, con el alcance definido según cada proyecto.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Se puede solicitar reparación y mantenimiento?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Termoelectra presenta servicio técnico, reparación y mantenimiento tanto para refrigeración como para climatización.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Cómo solicito una valoración?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Puedes contactar por WhatsApp, llamar al 651 09 73 93 o dejar tu nombre y teléfono en el formulario.</p></div></div></article>
+    </div>
+  </div>
 </section>
 <section aria-labelledby="contact-title" class="section section-dark" id="contacto">
 <div class="shell">
