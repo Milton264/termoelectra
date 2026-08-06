@@ -3394,6 +3394,177 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 </style>
 
+
+<style id="v21-climatizacion-creative-layer">
+/* v21: más ritmo visual en Climatización, conservando contenido y orden. */
+.te-climatizacion #servicios{
+  position:relative!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 8% 16%,rgba(10,138,194,.11),transparent 24%),
+    radial-gradient(circle at 94% 70%,rgba(194,32,51,.055),transparent 20%),
+    linear-gradient(180deg,#eef8fc 0%,#f8fcfe 46%,#eaf6fb 100%)!important;
+}
+.te-climatizacion #servicios::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;
+  background-image:radial-gradient(rgba(10,138,194,.26) 1px,transparent 1px);
+  background-size:26px 26px;
+  animation:climateGridDrift 24s linear infinite;
+}
+@keyframes climateGridDrift{to{background-position:52px 26px}}
+.te-climatizacion #servicios>.shell{position:relative;z-index:1}
+.te-climatizacion #servicios .section-head{
+  padding:clamp(30px,4vw,54px)!important;
+  margin-bottom:clamp(42px,5vw,70px)!important;
+  border:1px solid rgba(10,138,194,.14)!important;
+  border-radius:28px!important;
+  background:rgba(255,255,255,.82)!important;
+  box-shadow:0 22px 60px rgba(5,64,90,.09)!important;
+  backdrop-filter:blur(8px);
+}
+.te-climatizacion #servicios .detail-stack{
+  position:relative!important;
+  display:grid!important;
+  gap:clamp(34px,4vw,58px)!important;
+  padding-left:34px!important;
+}
+.te-climatizacion #servicios .detail-stack::before{
+  content:"";position:absolute;left:8px;top:46px;bottom:46px;width:3px;border-radius:99px;
+  background:linear-gradient(180deg,#0a8ac2,#37bad9 48%,#c22033);
+  box-shadow:0 0 22px rgba(10,138,194,.24);
+}
+.te-climatizacion #servicios .detail-card,
+.te-climatizacion #servicios .detail-card.reverse{
+  position:relative!important;
+  overflow:visible!important;
+  border:1px solid rgba(8,104,146,.16)!important;
+  border-radius:30px!important;
+  box-shadow:0 26px 72px rgba(5,57,81,.13)!important;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease!important;
+  isolation:isolate;
+}
+.te-climatizacion #servicios .detail-card::before{
+  content:"";position:absolute;z-index:4;left:-34px;top:50%;width:18px;height:18px;
+  transform:translateY(-50%);border-radius:50%;background:#fff;border:5px solid #0a8ac2;
+  box-shadow:0 0 0 7px rgba(10,138,194,.12),0 8px 22px rgba(4,70,99,.18);
+}
+.te-climatizacion #servicios .detail-card:nth-child(2)::before{border-color:#c22033}
+.te-climatizacion #servicios .detail-card:nth-child(3)::before{border-color:#37bad9}
+.te-climatizacion #servicios .detail-card::after{
+  content:"";position:absolute;z-index:5;left:0;right:0;top:0;height:4px;border-radius:30px 30px 0 0;
+  background:linear-gradient(90deg,#c22033,#0a8ac2,#37bad9,#c22033);
+  background-size:220% 100%;animation:climateAccentRun 7s linear infinite;
+}
+@keyframes climateAccentRun{to{background-position:220% 0}}
+.te-climatizacion #servicios .detail-card:hover{
+  transform:translateY(-7px)!important;
+  box-shadow:0 34px 88px rgba(5,57,81,.18)!important;
+}
+.te-climatizacion #servicios .detail-card:nth-child(1){background:rgba(255,255,255,.97)!important}
+.te-climatizacion #servicios .detail-card:nth-child(2){
+  background:linear-gradient(135deg,#074661 0%,#0c607e 100%)!important;
+  border-color:rgba(74,195,225,.22)!important;
+}
+.te-climatizacion #servicios .detail-card:nth-child(3){
+  background:linear-gradient(145deg,#ffffff 0%,#e5f5fb 100%)!important;
+}
+.te-climatizacion #servicios .detail-copy{
+  position:relative!important;
+  z-index:2!important;
+  overflow:hidden!important;
+}
+.te-climatizacion #servicios .detail-copy::after{
+  content:"";position:absolute;width:190px;height:190px;right:-110px;bottom:-115px;border-radius:50%;
+  border:1px solid rgba(10,138,194,.17);box-shadow:0 0 0 28px rgba(10,138,194,.04),0 0 0 58px rgba(10,138,194,.025);
+  pointer-events:none;
+}
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-copy::after{
+  border-color:rgba(211,245,255,.24);box-shadow:0 0 0 28px rgba(211,245,255,.045),0 0 0 58px rgba(211,245,255,.025)
+}
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-copy h3,
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-copy>p,
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-note,
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-note strong{color:#f3fbfe!important}
+.te-climatizacion #servicios .detail-card:nth-child(2) .eyebrow{color:#80dcf1!important}
+.te-climatizacion #servicios .detail-card:nth-child(2) .check-list li{
+  color:#fff!important;background:rgba(255,255,255,.09)!important;border-color:rgba(255,255,255,.18)!important;
+}
+.te-climatizacion #servicios .detail-card:nth-child(2) .detail-note{
+  background:rgba(255,255,255,.08)!important;border-color:rgba(115,220,244,.58)!important;
+}
+.te-climatizacion #servicios .detail-media{
+  position:relative!important;overflow:hidden!important;
+}
+.te-climatizacion #servicios .detail-media::after{
+  content:"";position:absolute;z-index:3;left:-30%;top:-10%;width:18%;height:120%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+  transform:skewX(-14deg);animation:climateScan 7.5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes climateScan{0%,62%{left:-30%}82%,100%{left:125%}}
+.te-climatizacion #servicios .detail-media figure{overflow:hidden!important}
+.te-climatizacion #servicios .detail-media img{
+  transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .7s ease!important;
+}
+.te-climatizacion #servicios .detail-card:hover .detail-media img{transform:scale(1.045)!important;filter:saturate(1.05) contrast(1.025)!important}
+.te-climatizacion #servicios .detail-badge{
+  box-shadow:0 14px 34px rgba(4,51,73,.2)!important;
+  animation:climateBadgeFloat 4.4s ease-in-out infinite;
+}
+@keyframes climateBadgeFloat{50%{transform:translateY(-5px)}}
+.te-climatizacion #servicios .check-list li{
+  position:relative!important;overflow:hidden!important;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease!important;
+}
+.te-climatizacion #servicios .check-list li::after{
+  content:"";position:absolute;inset:0;transform:translateX(-110%);
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.46),transparent);
+  transition:transform .65s ease;
+}
+.te-climatizacion #servicios .check-list li:hover{
+  transform:translateX(5px)!important;box-shadow:0 12px 26px rgba(4,73,101,.11)!important;border-color:rgba(10,138,194,.38)!important;
+}
+.te-climatizacion #servicios .check-list li:hover::after{transform:translateX(110%)}
+.te-climatizacion #servicios .detail-note{
+  box-shadow:0 12px 30px rgba(5,68,94,.075)!important;
+}
+.te-climatizacion #servicios .detail-card.in{
+  animation:climateCardArrive .85s cubic-bezier(.2,.75,.2,1) both;
+}
+.te-climatizacion #servicios .detail-card.reverse.in{animation-name:climateCardArriveReverse}
+@keyframes climateCardArrive{from{transform:translate3d(-34px,18px,0);filter:saturate(.86)}to{transform:none;filter:none}}
+@keyframes climateCardArriveReverse{from{transform:translate3d(34px,18px,0);filter:saturate(.86)}to{transform:none;filter:none}}
+
+/* La zona interactiva enlaza visualmente con los servicios y evita una ruptura plana. */
+.te-climatizacion #trabajos{
+  position:relative!important;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(58,188,219,.13),transparent 26%),
+    linear-gradient(145deg,#063f59 0%,#08617f 100%)!important;
+}
+.te-climatizacion #trabajos::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;
+  background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.te-climatizacion #trabajos>.shell{position:relative;z-index:1}
+.te-climatizacion #trabajos .climate-lab{box-shadow:0 30px 90px rgba(0,24,36,.35)!important}
+@media(max-width:900px){
+  .te-climatizacion #servicios .detail-stack{padding-left:0!important}
+  .te-climatizacion #servicios .detail-stack::before,.te-climatizacion #servicios .detail-card::before{display:none!important}
+}
+@media(max-width:760px){
+  .te-climatizacion #servicios .section-head{padding:28px 20px!important;border-radius:22px!important}
+  .te-climatizacion #servicios .detail-card:nth-child(2) .detail-media{order:0!important}
+  .te-climatizacion #servicios .detail-card:nth-child(2) .detail-copy{order:1!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .te-climatizacion #servicios::before,.te-climatizacion #servicios .detail-card::after,
+  .te-climatizacion #servicios .detail-media::after,.te-climatizacion #servicios .detail-badge{animation:none!important}
+  .te-climatizacion #servicios .detail-card.in{animation:none!important}
+}
+</style>
+
 </head>
 <body class="te-climatizacion">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
