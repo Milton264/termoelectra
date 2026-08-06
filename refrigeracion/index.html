@@ -6403,111 +6403,194 @@ input:focus,textarea:focus,select:focus{
 }
 </style>
 
-
-<style id="v17-full-width-consistency-fix">
-/* V17: mismo ancho útil en Home, Refrigeración y Climatización.
-   Se amplían los contenedores principales sin modificar el navbar
-   ni forzar las columnas responsive existentes. */
-:root{
-  --te-page-gutter:clamp(22px,3.2vw,62px);
-  --te-page-width:calc(100% - (var(--te-page-gutter) * 2));
-}
+<style id="v19-layout-repair">
+:root{--v19-gutter:clamp(24px,3.25vw,64px)}
 html,body{max-width:100%;overflow-x:hidden}
-
-/* Hero y franja de capacidades compartidos. */
-.unified-hero__inner,
-.unified-capability,
-.unified-strip{
-  width:var(--te-page-width)!important;
+/* Keep every animated block visible. Hover and hero motion remain active. */
+.reveal,.te-motion-item{opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important}
+/* Consistent useful width: backgrounds stay full bleed, content keeps a safe fluid gutter. */
+.te-home .home-v15-shell,
+.te-home .shell,
+.te-refrigeracion .wrap,
+.te-refrigeracion .carousel-head,
+.te-refrigeracion .foot-grid,
+.te-refrigeracion .foot-bottom,
+.te-climatizacion .shell{
+  width:calc(100% - (var(--v19-gutter) * 2))!important;
   max-width:none!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
+  margin-inline:auto!important;
+}
+.unified-hero__inner,.unified-capability{
+  width:calc(100% - (var(--v19-gutter) * 2))!important;
+  max-width:none!important;
+  margin-inline:auto!important;
 }
 
 /* HOME */
-.home-v15-shell,
-#contacto.section>.shell,
-footer>.shell{
-  width:var(--te-page-width)!important;
-  max-width:none!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
+.te-home .home-v15-section{padding:clamp(64px,6vw,96px) 0!important}
+.te-home .home-v15-areas{padding-top:clamp(68px,6.5vw,104px)!important}
+.te-home .home-v15-head{max-width:1120px!important;margin-bottom:clamp(30px,3vw,46px)!important}
+.te-home .home-v15-head.center{margin-inline:auto!important;text-align:center!important}
+.te-home .home-v15-head.center .home-v15-lead{margin-inline:auto!important}
+.te-home .home-v15-area-stack{gap:24px!important}
+.te-home .home-v15-area,.te-home .home-v15-area.reverse{
+  width:100%!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  min-height:520px!important;border-radius:28px!important;overflow:hidden!important
 }
-.home-v15-area-stack,
-.home-v15-response-grid,
-.home-v15-gallery,
-.home-v15-trust-grid,
-.home-v15-cert-line,
-.home-v15-faq-layout,
-#contacto .contact-card{
-  width:100%!important;
-  max-width:none!important;
+.te-home .home-v15-area.reverse .home-v15-area-media{order:2!important}
+.te-home .home-v15-area-media{min-height:520px!important;height:100%!important;overflow:hidden!important}
+.te-home .home-v15-area-media img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-home .home-v15-area-copy{padding:clamp(38px,4.5vw,72px)!important}
+.te-home .home-v15-response-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;gap:clamp(34px,5vw,82px)!important}
+.te-home .home-v15-response-list{gap:14px!important}
+.te-home .home-v15-response-card{min-height:170px!important}
+.te-home .home-v15-gallery{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:none!important;gap:16px!important
 }
-#contacto .contact-card{margin-left:0!important;margin-right:0!important}
+.te-home .home-v15-gallery figure,.te-home .home-v15-gallery figure:first-child,.te-home .home-v15-gallery figure:last-child{
+  grid-column:auto!important;grid-row:auto!important;height:auto!important;aspect-ratio:16/9!important;
+  border-radius:24px!important;overflow:hidden!important
+}
+.te-home .home-v15-gallery img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-home .home-v15-trust-grid{
+  grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important;
+  gap:clamp(34px,5vw,80px)!important;align-items:start!important
+}
+.te-home .home-v15-cert-line{align-self:stretch!important;grid-template-columns:repeat(5,minmax(0,1fr))!important}
+.te-home .home-v15-cert{min-height:145px!important}
+.te-home .home-v15-faq-layout{grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr)!important;gap:clamp(34px,5vw,80px)!important}
+.te-home #contacto{padding:40px 0!important}
+.te-home #contacto>.shell{width:calc(100% - (var(--v19-gutter) * 2))!important;max-width:none!important}
+.te-home .contact-card{max-width:none!important;margin:0!important}
 
-/* REFRIGERACIÓN: conserva los bloques zig-zag de borde a borde. */
-#industrial>.wrap,
-#camaras>.carousel-head,
-section#contacto>.wrap,
-.alt:not(.service-zigzag)>.wrap,
-footer>.foot-grid,
-footer>.foot-bottom{
-  width:var(--te-page-width)!important;
-  max-width:none!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
+/* REFRIGERATION */
+.te-refrigeracion #industrial>.wrap{padding-block:clamp(60px,6vw,92px)!important}
+.te-refrigeracion #industrial .svc{
+  display:grid!important;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+  gap:clamp(34px,4vw,68px)!important;align-items:center!important
 }
-#industrial .svc,
-#camaras .camera-seo-grid,
-.alt:not(.service-zigzag) .gallery,
-#contacto .contact-box,
-#contacto .compact-contact{
-  width:100%!important;
-  max-width:none!important;
+.te-refrigeracion #industrial .svc-media{min-height:520px!important;height:100%!important;border-radius:26px!important;overflow:hidden!important}
+.te-refrigeracion .svc-media.media-mosaic figure{overflow:hidden!important}
+.te-refrigeracion .svc-media.media-mosaic figure img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-refrigeracion .industrial-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.te-refrigeracion .cold-system-visual{
+  width:100%!important;max-width:none!important;margin:clamp(34px,4vw,62px) 0 0!important;
+  display:grid!important;grid-template-columns:minmax(300px,.72fr) minmax(0,1.68fr)!important;
+  min-height:520px!important;padding:14px!important;border-radius:28px!important;overflow:hidden!important
 }
-#contacto .contact-box,
-#contacto .compact-contact{margin-left:0!important;margin-right:0!important}
-#camaras .track{
-  padding-left:var(--te-page-gutter)!important;
-  padding-right:var(--te-page-gutter)!important;
-  scroll-padding-left:var(--te-page-gutter)!important;
-  scroll-padding-right:var(--te-page-gutter)!important;
+.te-refrigeracion .cold-system-copy{padding:clamp(30px,3.5vw,58px)!important;align-self:center!important}
+.te-refrigeracion .cold-system-media{height:100%!important;min-height:490px!important;border-radius:22px!important;overflow:hidden!important}
+.te-refrigeracion .cold-system-media>img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-refrigeracion .carousel-sec{padding:clamp(62px,6vw,94px) 0!important}
+.te-refrigeracion .carousel-head{text-align:center!important;padding:0!important}
+.te-refrigeracion .carousel-head .eyebrow-sec{justify-content:center!important}
+.te-refrigeracion .carousel-head h2,.te-refrigeracion .carousel-head p{margin-inline:auto!important}
+.te-refrigeracion .camera-seo-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:none!important;gap:14px!important}
+.te-refrigeracion .carousel{width:calc(100% - (var(--v19-gutter) * 2))!important;max-width:none!important;margin:28px auto 0!important}
+.te-refrigeracion .track{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;width:100%!important;transform:none!important}
+.te-refrigeracion .slide{width:100%!important;min-width:0!important;height:auto!important;aspect-ratio:4/3!important;border-radius:24px!important;overflow:hidden!important}
+.te-refrigeracion .slide img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-refrigeracion .service-zigzag{padding:clamp(54px,5vw,82px) 0!important}
+.te-refrigeracion .service-zigzag>.wrap{padding:0!important}
+.te-refrigeracion .service-zigzag .svc,.te-refrigeracion .service-zigzag .svc.rev{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  min-height:500px!important;margin-bottom:22px!important;border-radius:28px!important;overflow:hidden!important
 }
+.te-refrigeracion .service-zigzag .svc.rev .svc-media{order:2!important}
+.te-refrigeracion .service-zigzag .svc-media{height:100%!important;min-height:500px!important;border-radius:0!important}
+.te-refrigeracion .service-zigzag .svc-body{padding:clamp(36px,4vw,66px)!important;align-self:center!important}
+.te-refrigeracion #comercial>.wrap{padding-block:clamp(60px,6vw,92px)!important}
+.te-refrigeracion #comercial .svc,.te-refrigeracion #comercial .svc.rev{
+  display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important;
+  gap:clamp(34px,4vw,68px)!important;align-items:center!important
+}
+.te-refrigeracion #comercial .svc.rev .svc-media{order:2!important}
+.te-refrigeracion #comercial .svc-media{min-height:500px!important;height:100%!important;border-radius:26px!important;overflow:hidden!important}
+.te-refrigeracion .alt:not(.service-zigzag)>.wrap{padding-block:clamp(60px,6vw,92px)!important}
+.te-refrigeracion .alt:not(.service-zigzag) .sec-title,.te-refrigeracion .alt:not(.service-zigzag) .sec-lead{max-width:1000px!important}
+.te-refrigeracion .gallery{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-rows:245px!important;gap:14px!important;width:100%!important}
+.te-refrigeracion .gallery a{border-radius:22px!important;overflow:hidden!important}
+.te-refrigeracion .gallery a img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-refrigeracion #contacto>.wrap{padding-block:38px!important}
+.te-refrigeracion .contact-box{max-width:none!important;margin:0!important}
 
-/* CLIMATIZACIÓN */
-#servicios>.shell,
-#trabajos>.shell,
-#contacto.section.white>.shell{
-  width:var(--te-page-width)!important;
-  max-width:none!important;
-  margin-left:auto!important;
-  margin-right:auto!important;
+/* CLIMATIZATION */
+.te-climatizacion #servicios,.te-climatizacion #trabajos{padding:clamp(62px,6vw,94px) 0!important}
+.te-climatizacion .section-head{max-width:1120px!important;margin:0 auto clamp(34px,3.5vw,54px)!important;text-align:center!important}
+.te-climatizacion .section-head .eyebrow{justify-content:center!important}
+.te-climatizacion .section-head .lead{margin-inline:auto!important}
+.te-climatizacion .detail-stack{display:grid!important;gap:22px!important}
+.te-climatizacion #servicios .detail-card,.te-climatizacion #servicios .detail-card.reverse{
+  width:100%!important;max-width:none!important;display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  min-height:520px!important;border-radius:28px!important;overflow:hidden!important
 }
-#servicios .detail-stack,
-#trabajos .climate-lab,
-#trabajos .gallery-three,
-#contacto .contact-panel,
-#contacto .compact-contact{
-  width:100%!important;
-  max-width:none!important;
-}
+.te-climatizacion #servicios .detail-card.reverse .detail-media{order:2!important}
+.te-climatizacion #servicios .detail-media{height:100%!important;min-height:520px!important;overflow:hidden!important}
+.te-climatizacion #servicios .detail-media figure{overflow:hidden!important}
+.te-climatizacion #servicios .detail-media img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-climatizacion #servicios .detail-copy{padding:clamp(36px,4vw,66px)!important;align-self:center!important}
+.te-climatizacion .climate-lab{width:100%!important;max-width:none!important;margin:0!important;grid-template-columns:minmax(300px,.72fr) minmax(0,1.68fr)!important;min-height:520px!important;padding:14px!important;border-radius:28px!important}
+.te-climatizacion .lab-copy{padding:clamp(30px,3.5vw,58px)!important;align-self:center!important}
+.te-climatizacion .system-visual{height:100%!important;min-height:490px!important;border-radius:22px!important;overflow:hidden!important}
+.te-climatizacion .gallery-three{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:none!important;margin-inline:0!important}
+.te-climatizacion .gallery-item{aspect-ratio:4/3!important;border-radius:24px!important;overflow:hidden!important}
+.te-climatizacion .gallery-item img{width:100%!important;height:100%!important;object-fit:cover!important}
+.te-climatizacion #contacto{padding:40px 0!important}
+.te-climatizacion .contact-panel{max-width:none!important;margin:0!important}
 
-@media(max-width:1000px){
-  :root{--te-page-gutter:clamp(18px,3vw,30px)}
+@media(max-width:1050px){
+  .te-home .home-v15-trust-grid,.te-home .home-v15-faq-layout,.te-home .home-v15-response-grid{grid-template-columns:1fr!important}
+  .te-home .home-v15-cert-line{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .te-refrigeracion #industrial .svc,.te-refrigeracion #comercial .svc,.te-refrigeracion #comercial .svc.rev{grid-template-columns:1fr!important}
+  .te-refrigeracion #comercial .svc.rev .svc-media{order:0!important}
+  .te-refrigeracion .cold-system-visual,.te-climatizacion .climate-lab{grid-template-columns:1fr!important}
 }
 @media(max-width:760px){
-  :root{--te-page-gutter:14px}
-  #camaras .track{
-    padding-left:14px!important;
-    padding-right:14px!important;
-    scroll-padding-left:14px!important;
-    scroll-padding-right:14px!important;
-  }
-}
-</style>
+  :root{--v19-gutter:14px}
+  .te-home .home-v15-section{padding:48px 0!important}
+  .te-home .home-v15-area,.te-home .home-v15-area.reverse{display:flex!important;flex-direction:column!important;min-height:0!important;border-radius:24px!important}
+  .te-home .home-v15-area-media,.te-home .home-v15-area.reverse .home-v15-area-media{order:0!important;min-height:0!important;height:auto!important;aspect-ratio:4/3!important}
+  .te-home .home-v15-area-copy{order:1!important;padding:30px 22px 34px!important}
+  .te-home .home-v15-response-list{grid-template-columns:1fr!important}
+  .te-home .home-v15-gallery{grid-template-columns:1fr!important;gap:14px!important}
+  .te-home .home-v15-gallery figure,.te-home .home-v15-gallery figure:first-child,.te-home .home-v15-gallery figure:last-child{aspect-ratio:4/3!important}
+  .te-home .home-v15-cert-line{grid-template-columns:1fr!important}
+  .te-home .home-v15-cert{min-height:106px!important;border-right:0!important;border-top:1px solid #d5e7ee!important}
+  .te-home .home-v15-cert:first-child{border-top:0!important}
 
+  .te-refrigeracion #industrial>.wrap,.te-refrigeracion #comercial>.wrap,.te-refrigeracion .alt:not(.service-zigzag)>.wrap{padding-block:48px!important}
+  .te-refrigeracion #industrial .svc-media,.te-refrigeracion #comercial .svc-media{min-height:0!important;height:auto!important;aspect-ratio:4/3!important}
+  .te-refrigeracion .industrial-service-grid{grid-template-columns:1fr!important}
+  .te-refrigeracion .cold-system-visual{padding:10px!important;gap:8px!important;min-height:0!important}
+  .te-refrigeracion .cold-system-copy{padding:26px 16px 18px!important}
+  .te-refrigeracion .cold-system-media{min-height:0!important;height:auto!important;aspect-ratio:4/3!important}
+  .te-refrigeracion .camera-seo-grid{grid-template-columns:1fr!important}
+  .te-refrigeracion .carousel{width:100%!important;margin-top:20px!important}
+  .te-refrigeracion .track{display:flex!important;gap:14px!important;overflow-x:auto!important;padding:0 14px 8px!important;scroll-snap-type:x mandatory!important}
+  .te-refrigeracion .slide{flex:0 0 86vw!important;aspect-ratio:4/3!important;scroll-snap-align:start!important}
+  .te-refrigeracion .service-zigzag{padding:48px 0!important}
+  .te-refrigeracion .service-zigzag .svc,.te-refrigeracion .service-zigzag .svc.rev{display:flex!important;flex-direction:column!important;min-height:0!important;border-radius:24px!important}
+  .te-refrigeracion .service-zigzag .svc-media,.te-refrigeracion .service-zigzag .svc.rev .svc-media{order:0!important;min-height:0!important;height:auto!important;aspect-ratio:4/3!important}
+  .te-refrigeracion .service-zigzag .svc-body{order:1!important;padding:30px 22px 36px!important}
+  .te-refrigeracion .gallery{grid-template-columns:1fr 1fr!important;grid-auto-rows:170px!important;gap:10px!important}
+  .te-refrigeracion .gallery .g-landscape-wide{grid-column:span 2!important}
+
+  .te-climatizacion #servicios,.te-climatizacion #trabajos{padding:50px 0!important}
+  .te-climatizacion #servicios .detail-card,.te-climatizacion #servicios .detail-card.reverse{display:flex!important;flex-direction:column!important;min-height:0!important;border-radius:24px!important}
+  .te-climatizacion #servicios .detail-media,.te-climatizacion #servicios .detail-card.reverse .detail-media{order:0!important;min-height:0!important;height:auto!important;aspect-ratio:4/3!important}
+  .te-climatizacion #servicios .detail-copy{order:1!important;padding:30px 22px 36px!important}
+  .te-climatizacion .climate-lab{grid-template-columns:1fr!important;min-height:0!important;padding:10px!important}
+  .te-climatizacion .lab-copy{padding:26px 14px 18px!important}
+  .te-climatizacion .system-visual{min-height:360px!important}
+  .te-climatizacion .gallery-three{grid-template-columns:1fr!important;gap:14px!important}
+  .te-climatizacion .gallery-item{aspect-ratio:4/3!important}
+}
+@media(max-width:430px){:root{--v19-gutter:10px}}
+</style>
 </head>
-<body>
+<body class="te-refrigeracion">
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
 <header class="shared-header te-v11-header" id="siteHeader">
   <nav aria-label="Navegación principal" class="nav shared-nav te-v11-nav">
@@ -7305,5 +7388,15 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 })();
 </script>
 
+<script id="v19-motion-safety">
+(() => {
+  const body=document.body;if(!body)return;
+  body.dataset.v19Motion='ready';
+  document.querySelectorAll('.reveal,.te-motion-item').forEach(el=>{
+    el.classList.add('visible','in','te-motion-in');
+    el.style.opacity='1';el.style.visibility='visible';
+  });
+})();
+</script>
 </body>
 </html>
