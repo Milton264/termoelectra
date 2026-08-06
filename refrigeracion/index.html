@@ -6403,6 +6403,109 @@ input:focus,textarea:focus,select:focus{
 }
 </style>
 
+
+<style id="v17-full-width-consistency-fix">
+/* V17: mismo ancho útil en Home, Refrigeración y Climatización.
+   Se amplían los contenedores principales sin modificar el navbar
+   ni forzar las columnas responsive existentes. */
+:root{
+  --te-page-gutter:clamp(22px,3.2vw,62px);
+  --te-page-width:calc(100% - (var(--te-page-gutter) * 2));
+}
+html,body{max-width:100%;overflow-x:hidden}
+
+/* Hero y franja de capacidades compartidos. */
+.unified-hero__inner,
+.unified-capability,
+.unified-strip{
+  width:var(--te-page-width)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* HOME */
+.home-v15-shell,
+#contacto.section>.shell,
+footer>.shell{
+  width:var(--te-page-width)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.home-v15-area-stack,
+.home-v15-response-grid,
+.home-v15-gallery,
+.home-v15-trust-grid,
+.home-v15-cert-line,
+.home-v15-faq-layout,
+#contacto .contact-card{
+  width:100%!important;
+  max-width:none!important;
+}
+#contacto .contact-card{margin-left:0!important;margin-right:0!important}
+
+/* REFRIGERACIÓN: conserva los bloques zig-zag de borde a borde. */
+#industrial>.wrap,
+#camaras>.carousel-head,
+section#contacto>.wrap,
+.alt:not(.service-zigzag)>.wrap,
+footer>.foot-grid,
+footer>.foot-bottom{
+  width:var(--te-page-width)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+#industrial .svc,
+#camaras .camera-seo-grid,
+.alt:not(.service-zigzag) .gallery,
+#contacto .contact-box,
+#contacto .compact-contact{
+  width:100%!important;
+  max-width:none!important;
+}
+#contacto .contact-box,
+#contacto .compact-contact{margin-left:0!important;margin-right:0!important}
+#camaras .track{
+  padding-left:var(--te-page-gutter)!important;
+  padding-right:var(--te-page-gutter)!important;
+  scroll-padding-left:var(--te-page-gutter)!important;
+  scroll-padding-right:var(--te-page-gutter)!important;
+}
+
+/* CLIMATIZACIÓN */
+#servicios>.shell,
+#trabajos>.shell,
+#contacto.section.white>.shell{
+  width:var(--te-page-width)!important;
+  max-width:none!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+#servicios .detail-stack,
+#trabajos .climate-lab,
+#trabajos .gallery-three,
+#contacto .contact-panel,
+#contacto .compact-contact{
+  width:100%!important;
+  max-width:none!important;
+}
+
+@media(max-width:1000px){
+  :root{--te-page-gutter:clamp(18px,3vw,30px)}
+}
+@media(max-width:760px){
+  :root{--te-page-gutter:14px}
+  #camaras .track{
+    padding-left:14px!important;
+    padding-right:14px!important;
+    scroll-padding-left:14px!important;
+    scroll-padding-right:14px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
