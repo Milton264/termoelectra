@@ -1603,7 +1603,7 @@ h1,h2,h3,p,a,button,label{overflow-wrap:anywhere}
 @media(prefers-reduced-motion:reduce){
   .unified-hero__flow i{animation:none!important}
 }
-</style><meta content="v9-2026-08-04-visible-client-fixes" name="termoelectra-build"/>
+</style><meta content="v16-2026-08-05-no-empty-space" name="termoelectra-build"/>
 <style id="v11-final-navbar-footer-fix">
 :root{
   --te11-navy:#073b57;
@@ -2734,6 +2734,142 @@ input:focus,textarea:focus,select:focus{
   .te-motion-item,.te-motion-item.te-motion-left,.te-motion-item.te-motion-right{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
   .te-v15-heading::before{transform:scaleX(1)!important;transition:none!important}
   *,*::before,*::after{scroll-behavior:auto!important}
+}
+</style>
+
+
+<style id="v16-no-empty-space-fix">
+/* V16: compacta la Home sin alterar el orden, los textos, los colores ni el contenido. */
+@media (min-width:1101px){
+  .home-v15-section{
+    padding:clamp(50px,4.2vw,76px) 0!important;
+  }
+  .home-v15-areas{
+    padding-top:clamp(62px,5vw,88px)!important;
+  }
+  .home-v15-head{
+    margin-bottom:32px!important;
+  }
+
+  /* Confianza: título y promesas comparten la primera fila; las acreditaciones
+     ocupan todo el ancho debajo, sin dejar una mitad de la sección vacía. */
+  .home-v15-trust{
+    padding:52px 0 42px!important;
+  }
+  .home-v15-trust-grid{
+    grid-template-columns:1fr!important;
+    gap:30px!important;
+    align-items:start!important;
+  }
+  .home-v15-trust-grid>div:first-child{
+    display:grid!important;
+    grid-template-columns:minmax(0,.88fr) minmax(470px,1.12fr)!important;
+    grid-template-rows:auto auto 1fr!important;
+    column-gap:clamp(42px,5vw,82px)!important;
+    align-items:start!important;
+  }
+  .home-v15-trust-grid>div:first-child>.home-v15-kicker,
+  .home-v15-trust-grid>div:first-child>h2,
+  .home-v15-trust-grid>div:first-child>.home-v15-lead{
+    grid-column:1!important;
+  }
+  .home-v15-trust-grid>div:first-child>.home-v15-kicker{grid-row:1!important}
+  .home-v15-trust-grid>div:first-child>h2{grid-row:2!important}
+  .home-v15-trust-grid>div:first-child>.home-v15-lead{grid-row:3!important}
+  .home-v15-trust h2{
+    font-size:clamp(2.8rem,4.15vw,4.55rem)!important;
+    line-height:.96!important;
+  }
+  .home-v15-promises{
+    grid-column:2!important;
+    grid-row:1/4!important;
+    align-self:center!important;
+    gap:2px!important;
+    margin:0!important;
+  }
+  .home-v15-promise{
+    padding:14px 0!important;
+  }
+  .home-v15-cert-line{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    grid-template-rows:1fr!important;
+    align-self:auto!important;
+  }
+  .home-v15-cert{
+    min-height:126px!important;
+    height:auto!important;
+    padding:20px!important;
+    border-top:0!important;
+    border-right:1px solid #d5e7ee!important;
+  }
+  .home-v15-cert:last-child{
+    grid-column:auto!important;
+    border-right:0!important;
+  }
+
+  /* FAQ: menos aire decorativo y más cercanía con el bloque de contacto. */
+  .home-v15-faq{
+    padding:40px 0 30px!important;
+  }
+  .home-v15-faq-layout{
+    grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr)!important;
+    gap:clamp(36px,4.5vw,72px)!important;
+    align-items:start!important;
+  }
+  .home-v15-faq h2{
+    font-size:clamp(2.8rem,4.25vw,4.6rem)!important;
+  }
+  .home-v15-faq .home-v15-lead{
+    line-height:1.58!important;
+  }
+  .home-v15-faq-note{
+    margin-top:18px!important;
+    padding:16px 18px!important;
+  }
+  .home-v15-faq .faq-list{
+    gap:9px!important;
+  }
+  .home-v15-faq .faq-question{
+    min-height:64px!important;
+    padding:16px 18px!important;
+  }
+  .home-v15-faq .faq-answer p{
+    padding:0 18px 18px!important;
+  }
+}
+
+@media (min-width:1500px){
+  .home-v15-shell{
+    width:min(calc(100% - 72px),1620px)!important;
+  }
+  .home-v15-trust-grid>div:first-child{
+    grid-template-columns:minmax(0,.84fr) minmax(560px,1.16fr)!important;
+  }
+}
+
+@media (max-width:1100px){
+  .home-v15-section{
+    padding:58px 0!important;
+  }
+  .home-v15-trust-grid,
+  .home-v15-faq-layout{
+    gap:30px!important;
+  }
+  .home-v15-cert-line{
+    margin-top:0!important;
+  }
+}
+
+@media (max-width:680px){
+  .home-v15-section{
+    padding:48px 0!important;
+  }
+  .home-v15-faq{
+    padding-bottom:36px!important;
+  }
 }
 </style>
 
