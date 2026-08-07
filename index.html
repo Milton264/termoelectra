@@ -2924,6 +2924,128 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 @media(max-width:430px){:root{--v19-gutter:10px}}
 </style>
+
+<style id="v24-client-review">
+/* Revisión de cliente · menú, hero y ajustes de espaciado */
+.shared-header .shared-nav-links a,
+.site-header .shared-nav-links a,
+.shared-header .nav-links a,
+.shared-nav-links a,
+.nav-links a{
+  text-transform:none!important;
+  letter-spacing:0!important;
+  font-size:1rem!important;
+}
+@media(min-width:761px){
+  .shared-header .shared-nav-links a,
+  .site-header .shared-nav-links a,
+  .shared-header .nav-links a{font-size:1.02rem!important;padding-inline:18px!important}
+}
+
+/* El texto del hero queda directamente sobre la fotografía, sin tarjeta/caja. */
+.unified-hero__copy{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  padding:0!important;
+}
+.unified-hero__panel{display:none!important}
+.unified-hero__inner{grid-template-columns:1fr!important}
+.unified-hero__copy{width:min(980px,76vw)!important;max-width:980px!important}
+.unified-hero h1{max-width:980px!important}
+.unified-hero h1 .hero-subline{
+  margin-top:.24em!important;
+  font-size:.48em!important;
+  line-height:1.03!important;
+  letter-spacing:-.035em!important;
+  color:#d7f7ff!important;
+}
+
+/* Contacto directo: teléfono protagonista y WhatsApp solo como icono. */
+.unified-hero__button--phone{
+  min-width:205px!important;
+  background:#fff!important;
+  color:#073b57!important;
+  border-color:#fff!important;
+}
+.unified-hero__button--icon{
+  width:58px!important;
+  min-width:58px!important;
+  padding:0!important;
+  border-radius:50%!important;
+  aspect-ratio:1!important;
+}
+.unified-hero__button--icon svg{width:25px!important;height:25px!important}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Home: menos velo para que la fotografía superior gane presencia. */
+.unified-hero--home::before{
+  background-image:
+    linear-gradient(90deg,rgba(2,27,41,.70) 0%,rgba(3,39,58,.48) 43%,rgba(3,39,58,.09) 76%,rgba(3,39,58,.12) 100%),
+    var(--hero-image)!important;
+}
+
+/* Refrigeración: recortar el espacio previo a Nuestro Equipo. */
+.te-refrigeracion #comercial + .alt{margin-top:0!important;padding-top:0!important}
+.te-refrigeracion #comercial + .alt>.wrap{padding-top:54px!important;padding-bottom:72px!important}
+.te-refrigeracion #comercial>.wrap{padding-bottom:58px!important}
+
+/* FAQ de Home con más volumen pero sin convertirlo en texto pesado. */
+.te-home .home-v15-faq-layout{grid-template-columns:minmax(290px,.58fr) minmax(0,1.42fr)!important;gap:clamp(34px,5vw,76px)!important}
+.te-home .home-v15-faq .faq-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+.te-home .home-v15-faq .faq-item{height:max-content!important}
+
+@media(max-width:900px){
+  .unified-hero__copy{width:min(760px,88vw)!important}
+  .te-home .home-v15-faq-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:760px){
+  .shared-header .shared-nav-links a,.site-header .shared-nav-links a,.shared-header .nav-links a{font-size:1.05rem!important}
+  .unified-hero__copy{width:100%!important;max-width:none!important}
+  .unified-hero h1 .hero-subline{font-size:.52em!important;margin-top:.28em!important}
+  .unified-hero__actions{grid-template-columns:minmax(0,1fr) 58px!important;display:grid!important}
+  .unified-hero__button--phone{width:100%!important;min-width:0!important}
+  .unified-hero__button--icon{width:58px!important;min-width:58px!important}
+  .unified-hero--home::before{
+    background-image:
+      linear-gradient(180deg,rgba(2,27,41,.28) 0%,rgba(2,27,41,.66) 48%,rgba(2,27,41,.92) 100%),
+      var(--hero-image)!important;
+  }
+  .te-refrigeracion #comercial + .alt>.wrap{padding-top:38px!important;padding-bottom:52px!important}
+  .te-home .home-v15-faq .faq-list{grid-template-columns:1fr!important}
+}
+</style>
+<style id="v25-nav-size">
+/* Menú: el cliente lo veía pequeño. Sin mayúsculas y con cuerpo legible en todos los anchos. */
+.shared-header .shared-nav-links a,
+.shared-header .shared-nav-links a:not(.nav-cta),
+.site-header .shared-nav-links a,
+.site-header .shared-nav-links a:not(.nav-cta),
+.shared-header .nav-links a,
+.shared-header .nav-links a:not(.nav-cta),
+.te-v11-navlinks a,
+.te-v11-navlinks a:not(.nav-cta),
+.shared-nav-links a.shared-contact,
+.shared-nav-links a.nav-cta{
+  text-transform:none!important;
+  letter-spacing:0!important;
+  font-size:1.03rem!important;
+}
+@media(max-width:760px){
+  .shared-header .shared-nav-links a,
+  .shared-header .shared-nav-links a:not(.nav-cta),
+  .site-header .shared-nav-links a:not(.nav-cta),
+  .shared-header .nav-links a:not(.nav-cta),
+  .te-v11-navlinks a:not(.nav-cta),
+  .shared-nav-links a.shared-contact,
+  .shared-nav-links a.nav-cta{font-size:1.08rem!important}
+}
+</style>
+
+
 </head>
 <body class="te-home">
 <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -2933,10 +3055,10 @@ html,body{max-width:100%;overflow-x:hidden}
       <img alt="Termoelectra" class="shared-logo te-v11-logo" decoding="async" height="157" loading="eager" src="assets/logo-termoelectra.webp" width="420"/>
     </a>
     <div class="nav-links shared-nav-links te-v11-navlinks" id="navLinks">
-      <a aria-current="page" class="is-current" href="./index.html">Home</a>
-      <a href="./refrigeracion/index.html">Refrigeración</a>
-      <a href="./climatizacion/index.html">Climatización</a>
-      <a class="shared-contact te-v11-contact" href="#contacto">Contacto</a>
+      <a aria-current="page" class="is-current" href="./index.html">home</a>
+      <a href="./refrigeracion/index.html">refrigeración</a>
+      <a href="./climatizacion/index.html">climatización</a>
+      <a class="shared-contact te-v11-contact" href="#contacto">contacto</a>
     </div>
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="shared-menu te-v11-menu" id="menuToggle" type="button"><span></span><span></span><span></span></button>
   </nav>
@@ -2949,9 +3071,9 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="unified-hero__inner">
 <div class="unified-hero__copy">
 <span class="unified-hero__eyebrow">Termoelectra · Servicio Técnico</span>
-<h1 id="hero-title"><span>Refrigeración y</span><span class="unified-accent">Climatización.</span></h1>
+<h1 id="hero-title"><span>Refrigeración y Climatización</span><span class="hero-subline">Industrial y Comercial</span></h1>
 <p>Instalación, Reparación y Mantenimiento con Servicio Técnico para sistemas de Refrigeración, Frío Industrial y Climatización.</p>
-<div class="unified-hero__actions"><a aria-label="Contactar por WhatsApp" class="unified-hero__button unified-hero__button--wa" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"></path></svg>WhatsApp</a><a aria-label="Llamar al 651 09 73 93" class="unified-hero__button unified-hero__button--phone" href="tel:+34651097393"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"></path></svg>651 09 73 93</a></div>
+<div class="unified-hero__actions"><a aria-label="Llamar al 651 09 73 93" class="unified-hero__button unified-hero__button--phone" href="tel:+34651097393"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"></path></svg><span>651 09 73 93</span></a><a aria-label="Contactar por WhatsApp" title="WhatsApp" class="unified-hero__button unified-hero__button--wa unified-hero__button--icon" href="https://wa.me/34651097393?text=Hola%20Termoelectra%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios."><svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785a9.87 9.87 0 0 1-5.034-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"></path></svg><span class="sr-only">WhatsApp</span></a></div>
 </div>
 
 </div>
@@ -3062,8 +3184,8 @@ html,body{max-width:100%;overflow-x:hidden}
   <div class="home-v15-shell home-v15-faq-layout">
     <div>
       <span class="home-v15-kicker">Antes de Contactar</span>
-      <h2 id="faq-title">Cuatro Respuestas Claras.</h2>
-      <p class="home-v15-lead">Dejamos únicamente las dudas que realmente ayudan a decidir. El detalle técnico permanece en Refrigeración y Climatización.</p>
+      <h2 id="faq-title">Preguntas Frecuentes.</h2>
+      <p class="home-v15-lead">Reunimos las dudas más habituales sobre instalación, reparación y mantenimiento. El detalle técnico completo permanece en Refrigeración y Climatización.</p>
       <div class="home-v15-faq-note">¿Tu consulta es más específica? El formulario final y WhatsApp permiten indicar directamente el tipo de instalación o avería.</div>
     </div>
     <div class="faq-list">
@@ -3071,6 +3193,10 @@ html,body{max-width:100%;overflow-x:hidden}
       <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Trabajáis con proyectos comerciales e industriales?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Las páginas especializadas contemplan instalaciones comerciales e industriales, con el alcance definido según cada proyecto.</p></div></div></article>
       <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Se puede solicitar reparación y mantenimiento?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Termoelectra presenta servicio técnico, reparación y mantenimiento tanto para refrigeración como para climatización.</p></div></div></article>
       <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Cómo solicito una valoración?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Puedes contactar por WhatsApp, llamar al 651 09 73 93 o dejar tu nombre y teléfono en el formulario.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Qué incluye la instalación de cámaras frigoríficas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>La sección de Refrigeración contempla montaje e instalación de cámaras frigoríficas industriales y comerciales, definiendo el alcance según el proyecto y los equipos incluidos.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Atendéis averías y SAT de cámaras frigoríficas?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. El servicio técnico valora averías de cámaras frigoríficas y contempla reparación, SAT y actuaciones sobre cuartos fríos y refrigeración industrial.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿En qué espacios trabajáis la climatización comercial?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>La página de Climatización contempla locales, oficinas, restaurantes y naves industriales, ajustando la instalación al tipo de espacio.</p></div></div></article>
+      <article class="faq-item"><button aria-expanded="false" class="faq-question" type="button"><span>¿Ofrecéis mantenimiento preventivo de climatización?</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>Sí. Se contempla mantenimiento de climatización comercial e industrial, mantenimiento preventivo y contratos de mantenimiento según el alcance acordado.</p></div></div></article>
     </div>
   </div>
 </section>
