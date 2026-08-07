@@ -6953,6 +6953,25 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){.cold-mini-pulse{animation:none!important;left:calc(100% - 43px)}}
 </style>
 
+
+<style id="v23-lightbox-image-fix">
+#lb.lb{display:none;align-items:center;justify-content:center}
+#lb.lb.on{display:flex}
+#lbImg{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:min(86vw,1400px)!important;
+  max-height:78vh!important;
+  object-fit:contain!important;
+  margin:auto!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+@media(max-width:760px){
+  #lbImg{max-width:92vw!important;max-height:70vh!important}
+}
+</style>
 </head>
 <body class="te-refrigeracion">
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
@@ -7287,7 +7306,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div aria-label="Galería de proyectos" aria-modal="true" class="lb" id="lb" role="dialog">
 <button aria-label="Cerrar imagen" class="lb-close" id="lbClose">×</button>
 <button class="lb-nav lb-prev" id="lbPrev">‹</button>
-<img alt="" decoding="async" height="1" id="lbImg" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="1"/>
+<img alt="" decoding="async" id="lbImg" src=""/>
 <button class="lb-nav lb-next" id="lbNext">›</button>
 <div aria-live="polite" class="lb-meta">
 <span class="lb-count" id="lbCount"></span>
@@ -7598,7 +7617,10 @@ items.forEach((it,i)=>{
 });
 function openLb(){
   const sourceImage=items[idx].querySelector('img');
-  lbImg.src=items[idx].dataset.lb;
+  const sourceUrl=sourceImage?.currentSrc||sourceImage?.src||items[idx].dataset.lb;
+  lbImg.removeAttribute('width');
+  lbImg.removeAttribute('height');
+  lbImg.src=sourceUrl;
   lbImg.alt=sourceImage?.alt||'Proyecto de Termoelectra';
   lbCount.textContent=String(idx+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
   lbCaption.textContent=lbImg.alt;
