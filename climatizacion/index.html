@@ -3689,7 +3689,9 @@ html,body{max-width:100%;overflow-x:hidden}
 .espacio p{margin:0 0 18px;color:var(--muted);font-size:.93rem;line-height:1.62}
 .espacio__tags{list-style:none;margin:auto 0 0;padding:16px 0 0;display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid var(--ice-2)}
 .espacio__tags li{padding:6px 11px;border-radius:999px;background:var(--ice);color:var(--navy-2);font-size:.76rem;font-weight:700}
-.espacios-note{max-width:900px;margin:clamp(30px,4vw,46px) auto 0;color:var(--muted);font-size:.97rem;line-height:1.7;text-align:center}
+.espacios-hint{display:none;align-items:center;gap:9px;margin:clamp(30px,6vw,38px) 0 -8px;color:var(--navy-2);font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.espacios-hint::before{content:"";width:26px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--cyan-2))}
+.espacios-note{max-width:900px;margin:clamp(30px,4vw,46px) 0 0;padding:22px 26px;border-left:3px solid var(--cyan-2);border-radius:0 20px 20px 0;background:var(--ice);color:var(--navy-2);font-size:.95rem;line-height:1.7}
 
 .mant-flow{counter-reset:none;list-style:none;margin:clamp(34px,5vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
 .mant-flow::before{content:"";position:absolute;left:0;right:0;top:26px;height:2px;background:linear-gradient(90deg,var(--cyan-2),var(--line))}
@@ -3724,12 +3726,32 @@ html,body{max-width:100%;overflow-x:hidden}
   .espacios-band__copy strong{font-size:1.26rem;margin-bottom:9px}
   .espacios-band__copy p{font-size:.9rem;line-height:1.56}
   .espacios-band__tag{margin-bottom:11px;padding:6px 12px;font-size:.66rem}
-  .mant-flow{position:relative;padding-left:6px}
-  .mant-step{padding-left:2px}
-  .espacios-grid{grid-template-columns:1fr}
-  .mant-flow{grid-template-columns:1fr;gap:26px}
-  .mant-step{padding:0}
-  .mant-step__num{width:46px;height:46px;margin-bottom:14px;font-size:.85rem;box-shadow:0 0 0 6px var(--ice)}
+
+  /* Los cuatro espacios pasan a carrusel: se recorren de lado en vez de apilarse. */
+  .espacios-grid{
+    display:flex;grid-template-columns:none;gap:12px;
+    margin-inline:-14px;padding:4px 14px 16px;
+    overflow-x:auto;overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .espacios-grid::-webkit-scrollbar{display:none}
+  .espacio{flex:0 0 79vw;scroll-snap-align:center;padding:24px 22px 22px}
+  .espacio p{font-size:.91rem}
+  .espacios-hint{display:flex}
+
+  /* Mantenimiento: raíl vertical con el número junto al titular, no encima. */
+  .mant-flow{grid-template-columns:1fr;gap:0;padding-left:0}
+  .mant-flow::before{
+    display:block;left:23px;right:auto;top:10px;bottom:34px;
+    width:2px;height:auto;
+    background:linear-gradient(180deg,var(--cyan-2),var(--line));
+  }
+  .mant-step{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:15px;padding:0 0 26px}
+  .mant-step__num{grid-row:1/3;width:48px;height:48px;margin-bottom:0;font-size:.85rem;box-shadow:0 0 0 6px var(--ice)}
+  .mant-step h3{margin:11px 0 6px;font-size:1rem}
+  .mant-step p{font-size:.9rem}
+  .espacios-note{padding:18px 20px;font-size:.91rem}
   .mant-panels{grid-template-columns:1fr}
   .mant-panel{padding:28px 24px}
 }
@@ -3893,6 +3915,7 @@ html,body{max-width:100%;overflow-x:hidden}
 </figcaption>
 </figure>
 <div class="shell">
+<p class="espacios-hint" aria-hidden="true">Desliza para ver los cuatro espacios</p>
 <div class="espacios-grid reveal">
 <article class="espacio">
 <span aria-hidden="true" class="espacio__glyph"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 32 32"><path d="M4 26h24M6 26V13h9v13M15 26V7h11v19M9 17h3M9 21h3M19 11h4M19 15h4M19 19h4"></path></svg></span>
