@@ -3693,12 +3693,42 @@ html,body{max-width:100%;overflow-x:hidden}
 .espacios-hint::before{content:"";width:26px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--cyan-2))}
 .espacios-note{max-width:900px;margin:clamp(30px,4vw,46px) 0 0;padding:22px 26px;border-left:3px solid var(--cyan-2);border-radius:0 20px 20px 0;background:var(--ice);color:var(--navy-2);font-size:.95rem;line-height:1.7}
 
-.mant-flow{counter-reset:none;list-style:none;margin:clamp(34px,5vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
-.mant-flow::before{content:"";position:absolute;left:0;right:0;top:26px;height:2px;background:linear-gradient(90deg,var(--cyan-2),var(--line))}
-.mant-step{position:relative;padding:0 22px 0 0}
-.mant-step__num{position:relative;z-index:2;width:54px;height:54px;margin-bottom:20px;display:grid;place-items:center;border-radius:50%;background:var(--navy);color:#fff;font-size:.92rem;font-weight:800;letter-spacing:.02em;box-shadow:0 0 0 8px var(--ice)}
-.mant-step h3{margin:0 0 9px;color:var(--navy);font-size:1.02rem;line-height:1.3}
-.mant-step p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.62}
+.mant-cycle{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(30px,5vw,72px);align-items:center;margin:clamp(34px,5vw,58px) 0 0}
+.cyc-stage{position:relative;justify-self:center;width:min(100%,530px)}
+.cyc-svg{display:block;width:100%;height:auto;overflow:visible}
+.cyc-track{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round}
+.cyc-progress{fill:none;stroke:url(#cycGrad);stroke:var(--cyan);stroke-width:4;stroke-linecap:round;stroke-dasharray:955;stroke-dashoffset:calc(955 - 955 * var(--cyc-p,.25));transition:stroke-dashoffset .6s cubic-bezier(.4,0,.2,1)}
+.cyc-core{fill:#fff;stroke:var(--line);stroke-width:1.5}
+.cyc-node{cursor:pointer;outline:none}
+.cyc-node__ring{fill:none;stroke:var(--cyan-2);stroke-width:2;opacity:0;transform:scale(1);transform-origin:center;transform-box:fill-box}
+.cyc-node__disc{fill:#fff;stroke:var(--line);stroke-width:1.5;transition:fill .32s ease,stroke .32s ease}
+.cyc-node__glyph{fill:none;stroke:var(--navy-2);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;transition:stroke .32s ease}
+.cyc-node__num{fill:var(--muted);font-size:11px;font-weight:800;letter-spacing:.09em;text-anchor:middle;transition:fill .32s ease}
+.cyc-node:hover .cyc-node__disc{stroke:var(--cyan-2)}
+.cyc-node:focus-visible .cyc-node__disc{stroke:var(--navy);stroke-width:3}
+.cyc-node.is-active .cyc-node__disc{fill:var(--navy);stroke:var(--navy)}
+.cyc-node.is-active .cyc-node__glyph{stroke:var(--cyan-2)}
+.cyc-node.is-active .cyc-node__num{fill:rgba(226,246,253,.8)}
+.cyc-node.is-active .cyc-node__ring{opacity:1;animation:cycPulse 2.6s ease-out infinite}
+@keyframes cycPulse{0%{opacity:.55;transform:scale(1)}70%{opacity:0;transform:scale(1.42)}100%{opacity:0;transform:scale(1.42)}}
+.cyc-core-label{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}
+.cyc-core-label span{color:var(--navy-2);font-size:.63rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.cyc-core-label strong{display:block;margin:2px 0 4px;color:var(--navy);font-size:clamp(2.4rem,4.6vw,3.3rem);font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cyc-core-label em{display:block;max-width:150px;margin:0 auto;color:var(--muted);font-size:.78rem;font-style:normal;line-height:1.35}
+
+.cyc-detail__eyebrow{display:block;margin-bottom:16px;color:var(--navy-2);font-size:.71rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.cyc-panel[hidden]{display:none}
+.cyc-panel{animation:cycIn .38s ease both}
+@keyframes cycIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cyc-panel__pieza{display:inline-block;margin-bottom:12px;padding:6px 13px;border-radius:999px;background:var(--ice-2);color:var(--navy-2);font-size:.75rem;font-weight:700}
+.cyc-panel h3{margin:0 0 11px;color:var(--navy);font-size:clamp(1.3rem,2.1vw,1.72rem);line-height:1.22;letter-spacing:-.01em}
+.cyc-panel p{margin:0;color:var(--muted);font-size:1rem;line-height:1.7}
+.cyc-detail__foot{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.89rem;line-height:1.6}
+@media(prefers-reduced-motion:reduce){
+  .cyc-node.is-active .cyc-node__ring{animation:none}
+  .cyc-progress{transition:none}
+  .cyc-panel{animation:none}
+}
 
 .mant-panels{display:grid;grid-template-columns:1.02fr .98fr;gap:16px;margin-top:clamp(38px,5vw,60px)}
 .mant-panel{padding:34px 32px;border:1px solid var(--line);border-radius:26px;background:#fff}
@@ -3716,8 +3746,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 @media(max-width:1080px){
   .espacios-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .mant-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 0}
-  .mant-flow::before{display:none}
+  .mant-cycle{grid-template-columns:1fr;gap:34px}
 }
 @media(max-width:760px){
   .espacios-band img{height:clamp(380px,92vw,460px);object-position:center 46%}
@@ -3740,17 +3769,11 @@ html,body{max-width:100%;overflow-x:hidden}
   .espacio p{font-size:.91rem}
   .espacios-hint{display:flex}
 
-  /* Mantenimiento: raíl vertical con el número junto al titular, no encima. */
-  .mant-flow{grid-template-columns:1fr;gap:0;padding-left:0}
-  .mant-flow::before{
-    display:block;left:23px;right:auto;top:10px;bottom:34px;
-    width:2px;height:auto;
-    background:linear-gradient(180deg,var(--cyan-2),var(--line));
-  }
-  .mant-step{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:15px;padding:0 0 26px}
-  .mant-step__num{grid-row:1/3;width:48px;height:48px;margin-bottom:0;font-size:.85rem;box-shadow:0 0 0 6px var(--ice)}
-  .mant-step h3{margin:11px 0 6px;font-size:1rem}
-  .mant-step p{font-size:.9rem}
+  .mant-cycle{grid-template-columns:1fr;gap:26px}
+  .cyc-stage{width:min(100%,330px)}
+  .cyc-core-label em{max-width:118px;font-size:.72rem}
+  .cyc-node__num{font-size:12px}
+  .cyc-panel p{font-size:.95rem}
   .espacios-note{padding:18px 20px;font-size:.91rem}
   .mant-panels{grid-template-columns:1fr}
   .mant-panel{padding:28px 24px}
@@ -3968,28 +3991,68 @@ html,body{max-width:100%;overflow-x:hidden}
 <h2>Mantenimiento de Climatización Comercial.</h2>
 <p class="lead">El mantenimiento de climatización agrupa las revisiones periódicas que mantienen el sistema en condiciones de trabajo antes de que aparezca la avería.</p>
 </div>
-<ol class="mant-flow reveal">
-<li class="mant-step">
-<span aria-hidden="true" class="mant-step__num">01</span>
+<div class="mant-cycle reveal">
+<div class="cyc-stage">
+<svg class="cyc-svg" viewBox="0 0 420 420" role="tablist" aria-label="Tareas de una revisión de mantenimiento">
+<circle class="cyc-track" cx="210" cy="210" r="152"></circle>
+<circle class="cyc-progress" cx="210" cy="210" r="152" transform="rotate(-90 210 210)"></circle>
+<circle class="cyc-core" cx="210" cy="210" r="88"></circle>
+<g class="cyc-node is-active" data-step="0" role="tab" tabindex="0" aria-selected="true" aria-controls="mant-panel-0" transform="translate(210 58)">
+<circle class="cyc-node__ring" r="35"></circle>
+<circle class="cyc-node__disc" r="35"></circle>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-13-13h26v26h-26z"></path><path d="M-13-4h26M-13 4h26M-4-13v26M4-13v26"></path></g>
+<text class="cyc-node__num" y="21">01</text>
+</g>
+<g class="cyc-node" data-step="1" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-1" transform="translate(362 210)">
+<circle class="cyc-node__ring" r="35"></circle>
+<circle class="cyc-node__disc" r="35"></circle>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-14 7a14 14 0 0 1 28 0"></path><path d="M0 7 8-5"></path><circle cx="0" cy="7" r="2.4" fill="currentColor" stroke="none"></circle></g>
+<text class="cyc-node__num" y="21">02</text>
+</g>
+<g class="cyc-node" data-step="2" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-2" transform="translate(210 362)">
+<circle class="cyc-node__ring" r="35"></circle>
+<circle class="cyc-node__disc" r="35"></circle>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M0-14c6 7 9 11 9 15a9 9 0 0 1-18 0c0-4 3-8 9-15Z"></path></g>
+<text class="cyc-node__num" y="21">03</text>
+</g>
+<g class="cyc-node" data-step="3" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-3" transform="translate(58 210)">
+<circle class="cyc-node__ring" r="35"></circle>
+<circle class="cyc-node__disc" r="35"></circle>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-14-12h11v9h-11zM3 3h11v9H3z"></path><path d="M-8.5-3v6.5h17V3"></path></g>
+<text class="cyc-node__num" y="21">04</text>
+</g>
+</svg>
+<div class="cyc-core-label" aria-hidden="true">
+<span>Revisión</span>
+<strong data-cyc-num>01</strong>
+<em data-cyc-title>Limpieza de filtros y baterías</em>
+</div>
+</div>
+<div class="cyc-detail">
+<span class="cyc-detail__eyebrow">Qué se hace en cada visita</span>
+<article class="cyc-panel is-active" id="mant-panel-0" role="tabpanel" aria-labelledby="mant-tab-0">
+<span class="cyc-panel__pieza">Filtros y batería de intercambio</span>
 <h3>Limpieza de filtros y baterías</h3>
 <p>El mantenimiento preventivo de climatización empieza por la parte que más se ensucia. Un filtro saturado obliga al equipo a trabajar de más para mover el mismo aire.</p>
-</li>
-<li class="mant-step">
-<span aria-hidden="true" class="mant-step__num">02</span>
+</article>
+<article class="cyc-panel" id="mant-panel-1" role="tabpanel" aria-labelledby="mant-tab-1" hidden>
+<span class="cyc-panel__pieza">Circuito frigorífico y compresor</span>
 <h3>Comprobación de presiones</h3>
 <p>Se verifican las presiones del circuito y el comportamiento del compresor. Es la lectura que anticipa una fuga o una pérdida de rendimiento antes de que el local lo note.</p>
-</li>
-<li class="mant-step">
-<span aria-hidden="true" class="mant-step__num">03</span>
+</article>
+<article class="cyc-panel" id="mant-panel-2" role="tabpanel" aria-labelledby="mant-tab-2" hidden>
+<span class="cyc-panel__pieza">Bandejas y desagüe de condensados</span>
 <h3>Revisión de drenajes</h3>
 <p>Los desagües y bandejas de condensados se revisan en cada visita. Un drenaje obstruido es una de las causas más frecuentes de goteo en falso techo.</p>
-</li>
-<li class="mant-step">
-<span aria-hidden="true" class="mant-step__num">04</span>
+</article>
+<article class="cyc-panel" id="mant-panel-3" role="tabpanel" aria-labelledby="mant-tab-3" hidden>
+<span class="cyc-panel__pieza">Conjunto interior y exterior</span>
 <h3>Unidades interiores y exteriores</h3>
 <p>Se comprueba el funcionamiento del conjunto, interior y exterior, y se deja constancia del estado de cada equipo para la siguiente revisión.</p>
-</li>
-</ol>
+</article>
+<p class="cyc-detail__foot">Las cuatro tareas se repiten en cada revisión programada. La periodicidad se fija según las horas de uso de la instalación.</p>
+</div>
+</div>
 <div class="mant-panels">
 <article class="mant-panel mant-panel--dark reveal">
 <span class="mant-panel__label">Alcance acordado</span>
@@ -4458,6 +4521,65 @@ html,body{max-width:100%;overflow-x:hidden}
     el.classList.add('visible','in','te-motion-in');
     el.style.opacity='1';el.style.visibility='visible';
   });
+})();
+</script>
+<script>
+(function(){
+  var wrap=document.querySelector('.mant-cycle');
+  if(!wrap) return;
+  var nodes=[].slice.call(wrap.querySelectorAll('.cyc-node'));
+  var panels=[].slice.call(wrap.querySelectorAll('.cyc-panel'));
+  var prog=wrap.querySelector('.cyc-progress');
+  var numOut=wrap.querySelector('[data-cyc-num]');
+  var titleOut=wrap.querySelector('[data-cyc-title]');
+  var current=0, timer=null, touched=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function select(i,focus){
+    current=(i+nodes.length)%nodes.length;
+    nodes.forEach(function(n,k){
+      var on=k===current;
+      n.classList.toggle('is-active',on);
+      n.setAttribute('aria-selected',on?'true':'false');
+      n.setAttribute('tabindex',on?'0':'-1');
+    });
+    panels.forEach(function(pnl,k){
+      if(k===current){pnl.removeAttribute('hidden');pnl.classList.add('is-active');}
+      else{pnl.setAttribute('hidden','');pnl.classList.remove('is-active');}
+    });
+    prog.style.setProperty('--cyc-p',((current+1)/nodes.length).toFixed(3));
+    var h=panels[current].querySelector('h3');
+    numOut.textContent=('0'+(current+1)).slice(-2);
+    titleOut.textContent=h?h.textContent:'';
+    if(focus) nodes[current].focus();
+  }
+
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function start(){
+    if(reduce||touched) return;
+    stop();
+    timer=setInterval(function(){ select(current+1); },5200);
+  }
+
+  nodes.forEach(function(n,k){
+    n.addEventListener('click',function(){ touched=true; stop(); select(k); });
+    n.addEventListener('keydown',function(e){
+      var key=e.key;
+      if(key==='Enter'||key===' '||key==='Spacebar'){ e.preventDefault(); touched=true; stop(); select(k); }
+      else if(key==='ArrowRight'||key==='ArrowDown'){ e.preventDefault(); touched=true; stop(); select(current+1,true); }
+      else if(key==='ArrowLeft'||key==='ArrowUp'){ e.preventDefault(); touched=true; stop(); select(current-1,true); }
+    });
+  });
+  wrap.addEventListener('pointerdown',function(){ touched=true; stop(); });
+
+  select(0);
+
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ en.isIntersecting?start():stop(); });
+    },{threshold:.35}).observe(wrap);
+  } else { start(); }
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
 })();
 </script>
 </body>
