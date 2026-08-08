@@ -3057,6 +3057,65 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "name": "Termoelectra", "url": "https://termoelectra.es/", "telephone": "+34651097393", "email": "info@termoelectra.es", "areaServed": "España", "priceRange": "$$", "description": "Empresa de refrigeración y climatización industrial y comercial. Instalación, reparación y mantenimiento de frío industrial, cámaras frigoríficas y climatización comercial con servicio técnico.", "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalación de frío industrial"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalación y montaje de cámaras frigoríficas"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reparación y SAT de cámaras frigoríficas"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mantenimiento de cámaras frigoríficas"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalación de climatización comercial"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reparación de climatización comercial"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mantenimiento de climatización"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué servicios ofrece Termoelectra?", "acceptedAnswer": {"@type": "Answer", "text": "Instalación, reparación y mantenimiento de refrigeración, frío industrial, cámaras frigoríficas y climatización comercial."}}, {"@type": "Question", "name": "¿Trabajáis con proyectos comerciales e industriales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Las páginas especializadas contemplan instalaciones comerciales e industriales, con el alcance definido según cada proyecto."}}, {"@type": "Question", "name": "¿Se puede solicitar reparación y mantenimiento?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Termoelectra presenta servicio técnico, reparación y mantenimiento tanto para refrigeración como para climatización."}}, {"@type": "Question", "name": "¿Cómo solicito una valoración?", "acceptedAnswer": {"@type": "Answer", "text": "Puedes contactar por WhatsApp, llamar al 651 09 73 93 o dejar tu nombre y teléfono en el formulario."}}, {"@type": "Question", "name": "¿Qué incluye la instalación de cámaras frigoríficas?", "acceptedAnswer": {"@type": "Answer", "text": "La sección de Refrigeración contempla montaje e instalación de cámaras frigoríficas industriales y comerciales, definiendo el alcance según el proyecto y los equipos incluidos."}}, {"@type": "Question", "name": "¿Atendéis averías y SAT de cámaras frigoríficas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El servicio técnico valora averías de cámaras frigoríficas y contempla reparación, SAT y actuaciones sobre cuartos fríos y refrigeración industrial."}}, {"@type": "Question", "name": "¿En qué espacios trabajáis la climatización comercial?", "acceptedAnswer": {"@type": "Answer", "text": "La página de Climatización contempla locales, oficinas, restaurantes y naves industriales, ajustando la instalación al tipo de espacio."}}, {"@type": "Question", "name": "¿Ofrecéis mantenimiento preventivo de climatización?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Se contempla mantenimiento de climatización comercial e industrial, mantenimiento preventivo y contratos de mantenimiento según el alcance acordado."}}]}</script>
+<style id="v25-home-edificio">
+.home-v15-building{background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+.bld-lab{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);gap:clamp(26px,3.6vw,54px);align-items:center}
+.bld-stage{position:relative;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 22px 60px rgba(5,55,82,.07);overflow:hidden}
+.bld-svg{display:block;width:100%;height:auto}
+.bld-grid path{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:2 10;opacity:.7}
+.bld-ground{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round;opacity:.5}
+.bld-shell{fill:#fff;stroke:var(--navy);stroke-width:2.4;stroke-linejoin:round}
+.bld-line{fill:none;stroke:var(--navy);stroke-width:1.6;opacity:.55}
+.bld-detail{fill:none;stroke:var(--navy-2);stroke-width:1.5;stroke-linecap:round;opacity:.5}
+.bld-frost{fill:var(--ice-2);stroke:var(--navy-2);stroke-width:2}
+.bld-unit{fill:var(--ice-2);stroke:var(--navy-2);stroke-width:1.8}
+.bld-zone{transition:opacity .34s ease}
+.bld-lab.has-focus .bld-zone{opacity:.3}
+.bld-lab.has-focus .bld-zone.is-lit{opacity:1}
+
+.bld-hot{cursor:pointer;outline:none}
+.bld-hot__hit{fill:transparent;stroke:none}
+.bld-hot__inner{transform-box:fill-box;transform-origin:center}
+.bld-hot__halo{fill:var(--cyan);opacity:0}
+.bld-hot__dot{fill:#fff;stroke:var(--navy-2);stroke-width:2.2;transition:fill .3s ease,stroke .3s ease}
+.bld-hot__core{fill:var(--navy-2);transition:fill .3s ease}
+.bld-hot:hover .bld-hot__dot{stroke:var(--cyan)}
+.bld-hot:focus-visible .bld-hot__dot{stroke:var(--navy);stroke-width:3.4}
+.bld-hot.is-active .bld-hot__dot{fill:var(--navy);stroke:var(--navy)}
+.bld-hot.is-active .bld-hot__core{fill:var(--cyan)}
+.bld-hot.is-active .bld-hot__halo{opacity:.42;animation:bldPulse 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes bldPulse{0%{opacity:.42;transform:scale(.55)}70%{opacity:0;transform:scale(1.5)}100%{opacity:0;transform:scale(1.5)}}
+
+.bld-eyebrow{display:block;margin-bottom:14px;color:#0b83aa;font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.bld-panel[hidden]{display:none}
+.bld-panel{animation:bldIn .38s ease both}
+@keyframes bldIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.bld-panel__fam{display:inline-block;margin-bottom:13px;padding:7px 14px;border-radius:999px;font-size:.75rem;font-weight:800;letter-spacing:.02em}
+.bld-panel__fam--frio{background:var(--ice-2);color:var(--navy)}
+.bld-panel__fam--clima{background:rgba(216,39,60,.09);color:#a81f30}
+.bld-panel h3{margin:0 0 12px;color:var(--navy);font-size:clamp(1.5rem,2.3vw,2.05rem);line-height:1.18;letter-spacing:-.015em}
+.bld-panel p{margin:0;color:var(--muted);font-size:1rem;line-height:1.72}
+.bld-panel__cta{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:13px 22px;border-radius:999px;background:var(--navy);color:#fff;font-size:.9rem;font-weight:800;text-decoration:none;transition:background .28s ease,transform .28s ease}
+.bld-panel__cta::after{content:"→";font-weight:700}
+.bld-panel__cta:hover{background:var(--navy-2);transform:translateX(3px)}
+.bld-foot{margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;line-height:1.6}
+
+@media(max-width:1000px){
+  .bld-lab{grid-template-columns:1fr;gap:26px}
+}
+@media(max-width:700px){
+  .bld-hot__inner{transform:scale(1.75)}
+}
+@media(max-width:560px){
+  .bld-stage{border-radius:20px}
+  .bld-panel p{font-size:.95rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .bld-hot.is-active .bld-hot__halo{animation:none;opacity:.3}
+  .bld-panel{animation:none}
+  .bld-zone{transition:none}
+}
+</style>
 </head>
 <body class="te-home">
 <a class="skip-link" href="#contenido">Saltar al Contenido</a>
@@ -3132,6 +3191,123 @@ html,body{max-width:100%;overflow-x:hidden}
           <a class="home-v15-link" href="./climatizacion/index.html">Explorar Climatización <i>→</i></a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="home-v15-section home-v15-building" id="edificio" aria-labelledby="home-v15-building-title">
+  <div class="home-v15-shell">
+    <div class="home-v15-head center">
+      <span class="home-v15-kicker">Un edificio, dos especialidades</span>
+      <h2 id="home-v15-building-title">Dónde Entra el Frío y Dónde Entra el Aire.</h2>
+      <p class="home-v15-lead">Refrigeración y climatización conviven en el mismo edificio pero resuelven cosas distintas. Toca cada punto para ver cuál corresponde.</p>
+    </div>
+    <div class="bld-lab reveal">
+      <div class="bld-stage">
+        <svg class="bld-svg" viewBox="0 0 900 470" role="tablist" aria-label="Zonas de un edificio y servicio que corresponde a cada una">
+          <defs>
+            <linearGradient id="bldSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0d4f74" stop-opacity=".16"></stop>
+              <stop offset="1" stop-color="#0d4f74" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="900" height="470" fill="url(#bldSky)"></rect>
+          <g class="bld-grid">
+            <path d="M0 110h900M0 190h900M0 270h900M0 350h900"></path>
+          </g>
+          <path class="bld-ground" d="M20 424h860"></path>
+
+          <g class="bld-zone" data-zone="1">
+            <path class="bld-shell" d="M40 424V196l150-52 150 52v228"></path>
+            <path class="bld-line" d="M40 196h300"></path>
+            <path class="bld-frost" d="M92 424V286h112v138"></path>
+            <path class="bld-line" d="M92 286h112M148 286v138"></path>
+            <path class="bld-detail" d="M112 322h12M112 340h12M172 322h12M172 340h12"></path>
+            <rect class="bld-unit" x="228" y="252" width="70" height="30" rx="6"></rect>
+            <path class="bld-detail" d="M240 268h46M263 282v34"></path>
+          </g>
+
+          <g class="bld-zone" data-zone="2">
+            <path class="bld-shell" d="M366 424V300h214v124"></path>
+            <path class="bld-line" d="M366 300h214"></path>
+            <path class="bld-detail" d="M366 336h214"></path>
+            <rect class="bld-unit" x="436" y="266" width="74" height="28" rx="6"></rect>
+            <path class="bld-detail" d="M448 280h50M473 294v18"></path>
+            <path class="bld-detail" d="M396 366h34v58h-34zM516 366h34v58h-34z"></path>
+          </g>
+
+          <g class="bld-zone" data-zone="3">
+            <path class="bld-shell" d="M606 424V150h254v274"></path>
+            <path class="bld-line" d="M606 150h254M606 222h254M606 294h254M606 366h254"></path>
+            <rect class="bld-unit" x="654" y="114" width="62" height="26" rx="6"></rect>
+            <rect class="bld-unit" x="748" y="114" width="62" height="26" rx="6"></rect>
+            <path class="bld-detail" d="M685 140v26h94v-26M779 166v56"></path>
+            <path class="bld-detail" d="M640 188h44M708 188h44M776 188h44M640 260h44M708 260h44M776 260h44M640 332h44M708 332h44M776 332h44"></path>
+          </g>
+
+          <g class="bld-hot is-active" data-zone="0" role="tab" id="bld-tab-0" aria-controls="bld-panel-0" aria-selected="true" tabindex="0" transform="translate(256 212)">
+<circle class="bld-hot__hit" r="54"></circle>
+<g class="bld-hot__inner">
+<circle class="bld-hot__halo" r="26"></circle>
+<circle class="bld-hot__dot" r="13"></circle>
+<circle class="bld-hot__core" r="5"></circle>
+</g>
+</g>
+<g class="bld-hot" data-zone="1" role="tab" id="bld-tab-1" aria-controls="bld-panel-1" aria-selected="false" tabindex="-1" transform="translate(148 352)">
+<circle class="bld-hot__hit" r="54"></circle>
+<g class="bld-hot__inner">
+<circle class="bld-hot__halo" r="26"></circle>
+<circle class="bld-hot__dot" r="13"></circle>
+<circle class="bld-hot__core" r="5"></circle>
+</g>
+</g>
+<g class="bld-hot" data-zone="2" role="tab" id="bld-tab-2" aria-controls="bld-panel-2" aria-selected="false" tabindex="-1" transform="translate(470 356)">
+<circle class="bld-hot__hit" r="54"></circle>
+<g class="bld-hot__inner">
+<circle class="bld-hot__halo" r="26"></circle>
+<circle class="bld-hot__dot" r="13"></circle>
+<circle class="bld-hot__core" r="5"></circle>
+</g>
+</g>
+<g class="bld-hot" data-zone="3" role="tab" id="bld-tab-3" aria-controls="bld-panel-3" aria-selected="false" tabindex="-1" transform="translate(733 258)">
+<circle class="bld-hot__hit" r="54"></circle>
+<g class="bld-hot__inner">
+<circle class="bld-hot__halo" r="26"></circle>
+<circle class="bld-hot__dot" r="13"></circle>
+<circle class="bld-hot__core" r="5"></circle>
+</g>
+</g>
+
+        </svg>
+      </div>
+      <div class="bld-detail-col">
+        <span class="bld-eyebrow">Zona seleccionada</span>
+        <article class="bld-panel is-active" id="bld-panel-0" role="tabpanel" aria-labelledby="bld-tab-0">
+<span class="bld-panel__fam bld-panel__fam--clima">Climatización industrial</span>
+<h3>Nave industrial</h3>
+<p>Volúmenes altos, techos elevados y proceso productivo en marcha. La climatización de una nave se plantea sobre la actividad concreta que se desarrolla dentro.</p>
+<a class="bld-panel__cta" href="climatizacion/">Ver climatización</a>
+</article>
+<article class="bld-panel" id="bld-panel-1" role="tabpanel" aria-labelledby="bld-tab-1" hidden>
+<span class="bld-panel__fam bld-panel__fam--frio">Frío industrial</span>
+<h3>Cámara frigorífica</h3>
+<p>Instalación, reparación y mantenimiento de cámaras frigoríficas industriales y comerciales. El producto almacenado marca el rango de temperatura y el tipo de equipo.</p>
+<a class="bld-panel__cta" href="refrigeracion/">Ver refrigeración</a>
+</article>
+<article class="bld-panel" id="bld-panel-2" role="tabpanel" aria-labelledby="bld-tab-2" hidden>
+<span class="bld-panel__fam bld-panel__fam--frio">Refrigeración comercial</span>
+<h3>Local comercial</h3>
+<p>Equipos de frío para superficie de venta y hostelería, con entradas y salidas constantes de público y puerta en uso durante todo el horario comercial.</p>
+<a class="bld-panel__cta" href="refrigeracion/">Ver refrigeración</a>
+</article>
+<article class="bld-panel" id="bld-panel-3" role="tabpanel" aria-labelledby="bld-tab-3" hidden>
+<span class="bld-panel__fam bld-panel__fam--clima">Climatización comercial</span>
+<h3>Oficinas</h3>
+<p>Ocupación continuada y equipos encendidos toda la jornada. El reparto del aire se estudia junto con la distribución de puestos y el falso techo disponible.</p>
+<a class="bld-panel__cta" href="climatizacion/">Ver climatización</a>
+</article>
+<p class="bld-foot">La mayoría de instalaciones combinan las dos cosas. Por eso Termoelectra las trata desde una misma estructura de servicio técnico.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -3469,6 +3645,54 @@ html,body{max-width:100%;overflow-x:hidden}
     el.classList.add('visible','in','te-motion-in');
     el.style.opacity='1';el.style.visibility='visible';
   });
+})();
+</script>
+<script>
+(function(){
+  var lab=document.querySelector('.bld-lab');
+  if(!lab) return;
+  var hots=[].slice.call(lab.querySelectorAll('.bld-hot'));
+  var panels=[].slice.call(lab.querySelectorAll('.bld-panel'));
+  var zones=[].slice.call(lab.querySelectorAll('.bld-zone'));
+  var zoneOf=[1,1,2,3];
+  var n=hots.length, current=0, timer=null, touched=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function select(i,focus){
+    current=(i+n)%n;
+    hots.forEach(function(h,k){
+      var on=k===current;
+      h.classList.toggle('is-active',on);
+      h.setAttribute('aria-selected',on?'true':'false');
+      h.setAttribute('tabindex',on?'0':'-1');
+    });
+    panels.forEach(function(pn,k){
+      if(k===current){pn.removeAttribute('hidden');}else{pn.setAttribute('hidden','');}
+    });
+    var lit=zoneOf[current];
+    zones.forEach(function(z){
+      z.classList.toggle('is-lit',parseInt(z.getAttribute('data-zone'),10)===lit);
+    });
+    lab.classList.add('has-focus');
+    if(focus) hots[current].focus();
+  }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function start(){ if(reduce||touched) return; stop(); timer=setInterval(function(){ select(current+1); },5000); }
+
+  hots.forEach(function(h,k){
+    h.addEventListener('click',function(){ touched=true; stop(); select(k); });
+    h.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();touched=true;stop();select(k);}
+      else if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();touched=true;stop();select(current+1,true);}
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();touched=true;stop();select(current-1,true);}
+    });
+  });
+  lab.addEventListener('pointerdown',function(){ touched=true; stop(); });
+  select(0);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ en.forEach(function(e){ e.isIntersecting?start():stop(); }); },{threshold:.3}).observe(lab);
+  } else { start(); }
+  document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
 })();
 </script>
 </body>

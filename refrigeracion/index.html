@@ -7095,6 +7095,60 @@ html,body{max-width:100%;overflow-x:hidden}
 </style>
 
 
+<style id="v25-refri-termica">
+.ter-section{position:relative;background:linear-gradient(170deg,#061c2f 0%,#0a3352 58%,#0b3f63 100%);color:#eaf6fb;overflow:hidden}
+.ter-section::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(120,205,235,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,205,235,.05) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.ter-section>.wrap{position:relative;z-index:1}
+.ter-head{max-width:820px;margin-bottom:clamp(38px,5vw,62px)}
+.ter-section .eyebrow-sec{color:var(--cian-cl)}
+.ter-section .sec-title{color:#fff}
+.ter-section .sec-lead{color:rgba(215,238,248,.82)}
+
+.ter-lab{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,4.5vw,64px);align-items:stretch}
+.ter-scale{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);gap:22px}
+
+.ter-tube{position:relative;width:26px;justify-self:center;margin:10px 0 34px;border-radius:999px;background:rgba(9,42,66,.85);box-shadow:inset 0 0 0 1px rgba(133,214,240,.28)}
+.ter-tube__fill{position:absolute;left:3px;right:3px;bottom:3px;border-radius:999px;background:linear-gradient(180deg,#8fe4ff 0%,#33b4e0 55%,#1f7fb4 100%);height:var(--ter-fill,88%);transition:height .55s cubic-bezier(.4,0,.2,1)}
+.ter-tube__marker{position:absolute;left:50%;top:var(--ter-pos,13%);width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(143,228,255,.55),transparent 68%);transition:top .55s cubic-bezier(.4,0,.2,1)}
+.ter-tube__marker::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#eafaff;box-shadow:0 0 0 4px rgba(143,228,255,.35)}
+.ter-tube__bulb{position:absolute;left:50%;bottom:-30px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:linear-gradient(180deg,#2ea3d3,#15618f);box-shadow:inset 0 0 0 1px rgba(133,214,240,.32)}
+
+.ter-bands{display:grid;gap:10px;align-content:stretch}
+.ter-band{position:relative;display:grid;gap:3px;padding:16px 20px;border:1px solid rgba(133,214,240,.2);border-left:3px solid rgba(133,214,240,.3);border-radius:0 16px 16px 0;background:rgba(8,40,64,.5);color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .3s ease,border-color .3s ease,transform .3s ease}
+.ter-band:hover{background:rgba(13,60,92,.72);border-left-color:var(--cian-cl)}
+.ter-band:focus-visible{outline:2px solid var(--cian-cl);outline-offset:3px}
+.ter-band.is-active{background:linear-gradient(90deg,rgba(28,110,160,.9),rgba(11,52,80,.55));border-left-color:#8fe4ff;transform:translateX(5px)}
+.ter-band__temp{color:#9fe6ff;font-size:.98rem;font-weight:800;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.ter-band__name{color:rgba(219,240,250,.78);font-size:.84rem;line-height:1.35}
+.ter-band.is-active .ter-band__name{color:#fff}
+
+.ter-detail{display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,3.4vw,42px);border:1px solid rgba(133,214,240,.18);border-radius:26px;background:rgba(6,30,49,.55);backdrop-filter:blur(2px)}
+.ter-panel[hidden]{display:none}
+.ter-panel{animation:terIn .4s ease both}
+@keyframes terIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ter-panel__tipo{display:inline-block;margin-bottom:14px;padding:7px 14px;border-radius:999px;background:rgba(143,228,255,.14);color:#9fe6ff;font-size:.74rem;font-weight:800;letter-spacing:.06em}
+.ter-panel h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:0 0 14px;color:#fff;font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.01em}
+.ter-panel h3 em{color:#8fe4ff;font-size:.98rem;font-style:normal;font-weight:800;font-variant-numeric:tabular-nums}
+.ter-panel p{margin:0;color:rgba(213,236,247,.86);font-size:1rem;line-height:1.72}
+.ter-panel__tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0}
+.ter-panel__tags li{padding:7px 13px;border:1px solid rgba(133,214,240,.24);border-radius:999px;color:rgba(213,236,247,.9);font-size:.79rem;font-weight:600}
+.ter-foot{margin:24px 0 0;padding-top:18px;border-top:1px solid rgba(133,214,240,.16);color:rgba(190,220,235,.72);font-size:.86rem;line-height:1.6}
+
+@media(max-width:980px){
+  .ter-lab{grid-template-columns:1fr;gap:26px}
+  .ter-detail{padding:26px 22px}
+}
+@media(max-width:560px){
+  .ter-scale{grid-template-columns:44px minmax(0,1fr);gap:14px}
+  .ter-tube{width:20px}
+  .ter-tube__bulb{width:36px;height:36px;margin-left:-18px;bottom:-24px}
+  .ter-band{padding:13px 15px;border-radius:0 13px 13px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .ter-panel{animation:none}
+  .ter-tube__fill,.ter-tube__marker,.ter-band{transition:none}
+}
+</style>
 </head>
 <body class="te-refrigeracion">
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
@@ -7361,6 +7415,69 @@ html,body{max-width:100%;overflow-x:hidden}
 <a class="gallery-extra g-landscape" data-lb="archivo-control-refrigeracion.webp"><img alt="Panel de control de una instalación de refrigeración" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" width="1600"/></a>
 </div>
 <button aria-controls="galleryWork" aria-expanded="false" class="gallery-toggle" id="galleryToggle" type="button">Ver más fotografías</button>
+</div>
+</section>
+<section class="ter-section" id="temperaturas">
+<div class="wrap">
+<div class="ter-head">
+<span class="eyebrow-sec reveal">Rangos de trabajo</span>
+<h2 class="sec-title reveal d1">A Qué Temperatura Trabaja Cada Cámara Frigorífica</h2>
+<p class="sec-lead reveal d2">El producto marca la temperatura, y la temperatura marca el equipo. Recorre la escala para ver cómo cambia el tipo de cámara frigorífica en cada tramo.</p>
+</div>
+<div class="ter-lab reveal">
+<div class="ter-scale">
+<div class="ter-tube" aria-hidden="true">
+<span class="ter-tube__fill"></span>
+<span class="ter-tube__marker"></span>
+<span class="ter-tube__bulb"></span>
+</div>
+<div class="ter-bands" role="tablist" aria-label="Rangos de temperatura de cámaras frigoríficas">
+<button class="ter-band is-active" type="button" role="tab" id="ter-tab-0" data-band="0" aria-selected="true" aria-controls="ter-panel-0" tabindex="0">
+<span class="ter-band__temp">−25 a −18 °C</span>
+<span class="ter-band__name">Congelación</span>
+</button>
+<button class="ter-band" type="button" role="tab" id="ter-tab-1" data-band="1" aria-selected="false" aria-controls="ter-panel-1" tabindex="-1">
+<span class="ter-band__temp">0 a 2 °C</span>
+<span class="ter-band__name">Carne y pescado fresco</span>
+</button>
+<button class="ter-band" type="button" role="tab" id="ter-tab-2" data-band="2" aria-selected="false" aria-controls="ter-panel-2" tabindex="-1">
+<span class="ter-band__temp">4 a 8 °C</span>
+<span class="ter-band__name">Fruta, verdura y lácteos</span>
+</button>
+<button class="ter-band" type="button" role="tab" id="ter-tab-3" data-band="3" aria-selected="false" aria-controls="ter-panel-3" tabindex="-1">
+<span class="ter-band__temp">10 a 12 °C</span>
+<span class="ter-band__name">Antecámara y obrador</span>
+</button>
+</div>
+</div>
+<div class="ter-detail">
+<article class="ter-panel is-active" id="ter-panel-0" role="tabpanel" aria-labelledby="ter-tab-0">
+<span class="ter-panel__tipo">Cámara de congelación</span>
+<h3>Congelación<em>−25 a −18 °C</em></h3>
+<p>Las cámaras frigoríficas industriales de congelación conservan producto ya congelado: pescado, carne, masas y helados. Al trabajar por debajo de cero, el evaporador acumula hielo y la instalación necesita un ciclo de desescarche previsto desde el montaje.</p>
+<ul class="ter-panel__tags"><li>Congelados y helados</li><li>Desescarche programado</li><li>Suelo aislado</li></ul>
+</article>
+<article class="ter-panel" id="ter-panel-1" role="tabpanel" aria-labelledby="ter-tab-1" hidden>
+<span class="ter-panel__tipo">Cámara de conservación</span>
+<h3>Carne y pescado fresco<em>0 a 2 °C</em></h3>
+<p>El rango más exigente en estabilidad. Una cámara frigorífica comercial para carne o pescado fresco trabaja cerca del punto de congelación sin llegar a cruzarlo, así que la regulación y la colocación de la sonda condicionan el resultado.</p>
+<ul class="ter-panel__tags"><li>Carne y pescado</li><li>Alta humedad relativa</li><li>Regulación fina</li></ul>
+</article>
+<article class="ter-panel" id="ter-panel-2" role="tabpanel" aria-labelledby="ter-tab-2" hidden>
+<span class="ter-panel__tipo">Cámara de refrigeración</span>
+<h3>Fruta, verdura y lácteos<em>4 a 8 °C</em></h3>
+<p>Es el rango más habitual en hostelería y distribución. La instalación de cámaras frigoríficas para fruta, verdura y lácteos se dimensiona sobre el volumen de entrada diaria de producto, no solo sobre los metros cúbicos de la cámara.</p>
+<ul class="ter-panel__tags"><li>Hostelería y retail</li><li>Entrada diaria alta</li><li>Puerta en uso constante</li></ul>
+</article>
+<article class="ter-panel" id="ter-panel-3" role="tabpanel" aria-labelledby="ter-tab-3" hidden>
+<span class="ter-panel__tipo">Espacio refrigerado de paso</span>
+<h3>Antecámara y obrador<em>10 a 12 °C</em></h3>
+<p>Antecámaras, obradores y salas de preparación refrigeradas. Sirven de transición entre el local y la cámara: reducen el salto térmico en cada apertura y descargan trabajo del equipo principal.</p>
+<ul class="ter-panel__tags"><li>Sala de preparación</li><li>Zona de paso</li><li>Menos salto térmico</li></ul>
+</article>
+<p class="ter-foot">Rangos orientativos de referencia en el sector. La temperatura definitiva de cada instalación de cámara frigorífica se fija sobre el producto concreto y el uso previsto.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="contacto">
@@ -7917,6 +8034,43 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     el.classList.add('visible','in','te-motion-in');
     el.style.opacity='1';el.style.visibility='visible';
   });
+})();
+</script>
+<script>
+(function(){
+  var lab=document.querySelector('.ter-lab');
+  if(!lab) return;
+  var bands=[].slice.call(lab.querySelectorAll('.ter-band'));
+  var panels=[].slice.call(lab.querySelectorAll('.ter-panel'));
+  var tube=lab.querySelector('.ter-tube');
+  var n=bands.length, current=0;
+  function select(i,focus){
+    current=(i+n)%n;
+    bands.forEach(function(b,k){
+      var on=k===current;
+      b.classList.toggle('is-active',on);
+      b.setAttribute('aria-selected',on?'true':'false');
+      b.setAttribute('tabindex',on?'0':'-1');
+    });
+    panels.forEach(function(pn,k){
+      if(k===current){pn.removeAttribute('hidden');}
+      else{pn.setAttribute('hidden','');}
+    });
+    var pos=((current+0.5)/n)*100;
+    tube.style.setProperty('--ter-pos',pos.toFixed(1)+'%');
+    tube.style.setProperty('--ter-fill',(100-pos).toFixed(1)+'%');
+    if(focus) bands[current].focus();
+  }
+  bands.forEach(function(b,k){
+    b.addEventListener('click',function(){ select(k); });
+    b.addEventListener('keydown',function(e){
+      if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();select(current+1,true);}
+      else if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();select(current-1,true);}
+      else if(e.key==='Home'){e.preventDefault();select(0,true);}
+      else if(e.key==='End'){e.preventDefault();select(n-1,true);}
+    });
+  });
+  select(0);
 })();
 </script>
 </body>
