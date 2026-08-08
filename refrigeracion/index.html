@@ -6408,7 +6408,7 @@ input:focus,textarea:focus,select:focus{
 :root{--v19-gutter:clamp(24px,3.25vw,64px)}
 html,body{max-width:100%;overflow-x:hidden}
 /* Keep every animated block visible. Hover and hero motion remain active. */
-.reveal,.te-motion-item{opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important}
+html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important}
 /* Consistent useful width: backgrounds stay full bleed, content keeps a safe fluid gutter. */
 .te-home .home-v15-shell,
 .te-home .shell,
@@ -7149,8 +7149,83 @@ html,body{max-width:100%;overflow-x:hidden}
   .ter-tube__fill,.ter-tube__marker,.ter-band{transition:none}
 }
 </style>
+<style id="v25-motion">
+@supports (overflow: clip){
+  /* overflow:hidden crea contenedor de scroll y rompe view(); clip recorta sin crearlo. */
+  html,body{overflow-x:clip}
+  .section,.home-v15-section,.ter-section,.espacios-band,.bld-stage,
+  .full-service-section,.cta-final,.cta,.contact-box,.compact-contact,
+  .home-v15-gallery figure,.home-v15-area-media,.home-v15-cert-line,
+  .gallery-item,.detail-media,.svc-media,.gallery a,.hero-media figure,
+  .service-map-media,.system-visual,.cold-system-media,.explorer-media,
+  .process-grid,.faq-item{overflow:clip}
+}
+@keyframes teReveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes teRevealSoft{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes teZoomIn{from{opacity:0;transform:scale(.965)}to{opacity:1;transform:none}}
+@keyframes teProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes teDrift{from{transform:translateY(-3.5%) scale(1.09)}to{transform:translateY(3.5%) scale(1.09)}}
+
+.te-progress{position:fixed;top:0;left:0;z-index:9999;width:100%;height:3px;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,#d8273c 0%,#158bb5 38%,#7bdcf2 100%);pointer-events:none}
+
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .reveal{
+      opacity:0;
+      animation:teReveal cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 62%;
+      transition:none!important;
+    }
+    .reveal.d1{animation-range:entry 12% entry 70%}
+    .reveal.d2{animation-range:entry 20% entry 78%}
+    .reveal.d3{animation-range:entry 28% entry 86%}
+    .reveal.delay{animation-range:entry 16% entry 74%}
+
+    .te-stagger > *{
+      opacity:0;
+      animation:teRevealSoft cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry calc(2% + var(--te-i,0) * 9%) entry calc(58% + var(--te-i,0) * 9%);
+    }
+    .te-stagger > *:nth-child(1){--te-i:0}
+    .te-stagger > *:nth-child(2){--te-i:1}
+    .te-stagger > *:nth-child(3){--te-i:2}
+    .te-stagger > *:nth-child(4){--te-i:3}
+    .te-stagger > *:nth-child(5){--te-i:4}
+    .te-stagger > *:nth-child(6){--te-i:5}
+    .te-stagger > *:nth-child(7){--te-i:6}
+    .te-stagger > *:nth-child(8){--te-i:7}
+
+    .te-zoom{
+      opacity:0;
+      animation:teZoomIn cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 66%;
+    }
+
+    .te-progress{animation:teProgress linear both;animation-timeline:scroll(root block)}
+  }
+}
+@media (max-width:760px){
+  @keyframes teReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @keyframes teRevealSoft{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion: reduce){
+  .te-progress{display:none}
+}
+</style>
+<script>
+(function(){
+  var d=document.documentElement;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sd=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()');
+  if(!reduce&&(sd||('IntersectionObserver' in window))) d.classList.add('te-motion-ok');
+})();
+</script>
 </head>
 <body class="te-refrigeracion">
+<div class="te-progress" aria-hidden="true"></div>
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
 <header class="shared-header te-v11-header" id="siteHeader">
   <nav aria-label="Navegación principal" class="nav shared-nav te-v11-nav">
@@ -7334,10 +7409,10 @@ html,body{max-width:100%;overflow-x:hidden}
 <li>Reparación de cuartos fríos</li>
 <li>SAT y técnico de cámara frigorífica</li>
 <li>Reparar cámara frigorífica de refrigeración o de congelación</li>
-<li>Urgencia de cámara frigorífica con producto dentro</li>
+<li>Urgencia de cámara frigorífica</li>
 </ul>
 <p>Cada solicitud se revisa para identificar la avería y concretar el trabajo de reparación correspondiente.</p>
-<p>Una urgencia de cámara frigorífica se atiende con prioridad porque la temperatura sube en cuanto el equipo se detiene. Al reparar una cámara frigorífica con producto almacenado, la primera actuación es estabilizar el frío antes de continuar con la intervención.</p>
+<p>Una urgencia de cámara frigorífica aparece cuando el equipo se detiene y la temperatura interior empieza a subir. Al reparar una cámara frigorífica con producto almacenado, el alcance y los plazos de la intervención se concretan con Termoelectra en cada caso.</p>
 <p class="seo-detail" id="detail-repair"><strong>Reparación de Cámaras Frigoríficas:</strong> si necesitas reparar una cámara frigorífica, el servicio técnico de cámara frigorífica permite valorar la incidencia y definir la reparación. Esta área incluye SAT de cámara frigorífica, técnico de cámara frigorífica, reparación de frigorífico industrial y reparación de cuarto frío.</p>
 <button aria-controls="detail-repair" aria-expanded="false" class="detail-toggle" type="button">Ver detalle</button>
 </div>
@@ -7431,7 +7506,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <span class="ter-tube__marker"></span>
 <span class="ter-tube__bulb"></span>
 </div>
-<div class="ter-bands" role="tablist" aria-label="Rangos de temperatura de cámaras frigoríficas">
+<div class="ter-bands te-stagger" role="tablist" aria-label="Rangos de temperatura de cámaras frigoríficas">
 <button class="ter-band is-active" type="button" role="tab" id="ter-tab-0" data-band="0" aria-selected="true" aria-controls="ter-panel-0" tabindex="0">
 <span class="ter-band__temp">−25 a −18 °C</span>
 <span class="ter-band__name">Congelación</span>
@@ -7450,7 +7525,7 @@ html,body{max-width:100%;overflow-x:hidden}
 </button>
 </div>
 </div>
-<div class="ter-detail">
+<div class="ter-detail te-zoom">
 <article class="ter-panel is-active" id="ter-panel-0" role="tabpanel" aria-labelledby="ter-tab-0">
 <span class="ter-panel__tipo">Cámara de congelación</span>
 <h3>Congelación<em>−25 a −18 °C</em></h3>
