@@ -7095,60 +7095,6 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </style>
 
 
-<style id="v25-refri-termica">
-.ter-section{position:relative;background:linear-gradient(170deg,#061c2f 0%,#0a3352 58%,#0b3f63 100%);color:#eaf6fb;overflow:hidden}
-.ter-section::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(120,205,235,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,205,235,.05) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
-.ter-section>.wrap{position:relative;z-index:1}
-.ter-head{max-width:820px;margin-bottom:clamp(38px,5vw,62px)}
-.ter-section .eyebrow-sec{color:var(--cian-cl)}
-.ter-section .sec-title{color:#fff}
-.ter-section .sec-lead{color:rgba(215,238,248,.82)}
-
-.ter-lab{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,4.5vw,64px);align-items:stretch}
-.ter-scale{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);gap:22px}
-
-.ter-tube{position:relative;width:26px;justify-self:center;margin:10px 0 34px;border-radius:999px;background:rgba(9,42,66,.85);box-shadow:inset 0 0 0 1px rgba(133,214,240,.28)}
-.ter-tube__fill{position:absolute;left:3px;right:3px;bottom:3px;border-radius:999px;background:linear-gradient(180deg,#8fe4ff 0%,#33b4e0 55%,#1f7fb4 100%);height:var(--ter-fill,88%);transition:height .55s cubic-bezier(.4,0,.2,1)}
-.ter-tube__marker{position:absolute;left:50%;top:var(--ter-pos,13%);width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(143,228,255,.55),transparent 68%);transition:top .55s cubic-bezier(.4,0,.2,1)}
-.ter-tube__marker::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#eafaff;box-shadow:0 0 0 4px rgba(143,228,255,.35)}
-.ter-tube__bulb{position:absolute;left:50%;bottom:-30px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:linear-gradient(180deg,#2ea3d3,#15618f);box-shadow:inset 0 0 0 1px rgba(133,214,240,.32)}
-
-.ter-bands{display:grid;gap:10px;align-content:stretch}
-.ter-band{position:relative;display:grid;gap:3px;padding:16px 20px;border:1px solid rgba(133,214,240,.2);border-left:3px solid rgba(133,214,240,.3);border-radius:0 16px 16px 0;background:rgba(8,40,64,.5);color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .3s ease,border-color .3s ease,transform .3s ease}
-.ter-band:hover{background:rgba(13,60,92,.72);border-left-color:var(--cian-cl)}
-.ter-band:focus-visible{outline:2px solid var(--cian-cl);outline-offset:3px}
-.ter-band.is-active{background:linear-gradient(90deg,rgba(28,110,160,.9),rgba(11,52,80,.55));border-left-color:#8fe4ff;transform:translateX(5px)}
-.ter-band__temp{color:#9fe6ff;font-size:.98rem;font-weight:800;letter-spacing:.01em;font-variant-numeric:tabular-nums}
-.ter-band__name{color:rgba(219,240,250,.78);font-size:.84rem;line-height:1.35}
-.ter-band.is-active .ter-band__name{color:#fff}
-
-.ter-detail{display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,3.4vw,42px);border:1px solid rgba(133,214,240,.18);border-radius:26px;background:rgba(6,30,49,.55);backdrop-filter:blur(2px)}
-.ter-panel[hidden]{display:none}
-.ter-panel{animation:terIn .4s ease both}
-@keyframes terIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.ter-panel__tipo{display:inline-block;margin-bottom:14px;padding:7px 14px;border-radius:999px;background:rgba(143,228,255,.14);color:#9fe6ff;font-size:.74rem;font-weight:800;letter-spacing:.06em}
-.ter-panel h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:0 0 14px;color:#fff;font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.01em}
-.ter-panel h3 em{color:#8fe4ff;font-size:.98rem;font-style:normal;font-weight:800;font-variant-numeric:tabular-nums}
-.ter-panel p{margin:0;color:rgba(213,236,247,.86);font-size:1rem;line-height:1.72}
-.ter-panel__tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0}
-.ter-panel__tags li{padding:7px 13px;border:1px solid rgba(133,214,240,.24);border-radius:999px;color:rgba(213,236,247,.9);font-size:.79rem;font-weight:600}
-.ter-foot{margin:24px 0 0;padding-top:18px;border-top:1px solid rgba(133,214,240,.16);color:rgba(190,220,235,.72);font-size:.86rem;line-height:1.6}
-
-@media(max-width:980px){
-  .ter-lab{grid-template-columns:1fr;gap:26px}
-  .ter-detail{padding:26px 22px}
-}
-@media(max-width:560px){
-  .ter-scale{grid-template-columns:44px minmax(0,1fr);gap:14px}
-  .ter-tube{width:20px}
-  .ter-tube__bulb{width:36px;height:36px;margin-left:-18px;bottom:-24px}
-  .ter-band{padding:13px 15px;border-radius:0 13px 13px 0}
-}
-@media(prefers-reduced-motion:reduce){
-  .ter-panel{animation:none}
-  .ter-tube__fill,.ter-tube__marker,.ter-band{transition:none}
-}
-</style>
 <style id="v25-motion">
 @supports (overflow: clip){
   /* overflow:hidden crea contenedor de scroll y rompe view(); clip recorta sin crearlo. */
@@ -7276,6 +7222,53 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   .pagenav a{padding:7px 12px;font-size:.82rem}
 }
 </style>
+<style id="v25-hscroll">
+.hscroll{position:relative;background:linear-gradient(180deg,#061c2f 0%,#0a3352 62%,#0b3f63 100%);color:#eaf6fb;overflow:clip}
+.hscroll::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(120,205,235,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,205,235,.05) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hscroll__head{position:relative;z-index:1;max-width:840px;padding:clamp(64px,8vw,110px) 0 clamp(34px,4vw,54px)}
+.hscroll .eyebrow-sec{color:var(--cian-cl)}
+.hscroll .sec-title{color:#fff}
+.hscroll .sec-lead{color:rgba(215,238,248,.82)}
+
+.hscroll__rail{position:relative;z-index:1}
+.hscroll__sticky{overflow:clip}
+.hscroll__track{display:flex;gap:clamp(14px,1.6vw,24px);align-items:stretch;will-change:transform}
+
+.hcard{flex:0 0 clamp(260px,26vw,380px);display:flex;flex-direction:column;border:1px solid rgba(133,214,240,.18);border-radius:24px;background:rgba(6,30,49,.55);overflow:clip}
+.hcard__media{flex:0 0 auto;margin:0;height:clamp(190px,21vw,280px);background:rgba(10,45,70,.7)}
+.hcard__media img{display:block;width:100%;height:100%;object-fit:cover}
+.hcard__body{flex:1 1 auto;padding:22px 24px 26px}
+.hcard__num{display:block;margin-bottom:10px;color:#8fe4ff;font-size:.72rem;font-weight:900;letter-spacing:.16em}
+.hcard h3{margin:0 0 9px;color:#fff;font-size:1.12rem;line-height:1.28}
+.hcard p{margin:0;color:rgba(213,236,247,.82);font-size:.92rem;line-height:1.62}
+
+.hscroll__hint{display:flex;align-items:center;gap:9px;margin:0 clamp(20px,6vw,90px) 14px;color:#8fe4ff;font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.hscroll__hint::before{content:"";width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8fe4ff,#2ea3d3)}
+.hscroll__bar{position:relative;height:2px;margin:26px clamp(20px,6vw,90px) 0;border-radius:2px;background:rgba(133,214,240,.18)}
+.hscroll__bar span{display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,#8fe4ff,#2ea3d3);transform:scaleX(.08);transform-origin:0 50%}
+
+/* Móvil y navegadores sin scroll-driven: carrusel táctil clásico. */
+.hscroll__track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 clamp(20px,6vw,90px) clamp(52px,6vw,80px)}
+.hscroll__track::-webkit-scrollbar{display:none}
+.hcard{scroll-snap-align:center}
+
+@media (min-width:900px){
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion: no-preference){
+      .hscroll__rail{height:270vh;view-timeline-name:--hrail;view-timeline-axis:block}
+      .hscroll__sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(90px,13vh,140px);padding-bottom:40px}
+      .hscroll__track{
+        width:max-content;overflow:visible;scroll-snap-type:none;padding:0 clamp(20px,6vw,90px);
+        animation:hSlide linear both;animation-timeline:--hrail;animation-range:contain 11% contain 97%;
+      }
+      .hscroll__bar span{animation:hBar linear both;animation-timeline:--hrail;animation-range:contain 11% contain 97%}
+      @keyframes hSlide{from{transform:translateX(0)}to{transform:translateX(calc(-100% + 100vw))}}
+      .hscroll__hint{display:none}
+      @keyframes hBar{from{transform:scaleX(.08)}to{transform:scaleX(1)}}
+    }
+  }
+}
+</style>
 </head>
 <body class="te-refrigeracion">
 <div class="te-progress" aria-hidden="true"></div>
@@ -7294,7 +7287,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="burger shared-menu te-v11-menu" id="burger" type="button"><span></span><span></span><span></span></button>
   </nav>
 </header>
-<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#temperaturas">Temperaturas</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
+<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#recorrido">Recorrido</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
 
 <div class="menu-overlay shared-menu-overlay" id="overlay"></div>
 <section aria-labelledby="hero-title" class="unified-hero unified-hero--refrigeracion" style="--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
@@ -7458,8 +7451,8 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <h2 class="service-seo-title">Reparación de Cámaras Frigoríficas</h2>
 <p>El servicio técnico de cámaras frigoríficas atiende consultas e incidencias vinculadas a:</p>
 <ul class="svc-list">
-<li>Averías de cámaras frigoríficas</li>
-<li>Reparación de cámaras frigoríficas</li>
+<li>Avería de cámara frigorífica</li>
+<li>Reparación de cámara frigorífica</li>
 <li>Reparación de frigorífico industrial</li>
 <li>Reparación de cuartos fríos</li>
 <li>SAT y técnico de cámara frigorífica</li>
@@ -7547,66 +7540,68 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <button aria-controls="galleryWork" aria-expanded="false" class="gallery-toggle" id="galleryToggle" type="button">Ver más fotografías</button>
 </div>
 </section>
-<section class="ter-section" id="temperaturas">
+<section class="hscroll" id="recorrido" aria-labelledby="hscroll-title">
 <div class="wrap">
-<div class="ter-head">
-<span class="eyebrow-sec reveal">Rangos de trabajo</span>
-<h2 class="sec-title reveal d1">A Qué Temperatura Trabaja Cada Cámara Frigorífica</h2>
-<p class="sec-lead reveal d2">El producto marca la temperatura, y la temperatura marca el equipo. Recorre la escala para ver cómo cambia el tipo de cámara frigorífica en cada tramo.</p>
-</div>
-<div class="ter-lab reveal">
-<div class="ter-scale">
-<div class="ter-tube" aria-hidden="true">
-<span class="ter-tube__fill"></span>
-<span class="ter-tube__marker"></span>
-<span class="ter-tube__bulb"></span>
-</div>
-<div class="ter-bands te-stagger" role="tablist" aria-label="Rangos de temperatura de cámaras frigoríficas">
-<button class="ter-band is-active" type="button" role="tab" id="ter-tab-0" data-band="0" aria-selected="true" aria-controls="ter-panel-0" tabindex="0">
-<span class="ter-band__temp">−25 a −18 °C</span>
-<span class="ter-band__name">Congelación</span>
-</button>
-<button class="ter-band" type="button" role="tab" id="ter-tab-1" data-band="1" aria-selected="false" aria-controls="ter-panel-1" tabindex="-1">
-<span class="ter-band__temp">0 a 2 °C</span>
-<span class="ter-band__name">Carne y pescado fresco</span>
-</button>
-<button class="ter-band" type="button" role="tab" id="ter-tab-2" data-band="2" aria-selected="false" aria-controls="ter-panel-2" tabindex="-1">
-<span class="ter-band__temp">4 a 8 °C</span>
-<span class="ter-band__name">Fruta, verdura y lácteos</span>
-</button>
-<button class="ter-band" type="button" role="tab" id="ter-tab-3" data-band="3" aria-selected="false" aria-controls="ter-panel-3" tabindex="-1">
-<span class="ter-band__temp">10 a 12 °C</span>
-<span class="ter-band__name">Antecámara y obrador</span>
-</button>
+<div class="hscroll__head">
+<span class="eyebrow-sec reveal">Recorrido visual</span>
+<h2 class="sec-title reveal d1" id="hscroll-title">De la Sala de Máquinas al Punto de Venta</h2>
+<p class="sec-lead reveal d2">Las áreas de trabajo de frío industrial y refrigeración comercial, en el orden en que se encuentran en una instalación real.</p>
 </div>
 </div>
-<div class="ter-detail te-zoom">
-<article class="ter-panel is-active" id="ter-panel-0" role="tabpanel" aria-labelledby="ter-tab-0">
-<span class="ter-panel__tipo">Cámara de congelación</span>
-<h3>Congelación<em>−25 a −18 °C</em></h3>
-<p>Las cámaras frigoríficas industriales de congelación conservan producto ya congelado: pescado, carne, masas y helados. Al trabajar por debajo de cero, el evaporador acumula hielo y la instalación necesita un ciclo de desescarche previsto desde el montaje.</p>
-<ul class="ter-panel__tags"><li>Congelados y helados</li><li>Desescarche programado</li><li>Suelo aislado</li></ul>
+<div class="hscroll__rail">
+<div class="hscroll__sticky">
+<div class="hscroll__track">
+<article class="hcard">
+<figure class="hcard__media"><img alt="Sala de máquinas de una instalación de refrigeración" decoding="async" height="1050" loading="lazy" src="sala-maquinas.webp" width="1400"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">01</span>
+<h3>Frío Industrial</h3>
+<p>Salas de máquinas y equipos de potencia para instalaciones de refrigeración industrial.</p>
+</div>
 </article>
-<article class="ter-panel" id="ter-panel-1" role="tabpanel" aria-labelledby="ter-tab-1" hidden>
-<span class="ter-panel__tipo">Cámara de conservación</span>
-<h3>Carne y pescado fresco<em>0 a 2 °C</em></h3>
-<p>El rango más exigente en estabilidad. Una cámara frigorífica comercial para carne o pescado fresco trabaja cerca del punto de congelación sin llegar a cruzarlo, así que la regulación y la colocación de la sonda condicionan el resultado.</p>
-<ul class="ter-panel__tags"><li>Carne y pescado</li><li>Alta humedad relativa</li><li>Regulación fina</li></ul>
-</article>
-<article class="ter-panel" id="ter-panel-2" role="tabpanel" aria-labelledby="ter-tab-2" hidden>
-<span class="ter-panel__tipo">Cámara de refrigeración</span>
-<h3>Fruta, verdura y lácteos<em>4 a 8 °C</em></h3>
-<p>Es el rango más habitual en hostelería y distribución. La instalación de cámaras frigoríficas para fruta, verdura y lácteos se dimensiona sobre el volumen de entrada diaria de producto, no solo sobre los metros cúbicos de la cámara.</p>
-<ul class="ter-panel__tags"><li>Hostelería y retail</li><li>Entrada diaria alta</li><li>Puerta en uso constante</li></ul>
-</article>
-<article class="ter-panel" id="ter-panel-3" role="tabpanel" aria-labelledby="ter-tab-3" hidden>
-<span class="ter-panel__tipo">Espacio refrigerado de paso</span>
-<h3>Antecámara y obrador<em>10 a 12 °C</em></h3>
-<p>Antecámaras, obradores y salas de preparación refrigeradas. Sirven de transición entre el local y la cámara: reducen el salto térmico en cada apertura y descargan trabajo del equipo principal.</p>
-<ul class="ter-panel__tags"><li>Sala de preparación</li><li>Zona de paso</li><li>Menos salto térmico</li></ul>
-</article>
-<p class="ter-foot">Rangos orientativos de referencia en el sector. La temperatura definitiva de cada instalación de cámara frigorífica se fija sobre el producto concreto y el uso previsto.</p>
+<article class="hcard">
+<figure class="hcard__media"><img alt="Cámara frigorífica industrial con estanterías" decoding="async" height="314" loading="lazy" src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" width="600"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">02</span>
+<h3>Cámaras Frigoríficas Industriales</h3>
+<p>Montaje de cámaras frigoríficas industriales para almacenamiento en palet.</p>
 </div>
+</article>
+<article class="hcard">
+<figure class="hcard__media"><img alt="Cámara frigorífica comercial con puertas de vidrio instalada por Termoelectra" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" width="1600"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">03</span>
+<h3>Cámaras Frigoríficas Comerciales</h3>
+<p>Cámaras frigoríficas comerciales con puertas de vidrio para superficie de venta.</p>
+</div>
+</article>
+<article class="hcard">
+<figure class="hcard__media"><img alt="Técnicos de Termoelectra revisando el panel de control de una instalación" decoding="async" height="1500" loading="lazy" src="galeria-revision-tecnica.webp" width="1000"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">04</span>
+<h3>Reparación y SAT</h3>
+<p>Servicio técnico de cámara frigorífica sobre el panel de control de la instalación.</p>
+</div>
+</article>
+<article class="hcard">
+<figure class="hcard__media"><img alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" decoding="async" height="1785" loading="lazy" src="galeria-condensadores.webp" width="1000"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">05</span>
+<h3>Mantenimiento</h3>
+<p>Revisión de unidades condensadoras en cubierta dentro del mantenimiento de frío industrial.</p>
+</div>
+</article>
+<article class="hcard">
+<figure class="hcard__media"><img alt="Técnico de Termoelectra en un almacén frigorífico industrial" decoding="async" height="1100" loading="lazy" src="galeria-valvulas.webp" width="1100"/></figure>
+<div class="hcard__body">
+<span class="hcard__num">06</span>
+<h3>Refrigeración Comercial</h3>
+<p>Equipos de refrigeración comercial en almacén frigorífico y punto de venta.</p>
+</div>
+</article>
+</div>
+<p class="hscroll__hint" aria-hidden="true">Desliza para recorrer las áreas</p>
+<div class="hscroll__bar" aria-hidden="true"><span></span></div>
 </div>
 </div>
 </section>
@@ -8164,43 +8159,6 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     el.classList.add('visible','in','te-motion-in');
     el.style.opacity='1';el.style.visibility='visible';
   });
-})();
-</script>
-<script>
-(function(){
-  var lab=document.querySelector('.ter-lab');
-  if(!lab) return;
-  var bands=[].slice.call(lab.querySelectorAll('.ter-band'));
-  var panels=[].slice.call(lab.querySelectorAll('.ter-panel'));
-  var tube=lab.querySelector('.ter-tube');
-  var n=bands.length, current=0;
-  function select(i,focus){
-    current=(i+n)%n;
-    bands.forEach(function(b,k){
-      var on=k===current;
-      b.classList.toggle('is-active',on);
-      b.setAttribute('aria-selected',on?'true':'false');
-      b.setAttribute('tabindex',on?'0':'-1');
-    });
-    panels.forEach(function(pn,k){
-      if(k===current){pn.removeAttribute('hidden');}
-      else{pn.setAttribute('hidden','');}
-    });
-    var pos=((current+0.5)/n)*100;
-    tube.style.setProperty('--ter-pos',pos.toFixed(1)+'%');
-    tube.style.setProperty('--ter-fill',(100-pos).toFixed(1)+'%');
-    if(focus) bands[current].focus();
-  }
-  bands.forEach(function(b,k){
-    b.addEventListener('click',function(){ select(k); });
-    b.addEventListener('keydown',function(e){
-      if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();select(current+1,true);}
-      else if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();select(current-1,true);}
-      else if(e.key==='Home'){e.preventDefault();select(0,true);}
-      else if(e.key==='End'){e.preventDefault();select(n-1,true);}
-    });
-  });
-  select(0);
 })();
 </script>
 <script>
