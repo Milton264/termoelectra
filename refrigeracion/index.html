@@ -7222,50 +7222,59 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   .pagenav a{padding:7px 12px;font-size:.82rem}
 }
 </style>
-<style id="v25-hscroll">
-.hscroll{position:relative;background:linear-gradient(180deg,#061c2f 0%,#0a3352 62%,#0b3f63 100%);color:#eaf6fb;overflow:clip}
-.hscroll::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(120,205,235,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(120,205,235,.05) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
-.hscroll__head{position:relative;z-index:1;max-width:840px;padding:clamp(64px,8vw,110px) 0 clamp(34px,4vw,54px)}
-.hscroll .eyebrow-sec{color:var(--cian-cl)}
-.hscroll .sec-title{color:#fff}
-.hscroll .sec-lead{color:rgba(215,238,248,.82)}
+<style id="v26-motion-lab">
+@supports (overflow: clip){
+  .te-open,.te-open *,section,section > div,figure,
+  .svc-media,.media-mosaic,.media-triptych,.fit-complete,
+  .gallery,.gallery-item,.detail-media,.carousel-sec,.slide,
+  .cold-system-media,.system-visual,.explorer-media,.contact-box,.cta,.cta-final{overflow:clip}
+  .espacios-grid,.hscroll__track,.pagenav__inner{overflow-x:auto;overflow-y:visible}
+}
+/* Tratamientos sobre el contenido que ya existe. No añaden secciones ni imágenes. */
 
-.hscroll__rail{position:relative;z-index:1}
-.hscroll__sticky{overflow:clip}
-.hscroll__track{display:flex;gap:clamp(14px,1.6vw,24px);align-items:stretch;will-change:transform}
+/* 1. Titulares que se levantan palabra por palabra al entrar. */
+.te-words{--te-wgap:.24em}
+.te-words .te-w{display:inline-block;overflow:clip;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
+.te-words .te-w > span{display:inline-block;will-change:transform}
 
-.hcard{flex:0 0 clamp(260px,26vw,380px);display:flex;flex-direction:column;border:1px solid rgba(133,214,240,.18);border-radius:24px;background:rgba(6,30,49,.55);overflow:clip}
-.hcard__media{flex:0 0 auto;margin:0;height:clamp(190px,21vw,280px);background:rgba(10,45,70,.7)}
-.hcard__media img{display:block;width:100%;height:100%;object-fit:cover}
-.hcard__body{flex:1 1 auto;padding:22px 24px 26px}
-.hcard__num{display:block;margin-bottom:10px;color:#8fe4ff;font-size:.72rem;font-weight:900;letter-spacing:.16em}
-.hcard h3{margin:0 0 9px;color:#fff;font-size:1.12rem;line-height:1.28}
-.hcard p{margin:0;color:rgba(213,236,247,.82);font-size:.92rem;line-height:1.62}
+/* 2. Imágenes que se abren desde un recorte hacia el encuadre completo. */
+.te-open{clip-path:inset(0 0 0 0)}
 
-.hscroll__hint{display:flex;align-items:center;gap:9px;margin:0 clamp(20px,6vw,90px) 14px;color:#8fe4ff;font-size:.78rem;font-weight:700;letter-spacing:.04em}
-.hscroll__hint::before{content:"";width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,#8fe4ff,#2ea3d3)}
-.hscroll__bar{position:relative;height:2px;margin:26px clamp(20px,6vw,90px) 0;border-radius:2px;background:rgba(133,214,240,.18)}
-.hscroll__bar span{display:block;height:100%;border-radius:2px;background:linear-gradient(90deg,#8fe4ff,#2ea3d3);transform:scaleX(.08);transform-origin:0 50%}
+/* 3. Bloques de texto largo que se iluminan línea a línea al pasar. */
+.te-dim{color:color-mix(in srgb, currentColor 38%, transparent)}
 
-/* Móvil y navegadores sin scroll-driven: carrusel táctil clásico. */
-.hscroll__track{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 clamp(20px,6vw,90px) clamp(52px,6vw,80px)}
-.hscroll__track::-webkit-scrollbar{display:none}
-.hcard{scroll-snap-align:center}
-
-@media (min-width:900px){
+@media (prefers-reduced-motion: no-preference){
   @supports (animation-timeline: view()){
-    @media (prefers-reduced-motion: no-preference){
-      .hscroll__rail{height:270vh;view-timeline-name:--hrail;view-timeline-axis:block}
-      .hscroll__sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(90px,13vh,140px);padding-bottom:40px}
-      .hscroll__track{
-        width:max-content;overflow:visible;scroll-snap-type:none;padding:0 clamp(20px,6vw,90px);
-        animation:hSlide linear both;animation-timeline:--hrail;animation-range:contain 11% contain 97%;
-      }
-      .hscroll__bar span{animation:hBar linear both;animation-timeline:--hrail;animation-range:contain 11% contain 97%}
-      @keyframes hSlide{from{transform:translateX(0)}to{transform:translateX(calc(-100% + 100vw))}}
-      .hscroll__hint{display:none}
-      @keyframes hBar{from{transform:scaleX(.08)}to{transform:scaleX(1)}}
+    .te-words .te-w > span{
+      transform:translateY(110%);
+      animation:teWordUp cubic-bezier(.16,.84,.34,1) both;
+      animation-timeline:view();
+      animation-range:entry calc(6% + var(--te-w,0) * 2.6%) entry calc(54% + var(--te-w,0) * 2.6%);
     }
+    @keyframes teWordUp{to{transform:translateY(0)}}
+
+    .te-open{
+      animation:teOpen cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 66%;
+    }
+    @keyframes teOpen{
+      from{clip-path:inset(14% 10% 14% 10% round 26px)}
+      to{clip-path:inset(0% 0% 0% 0% round 0px)}
+    }
+    .te-open > img,.te-open img{
+      animation:teSettle cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 72%;
+    }
+    @keyframes teSettle{from{transform:scale(1.12)}to{transform:scale(1)}}
+
+    .te-dim{
+      animation:teLight linear both;
+      animation-timeline:view();
+      animation-range:entry 22% cover 52%;
+    }
+    @keyframes teLight{to{color:currentColor}}
   }
 }
 </style>
@@ -7287,7 +7296,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="burger shared-menu te-v11-menu" id="burger" type="button"><span></span><span></span><span></span></button>
   </nav>
 </header>
-<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#recorrido">Recorrido</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
+<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
 
 <div class="menu-overlay shared-menu-overlay" id="overlay"></div>
 <section aria-labelledby="hero-title" class="unified-hero unified-hero--refrigeracion" style="--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
@@ -7538,71 +7547,6 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <a class="gallery-extra g-landscape" data-lb="archivo-control-refrigeracion.webp"><img alt="Panel de control de una instalación de refrigeración" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" width="1600"/></a>
 </div>
 <button aria-controls="galleryWork" aria-expanded="false" class="gallery-toggle" id="galleryToggle" type="button">Ver más fotografías</button>
-</div>
-</section>
-<section class="hscroll" id="recorrido" aria-labelledby="hscroll-title">
-<div class="wrap">
-<div class="hscroll__head">
-<span class="eyebrow-sec reveal">Recorrido visual</span>
-<h2 class="sec-title reveal d1" id="hscroll-title">De la Sala de Máquinas al Punto de Venta</h2>
-<p class="sec-lead reveal d2">Las áreas de trabajo de frío industrial y refrigeración comercial, en el orden en que se encuentran en una instalación real.</p>
-</div>
-</div>
-<div class="hscroll__rail">
-<div class="hscroll__sticky">
-<div class="hscroll__track">
-<article class="hcard">
-<figure class="hcard__media"><img alt="Sala de máquinas de una instalación de refrigeración" decoding="async" height="1050" loading="lazy" src="sala-maquinas.webp" width="1400"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">01</span>
-<h3>Frío Industrial</h3>
-<p>Salas de máquinas y equipos de potencia para instalaciones de refrigeración industrial.</p>
-</div>
-</article>
-<article class="hcard">
-<figure class="hcard__media"><img alt="Cámara frigorífica industrial con estanterías" decoding="async" height="314" loading="lazy" src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" width="600"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">02</span>
-<h3>Cámaras Frigoríficas Industriales</h3>
-<p>Montaje de cámaras frigoríficas industriales para almacenamiento en palet.</p>
-</div>
-</article>
-<article class="hcard">
-<figure class="hcard__media"><img alt="Cámara frigorífica comercial con puertas de vidrio instalada por Termoelectra" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" width="1600"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">03</span>
-<h3>Cámaras Frigoríficas Comerciales</h3>
-<p>Cámaras frigoríficas comerciales con puertas de vidrio para superficie de venta.</p>
-</div>
-</article>
-<article class="hcard">
-<figure class="hcard__media"><img alt="Técnicos de Termoelectra revisando el panel de control de una instalación" decoding="async" height="1500" loading="lazy" src="galeria-revision-tecnica.webp" width="1000"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">04</span>
-<h3>Reparación y SAT</h3>
-<p>Servicio técnico de cámara frigorífica sobre el panel de control de la instalación.</p>
-</div>
-</article>
-<article class="hcard">
-<figure class="hcard__media"><img alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" decoding="async" height="1785" loading="lazy" src="galeria-condensadores.webp" width="1000"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">05</span>
-<h3>Mantenimiento</h3>
-<p>Revisión de unidades condensadoras en cubierta dentro del mantenimiento de frío industrial.</p>
-</div>
-</article>
-<article class="hcard">
-<figure class="hcard__media"><img alt="Técnico de Termoelectra en un almacén frigorífico industrial" decoding="async" height="1100" loading="lazy" src="galeria-valvulas.webp" width="1100"/></figure>
-<div class="hcard__body">
-<span class="hcard__num">06</span>
-<h3>Refrigeración Comercial</h3>
-<p>Equipos de refrigeración comercial en almacén frigorífico y punto de venta.</p>
-</div>
-</article>
-</div>
-<p class="hscroll__hint" aria-hidden="true">Desliza para recorrer las áreas</p>
-<div class="hscroll__bar" aria-hidden="true"><span></span></div>
-</div>
 </div>
 </section>
 <section id="contacto">
@@ -8206,6 +8150,87 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   },{passive:true});
   window.addEventListener('resize',function(){ syncOffset(); onScroll(); },{passive:true});
   syncOffset(); onScroll();
+})();
+</script>
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sd=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()');
+  if(reduce||!sd) return;
+
+  /* --- titulares palabra por palabra --- */
+  function splitWords(el){
+    if(el.dataset.teSplit) return;
+    var i=0, LIMIT=26;
+    (function walk(node){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(n){
+        if(n.nodeType===3){
+          var parts=n.nodeValue.split(/(\s+)/);
+          if(!parts.length) return;
+          var frag=document.createDocumentFragment();
+          parts.forEach(function(pt){
+            if(!pt) return;
+            if(/^\s+$/.test(pt)){ frag.appendChild(document.createTextNode(pt)); return; }
+            if(i>=LIMIT){ frag.appendChild(document.createTextNode(pt)); return; }
+            var outer=document.createElement('span');
+            outer.className='te-w';
+            var inner=document.createElement('span');
+            inner.textContent=pt;
+            inner.style.setProperty('--te-w',i);
+            outer.appendChild(inner);
+            frag.appendChild(outer);
+            i++;
+          });
+          node.replaceChild(frag,n);
+        } else if(n.nodeType===1 && !n.classList.contains('te-w') && n.tagName!=='BR'){
+          walk(n);
+        }
+      });
+    })(el);
+    el.classList.add('te-words');
+    el.dataset.teSplit='1';
+  }
+
+  var heads=[].slice.call(document.querySelectorAll('main h2, section h2'));
+  heads.forEach(function(h){
+    if(h.closest('.pagenav')||h.closest('header')||h.closest('footer')) return;
+    if(h.querySelector('img,svg')) return;
+    if((h.textContent||'').trim().length>150) return;
+    splitWords(h);
+  });
+
+  /* --- apertura de imágenes existentes --- */
+  var figs=[].slice.call(document.querySelectorAll('section figure, .gallery-item, .hcard__media'));
+  figs.forEach(function(f){
+    if(f.closest('.pagenav')||f.closest('footer')) return;
+    var img=f.querySelector('img');
+    if(!img) return;
+    var r=f.getBoundingClientRect();
+    if(r.width<180||r.height<120) return;
+    if(f.closest('[class*="hero"]')) return;
+    f.classList.add('te-open');
+  });
+
+  /* Un ancestro con overflow:hidden crea contenedor de scroll y congela view().
+     Se convierte a clip solo en la cadena de los elementos animados. */
+  function unclip(el){
+    var n=el.parentElement, guard=0;
+    while(n && n!==document.body && guard++<24){
+      var o=getComputedStyle(n).overflow;
+      if(o==='hidden'){ n.style.setProperty('overflow','clip','important'); }
+      n=n.parentElement;
+    }
+  }
+
+  /* --- párrafos guía que se iluminan --- */
+  var leads=[].slice.call(document.querySelectorAll('.sec-lead, .lead, .home-v15-lead'));
+  leads.forEach(function(l){
+    if(l.closest('[class*="hero"]')) return;
+    l.classList.add('te-dim');
+  });
+
+  [].slice.call(document.querySelectorAll('.te-open,.te-w,.te-dim')).forEach(unclip);
 })();
 </script>
 </body>

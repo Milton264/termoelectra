@@ -3942,6 +3942,62 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   .pagenav a{padding:7px 12px;font-size:.82rem}
 }
 </style>
+<style id="v26-motion-lab">
+@supports (overflow: clip){
+  .te-open,.te-open *,section,section > div,figure,
+  .svc-media,.media-mosaic,.media-triptych,.fit-complete,
+  .gallery,.gallery-item,.detail-media,.carousel-sec,.slide,
+  .cold-system-media,.system-visual,.explorer-media,.contact-box,.cta,.cta-final{overflow:clip}
+  .espacios-grid,.hscroll__track,.pagenav__inner{overflow-x:auto;overflow-y:visible}
+}
+/* Tratamientos sobre el contenido que ya existe. No añaden secciones ni imágenes. */
+
+/* 1. Titulares que se levantan palabra por palabra al entrar. */
+.te-words{--te-wgap:.24em}
+.te-words .te-w{display:inline-block;overflow:clip;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
+.te-words .te-w > span{display:inline-block;will-change:transform}
+
+/* 2. Imágenes que se abren desde un recorte hacia el encuadre completo. */
+.te-open{clip-path:inset(0 0 0 0)}
+
+/* 3. Bloques de texto largo que se iluminan línea a línea al pasar. */
+.te-dim{color:color-mix(in srgb, currentColor 38%, transparent)}
+
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .te-words .te-w > span{
+      transform:translateY(110%);
+      animation:teWordUp cubic-bezier(.16,.84,.34,1) both;
+      animation-timeline:view();
+      animation-range:entry calc(6% + var(--te-w,0) * 2.6%) entry calc(54% + var(--te-w,0) * 2.6%);
+    }
+    @keyframes teWordUp{to{transform:translateY(0)}}
+
+    .te-open{
+      animation:teOpen cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 66%;
+    }
+    @keyframes teOpen{
+      from{clip-path:inset(14% 10% 14% 10% round 26px)}
+      to{clip-path:inset(0% 0% 0% 0% round 0px)}
+    }
+    .te-open > img,.te-open img{
+      animation:teSettle cubic-bezier(.22,.61,.36,1) both;
+      animation-timeline:view();
+      animation-range:entry 4% entry 72%;
+    }
+    @keyframes teSettle{from{transform:scale(1.12)}to{transform:scale(1)}}
+
+    .te-dim{
+      animation:teLight linear both;
+      animation-timeline:view();
+      animation-range:entry 22% cover 52%;
+    }
+    @keyframes teLight{to{color:currentColor}}
+  }
+}
+</style>
 </head>
 <body class="te-climatizacion">
 <div class="te-progress" aria-hidden="true"></div>
@@ -4743,6 +4799,87 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   },{passive:true});
   window.addEventListener('resize',function(){ syncOffset(); onScroll(); },{passive:true});
   syncOffset(); onScroll();
+})();
+</script>
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sd=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()');
+  if(reduce||!sd) return;
+
+  /* --- titulares palabra por palabra --- */
+  function splitWords(el){
+    if(el.dataset.teSplit) return;
+    var i=0, LIMIT=26;
+    (function walk(node){
+      var kids=[].slice.call(node.childNodes);
+      kids.forEach(function(n){
+        if(n.nodeType===3){
+          var parts=n.nodeValue.split(/(\s+)/);
+          if(!parts.length) return;
+          var frag=document.createDocumentFragment();
+          parts.forEach(function(pt){
+            if(!pt) return;
+            if(/^\s+$/.test(pt)){ frag.appendChild(document.createTextNode(pt)); return; }
+            if(i>=LIMIT){ frag.appendChild(document.createTextNode(pt)); return; }
+            var outer=document.createElement('span');
+            outer.className='te-w';
+            var inner=document.createElement('span');
+            inner.textContent=pt;
+            inner.style.setProperty('--te-w',i);
+            outer.appendChild(inner);
+            frag.appendChild(outer);
+            i++;
+          });
+          node.replaceChild(frag,n);
+        } else if(n.nodeType===1 && !n.classList.contains('te-w') && n.tagName!=='BR'){
+          walk(n);
+        }
+      });
+    })(el);
+    el.classList.add('te-words');
+    el.dataset.teSplit='1';
+  }
+
+  var heads=[].slice.call(document.querySelectorAll('main h2, section h2'));
+  heads.forEach(function(h){
+    if(h.closest('.pagenav')||h.closest('header')||h.closest('footer')) return;
+    if(h.querySelector('img,svg')) return;
+    if((h.textContent||'').trim().length>150) return;
+    splitWords(h);
+  });
+
+  /* --- apertura de imágenes existentes --- */
+  var figs=[].slice.call(document.querySelectorAll('section figure, .gallery-item, .hcard__media'));
+  figs.forEach(function(f){
+    if(f.closest('.pagenav')||f.closest('footer')) return;
+    var img=f.querySelector('img');
+    if(!img) return;
+    var r=f.getBoundingClientRect();
+    if(r.width<180||r.height<120) return;
+    if(f.closest('[class*="hero"]')) return;
+    f.classList.add('te-open');
+  });
+
+  /* Un ancestro con overflow:hidden crea contenedor de scroll y congela view().
+     Se convierte a clip solo en la cadena de los elementos animados. */
+  function unclip(el){
+    var n=el.parentElement, guard=0;
+    while(n && n!==document.body && guard++<24){
+      var o=getComputedStyle(n).overflow;
+      if(o==='hidden'){ n.style.setProperty('overflow','clip','important'); }
+      n=n.parentElement;
+    }
+  }
+
+  /* --- párrafos guía que se iluminan --- */
+  var leads=[].slice.call(document.querySelectorAll('.sec-lead, .lead, .home-v15-lead'));
+  leads.forEach(function(l){
+    if(l.closest('[class*="hero"]')) return;
+    l.classList.add('te-dim');
+  });
+
+  [].slice.call(document.querySelectorAll('.te-open,.te-w,.te-dim')).forEach(unclip);
 })();
 </script>
 </body>
