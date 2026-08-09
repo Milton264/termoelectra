@@ -7223,6 +7223,59 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   if(!reduce&&(sd||('IntersectionObserver' in window))) d.classList.add('te-motion-ok');
 })();
 </script>
+<style id="v25-ux">
+/* Transición entre páginas: evita el parpadeo en blanco al navegar. */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:teVtOut .22s cubic-bezier(.4,0,1,1) both}
+  ::view-transition-new(root){animation:teVtIn .3s cubic-bezier(0,0,.2,1) both}
+  @keyframes teVtOut{to{opacity:0}}
+  @keyframes teVtIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+
+/* Barra de secciones: indica en qué parte de la página estás y permite saltar. */
+.pagenav{
+  position:sticky;top:var(--pagenav-top,72px);z-index:60;
+  margin:0;padding:0;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid rgba(11,90,130,.14);
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s;
+}
+.pagenav.is-on{opacity:1;visibility:visible;transform:none}
+.pagenav__inner{
+  display:flex;align-items:center;gap:4px;
+  max-width:1280px;margin-inline:auto;padding:0 clamp(14px,3vw,28px);
+  height:48px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.pagenav__inner::-webkit-scrollbar{display:none}
+.pagenav a{
+  position:relative;flex:0 0 auto;
+  padding:8px 14px;border-radius:999px;
+  color:#51707f;
+  font-size:.86rem;font-weight:700;text-decoration:none;white-space:nowrap;
+  transition:color .25s ease,background .25s ease;
+}
+.pagenav a:hover{color:#0b3a66;background:rgba(11,90,130,.06)}
+.pagenav a[aria-current="true"]{color:#fff;background:#0b3a66}
+.pagenav__bar{
+  position:absolute;left:0;bottom:-1px;height:2px;width:100%;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,#d8273c,#158bb5 42%,#7bdcf2);
+}
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    .pagenav__bar{animation:teProgress linear both;animation-timeline:scroll(root block)}
+    .te-progress{display:none}
+  }
+}
+@media(max-width:760px){
+  .pagenav{--pagenav-top:64px}
+  .pagenav__inner{height:44px}
+  .pagenav a{padding:7px 12px;font-size:.82rem}
+}
+</style>
 </head>
 <body class="te-refrigeracion">
 <div class="te-progress" aria-hidden="true"></div>
@@ -7241,6 +7294,8 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="burger shared-menu te-v11-menu" id="burger" type="button"><span></span><span></span><span></span></button>
   </nav>
 </header>
+<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#temperaturas">Temperaturas</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
+
 <div class="menu-overlay shared-menu-overlay" id="overlay"></div>
 <section aria-labelledby="hero-title" class="unified-hero unified-hero--refrigeracion" style="--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
 <div aria-hidden="true" class="unified-hero__flow"><i></i><i></i><i></i></div>
@@ -8146,6 +8201,53 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     });
   });
   select(0);
+})();
+</script>
+<script>
+(function(){
+  var nav=document.querySelector('.pagenav');
+  if(!nav) return;
+  var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var inner=nav.querySelector('.pagenav__inner');
+  var hdr=document.querySelector('header');
+
+  function top(el){ return el.getBoundingClientRect().top + window.scrollY; }
+
+  function syncOffset(){
+    var h=hdr?Math.round(hdr.getBoundingClientRect().height):72;
+    if(h>0&&h<160) nav.style.setProperty('--pagenav-top',h+'px');
+    var nh=Math.round(nav.getBoundingClientRect().height)||48;
+    document.documentElement.style.scrollPaddingTop=(h+nh+14)+'px';
+  }
+
+  function setCurrent(i){
+    links.forEach(function(a,k){
+      if(k===i) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');
+    });
+    var a=links[i];
+    if(a&&inner.scrollWidth>inner.clientWidth+4){
+      inner.scrollTo({left:Math.max(0,a.offsetLeft-(inner.clientWidth-a.offsetWidth)/2),behavior:'smooth'});
+    }
+  }
+
+  function onScroll(){
+    var y=window.scrollY+window.innerHeight*0.3, idx=-1;
+    for(var k=0;k<secs.length;k++){ if(secs[k]&&top(secs[k])<=y) idx=k; }
+    var atEnd=(window.scrollY+window.innerHeight)>=(document.documentElement.scrollHeight-48);
+    if(atEnd) idx=secs.length-1;
+    if(idx>=0) setCurrent(idx);
+    var f=secs[0];
+    nav.classList.toggle('is-on', f ? window.scrollY > (top(f)-320) : window.scrollY>500);
+  }
+
+  var tick=false;
+  window.addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){ onScroll(); tick=false; });
+  },{passive:true});
+  window.addEventListener('resize',function(){ syncOffset(); onScroll(); },{passive:true});
+  syncOffset(); onScroll();
 })();
 </script>
 </body>

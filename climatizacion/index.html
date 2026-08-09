@@ -3889,6 +3889,59 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   if(!reduce&&(sd||('IntersectionObserver' in window))) d.classList.add('te-motion-ok');
 })();
 </script>
+<style id="v25-ux">
+/* Transición entre páginas: evita el parpadeo en blanco al navegar. */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:teVtOut .22s cubic-bezier(.4,0,1,1) both}
+  ::view-transition-new(root){animation:teVtIn .3s cubic-bezier(0,0,.2,1) both}
+  @keyframes teVtOut{to{opacity:0}}
+  @keyframes teVtIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+
+/* Barra de secciones: indica en qué parte de la página estás y permite saltar. */
+.pagenav{
+  position:sticky;top:var(--pagenav-top,72px);z-index:60;
+  margin:0;padding:0;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid rgba(11,90,130,.14);
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s;
+}
+.pagenav.is-on{opacity:1;visibility:visible;transform:none}
+.pagenav__inner{
+  display:flex;align-items:center;gap:4px;
+  max-width:1280px;margin-inline:auto;padding:0 clamp(14px,3vw,28px);
+  height:48px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.pagenav__inner::-webkit-scrollbar{display:none}
+.pagenav a{
+  position:relative;flex:0 0 auto;
+  padding:8px 14px;border-radius:999px;
+  color:#51707f;
+  font-size:.86rem;font-weight:700;text-decoration:none;white-space:nowrap;
+  transition:color .25s ease,background .25s ease;
+}
+.pagenav a:hover{color:#0b3a66;background:rgba(11,90,130,.06)}
+.pagenav a[aria-current="true"]{color:#fff;background:#0b3a66}
+.pagenav__bar{
+  position:absolute;left:0;bottom:-1px;height:2px;width:100%;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,#d8273c,#158bb5 42%,#7bdcf2);
+}
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    .pagenav__bar{animation:teProgress linear both;animation-timeline:scroll(root block)}
+    .te-progress{display:none}
+  }
+}
+@media(max-width:760px){
+  .pagenav{--pagenav-top:64px}
+  .pagenav__inner{height:44px}
+  .pagenav a{padding:7px 12px;font-size:.82rem}
+}
+</style>
 </head>
 <body class="te-climatizacion">
 <div class="te-progress" aria-hidden="true"></div>
@@ -3907,6 +3960,8 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle shared-menu te-v11-menu" id="menuToggle" type="button"><span></span><span></span><span></span></button>
   </nav>
 </header>
+<nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#servicios">Servicios</a><a href="#espacios">Espacios</a><a href="#mantenimiento">Mantenimiento</a><a href="#trabajos">Trabajos</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
+
 <div class="menu-overlay shared-menu-overlay" id="menuOverlay"></div>
 <main id="contenido">
 <section aria-labelledby="hero-title" class="unified-hero unified-hero--climatizacion" style="--hero-image:url('climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
@@ -4073,84 +4128,65 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 <div class="mant-cycle reveal">
 <div class="cyc-stage te-zoom">
-<svg class="cyc-svg" viewBox="0 0 420 420" role="tablist" aria-label="Tareas de una revisión de mantenimiento">
+<svg class="cyc-svg" viewBox="0 0 420 420" role="tablist" aria-label="Modalidades de mantenimiento de climatización">
 <circle class="cyc-track" cx="210" cy="210" r="152"></circle>
 <circle class="cyc-progress" cx="210" cy="210" r="152" transform="rotate(-90 210 210)"></circle>
 <circle class="cyc-core" cx="210" cy="210" r="88"></circle>
 <g class="cyc-node is-active" data-step="0" role="tab" tabindex="0" aria-selected="true" aria-controls="mant-panel-0" transform="translate(210 58)">
 <circle class="cyc-node__ring" r="35"></circle>
 <circle class="cyc-node__disc" r="35"></circle>
-<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-13-13h26v26h-26z"></path><path d="M-13-4h26M-13 4h26M-4-13v26M4-13v26"></path></g>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-13-10h26v22h-26z"></path><path d="M-13-3h26M-7-14v6M7-14v6"></path><path d="M-6 4l4 4 8-9"></path></g>
 <text class="cyc-node__num" y="21">01</text>
 </g>
 <g class="cyc-node" data-step="1" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-1" transform="translate(362 210)">
 <circle class="cyc-node__ring" r="35"></circle>
 <circle class="cyc-node__disc" r="35"></circle>
-<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-14 7a14 14 0 0 1 28 0"></path><path d="M0 7 8-5"></path><circle cx="0" cy="7" r="2.4" fill="currentColor" stroke="none"></circle></g>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-10-14h13l7 7v21h-20z"></path><path d="M3-14v7h7"></path><path d="M-5-3h10M-5 3h10"></path><path d="M-6 10c4-3 8 3 12 0"></path></g>
 <text class="cyc-node__num" y="21">02</text>
 </g>
 <g class="cyc-node" data-step="2" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-2" transform="translate(210 362)">
 <circle class="cyc-node__ring" r="35"></circle>
 <circle class="cyc-node__disc" r="35"></circle>
-<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M0-14c6 7 9 11 9 15a9 9 0 0 1-18 0c0-4 3-8 9-15Z"></path></g>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-13-6h26l-2-7h-22z"></path><path d="M-11-6v18h22V-6"></path><path d="M-4 12V2h8v10"></path></g>
 <text class="cyc-node__num" y="21">03</text>
 </g>
 <g class="cyc-node" data-step="3" role="tab" tabindex="-1" aria-selected="false" aria-controls="mant-panel-3" transform="translate(58 210)">
 <circle class="cyc-node__ring" r="35"></circle>
 <circle class="cyc-node__disc" r="35"></circle>
-<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-14-12h11v9h-11zM3 3h11v9H3z"></path><path d="M-8.5-3v6.5h17V3"></path></g>
+<g class="cyc-node__glyph" transform="translate(0 -5) scale(.82)"><path d="M-14 12V-1l9-5v6l9-5v6l9-5v16z"></path><path d="M-14 12h28"></path><path d="M-7 5h3M2 5h3"></path></g>
 <text class="cyc-node__num" y="21">04</text>
 </g>
 </svg>
 <div class="cyc-core-label" aria-hidden="true">
-<span>Revisión</span>
+<span>Modalidad</span>
 <strong data-cyc-num>01</strong>
-<em data-cyc-title>Limpieza de filtros y baterías</em>
+<em data-cyc-title>Revisiones programadas</em>
 </div>
 </div>
 <div class="cyc-detail">
-<span class="cyc-detail__eyebrow">Qué se hace en cada visita</span>
+<span class="cyc-detail__eyebrow">Modalidades de mantenimiento</span>
 <article class="cyc-panel is-active" id="mant-panel-0" role="tabpanel" aria-labelledby="mant-tab-0">
-<span class="cyc-panel__pieza">Filtros y batería de intercambio</span>
-<h3>Limpieza de filtros y baterías</h3>
-<p>El mantenimiento preventivo de climatización empieza por la parte que más se ensucia. Un filtro saturado obliga al equipo a trabajar de más para mover el mismo aire.</p>
+<span class="cyc-panel__pieza">Revisiones programadas</span>
+<h3>Mantenimiento Preventivo de Climatización</h3>
+<p>El mantenimiento preventivo de climatización agrupa las revisiones que se programan por adelantado, antes de que aparezca la avería. Es la modalidad habitual en locales y oficinas donde una parada del sistema interrumpe la actividad.</p>
 </article>
 <article class="cyc-panel" id="mant-panel-1" role="tabpanel" aria-labelledby="mant-tab-1" hidden>
-<span class="cyc-panel__pieza">Circuito frigorífico y compresor</span>
-<h3>Comprobación de presiones</h3>
-<p>Se verifican las presiones del circuito y el comportamiento del compresor. Es la lectura que anticipa una fuga o una pérdida de rendimiento antes de que el local lo note.</p>
+<span class="cyc-panel__pieza">Alcance por escrito</span>
+<h3>Contrato de Mantenimiento de Climatización</h3>
+<p>Un contrato de mantenimiento de climatización deja fijado por escrito qué equipos entran, cuántas visitas al año se realizan y qué incluye cada una. Convierte el mantenimiento en algo previsible en lugar de una llamada de urgencia.</p>
 </article>
 <article class="cyc-panel" id="mant-panel-2" role="tabpanel" aria-labelledby="mant-tab-2" hidden>
-<span class="cyc-panel__pieza">Bandejas y desagüe de condensados</span>
-<h3>Revisión de drenajes</h3>
-<p>Los desagües y bandejas de condensados se revisan en cada visita. Un drenaje obstruido es una de las causas más frecuentes de goteo en falso techo.</p>
+<span class="cyc-panel__pieza">Locales, oficinas y hostelería</span>
+<h3>Mantenimiento de Climatización Comercial</h3>
+<p>El mantenimiento de climatización comercial cubre equipos de superficie de venta, oficinas y hostelería. Son instalaciones con horario de atención al público, donde la revisión se encaja fuera de las horas de servicio.</p>
 </article>
 <article class="cyc-panel" id="mant-panel-3" role="tabpanel" aria-labelledby="mant-tab-3" hidden>
-<span class="cyc-panel__pieza">Conjunto interior y exterior</span>
-<h3>Unidades interiores y exteriores</h3>
-<p>Se comprueba el funcionamiento del conjunto, interior y exterior. El detalle de lo que se revisa y de lo que queda registrado depende de lo acordado para cada instalación.</p>
-</article>
-<p class="cyc-detail__foot">Estas tareas son las habituales de una revisión programada de climatización. El alcance y la periodicidad concretos se acuerdan para cada instalación.</p>
-</div>
-</div>
-<div class="mant-panels te-stagger">
-<article class="mant-panel mant-panel--dark reveal">
-<span class="mant-panel__label">Alcance acordado</span>
-<h3>Contrato de Mantenimiento de Climatización</h3>
-<p>Un contrato de mantenimiento de climatización deja por escrito qué entra y qué no. Es la fórmula habitual en locales, oficinas y naves donde la parada del sistema afecta directamente a la actividad.</p>
-<ul class="mant-panel__list">
-<li>Equipos incluidos en el mantenimiento de climatización comercial</li>
-<li>Número de visitas al año</li>
-<li>Tareas de cada revisión</li>
-<li>Vía de aviso acordada</li>
-</ul>
-</article>
-<article class="mant-panel reveal">
-<span class="mant-panel__label">Equipos industriales</span>
+<span class="cyc-panel__pieza">Naves y equipos de potencia</span>
 <h3>Mantenimiento de Aire Acondicionado Industrial</h3>
-<p>El mantenimiento de aire acondicionado industrial atiende equipos de mayor potencia y sistemas con conductos, aerotermia o unidades en cubierta. La periodicidad se ajusta a las horas reales de uso de cada instalación.</p>
-<p class="mant-panel__foot">Como empresa de mantenimiento de climatización, Termoelectra concreta las tareas sobre la instalación real. Cuando aparece una avería, corresponde al servicio técnico de climatización valorar la intervención.</p>
+<p>El mantenimiento de aire acondicionado industrial atiende equipos de mayor potencia y sistemas con conductos, aerotermia o unidades en cubierta. La periodicidad se plantea sobre las horas reales de uso de cada instalación.</p>
 </article>
+<p class="cyc-detail__foot">Como empresa de mantenimiento de climatización, Termoelectra plantea el alcance y la periodicidad de cada modalidad sobre la instalación concreta.</p>
+</div>
 </div>
 </div>
 </section>
@@ -4628,9 +4664,9 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
       else{pnl.setAttribute('hidden','');pnl.classList.remove('is-active');}
     });
     prog.style.setProperty('--cyc-p',((current+1)/nodes.length).toFixed(3));
-    var h=panels[current].querySelector('h3');
+    var s=panels[current].querySelector('.cyc-panel__pieza');
     numOut.textContent=('0'+(current+1)).slice(-2);
-    titleOut.textContent=h?h.textContent:'';
+    titleOut.textContent=s?s.textContent:'';
     if(focus) nodes[current].focus();
   }
 
@@ -4660,6 +4696,53 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
     },{threshold:.35}).observe(wrap);
   } else { start(); }
   document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+})();
+</script>
+<script>
+(function(){
+  var nav=document.querySelector('.pagenav');
+  if(!nav) return;
+  var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var inner=nav.querySelector('.pagenav__inner');
+  var hdr=document.querySelector('header');
+
+  function top(el){ return el.getBoundingClientRect().top + window.scrollY; }
+
+  function syncOffset(){
+    var h=hdr?Math.round(hdr.getBoundingClientRect().height):72;
+    if(h>0&&h<160) nav.style.setProperty('--pagenav-top',h+'px');
+    var nh=Math.round(nav.getBoundingClientRect().height)||48;
+    document.documentElement.style.scrollPaddingTop=(h+nh+14)+'px';
+  }
+
+  function setCurrent(i){
+    links.forEach(function(a,k){
+      if(k===i) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');
+    });
+    var a=links[i];
+    if(a&&inner.scrollWidth>inner.clientWidth+4){
+      inner.scrollTo({left:Math.max(0,a.offsetLeft-(inner.clientWidth-a.offsetWidth)/2),behavior:'smooth'});
+    }
+  }
+
+  function onScroll(){
+    var y=window.scrollY+window.innerHeight*0.3, idx=-1;
+    for(var k=0;k<secs.length;k++){ if(secs[k]&&top(secs[k])<=y) idx=k; }
+    var atEnd=(window.scrollY+window.innerHeight)>=(document.documentElement.scrollHeight-48);
+    if(atEnd) idx=secs.length-1;
+    if(idx>=0) setCurrent(idx);
+    var f=secs[0];
+    nav.classList.toggle('is-on', f ? window.scrollY > (top(f)-320) : window.scrollY>500);
+  }
+
+  var tick=false;
+  window.addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){ onScroll(); tick=false; });
+  },{passive:true});
+  window.addEventListener('resize',function(){ syncOffset(); onScroll(); },{passive:true});
+  syncOffset(); onScroll();
 })();
 </script>
 </body>
