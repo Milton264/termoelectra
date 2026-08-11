@@ -298,3 +298,33 @@
   .shared-nav-links,
   .shared-menu-overlay{transition:none!important}
 }
+
+
+/* ---- Formulario de contacto: consentimiento RGPD y estado de envío ---- */
+.te-consent{
+  display:flex; align-items:flex-start; gap:10px;
+  margin:4px 0 14px; font-size:.82rem; line-height:1.45;
+}
+.te-consent input[type=checkbox]{
+  flex:0 0 auto; width:18px; height:18px; margin:2px 0 0;
+  accent-color:#158bb5; cursor:pointer;
+}
+.te-consent label{ cursor:pointer; }
+/* Hereda el mismo tono que las etiquetas del formulario: en la home el contenedor
+   resolvía a var(--ink) navy sobre tarjeta navy y el texto quedaba ilegible (1,53:1). */
+.compact-contact-form .te-consent,
+.compact-contact-form .te-consent label{ color:#eef9fc; }
+.compact-contact-form .te-consent a{ color:#fff; }
+.te-consent a{ text-decoration:underline; font-weight:700; }
+.te-consent input[type=checkbox]:focus-visible{ outline:2px solid #a9edff; outline-offset:2px; }
+.te-form-status{
+  margin:10px 0 0; min-height:0; font-size:.86rem; font-weight:600; line-height:1.45;
+}
+.te-form-status:empty{ display:none; }
+.te-form-status.is-error{ color:#d8273c; }
+.te-form-status.is-ok{ color:#0f9f52; }
+.section-dark .te-form-status.is-error,
+.compact-contact .te-form-status.is-error{ color:#ffb3bd; }
+.section-dark .te-form-status.is-ok,
+.compact-contact .te-form-status.is-ok{ color:#8ef0bb; }
+@media (max-width:600px){ .te-consent{ font-size:.78rem; } }
