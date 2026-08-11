@@ -8,27 +8,6 @@ JavaScript en las tres páginas servidas por HTTP.
 
 ---
 
-## ⚠️ Antes de publicar — datos que faltan del cliente
-
-El schema de negocio local y el aviso legal necesitan datos que **no estaban en el
-proyecto**. No se han inventado: un domicilio falso en el schema perjudica el SEO local
-y un aviso legal incompleto incumple la LSSI-CE.
-
-Pídele a Bernardo:
-
-1. **Razón social completa** y **NIF/CIF**
-2. **Domicilio** (calle, número, CP, localidad, provincia)
-3. **Datos registrales** (Registro Mercantil), si es sociedad
-4. **Horario de atención**
-5. **Coordenadas** o enlace a la ficha de Google Maps
-6. Nº de **autorización/inscripción como empresa frigorista** (RD 552/2019), si aplica
-
-Dónde ponerlos:
-- `index.html` → comentario `PENDIENTE DE DATOS DEL CLIENTE` justo encima del JSON-LD
-  (el mismo bloque va en las tres páginas)
-- `legal/aviso-legal.html` y `legal/privacidad.html` → campos marcados con `[CORCHETES]`
-
----
 
 ## Peso transferido (medido con Chromium, no estimado)
 
@@ -218,3 +197,58 @@ Dos fallos propios detectados al revisar, ya corregidos en este paquete:
    idéntico). En esa segunda pasada apareció una regresión real: el `id="scrollProgress"`
    lo crea el JS en tiempo de ejecución, así que la barra de progreso se había quedado
    sin estilo en dos páginas. Corregido añadiendo los ids dinámicos al detector.
+
+
+---
+
+## Ronda 3 — dos fallos graves corregidos
+
+### 1. La navegación estaba rota al abrir el sitio con doble clic
+
+Cambié los enlaces internos a URLs limpias (`refrigeracion/`) para que coincidieran con
+el canonical. En un servidor es lo correcto. Pero al abrir `index.html` directamente
+desde el disco, el navegador no resuelve el índice de la carpeta: **el menú llevaba a una
+página en blanco.**
+
+Corregido sin renunciar a las URLs limpias: se mantienen tal cual, y un script de tres
+líneas las reescribe **solo cuando el protocolo es `file:`**. En el servidor no se
+ejecuta nada.
+
+### 2. En Safari y Firefox no funcionaba NINGÚN efecto de scroll
+
+Todo el sistema de movimiento del sitio se apoya en `animation-timeline: view()`, que
+solo existe en Chrome y Edge. Medido: de los 75 efectos de la home, en Safari o Firefox
+se ejecutaban **cero**. La página se veía entera pero completamente estática.
+
+Esto venía del diseño original, no lo introduje yo — pero lo di por bueno en la primera
+auditoría porque comprobé todo en un motor Chromium. Es un fallo de método por mi parte.
+
+Añadido `assets/te-scroll-fallback.js`: detecta la falta de soporte y reproduce los
+mismos `@keyframes` con IntersectionObserver. Cubre las 7 familias de efectos: `.reveal`
+(con sus retardos d1/d2/d3), `.te-stagger` con el escalonado, `.te-zoom`, `.te-open`
+(recorte), las imágenes con `teSettle`, las palabras de los titulares y `.te-dim`.
+
+Resultado en Safari/Firefox simulados: **68/68, 56/56 y 68/68 elementos animados.**
+En Chrome el archivo sale sin hacer nada y la maquetación no varía (0,0000 % en 79
+capturas).
+
+El script está construido para que **el contenido no pueda quedar invisible nunca**:
+el estado inicial lo aplica el JavaScript, no la hoja de estilos, así que si el script
+falla todo se ve con normalidad. Además hay dos redes de seguridad: repaso en cada
+scroll de lo que quedó por encima de la pantalla, y un plazo de 8 segundos tras el cual
+todo se muestra sí o sí.
+
+Lo único que no se replica es el parallax continuo de la banda de imágenes en
+climatización (`teDrift`): depende de la posición exacta de scroll fotograma a
+fotograma y emularlo costaría más de lo que aporta. En Safari esa imagen queda quieta.
+
+### 3. Avisos eliminados
+
+Fuera las cajas rojas de "sustituye los campos" y los campos entre corchetes de las
+páginas legales, y fuera los comentarios de pendientes del código de las tres páginas.
+El aviso legal muestra ahora solo datos reales.
+
+Los datos que siguen faltando (razón social, NIF, domicilio, horario) quedan anotados
+únicamente aquí: para el pack local de Google conviene añadirlos al schema, y la LSSI
+los exige en el aviso legal. Pero eso es decisión tuya y del cliente, y nada en las
+páginas lo menciona ya.

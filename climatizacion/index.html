@@ -3899,22 +3899,6 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   }
 }
 </style>
-<!-- PENDIENTE DE DATOS DEL CLIENTE (Bernardo): para posicionar en el pack local de Google
-     hacen falta razón social, NIF, domicilio y horario reales. En cuanto los tengas, añade
-     dentro del nodo HVACBusiness de abajo (y en legal/aviso-legal.html):
-
-     "legalName": "Razón social S.L.",
-     "vatID": "B00000000",
-     "address": { "@type": "PostalAddress", "streetAddress": "Calle y número",
-                  "postalCode": "00000", "addressLocality": "Localidad",
-                  "addressRegion": "Provincia", "addressCountry": "ES" },
-     "geo": { "@type": "GeoCoordinates", "latitude": 0.000000, "longitude": 0.000000 },
-     "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification",
-       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-       "opens": "08:00", "closes": "18:00" }],
-     "sameAs": ["https://www.google.com/maps/place/...", "perfiles sociales si los hay"]
-
-     NO se han inventado estos valores: un domicilio falso en el schema perjudica el SEO local. -->
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"HVACBusiness","@id":"https://termoelectra.es/#business","name":"Termoelectra","url":"https://termoelectra.es/","logo":{"@type":"ImageObject","@id":"https://termoelectra.es/#logo","url":"https://termoelectra.es/assets/logo-termoelectra.webp","width":483,"height":180},"image":"https://termoelectra.es/assets/og-termoelectra.jpg","telephone":"+34651097393","email":"info@termoelectra.es","priceRange":"$$","currenciesAccepted":"EUR","areaServed":{"@type":"Country","name":"España"},"contactPoint":[{"@type":"ContactPoint","telephone":"+34651097393","contactType":"customer service","areaServed":"ES","availableLanguage":["es"]}],"description":"Empresa de refrigeración y climatización industrial y comercial. Instalación, reparación y mantenimiento de frío industrial, cámaras frigoríficas y climatización comercial con servicio técnico.","knowsAbout":["Frío industrial","Cámaras frigoríficas","Refrigeración comercial","Climatización comercial","Aire acondicionado","Aerotermia","Servicio técnico de refrigeración"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación de frío industrial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación y montaje de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparación y SAT de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación de climatización comercial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparación de climatización comercial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento de climatización","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}}]},{"@type":"WebSite","@id":"https://termoelectra.es/#website","url":"https://termoelectra.es/","name":"Termoelectra","inLanguage":"es-ES","publisher":{"@id":"https://termoelectra.es/#business"}},{"@type":"WebPage","@id":"https://termoelectra.es/climatizacion/#webpage","url":"https://termoelectra.es/climatizacion/","name":"Climatización, Aire Acondicionado y Aerotermia | Termoelectra","description":"Climatización comercial: instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia con servicio técnico.","inLanguage":"es-ES","isPartOf":{"@id":"https://termoelectra.es/#website"},"about":{"@id":"https://termoelectra.es/#business"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://termoelectra.es/assets/og-climatizacion.jpg"},"breadcrumb":{"@id":"https://termoelectra.es/climatizacion/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://termoelectra.es/climatizacion/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://termoelectra.es/"},{"@type":"ListItem","position":2,"name":"Climatización","item":"https://termoelectra.es/climatizacion/"}]},{"@type":"Service","@id":"https://termoelectra.es/climatizacion/#service","name":"Climatización comercial","serviceType":["Instalación de climatización comercial","Reparación de climatización comercial","Mantenimiento de climatización","Instalación de aerotermia","Instalación de aire acondicionado","Calefacción"],"provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"},"description":"Climatización comercial: instalación, reparación y mantenimiento de aire acondicionado, calefacción y aerotermia con servicio técnico."}]}</script>
 </head>
 <body class="te-climatizacion">
@@ -4793,5 +4777,12 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </script>
 <script defer="" src="../assets/te-contact.js"></script>
 <script>document.addEventListener("DOMContentLoaded",function(){window.TEContact&&window.TEContact.init({form:"climateContactForm",name:"climateName",phone:"climatePhone",ctx:" sobre climatización"});});</script>
+<script>/* Las URLs limpias (/refrigeracion/) son las correctas en el servidor, pero al
+abrir el sitio con doble clic (file://) el navegador no resuelve el index de la carpeta.
+Solo en ese caso se reescriben los enlaces para que la navegación local funcione. */
+if(location.protocol==='file:'){document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');
+if(h&&!/^(https?:|tel:|mailto:|#|javascript:)/.test(h)&&/\/$/.test(h))a.setAttribute('href',h+'index.html');});});}</script>
+<script defer="" src="../assets/te-scroll-fallback.js"></script>
 </body>
 </html>

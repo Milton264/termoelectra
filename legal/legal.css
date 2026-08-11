@@ -24,9 +24,6 @@ th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-al
 th{background:var(--ice);color:var(--navy);font-weight:800}
 .callout{margin:22px 0;padding:16px 18px;border-left:4px solid var(--cyan);border-radius:0 12px 12px 0;background:var(--ice)}
 .callout p{margin:0;color:var(--navy)}
-.todo{margin:22px 0;padding:16px 18px;border-left:4px solid #d8273c;border-radius:0 12px 12px 0;background:#fff3f4}
-.todo p{margin:0 0 6px;color:#7c1220;font-size:.94rem}
-.todo strong{color:#a3162a}
 footer{padding:30px 0;border-top:1px solid var(--line);background:var(--ice)}
 footer .shell{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
 footer a{color:var(--navy-2)}
