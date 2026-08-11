@@ -20,6 +20,12 @@
       statusEl.className = 'te-form-status is-' + kind;
     };
 
+    if (consentEl) {
+      consentEl.addEventListener('change', () => {
+        if (consentEl.checked) consentEl.closest('.te-consent')?.classList.remove('is-missing');
+      });
+    }
+
     form.addEventListener('submit', event => {
       event.preventDefault();
       const name = nameEl.value.trim();
@@ -27,7 +33,17 @@
 
       if (!name || !phone) { say('Indica tu nombre y tu teléfono para poder responderte.', 'error'); return; }
       if (phone.replace(/\D/g, '').length < 9) { say('Revisa el teléfono: parece incompleto.', 'error'); return; }
-      if (consentEl && !consentEl.checked) { say('Necesitamos que aceptes la política de privacidad para poder contactarte.', 'error'); return; }
+      if (consentEl && !consentEl.checked) {
+        say('Necesitamos que aceptes la política de privacidad para poder contactarte.', 'error');
+        const row = consentEl.closest('.te-consent');
+        if (row) {
+          row.classList.remove('is-missing');
+          void row.offsetWidth;            // reinicia la animación de aviso
+          row.classList.add('is-missing');
+        }
+        consentEl.focus({ preventScroll: false });
+        return;
+      }
 
       const message = 'Hola Termoelectra, quiero solicitar información' + (opts.ctx || '') +
         '.\n\nNombre: ' + name + '\nTeléfono: ' + phone;

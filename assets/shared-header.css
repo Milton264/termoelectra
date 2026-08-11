@@ -328,3 +328,78 @@
 .section-dark .te-form-status.is-ok,
 .compact-contact .te-form-status.is-ok{ color:#8ef0bb; }
 @media (max-width:600px){ .te-consent{ font-size:.78rem; } }
+
+
+/* ---- Consentimiento como pie del formulario (v2) ------------------------ */
+.te-consent--footnote{
+  display:flex; align-items:flex-start; gap:9px;
+  margin:14px 2px 0; padding:0;
+  font-size:.735rem; line-height:1.5; letter-spacing:.005em;
+}
+.compact-contact-form .te-consent--footnote,
+.compact-contact-form .te-consent--footnote label{ color:#c8e2ec; }
+.compact-contact-form .te-consent--footnote a{ color:#fff; }
+
+/* Casilla propia: la nativa desentonaba con el resto del formulario */
+.te-consent--footnote input[type=checkbox]{
+  appearance:none; -webkit-appearance:none;
+  flex:0 0 auto; position:relative; top:1px;
+  width:17px; height:17px; margin:0; padding:0;
+  border:1.5px solid rgba(255,255,255,.45); border-radius:5px;
+  background:rgba(255,255,255,.07); cursor:pointer;
+  transition:border-color .18s cubic-bezier(.2,.7,.2,1),
+             background .18s cubic-bezier(.2,.7,.2,1),
+             box-shadow .18s cubic-bezier(.2,.7,.2,1);
+}
+.te-consent--footnote input[type=checkbox]:hover{ border-color:rgba(255,255,255,.8); }
+.te-consent--footnote input[type=checkbox]:checked{
+  border-color:#20a8d2; background:linear-gradient(135deg,#158bb5,#20a8d2);
+}
+/* La marca se dibuja al marcar; sin transición de layout, solo transform */
+.te-consent--footnote input[type=checkbox]::after{
+  content:""; position:absolute; left:5px; top:1.5px;
+  width:4px; height:9px; border:solid #fff; border-width:0 2px 2px 0;
+  transform:rotate(45deg) scale(0); transform-origin:center;
+  transition:transform .22s cubic-bezier(.34,1.4,.5,1);
+}
+.te-consent--footnote input[type=checkbox]:checked::after{ transform:rotate(45deg) scale(1); }
+.te-consent--footnote input[type=checkbox]:focus-visible{
+  outline:none; box-shadow:0 0 0 3px rgba(169,237,255,.55);
+}
+.te-consent--footnote label{ cursor:pointer; }
+.te-consent--footnote a{ text-decoration:underline; text-underline-offset:2px; font-weight:700; }
+
+/* Aviso cuando se intenta enviar sin marcar */
+.te-consent--footnote.is-missing input[type=checkbox]{
+  border-color:#ff8f9c; background:rgba(216,39,60,.18);
+}
+.compact-contact-form .te-consent--footnote.is-missing,
+.compact-contact-form .te-consent--footnote.is-missing label{ color:#ffc3cb; }
+@media (prefers-reduced-motion: no-preference){
+  .te-consent--footnote.is-missing{ animation:te-consent-nudge .4s cubic-bezier(.36,.07,.19,.97); }
+  @keyframes te-consent-nudge{
+    0%,100%{transform:translateX(0)} 22%{transform:translateX(-4px)}
+    55%{transform:translateX(3px)} 80%{transform:translateX(-2px)}
+  }
+}
+@media (max-width:600px){ .te-consent--footnote{ font-size:.72rem; } }
+
+/* La barra de progreso animaba `width` (layout en cada fotograma).
+   Con scaleX el trabajo se queda en el compositor. Mismo resultado visual. */
+#scrollProgress, .te-v15-progress > span, .scroll-progress > span{
+  width:100%!important;
+  transform-origin:0 50%;
+  transform:scaleX(var(--te-progress,0));
+  will-change:transform;
+}
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    /* Donde el navegador lo soporta, la barra la mueve el propio compositor
+       sin pasar por JavaScript. */
+    #scrollProgress, .te-v15-progress > span, .scroll-progress > span{
+      animation:te-progress-grow linear both;
+      animation-timeline:scroll(root block);
+    }
+    @keyframes te-progress-grow{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
+  }
+}

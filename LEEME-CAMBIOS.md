@@ -87,8 +87,9 @@ Incluye los 47 KB de la tipografía Inter, que antes no se descargaba.
 - Tipografía Inter autoalojada (48 KB, variable, pesos 100–900). Antes se declaraba
   `font-family: Inter` sin cargarla en ningún sitio: **el sitio se veía en Segoe UI**.
   Al servirla desde el propio dominio tampoco se comunica la IP del visitante a Google
-- 761 reglas CSS muertas eliminadas, verificadas con 79 capturas deterministas
-  (`prefers-reduced-motion` + scroll fijo) a 0,0000 % de desviación
+- **849 reglas CSS muertas eliminadas.** Verificación definitiva: cada uno de los 565
+  selectores retirados se comprobó contra el DOM real en el navegador (tras scroll, menú
+  abierto y estados aplicados por JS) y **ninguno coincide con un solo elemento**
 
 ### Corrección de errores
 - Doble `<!DOCTYPE html>` en las tres páginas
@@ -130,3 +131,90 @@ el cliente. Se deja documentado como partida aparte.
 - El `preload` de la tipografía lleva `crossorigin` (obligatorio para fuentes). Bajo
   `file://` da error en consola; sobre HTTP funciona correctamente.
 - Conviene servir con compresión gzip/brotli activada.
+
+
+---
+
+## Ronda 2 — consentimiento y animaciones
+
+### Consentimiento reubicado
+
+Estaba entre el campo Teléfono y el botón, ocupando tres líneas y empujando el CTA.
+En escritorio se metía además como tercera columna estrujada junto a los campos.
+
+Ahora es una nota compacta **debajo del botón**, con casilla propia (la nativa
+desentonaba), marca que se dibuja al activarse y foco visible. En escritorio los campos
+y el botón quedan en una sola línea.
+
+Cambió también el orden del DOM, no solo el visual: el orden de foco coincide con el de
+lectura (WCAG 2.4.3). Si se envía sin marcar, el foco salta a la casilla y la fila avisa
+con un movimiento breve, desactivado bajo `prefers-reduced-motion`.
+
+Contraste medido sobre píxeles reales: **7,52:1** en las tres páginas.
+
+Sigue siendo casilla obligatoria y desmarcada por defecto, que es lo que exige la AEPD:
+el consentimiento debe ser un acto afirmativo. No se puede sustituir por un
+"al enviar aceptas".
+
+### Animaciones y transiciones
+
+Cambios de *cómo* se anima, nunca de dónde acaba nada. Verificado: **0,0000 % de
+desviación de maquetación en 79 capturas**.
+
+1. **Barra de progreso**: animaba `width`, que fuerza layout en cada fotograma. Pasa a
+   `transform: scaleX()`. Donde el navegador soporta `animation-timeline: scroll()` la
+   mueve el compositor sin pasar por JavaScript (verificado: `scaleX = 1.0` exacto al
+   final del documento, movida por un `ScrollTimeline`).
+2. **4 escuchadores de scroll sin amortiguar** envueltos en `requestAnimationFrame`.
+3. **169 transiciones** pasan del `ease` genérico del navegador a la curva que el
+   proyecto ya usaba en 15 sitios, `cubic-bezier(.2,.7,.2,1)`. Es consistencia: antes
+   convivían dos criterios de aceleración distintos en la misma página.
+
+Resultado (mediana de 3 pasadas, CPU x4, móvil 390 px):
+
+| Página | operaciones de layout | CPU |
+|---|---|---|
+| Home | 96 → 44 | 2,47 s → 2,16 s |
+| Refrigeración | 55 → 61 | 2,78 s → 2,37 s |
+| Climatización | 54 → 50 | 1,92 s → 1,85 s |
+
+### El techo, y por qué no lo cruzo
+
+Desglose del coste durante el scroll:
+
+| Página | script | recálculo de estilo | layout | total |
+|---|---|---|---|---|
+| Home | 0,08 s | 0,23 s | 0,02 s | 2,00 s |
+| Refrigeración | 0,10 s | 0,47 s | 0,08 s | 3,62 s |
+| Climatización | 0,03 s | 0,34 s | 0,01 s | 2,06 s |
+
+El grueso no es JavaScript ni layout: es pintado y composición de **60–75 animaciones
+scroll-driven simultáneas** por página. Es el precio del diseño actual.
+
+Dos optimizaciones habituales descartadas a propósito:
+
+- `contain: paint` en los contenedores animados: en este proyecto ya está comprobado que
+  recortar el contexto de pintado **congela `animation-timeline: view()`** (el bug del
+  `overflow:hidden`). No se toca.
+- `content-visibility: auto`: provoca saltos de scroll y desactiva las animaciones de
+  bloques aún no pintados.
+
+Bajar de ahí exige reducir el número de elementos animados a la vez: decisión de diseño
+con el cliente, no ajuste técnico.
+
+---
+
+## Correcciones sobre la ronda 1
+
+Dos fallos propios detectados al revisar, ya corregidos en este paquete:
+
+1. **La purga de CSS solo cubría un tercio del proyecto.** El patrón buscaba `<style>`
+   pero 20 de los 30 bloques son `<style id="...">`. Rehecha sobre todos: de 761 a
+   **849 reglas** eliminadas.
+2. **La verificación tenía un punto ciego.** Usaba `prefers-reduced-motion`, que
+   desactiva justo las animaciones scroll-driven, así que no habría detectado un daño en
+   ellas. Añadida verificación de selectores contra el DOM real y recuento de
+   `animation-timeline` (14/14/16, idéntico al original) y de `@keyframes` (26/42/37,
+   idéntico). En esa segunda pasada apareció una regresión real: el `id="scrollProgress"`
+   lo crea el JS en tiempo de ejecución, así que la barra de progreso se había quedado
+   sin estilo en dos páginas. Corregido añadiendo los ids dinámicos al detector.
