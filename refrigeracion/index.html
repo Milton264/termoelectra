@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -8,14 +7,30 @@
 <meta content="light only" name="color-scheme"/>
 <meta content="light" name="supported-color-schemes"/>
 <title>Refrigeración Industrial y Comercial | Frío Industrial y Cámaras Frigoríficas · Termoelectra</title>
-<link href="https://termoelectra.es/refrigeracion" rel="canonical"/>
+<link href="https://termoelectra.es/refrigeracion/" rel="canonical"/>
+<meta content="#073b57" name="theme-color"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="Termoelectra" property="og:site_name"/>
+<meta content="https://termoelectra.es/refrigeracion/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="../favicon.ico" rel="icon" sizes="any"/>
+<link href="../assets/icons/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../assets/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../site.webmanifest" rel="manifest"/>
+<link as="font" crossorigin="" href="../assets/fonts/inter-latin-wght-normal.woff2" rel="preload" type="font/woff2"/>
+<meta content="https://termoelectra.es/assets/og-refrigeracion.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Termoelectra - Frio industrial y camaras frigorificas" property="og:image:alt"/>
+<meta content="https://termoelectra.es/assets/og-refrigeracion.jpg" name="twitter:image"/>
+<style>@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2-variations");unicode-range:U+0-FF,U+131,U+152-153,U+2BB-2BC,U+2C6,U+2DA,U+2DC,U+304,U+308,U+329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
 <meta content="Empresa de frío industrial y refrigeración comercial. Instalación, reparación y mantenimiento de cámaras frigoríficas industriales y comerciales, con SAT de frío industrial y servicio técnico de refrigeración." name="description"/>
-<meta content="frío industrial, empresa de frío industrial, refrigeración industrial, instalación de frío industrial, mantenimiento de frío industrial, reparación de frío industrial, SAT de frío industrial, instalación de cámaras frigoríficas, montaje de cámaras frigoríficas, reparación de cámaras frigoríficas, mantenimiento de cámaras frigoríficas, refrigeración comercial" name="keywords"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta content="website" property="og:type"/>
 <meta content="Frío Industrial, Cámaras Frigoríficas y Refrigeración Comercial · Termoelectra" property="og:title"/>
 <meta content="Instalación, reparación, SAT y mantenimiento de frío industrial, cámaras frigoríficas y equipos de refrigeración comercial." property="og:description"/>
-<link as="image" fetchpriority="high" href="hero-operarios.webp" rel="preload"/>
+<link as="image" fetchpriority="high" href="hero-operarios-960w.webp" media="(max-width: 700px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="hero-operarios.webp" media="(min-width: 701px)" rel="preload"/>
 <style>
 :root{
   --azul:#0b3a66;        /* azul corporativo profundo */
@@ -33,17 +48,17 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;color-scheme:light}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:"Inter",system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 /* Blindaje modo oscuro: el sitio siempre se ve en claro */
 @media(prefers-color-scheme:dark){
   body{background:#fff;color:var(--tinta)}
   section{background:inherit}
-  #comercial,#industrial,#certificaciones,#contacto{background:#fff}
+  #comercial,#industrial,#contacto{background:#fff}
   .alt{background:var(--hielo)}
-  .sec-title,.svc-body h3,.faq-q,.cert .cn,.nav-links a:not(.nav-cta){color:var(--azul)}
-  .svc-body p,.sec-lead,.faq-a p,.cert p{color:var(--gris)}
+  .sec-title,.svc-body h3,.faq-q,.nav-links a:not(.nav-cta){color:var(--azul)}
+  .svc-body p,.sec-lead,.faq-a p{color:var(--gris)}
 }
-h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.12;font-weight:700;letter-spacing:-.02em}
+h1,h2,h3{font-family:"Sora",sans-serif;line-height:1.12;font-weight:700;letter-spacing:-.02em}
 img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 ::selection{background:var(--cian);color:#fff}
@@ -53,9 +68,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-b
 .nav{max-width:1240px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{height:44px}
 .nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-family:'Sora',sans-serif;font-weight:500;font-size:.95rem;color:var(--azul);position:relative;padding:6px 0;transition:.25s}
+.nav-links a{font-family:"Sora",sans-serif;font-weight:500;font-size:.95rem;color:var(--azul);position:relative;padding:6px 0;transition:.25s}
 .nav-links a:not(.nav-cta):hover{color:var(--cian)}
-.nav-links a:not(.nav-cta)::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--cian);transition:.3s}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--cian);transition:.3s}
 .nav-links a:not(.nav-cta):hover::after{width:100%}
 .nav-cta{background:var(--cian);color:#fff!important;padding:12px 26px;border-radius:8px;font-weight:600;transition:.3s;box-shadow:0 6px 18px rgba(10,138,194,.3)}
 .nav-cta:hover{background:var(--azul);transform:translateY(-2px)}
@@ -66,32 +81,32 @@ header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-b
 .burger.x span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(11,58,102,.94) 0%,rgba(18,80,140,.86) 55%,rgba(10,138,194,.7) 100%),url('hero-operarios.webp') center/cover;color:#fff}
-.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 65% 60%,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 82% 25%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 40% 80%,rgba(255,255,255,.3),transparent);background-size:280px 280px;opacity:.6;animation:drift 32s linear infinite}
+
+
 @keyframes drift{from{background-position:0 0}to{background-position:280px 280px}}
-.hero-inner{max-width:1240px;margin:0 auto;padding:140px 32px 90px;position:relative;z-index:2;width:100%}
+
 .eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:9px 20px;border-radius:50px;font-size:.82rem;font-weight:600;letter-spacing:.04em;margin-bottom:28px;backdrop-filter:blur(4px)}
-.hero h1{font-size:clamp(2.7rem,6.5vw,5rem);font-weight:800;margin-bottom:24px;text-shadow:0 4px 30px rgba(0,0,0,.25)}
-.hero h1 .hl{color:var(--cian-cl)}
-.hero-title .w{display:inline-block;opacity:0;transform:translateY(40px);animation:wordUp .7s cubic-bezier(.2,.7,.2,1) forwards}
-.hero-title .w:nth-child(1){animation-delay:.15s}
-.hero-title .w:nth-child(2){animation-delay:.3s}
-.hero-title .w:nth-child(3){animation-delay:.42s}
-.hero-title .w:nth-child(4){animation-delay:.52s}
+
+
+
+
+
+
+
 @keyframes wordUp{to{opacity:1;transform:none}}
-.hero p{font-size:clamp(1.05rem,1.7vw,1.32rem);max-width:620px;margin-bottom:42px;color:rgba(255,255,255,.94)}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{font-family:'Sora',sans-serif;padding:16px 30px;border-radius:10px;font-weight:600;font-size:1rem;transition:.3s;display:inline-flex;align-items:center;gap:11px;cursor:pointer;border:0}
-.btn svg{width:22px;height:22px;flex-shrink:0}
-.btn-primary{background:#fff;color:var(--azul)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,255,255,.25)}
-.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 26px rgba(37,211,102,.4)}
-.btn-wa:hover{transform:translateY(-3px);filter:brightness(1.06)}
-.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(4px)}
-.btn-ghost:hover{background:#fff;color:var(--azul)}
-.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2.4s infinite}
-.scroll-ind span{display:block;width:26px;height:42px;border:2px solid rgba(255,255,255,.55);border-radius:20px;position:relative}
-.scroll-ind span::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:9px;background:#fff;border-radius:2px;animation:scroll 2s infinite}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
 @keyframes scroll{0%{opacity:1;top:8px}100%{opacity:0;top:24px}}
 
@@ -99,47 +114,47 @@ header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-b
 /* CIFRAS a pantalla completa sobre imagen */
 
 /* CINTA DE SECTORES */
-.marquee{background:var(--azul);overflow:hidden;padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
-.marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 32s linear infinite}
-.marquee-track span{font-family:'Sora',sans-serif;font-weight:600;font-size:clamp(1.1rem,2vw,1.6rem);color:#fff;padding:0 30px;white-space:nowrap}
-.marquee-track i{color:var(--cian-cl);font-style:normal;font-size:1rem}
+
+
+
+
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* PROCESO */
-.process-sec{background:var(--hielo)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;position:relative}
-.steps::before{content:'';position:absolute;top:38px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--cian),var(--cian-cl));opacity:.3}
+
+
+
 .step{position:relative;background:#fff;border:1px solid var(--linea);border-radius:16px;padding:34px 26px;transition:.35s}
 .step:hover{transform:translateY(-8px);box-shadow:var(--sombra-h);border-color:var(--cian)}
-.step-num{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;background:var(--azul);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:1.5rem;border-radius:14px;margin-bottom:20px;box-shadow:0 8px 20px rgba(11,58,102,.25);transition:.35s}
-.step:hover .step-num{background:var(--cian);transform:scale(1.08)}
-.step h3{font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--azul);margin-bottom:10px}
+
+
+.step h3{font-family:"Sora",sans-serif;font-size:1.3rem;color:var(--azul);margin-bottom:10px}
 .step p{color:var(--gris);font-size:.95rem}
 
 /* ESCARCHA */
-.snow{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.snow i{position:absolute;top:-10px;color:rgba(255,255,255,.7);animation:fall linear infinite}
+
+
 @keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
 
 section{scroll-margin-top:80px}
 .wrap{max-width:1240px;margin:0 auto;padding:110px 32px}
-.eyebrow-sec{display:inline-flex;align-items:center;gap:12px;font-family:'Sora',sans-serif;color:var(--cian);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
-.eyebrow-sec::before{content:'';width:34px;height:2px;background:var(--cian)}
+.eyebrow-sec{display:inline-flex;align-items:center;gap:12px;font-family:"Sora",sans-serif;color:var(--cian);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow-sec::before{content:"";width:34px;height:2px;background:var(--cian)}
 .sec-title{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:22px;color:var(--azul)}
 .sec-lead{font-size:1.15rem;color:var(--gris);max-width:720px;margin-bottom:20px}
 
 .svc{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:48px}
 .svc.rev .svc-media{order:2}
-.svc-body h3{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;margin:24px 0 14px;color:var(--azul)}
+.svc-body h3{font-family:"Sora",sans-serif;font-size:1.5rem;font-weight:700;margin:24px 0 14px;color:var(--azul)}
 .svc-body p{color:var(--gris);margin-bottom:16px}
 .svc-list{list-style:none;margin:22px 0}
 .svc-list li{padding:12px 0 12px 34px;position:relative;color:var(--tinta);font-weight:500;border-bottom:1px solid var(--linea)}
-.svc-list li::before{content:'';position:absolute;left:0;top:15px;width:20px;height:20px;background:var(--hielo2);border-radius:50%}
-.svc-list li::after{content:'';position:absolute;left:7px;top:19px;width:6px;height:10px;border:solid var(--cian);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.svc-list li::before{content:"";position:absolute;left:0;top:15px;width:20px;height:20px;background:var(--hielo2);border-radius:50%}
+.svc-list li::after{content:"";position:absolute;left:7px;top:19px;width:6px;height:10px;border:solid var(--cian);border-width:0 2px 2px 0;transform:rotate(45deg)}
 .svc-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--sombra)}
 .svc-media img{width:100%;height:470px;object-fit:cover;transition:transform .9s ease}
 .svc-media:hover img{transform:scale(1.05)}
-.svc-media .tag{position:absolute;bottom:18px;left:18px;background:#fff;color:var(--azul);padding:11px 20px;border-radius:50px;font-family:'Sora',sans-serif;font-weight:600;font-size:.88rem;box-shadow:var(--sombra)}
+.svc-media .tag{position:absolute;bottom:18px;left:18px;background:#fff;color:var(--azul);padding:11px 20px;border-radius:50px;font-family:"Sora",sans-serif;font-weight:600;font-size:.88rem;box-shadow:var(--sombra)}
 
 .alt{background:var(--hielo)}
 
@@ -156,51 +171,51 @@ section{scroll-margin-top:80px}
 .slide{flex:0 0 clamp(280px,44vw,470px);scroll-snap-align:center;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 20px 46px rgba(0,0,0,.34)}
 .slide img{width:100%;height:350px;object-fit:cover;transition:transform .7s}
 .slide:hover img{transform:scale(1.07)}
-.slide .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(11,58,102,.96));padding:48px 22px 20px;font-family:'Sora',sans-serif;font-weight:600;font-size:1.05rem}
+.slide .cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(11,58,102,.96));padding:48px 22px 20px;font-family:"Sora",sans-serif;font-weight:600;font-size:1.05rem}
 .slide .cap small{display:block;color:var(--cian-cl);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;font-weight:600}
-.car-btns{display:flex;gap:12px;justify-content:center;margin-top:4px}
-.car-btn{width:54px;height:54px;border-radius:50%;border:2px solid rgba(255,255,255,.32);background:rgba(255,255,255,.06);color:#fff;font-size:1.3rem;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center}
-.car-btn:hover{background:var(--cian);border-color:var(--cian);transform:scale(1.08)}
+
+
+
 
 /* GALERÍA */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:205px;gap:14px;margin-top:44px}
 .gallery a{border-radius:14px;overflow:hidden;position:relative;cursor:pointer}
 .gallery a img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
 .gallery a:hover img{transform:scale(1.09)}
-.gallery a::after{content:'+';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:#fff;background:rgba(10,138,194,.72);opacity:0;transition:.4s;font-weight:300}
+.gallery a::after{content:"+";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.4rem;color:#fff;background:rgba(10,138,194,.72);opacity:0;transition:.4s;font-weight:300}
 .gallery a:hover::after{opacity:1}
-.g-big{grid-column:span 2;grid-row:span 2}
-.g-wide{grid-column:span 2}
+
+
 
 /* CERTIFICACIONES */
-.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:18px;margin-top:44px}
-.cert{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:34px 26px;transition:.3s;position:relative;overflow:hidden}
-.cert::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cian),var(--cian-cl))}
-.cert:hover{transform:translateY(-6px);box-shadow:var(--sombra-h)}
-.cert .cn{font-family:'Sora',sans-serif;font-size:1.35rem;font-weight:700;color:var(--cian);margin-bottom:10px}
-.cert p{font-size:.9rem;color:var(--gris)}
+
+
+
+
+
+
 
 /* FAQ */
 .faq-item{border-bottom:1px solid var(--linea)}
-.faq-q{width:100%;text-align:left;background:none;border:0;padding:26px 50px 26px 0;font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:600;color:var(--azul);cursor:pointer;position:relative}
-.faq-q::after{content:'+';position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.7rem;color:var(--cian);transition:.3s;font-weight:400}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:26px 50px 26px 0;font-family:"Sora",sans-serif;font-size:1.15rem;font-weight:600;color:var(--azul);cursor:pointer;position:relative}
+.faq-q::after{content:"+";position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:1.7rem;color:var(--cian);transition:.3s;font-weight:400}
 .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .faq-a p{padding:0 0 26px;color:var(--gris);max-width:820px}
 
 /* CTA */
-.cta-final{position:relative;text-align:center;padding:96px 40px;border-radius:28px;overflow:hidden;background:linear-gradient(120deg,var(--azul),var(--cian));color:#fff}
-.cta-final::before{content:'';position:absolute;top:-40%;right:-8%;width:420px;height:420px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);border-radius:50%}
-.cta-final h2{font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:16px;position:relative}
-.cta-final p{font-size:1.15rem;opacity:.94;margin-bottom:34px;position:relative}
-.cta-final .hero-btns{justify-content:center;position:relative}
+
+
+
+
+
 
 /* FOOTER */
 footer{background:var(--tinta);color:rgba(255,255,255,.8);padding:66px 32px 32px}
 .foot-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:46px}
-.foot-logo{height:48px;background:#fff;padding:8px 14px;border-radius:10px;display:inline-block;margin-bottom:20px}
+
 footer p{color:rgba(255,255,255,.7);font-size:.95rem}
-footer h4{font-family:'Sora',sans-serif;color:#fff;font-size:1rem;margin-bottom:18px;font-weight:600}
+footer h4{font-family:"Sora",sans-serif;color:#fff;font-size:1rem;margin-bottom:18px;font-weight:600}
 footer ul{list-style:none}
 footer li{padding:7px 0}
 footer li a,footer li{color:rgba(255,255,255,.7);font-size:.95rem}
@@ -211,22 +226,22 @@ footer li a:hover{color:var(--cian-cl)}
 
 /* CONTACTO / FORMULARIO */
 .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:24px;overflow:hidden;box-shadow:var(--sombra-h)}
-.contact-info{background:linear-gradient(150deg,var(--azul),var(--azul2));color:#fff;padding:56px 48px;position:relative;overflow:hidden}
-.contact-info::before{content:'';position:absolute;bottom:-30%;left:-10%;width:340px;height:340px;background:radial-gradient(circle,rgba(58,168,221,.28),transparent 70%);border-radius:50%}
-.contact-info h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:16px;position:relative}
-.contact-info>p{color:rgba(255,255,255,.9);margin-bottom:30px;position:relative}
-.contact-list{list-style:none;position:relative}
-.contact-list li{padding:14px 0;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:3px}
-.contact-list li span{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cian-cl);font-weight:600}
-.contact-list li a,.contact-list li{color:#fff;font-size:1.05rem}
-.contact-form{background:#fff;padding:48px}
-.cf-field{margin-bottom:18px}
-.cf-field label{display:block;font-family:'Sora',sans-serif;font-weight:600;font-size:.85rem;color:var(--azul);margin-bottom:7px}
-.cf-field input,.cf-field textarea{width:100%;padding:14px 16px;border:1.5px solid var(--linea);border-radius:10px;font-family:inherit;font-size:1rem;color:var(--tinta);transition:.25s;background:var(--hielo)}
-.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--cian);background:#fff;box-shadow:0 0 0 4px rgba(10,138,194,.12)}
-.cf-field textarea{resize:vertical;min-height:110px}
-.cf-send{width:100%;justify-content:center;margin-top:4px}
-.cf-note{font-size:.82rem;color:var(--gris);text-align:center;margin-top:12px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -256,15 +271,15 @@ footer li a:hover{color:var(--cian-cl)}
   .svc.rev .svc-body{order:2}
   .svc-media img{height:330px}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
-  .g-big{grid-column:span 2;grid-row:span 1}
+  
   .foot-grid{grid-template-columns:1fr;gap:32px}
   .wrap{padding:80px 22px}
-  .cta-final{padding:70px 26px}
+  
   .contact-box{grid-template-columns:1fr}
-  .contact-info{padding:40px 28px}
-  .contact-form{padding:36px 28px}
-  .steps{grid-template-columns:1fr;gap:18px}
-  .steps::before{display:none}
+  
+  
+  
+  
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -376,111 +391,29 @@ header{
 .nav-cta:hover{background:var(--rojo)}
 
 /* Hero editorial, técnico y legible */
-.hero{
-  min-height:930px;
-  background-image:
-    linear-gradient(90deg,rgba(4,24,40,.99) 0%,rgba(5,35,58,.96) 41%,rgba(5,35,58,.72) 61%,rgba(4,24,40,.18) 100%),
-    linear-gradient(0deg,rgba(4,24,40,.38),rgba(4,24,40,.02)),
-    url('hero-operarios.webp');
-  background-position:center,right center;
-  background-size:cover;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  opacity:.24;
-  background-image:
-    linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
-  background-size:72px 72px;
-  mask-image:linear-gradient(90deg,#000,transparent 73%);
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  width:660px;
-  height:660px;
-  left:-250px;
-  bottom:-310px;
-  border:1px solid rgba(85,198,230,.28);
-  border-radius:50%;
-  background:transparent;
-  opacity:1;
-  animation:none;
-  box-shadow:
-    0 0 0 70px rgba(85,198,230,.025),
-    0 0 0 140px rgba(85,198,230,.018);
-}
-.snow{display:none}
-.hero-inner{
-  max-width:1320px;
-  padding:180px 38px 120px;
-}
-.hero-inner::before{
-  content:"";
-  display:block;
-  width:76px;
-  height:5px;
-  margin-bottom:30px;
-  border-radius:10px;
-  background:linear-gradient(90deg,var(--rojo) 0 44%,var(--cian-cl) 44%);
-}
-.hero .eyebrow{
-  margin-bottom:30px;
-  padding:10px 18px;
-  border-color:rgba(255,255,255,.2);
-  background:rgba(5,31,51,.46);
-  font-size:.76rem;
-  font-weight:700;
-  letter-spacing:.09em;
-}
-.hero h1{
-  max-width:930px;
-  margin-bottom:30px;
-  font-size:clamp(3.15rem,7vw,6.8rem);
-  line-height:.92;
-  text-wrap:balance;
-  text-shadow:0 16px 45px rgba(0,0,0,.28);
-}
-.hero h1 .hl{color:#7ed9ef}
-.hero p{
-  max-width:730px;
-  margin-bottom:46px;
-  color:rgba(255,255,255,.84);
-  font-size:clamp(1.05rem,1.5vw,1.28rem);
-  line-height:1.75;
-}
-.hero-btns{gap:12px}
-.btn{
-  min-height:56px;
-  padding:15px 25px;
-  border-radius:999px;
-  font-size:.92rem;
-  font-weight:700;
-  box-shadow:none;
-}
-.btn-primary{
-  background:#fff;
-  color:var(--azul);
-  box-shadow:0 16px 38px rgba(0,0,0,.14);
-}
-.btn-primary:hover{color:#fff;background:var(--rojo)}
-.btn-wa{box-shadow:0 14px 36px rgba(37,211,102,.25)}
-.btn-ghost{background:rgba(4,24,40,.4)}
-.scroll-ind{bottom:42px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Cifras: una pausa visual contundente */
 
-.marquee{
-  padding:22px 0;
-  border:0;
-  background:var(--rojo);
-}
-.marquee-track span{font-size:clamp(1rem,1.8vw,1.35rem);letter-spacing:-.02em}
-.marquee-track i{color:#fff;opacity:.5}
+
+
+
 
 /* Servicios */
 #industrial{
@@ -620,13 +553,8 @@ header{
   background:linear-gradient(transparent,rgba(4,24,40,.97));
 }
 .slide .cap small{color:var(--cian-cl)}
-.car-btns{gap:10px;margin-top:28px}
-.car-btn{
-  width:58px;
-  height:58px;
-  border:1px solid rgba(255,255,255,.24);
-  background:rgba(255,255,255,.08);
-}
+
+
 
 /* Bloques de instalación, reparación y mantenimiento */
 .alt{
@@ -649,17 +577,9 @@ header{
 .alt .svc.rev .svc-list li::before{background:rgba(85,198,230,.16)}
 
 /* Proceso */
-.process-sec{
-  position:relative;
-  overflow:hidden;
-  background:#fff;
-}
-.steps{
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:64px;
-}
-.steps::before{display:none}
+
+
+
 .step{
   min-height:310px;
   padding:34px 28px 30px;
@@ -671,19 +591,8 @@ header{
 .step:nth-child(even){transform:translateY(28px)}
 .step:nth-child(even):hover{transform:translateY(18px)}
 .step:hover{transform:translateY(-10px);border-color:rgba(11,157,204,.55)}
-.step-num{
-  width:auto;
-  height:auto;
-  margin-bottom:42px;
-  justify-content:flex-start;
-  border-radius:0;
-  background:transparent;
-  color:var(--cian);
-  font-size:2.8rem;
-  line-height:1;
-  box-shadow:none;
-}
-.step:hover .step-num{background:transparent;color:var(--rojo);transform:none}
+
+
 .step h3{font-size:1.35rem}
 .step p{line-height:1.75}
 
@@ -720,7 +629,7 @@ header{
   padding:24px;
   border-radius:inherit;
   background:linear-gradient(transparent,rgba(4,24,40,.92));
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:1.45rem;
   font-weight:700;
   letter-spacing:.08em;
@@ -728,42 +637,13 @@ header{
 }
 
 /* Certificaciones */
-#certificaciones{background:#fff}
-.certs{
-  grid-template-columns:repeat(5,1fr);
-  gap:14px;
-  margin-top:56px;
-}
-.cert{
-  min-height:250px;
-  padding:34px 26px;
-  border:1px solid var(--linea);
-  border-radius:24px;
-  box-shadow:0 15px 45px rgba(5,32,52,.05);
-}
-.cert::before{
-  height:6px;
-  background:linear-gradient(90deg,var(--rojo),var(--cian));
-}
-.cert::after{
-  content:"✓";
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:38px;
-  height:38px;
-  margin-top:25px;
-  border-radius:50%;
-  background:var(--hielo2);
-  color:var(--cian);
-  font-weight:800;
-}
-.cert .cn{
-  color:var(--azul);
-  font-size:1.25rem;
-  line-height:1.2;
-}
-.cert p{line-height:1.65}
+
+
+
+
+
+
+
 
 /* FAQ */
 .faq-item{
@@ -802,38 +682,15 @@ header{
   border-radius:34px;
   box-shadow:0 30px 100px rgba(5,32,52,.13);
 }
-.contact-info{
-  padding:70px 58px;
-  background:
-    radial-gradient(circle at 12% 90%,rgba(85,198,230,.2),transparent 19rem),
-    linear-gradient(145deg,#061e32,#0a4168);
-}
-.contact-info::after{
-  content:"";
-  position:absolute;
-  top:30px;
-  right:30px;
-  width:90px;
-  height:90px;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:50%;
-  box-shadow:0 0 0 24px rgba(255,255,255,.025);
-}
-.contact-info h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1}
-.contact-list li{padding:17px 0}
-.contact-form{
-  padding:62px 58px;
-  background:#fff;
-}
-.cf-field{margin-bottom:20px}
-.cf-field label{font-size:.78rem;letter-spacing:.04em}
-.cf-field input,.cf-field textarea{
-  padding:16px 17px;
-  border:1px solid #d9e5ec;
-  border-radius:13px;
-  background:#f5f8fa;
-}
-.cf-send{min-height:58px}
+
+
+
+
+
+
+
+
+
 
 /* Footer */
 footer{
@@ -841,12 +698,7 @@ footer{
   background:#041824;
 }
 .foot-grid{max-width:1224px;grid-template-columns:1.6fr .7fr .9fr;gap:74px}
-.foot-logo{
-  width:255px;
-  height:auto;
-  padding:10px 16px;
-  border-radius:14px;
-}
+
 .foot-bottom{max-width:1224px;text-align:left}
 
 .lb{backdrop-filter:blur(14px)}
@@ -859,8 +711,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 }
 
 @media(max-width:1100px){
-  .certs{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
+  
+  
   .step:nth-child(even){transform:none}
 }
 
@@ -877,19 +729,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   }
   .nav-links a{width:100%;padding:14px 16px;font-size:1.05rem}
   .nav-cta{margin-left:0}
-  .hero{
-    min-height:850px;
-    background-image:
-      linear-gradient(90deg,rgba(4,24,40,.96),rgba(5,35,58,.82)),
-      url('hero-operarios.webp');
-    background-position:64% center;
-  }
-  .hero-inner{padding:150px 22px 100px}
-  .hero h1{font-size:clamp(3rem,14vw,5.1rem)}
-  .hero p{font-size:1rem}
-  .hero-btns{display:grid;grid-template-columns:1fr}
-  .btn{width:100%;justify-content:center}
-  .scroll-ind{display:none}
+  
+  
+  
+  
+  
+  
+  
   .wrap{padding:90px 22px}
   #industrial{background:#fff}
   .svc,.svc.rev{
@@ -905,38 +751,38 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .track{padding-inline:22px}
   .slide img{height:350px}
   .alt .svc{padding:24px;border-radius:26px}
-  .steps{grid-template-columns:1fr}
+  
   .step{min-height:auto}
   .gallery{grid-template-columns:repeat(6,1fr);grid-auto-rows:190px}
   .gallery a,.gallery a:nth-child(4),.gallery a:nth-child(7){grid-column:span 3}
   .gallery a:nth-child(1){grid-column:span 6;grid-row:span 2}
-  .certs{grid-template-columns:repeat(2,1fr)}
+  
   .contact-box{grid-template-columns:1fr}
-  .contact-info,.contact-form{padding:46px 28px}
+  
   .foot-grid{grid-template-columns:1fr;gap:36px}
 }
 
 @media(max-width:560px){
-  .hero{min-height:810px}
-  .hero h1{font-size:clamp(2.7rem,14vw,4rem)}
-  .hero .eyebrow{font-size:.68rem}
+  
+  
+  
   .sec-title{font-size:clamp(2.1rem,11vw,3.2rem)}
   .gallery{grid-template-columns:1fr;grid-auto-rows:240px}
   .gallery a,.gallery a:nth-child(1),.gallery a:nth-child(4),.gallery a:nth-child(7){
     grid-column:1;
     grid-row:span 1;
   }
-  .certs{grid-template-columns:1fr}
-  .cert{min-height:210px}
+  
+  
   .faq-item{padding:0 17px}
   .faq-q{font-size:.96rem}
-  .contact-info,.contact-form{padding:38px 22px}
+  
   footer{padding-inline:22px}
 }
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .hero{background-attachment:scroll}
+  
 }
 </style>
 <style>
@@ -994,87 +840,23 @@ header.is-scrolled{
 }
 
 /* 1. Hero dividido: texto y maquinaria comparten protagonismo */
-.hero{
-  min-height:960px;
-  background:#041824;
-  isolation:isolate;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  z-index:0;
-  inset:0 0 0 43%;
-  opacity:1;
-  background:
-    linear-gradient(90deg,#041824 0%,rgba(4,24,36,.72) 20%,rgba(4,24,36,.05) 56%),
-    linear-gradient(0deg,rgba(4,24,36,.58),transparent 48%),
-    url('hero-operarios.webp') 58% center/cover no-repeat;
-  clip-path:polygon(18% 0,100% 0,100% 100%,0 100%);
-  mask-image:none;
-  transform:translate3d(0,var(--hero-shift,0px),0) scale(1.035);
-  transform-origin:center;
-  will-change:transform;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  z-index:1;
-  left:calc(43% - 80px);
-  top:8%;
-  bottom:8%;
-  width:1px;
-  height:auto;
-  border:0;
-  border-radius:0;
-  opacity:.7;
-  background:linear-gradient(transparent,var(--cian-cl),var(--rojo),transparent);
-  box-shadow:
-    32px 0 0 rgba(85,198,230,.08),
-    64px 0 0 rgba(85,198,230,.04);
-  animation:heroScan 5.5s ease-in-out infinite;
-}
+
+
+
 @keyframes heroScan{
   0%,100%{transform:translateY(-3%);opacity:.45}
   50%{transform:translateY(3%);opacity:.9}
 }
-.hero-inner{
-  max-width:1360px;
-  padding-top:190px;
-  padding-bottom:130px;
-}
-.hero-inner::before{width:96px}
-.hero-inner::after{
-  content:"";
-  position:absolute;
-  left:38px;
-  bottom:70px;
-  width:min(560px,45vw);
-  height:1px;
-  background:linear-gradient(90deg,rgba(255,255,255,.35),transparent);
-}
-.hero h1{
-  max-width:780px;
-  font-size:clamp(3.9rem,6.8vw,7.2rem);
-  line-height:.88;
-}
-.hero-title .w:first-child{display:block}
-.hero p{
-  max-width:660px;
-  padding-left:22px;
-  border-left:2px solid rgba(85,198,230,.55);
-}
-.hero-btns{
-  width:max-content;
-  max-width:100%;
-  padding:8px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:999px;
-  background:rgba(4,24,36,.48);
-  backdrop-filter:blur(12px);
-}
-.hero-btns .btn{min-height:54px}
-.hero .btn-primary{background:var(--rojo);color:#fff}
-.hero .btn-primary:hover{background:#fff;color:var(--azul)}
+
+
+
+
+
+
+
+
+
+
 
 /* 2. Cifras como panel de control técnico */
 
@@ -1138,9 +920,7 @@ header.is-scrolled{
 }
 
 /* Proceso conectado con una línea que se activa */
-.steps{
-  counter-reset:workstep;
-}
+
 .step{
   counter-increment:workstep;
   overflow:hidden;
@@ -1205,7 +985,7 @@ header.is-scrolled{
   gap:20px;
   color:#fff;
   transform:translateX(-50%);
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
 }
 .lb-count{
   color:var(--cian-cl);
@@ -1242,11 +1022,7 @@ header.is-scrolled{
 /* 5. Acciones móviles persistentes */
 .mobile-actions{display:none}
 
-@media(max-width:1100px){
-  .hero::before{inset:0 0 0 35%}
-  .hero::after{left:calc(35% - 45px)}
-  .hero h1{max-width:700px}
-}
+
 
 @media(max-width:900px){
   body{padding-bottom:78px}
@@ -1341,41 +1117,18 @@ header.is-scrolled{
     backdrop-filter:blur(7px);
     -webkit-backdrop-filter:blur(7px);
   }
-  body.menu-open .mobile-actions,
-
-  .hero{
+  body.menu-open .mobile-actions{
     min-height:880px;
     background:#041824;
   }
-  .hero::before{
-    inset:0;
-    clip-path:none;
-    background:
-      linear-gradient(180deg,rgba(4,24,36,.56),rgba(4,24,36,.97) 76%),
-      linear-gradient(90deg,rgba(4,24,36,.72),transparent),
-      url('hero-operarios.webp') 60% center/cover no-repeat;
-  }
-  .hero::after{
-    left:22px;
-    right:22px;
-    top:auto;
-    bottom:112px;
-    width:auto;
-    height:1px;
-    background:linear-gradient(90deg,var(--rojo),var(--cian-cl),transparent);
-    box-shadow:none;
-    animation:none;
-  }
-  .hero-inner{padding:145px 22px 112px}
-  .hero-inner::after{display:none}
-  .hero h1{font-size:clamp(3rem,14.5vw,5.2rem)}
-  .hero p{padding-left:15px}
-  .hero-btns{
-    width:100%;
-    padding:7px;
-    border-radius:25px;
-  }
-  .hero-btns .btn{width:100%}
+  
+  
+  
+  
+  
+  
+  
+  
 
   .svc-media{position:relative;top:auto}
   .lb img{max-width:92vw;max-height:72vh;border-radius:16px}
@@ -1409,7 +1162,7 @@ header.is-scrolled{
     justify-content:center;
     gap:9px;
     border-radius:14px;
-    font-family:'Sora',sans-serif;
+    font-family:"Sora",sans-serif;
     font-size:.78rem;
     font-weight:800;
   }
@@ -1420,13 +1173,13 @@ header.is-scrolled{
 
 @media(max-width:430px){
   .nav-logo{width:155px}
-  .hero h1{font-size:clamp(2.75rem,14vw,4rem)}
-  .hero .eyebrow{max-width:100%;white-space:normal}
+  
+  
 }
 
 @media(prefers-reduced-motion:reduce){
-  .hero::after{animation:none}
-  .hero::before{transform:none}
+  
+  
   .scroll-progress span{transition:none}
   .svc-media{transform:none!important}
 }
@@ -1490,127 +1243,31 @@ header.is-scrolled{
 .nav-cta:hover{background:linear-gradient(135deg,var(--azul),var(--azul2))}
 
 /* Hero inmersivo de refrigeración */
-.hero{
-  --hero-shift:0px;
-  min-height:950px;
-  background:
-    linear-gradient(90deg,rgba(5,42,66,.96) 0%,rgba(9,66,98,.88) 46%,rgba(9,66,98,.3) 78%,rgba(5,42,66,.18) 100%),
-    linear-gradient(0deg,rgba(5,42,66,.58),transparent 48%),
-    url('hero-operarios.webp') 58% center/cover no-repeat;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  z-index:0;
-  inset:0;
-  opacity:1;
-  clip-path:none;
-  background:
-    radial-gradient(circle at 72% 24%,rgba(225,251,255,.22),transparent 18rem),
-    linear-gradient(115deg,rgba(185,238,252,.07),transparent 45%);
-  transform:none;
-  mask-image:none;
-  animation:none;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  z-index:1;
-  left:-8%;
-  right:-8%;
-  top:auto;
-  bottom:-115px;
-  width:auto;
-  height:270px;
-  border:0;
-  border-radius:50%;
-  opacity:.82;
-  background:
-    radial-gradient(ellipse at 30% 50%,rgba(220,249,255,.34),transparent 44%),
-    radial-gradient(ellipse at 72% 42%,rgba(181,235,249,.25),transparent 40%);
-  filter:blur(22px);
-  box-shadow:none;
-  animation:coldMist 9s ease-in-out infinite alternate;
-}
+
+
+
 @keyframes coldMist{
   from{transform:translate3d(-2%,0,0) scale(1)}
   to{transform:translate3d(2%,-14px,0) scale(1.04)}
 }
-.hero-inner{max-width:1320px;padding-top:180px}
-.hero-inner::before{
-  width:92px;
-  background:linear-gradient(90deg,#e8fbff,#67d0ef,#fff);
-  box-shadow:0 0 18px rgba(155,234,255,.42);
-}
-.hero-inner::after{
-  background:linear-gradient(90deg,rgba(210,247,255,.55),transparent);
-}
-.hero h1{
-  max-width:940px;
-  text-shadow:0 15px 45px rgba(0,31,48,.26);
-}
-.hero-title .w:first-child{display:inline-block}
-.hero h1 .hl{color:#b8f0ff}
-.hero p{
-  border-left-color:rgba(155,234,255,.75);
-  color:rgba(242,252,255,.9);
-}
-.hero .eyebrow{
-  border-color:rgba(206,245,255,.34);
-  background:rgba(221,248,255,.11);
-  box-shadow:inset 0 1px rgba(255,255,255,.2);
-}
-.hero-btns{
-  width:auto;
-  padding:0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-  backdrop-filter:none;
-}
-.hero .btn-primary{
-  color:var(--azul);
-  background:linear-gradient(135deg,#fff,#dff7ff);
-  box-shadow:0 14px 40px rgba(194,241,253,.2);
-}
-.hero .btn-primary:hover{color:#fff;background:var(--cian)}
-.hero .btn-ghost{
-  border-color:rgba(220,249,255,.55);
-  background:rgba(218,247,255,.1);
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Copos, cristales y niebla fría */
-.snow{
-  display:block;
-  z-index:1;
-  overflow:hidden;
-  opacity:1;
-}
-.snow::before,
-.snow::after{
-  content:"";
-  position:absolute;
-  left:-10%;
-  right:-10%;
-  bottom:-35px;
-  height:150px;
-  pointer-events:none;
-  background:radial-gradient(ellipse at 50% 100%,rgba(226,250,255,.25),transparent 62%);
-  filter:blur(18px);
-  animation:frostBreathe 7s ease-in-out infinite alternate;
-}
-.snow::after{bottom:10%;opacity:.35;animation-delay:-3s}
-.snow i{
-  position:absolute;
-  top:-12vh;
-  display:block;
-  color:rgba(244,253,255,.92);
-  font-style:normal;
-  line-height:1;
-  text-shadow:0 0 10px rgba(198,242,255,.8);
-  will-change:transform,opacity;
-  animation:snowfall var(--fall-time,12s) linear infinite;
-}
+
+
+
+
 @keyframes snowfall{
   0%{transform:translate3d(0,-12vh,0) rotate(0deg);opacity:0}
   8%{opacity:var(--flake-opacity,.8)}
@@ -1625,17 +1282,12 @@ header.is-scrolled{
 
 /* Cifras congeladas */
 
-.marquee{
-  background:linear-gradient(90deg,#0c496b,#167da6,#0c496b);
-  box-shadow:inset 0 1px rgba(255,255,255,.12);
-}
-.marquee-track i{color:#c8f4ff;opacity:.85}
+
+
 
 /* Secciones claras con sensación de aire frío */
 #industrial,
-#comercial,
-.process-sec,
-#certificaciones{
+#comercial{
   background:
     radial-gradient(circle at 92% 16%,rgba(160,227,246,.13),transparent 24rem),
     #fff;
@@ -1709,7 +1361,7 @@ header.is-scrolled{
 }
 .slide .cap{background:linear-gradient(transparent,rgba(5,48,70,.97))}
 .slide .cap small{color:#a7edff}
-.car-btn:hover{background:#58c8e8;border-color:#8be2f7}
+
 
 /* Proceso y certificaciones con acabado helado */
 .step{
@@ -1728,15 +1380,11 @@ header.is-scrolled{
   border-radius:50%;
 }
 .step::after{background:linear-gradient(90deg,#9de9fa,#24abd8)}
-.step-num{color:#1aa8d7}
-.step:hover .step-num{color:#0b729d}
-.cert{
-  border-color:#d4eaf2;
-  background:linear-gradient(145deg,#fff,#f0faff);
-  box-shadow:0 15px 45px rgba(19,104,138,.06);
-}
-.cert::before{background:linear-gradient(90deg,#b4eefc,#37b8de)}
-.cert::after{background:#def4fb;color:#158bb7}
+
+
+
+
+
 
 /* Galería y contacto dentro de la misma identidad fría */
 .gallery a{box-shadow:0 16px 48px rgba(15,91,121,.12)}
@@ -1747,16 +1395,12 @@ header.is-scrolled{
     radial-gradient(circle at 18% 18%,rgba(95,202,232,.18),transparent 28rem),
     rgba(3,35,51,.97);
 }
-.contact-info{
-  background:
-    radial-gradient(circle at 12% 90%,rgba(174,235,251,.22),transparent 19rem),
-    linear-gradient(145deg,#0b496b,#15749b);
-}
+
 .contact-box{
   border-color:#d2e8f1;
   box-shadow:0 30px 100px rgba(14,91,122,.12);
 }
-.cf-field input,.cf-field textarea{background:#f2faff;border-color:#d4e9f1}
+
 footer{background:#073047}
 
 @media(max-width:900px){
@@ -1769,26 +1413,10 @@ footer{background:#073047}
   }
   .nav-links::before{background:linear-gradient(90deg,#b8effb,#35b6dd,transparent)}
   .nav-links .nav-cta{background:linear-gradient(135deg,var(--azul2),var(--cian))}
-  .hero{
-    min-height:880px;
-    background:
-      linear-gradient(180deg,rgba(6,49,73,.5),rgba(6,49,73,.96) 77%),
-      linear-gradient(90deg,rgba(6,49,73,.66),transparent),
-      url('hero-operarios.webp') 60% center/cover no-repeat;
-  }
-  .hero::before{
-    background:radial-gradient(circle at 75% 18%,rgba(226,250,255,.2),transparent 17rem);
-  }
-  .hero::after{
-    left:-15%;
-    right:-15%;
-    bottom:-120px;
-    width:auto;
-    height:260px;
-    background:radial-gradient(ellipse,rgba(220,249,255,.34),transparent 64%);
-    animation:coldMist 9s ease-in-out infinite alternate;
-  }
-  .hero-btns{padding:0;background:transparent}
+  
+  
+  
+  
   .mobile-actions{
     border-color:#cfe8f1;
     background:rgba(248,254,255,.96);
@@ -1807,17 +1435,12 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
 .nav{min-height:72px;padding:10px 32px}
 .nav-logo{width:176px;height:50px;object-fit:contain}
 
-.hero{min-height:720px}
-.hero-inner{padding:132px 32px 70px}
-.hero-inner::before{display:none}
-.hero h1{
-  max-width:900px;
-  margin-bottom:22px;
-  font-size:clamp(3.2rem,6.1vw,5.8rem);
-  line-height:.93;
-}
-.hero p{max-width:790px;margin-bottom:28px;font-size:1.05rem;line-height:1.7}
-.hero-btns{gap:10px}
+
+
+
+
+
+
 
 
 .carousel-head{max-width:1240px;padding:72px 32px 12px}
@@ -1846,19 +1469,9 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
 .alt .wrap{padding-top:62px;padding-bottom:62px}
 .alt .svc{padding:30px;margin-bottom:24px}
 
-.process-sec .wrap{padding-top:70px;padding-bottom:70px}
-.steps{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:0;
-  margin-top:32px;
-  overflow:hidden;
-  border:1px solid #d7ebf3;
-  border-radius:22px;
-  background:#fff;
-  box-shadow:0 20px 60px rgba(18,103,137,.08);
-}
-.steps::before{display:none}
+
+
+
 .step{
   min-height:0;
   padding:0;
@@ -1887,18 +1500,18 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   cursor:default;
   font:inherit;
 }
-.step-title{margin:0;font-family:'Sora',sans-serif;font-size:1.08rem;font-weight:700;line-height:1.2}
-.step-num{margin:0;font-size:1.25rem;line-height:1}
-.step-plus{display:none}
-.step-detail{display:block;padding:0 22px 22px}
-.step-detail p{margin:0;color:var(--gris);font-size:.91rem;line-height:1.6}
+
+
+
+
+
 
 .gallery{margin-top:30px}
-.certs{margin-top:30px;gap:14px}
-.cert{min-height:185px;padding:26px 22px}
-#certificaciones .wrap{padding-top:70px;padding-bottom:70px}
+
+
+
 .contact-box{max-width:1120px;margin:0 auto}
-.contact-info,.contact-form{padding:50px}
+
 
 @media(max-width:900px){
   body{padding-bottom:74px}
@@ -1907,32 +1520,21 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   .nav-logo{width:152px;height:46px}
   .burger{width:42px;height:42px}
 
-  .hero{
-    min-height:690px;
-    background:
-      linear-gradient(180deg,rgba(6,49,73,.48),rgba(6,49,73,.96) 76%),
-      linear-gradient(90deg,rgba(6,49,73,.6),transparent),
-      url('hero-operarios.webp') 58% center/cover no-repeat;
-  }
-  .hero-inner{padding:102px 17px 62px}
-  .hero h1{
-    max-width:640px;
-    margin-bottom:20px;
-    font-size:clamp(2.65rem,12vw,4rem);
-    line-height:.92;
-  }
-  .hero p{max-width:600px;margin-bottom:24px;font-size:.94rem;line-height:1.62}
-  .hero .btn-wa,.hero .btn-ghost{display:none}
-  .hero .btn-primary{width:100%;max-width:340px;justify-content:center}
-  .scroll-ind{display:none}
+  
+  
+  
+  
+  
+  
+  
 
   .wrap{padding:52px 16px}
   .sec-title{font-size:clamp(1.9rem,8.5vw,2.6rem);margin-bottom:14px}
   .sec-lead{font-size:.96rem;line-height:1.65}
 
 
-  .marquee{padding:12px 0}
-  .marquee-track{gap:20px}
+  
+  
 
   .carousel-head{padding:52px 16px 10px}
   .carousel-head h2{font-size:clamp(1.9rem,8.5vw,2.6rem)}
@@ -1962,8 +1564,8 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   .alt .wrap{padding-top:46px;padding-bottom:46px}
   .alt .svc{padding:16px;margin-bottom:16px;border-radius:18px}
 
-  .process-sec .wrap{padding-top:52px;padding-bottom:52px}
-  .steps{display:block;margin-top:24px;border-radius:18px}
+  
+  
   .step{
     border-right:0;
     border-bottom:1px solid #d7ebf3;
@@ -1976,51 +1578,35 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
     padding:15px 16px;
     cursor:pointer;
   }
-  .step-title{font-size:1rem}
-  .step-num{font-size:1.05rem}
-  .step-plus{
-    display:grid;
-    place-items:center;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    color:#0b729d;
-    background:#e3f7fc;
-    font-size:1.25rem;
-    line-height:1;
-    transition:transform .25s ease;
-  }
-  .step-detail{
-    max-height:0;
-    overflow:hidden;
-    padding:0 16px 0 68px;
-    transition:max-height .3s ease,padding .3s ease;
-  }
-  .step-detail p{font-size:.87rem;line-height:1.55}
-  .step.open .step-detail{max-height:150px;padding:0 16px 16px 68px}
-  .step.open .step-plus{transform:rotate(45deg)}
+  
+  
+  
+  
+  
+  
+  
 
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:8px}
-  .gallery .g-big{grid-row:span 2}
-  .gallery .g-wide{grid-column:span 2}
+  
+  
 
-  .certs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .cert{min-height:150px;padding:20px 14px}
-  .cert .cn{font-size:.95rem}
-  .cert p{font-size:.78rem;line-height:1.45}
-  #certificaciones .wrap{padding-top:52px;padding-bottom:52px}
+  
+  
+  
+  
+  
 
-  .contact-info,.contact-form{padding:28px 20px}
-  .contact-info h2{font-size:2rem}
+  
+  
   .mobile-actions{left:8px;right:8px;bottom:8px;padding:6px}
 }
 
 @media(max-width:430px){
   .nav-logo{width:142px}
-  .hero{min-height:650px}
-  .hero h1{font-size:clamp(2.45rem,12.2vw,3.25rem)}
-  .certs{grid-template-columns:1fr 1fr}
-  .cert{min-height:142px}
+  
+  
+  
+  
 }
 
 /* =========================================================
@@ -2038,16 +1624,14 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
 #industrial,
 .carousel-sec + .alt,
 #comercial,
-#certificaciones,
 #contacto{
   background:
     radial-gradient(circle at 92% 12%,rgba(133,218,243,.12),transparent 24rem),
     linear-gradient(180deg,#fff,#f6fcfe);
 }
 
-.process-sec,
-#comercial + .alt,
-#certificaciones + .alt{
+
+#comercial + .alt{
   position:relative;
   overflow:hidden;
   color:#fff;
@@ -2056,9 +1640,8 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
     radial-gradient(circle at 88% 82%,rgba(102,203,232,.13),transparent 30rem),
     linear-gradient(145deg,#073550,#0e6388);
 }
-.process-sec::after,
-#comercial + .alt::after,
-#certificaciones + .alt::after{
+
+#comercial + .alt::after{
   content:"";
   position:absolute;
   inset:0;
@@ -2068,38 +1651,30 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   background-image:radial-gradient(circle at center,rgba(228,250,255,.55) 1px,transparent 1.5px);
   background-size:42px 42px;
 }
-.process-sec > .wrap,
-#comercial + .alt > .wrap,
-#certificaciones + .alt > .wrap{
+
+#comercial + .alt > .wrap{
   position:relative;
   z-index:1;
 }
-.process-sec .sec-title,
-#comercial + .alt .sec-title,
-#certificaciones + .alt .sec-title{
+
+#comercial + .alt .sec-title{
   color:#fff;
 }
-.process-sec .sec-lead,
-#comercial + .alt .sec-lead,
-#certificaciones + .alt .sec-lead{
+
+#comercial + .alt .sec-lead{
   color:rgba(239,251,255,.82);
 }
-.process-sec .eyebrow-sec,
-#comercial + .alt .eyebrow-sec,
-#certificaciones + .alt .eyebrow-sec{
+
+#comercial + .alt .eyebrow-sec{
   color:#a7edff;
 }
-.process-sec .eyebrow-sec::before,
-#comercial + .alt .eyebrow-sec::before,
-#certificaciones + .alt .eyebrow-sec::before{
+
+#comercial + .alt .eyebrow-sec::before{
   background:linear-gradient(90deg,#fff,#70d9f5);
 }
 
 /* El proceso mantiene tarjetas blancas para que los cuatro pasos se entiendan. */
-.process-sec .steps{
-  border-color:rgba(214,247,255,.3);
-  box-shadow:0 24px 70px rgba(1,26,39,.24);
-}
+
 
 /* La galería vive sobre azul, con un borde frío que separa cada fotografía. */
 #comercial + .alt .gallery a{
@@ -2108,49 +1683,20 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
 }
 
 /* Las preguntas se leen como bloques claros dentro de la sección azul. */
-#certificaciones + .alt .faq-item{
-  margin-bottom:10px;
-  padding:0 22px;
-  border:1px solid rgba(213,247,255,.17);
-  border-radius:14px;
-  background:rgba(238,251,255,.07);
-  box-shadow:inset 0 1px rgba(255,255,255,.06);
-}
-#certificaciones + .alt .faq-q{color:#fff}
-#certificaciones + .alt .faq-q::after{color:#9beaff}
-#certificaciones + .alt .faq-a p{color:rgba(236,250,255,.78)}
-#certificaciones + .alt .faq-item.open{
-  border-color:rgba(155,234,255,.5);
-  background:rgba(238,251,255,.11);
-}
+
+
+
+
+
 
 /* =========================================================
    V6 · CONTRASTE REAL Y MARCA INVERTIDA EN EL FOOTER
    ========================================================= */
-#certificaciones + .alt .faq-q::after{
-  color:#fff;
-  background:#062f46;
-  border:2px solid rgba(183,240,255,.82);
-  box-shadow:0 7px 18px rgba(0,25,38,.28);
-  font-weight:500;
-}
-#certificaciones + .alt .faq-item.open .faq-q::after{
-  color:#062f46;
-  background:#fff;
-  border-color:#fff;
-}
 
-.foot-brand-logo{
-  display:block;
-  width:min(100%,310px);
-  margin:0 0 22px;
-}
-.foot-brand-logo svg{
-  display:block;
-  width:100%;
-  height:auto;
-  overflow:visible;
-}
+
+
+
+
 
 /* =========================================================
    V7 · BLINDAJE RESPONSIVE MÓVIL
@@ -2170,8 +1716,7 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
     max-width:none;
     overflow-x:hidden;
   }
-  .hero,
-  .marquee,
+  
   body > section,
   footer{
     width:100vw;
@@ -2206,7 +1751,7 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   border-radius:999px;
   color:#0b5879;
   background:#eefaff;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.72rem;
   font-weight:700;
   letter-spacing:.02em;
@@ -2221,11 +1766,8 @@ header{transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
   box-shadow:0 0 0 4px rgba(26,168,215,.11);
 }
 /* Las tarjetas pares ya no bajan 28px: todos los pasos parten de la misma línea. */
-.steps .step:nth-child(even),
-.steps .step:nth-child(even):hover{
-  transform:none!important;
-}
-.steps .step{align-self:stretch}
+
+
 
 /* Footer claro para usar el logotipo original sin inventarlo ni encerrarlo en un bloque. */
 footer{
@@ -2360,17 +1902,14 @@ footer li a:hover{color:#0b8fbd}
 }
 
 @media(max-width:900px){
-  #certificaciones + .alt .faq-item{padding:0 16px}
+  
   .service-tags{margin-top:17px}
   .service-tags span{font-size:.68rem}
   .foot-logo-real{width:210px;margin-bottom:14px}
   footer{padding-top:50px}
 }
 
-@media(prefers-reduced-motion:reduce){
-  .snow i{animation:none!important;display:none}
-  .snow::before,.snow::after,.hero::after{animation:none}
-}
+
 </style>
 <style>
 /* =========================================================
@@ -2379,7 +1918,7 @@ footer li a:hover{color:#0b8fbd}
 .service-seo-title{
   margin:24px 0 14px;
   color:var(--azul);
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:clamp(1.5rem,2.2vw,2.05rem);
   font-weight:700;
   line-height:1.15;
@@ -2420,7 +1959,7 @@ footer li a:hover{color:#0b8fbd}
   display:block;
   margin-bottom:10px;
   color:#148ab5;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.67rem;
   font-weight:800;
   letter-spacing:.15em;
@@ -2594,7 +2133,7 @@ header.is-scrolled{
   border-radius:12px;
   color:#17475e;
   background:rgba(255,255,255,.82);
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.72rem;
   font-weight:700;
   text-align:left;
@@ -2664,7 +2203,7 @@ header.is-scrolled{
   color:#073b59;
   background:#fff;
   box-shadow:0 7px 20px rgba(0,0,0,.22);
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.58rem;
   font-weight:800;
   opacity:0;
@@ -2704,13 +2243,13 @@ header.is-scrolled{
 }
 .system-readout small{
   color:#9deaff;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.59rem;
   font-weight:800;
   letter-spacing:.11em;
 }
 .system-readout strong{
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.78rem;
 }
 
@@ -2739,7 +2278,7 @@ header.is-scrolled{
   top:18px;
   left:20px;
   color:rgba(255,255,255,.82);
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:clamp(2.1rem,4vw,3.6rem);
   font-weight:800;
   line-height:1;
@@ -2827,7 +2366,7 @@ header.is-scrolled{
   border-radius:999px;
   color:#075b7e;
   background:#fff;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.72rem;
   font-weight:700;
 }
@@ -2965,242 +2504,37 @@ header.is-scrolled{
 
 /* Mapa animado de las cinco áreas ya explicadas en la web.
    Se integra en Certificaciones para dar ritmo al tramo final. */
-.service-orbit{
-  position:relative;
-  display:grid;
-  grid-template-columns:minmax(260px,.76fr) minmax(430px,1.24fr);
-  gap:34px;
-  align-items:center;
-  margin-top:52px;
-  padding:34px 38px;
-  overflow:hidden;
-  border-radius:30px;
-  color:#fff;
-  background:
-    radial-gradient(circle at 78% 45%,rgba(72,199,230,.22),transparent 20rem),
-    linear-gradient(135deg,#052f47,#0b5f80);
-  box-shadow:0 28px 72px rgba(3,52,73,.18);
-}
-.service-orbit::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  opacity:.17;
-  background-image:
-    linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(90deg,transparent,#000 38%,#000);
-}
-.orbit-copy{position:relative;z-index:2}
-.orbit-copy small{
-  display:block;
-  margin-bottom:10px;
-  color:#9cecff;
-  font-family:'Sora',sans-serif;
-  font-size:.68rem;
-  font-weight:800;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-}
-.orbit-copy h3{
-  max-width:460px;
-  margin-bottom:14px;
-  color:#fff;
-  font-size:clamp(1.7rem,2.8vw,2.65rem);
-}
-.orbit-copy p{
-  max-width:520px;
-  margin:0;
-  color:rgba(237,250,255,.78);
-  line-height:1.75;
-}
-.orbit-hint{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:20px;
-  color:#bdeffc;
-  font-family:'Sora',sans-serif;
-  font-size:.7rem;
-  font-weight:700;
-}
-.orbit-hint::before{
-  content:"";
-  width:24px;
-  height:1px;
-  background:#7ddcf3;
-}
-.orbit-stage{
-  position:relative;
-  z-index:2;
-  min-height:390px;
-}
-.orbit-ring{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:292px;
-  height:292px;
-  border:1px solid rgba(177,235,248,.35);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 34px rgba(116,216,240,.035),
-    inset 0 0 50px rgba(103,220,247,.08);
-  transform:translate(-50%,-50%);
-}
-.orbit-ring::before{
-  content:"";
-  position:absolute;
-  inset:-3px;
-  border-radius:inherit;
-  background:conic-gradient(
-    from 0deg,
-    transparent 0 12%,
-    #a5efff 18%,
-    transparent 25% 47%,
-    #5ac9e8 54%,
-    transparent 61% 82%,
-    #fff 88%,
-    transparent 94%
-  );
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  padding:3px;
-  animation:orbitFlow 8s linear infinite;
-}
-.orbit-ring::after{
-  content:"";
-  position:absolute;
-  top:-7px;
-  left:50%;
-  width:13px;
-  height:13px;
-  border:3px solid #fff;
-  border-radius:50%;
-  background:#62d8f3;
-  box-shadow:0 0 0 8px rgba(98,216,243,.12),0 0 25px #84e5fa;
-  transform:translateX(-50%);
-  animation:orbitPulse 2s ease-in-out infinite;
-}
-.orbit-core{
-  position:absolute;
-  top:50%;
-  left:50%;
-  display:grid;
-  place-items:center;
-  width:170px;
-  height:170px;
-  padding:22px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:50%;
-  text-align:center;
-  background:rgba(3,40,58,.82);
-  box-shadow:0 18px 50px rgba(0,0,0,.28),inset 0 0 38px rgba(103,218,243,.09);
-  backdrop-filter:blur(10px);
-  transform:translate(-50%,-50%);
-}
-.orbit-core span{
-  color:#85dff4;
-  font-family:'Sora',sans-serif;
-  font-size:.57rem;
-  font-weight:800;
-  letter-spacing:.16em;
-}
-.orbit-core strong{
-  display:block;
-  color:#fff;
-  font-family:'Sora',sans-serif;
-  font-size:1.18rem;
-  line-height:1.15;
-}
-.orbit-core i{
-  color:rgba(235,250,255,.7);
-  font-size:.65rem;
-  font-style:normal;
-}
-.orbit-node{
-  position:absolute;
-  z-index:4;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  min-height:39px;
-  padding:8px 11px 8px 8px;
-  border:1px solid rgba(190,239,250,.34);
-  border-radius:999px;
-  color:#fff;
-  background:rgba(4,51,70,.88);
-  box-shadow:0 10px 25px rgba(0,0,0,.18);
-  font-family:'Sora',sans-serif;
-  font-size:.68rem;
-  font-weight:700;
-  white-space:nowrap;
-  backdrop-filter:blur(9px);
-  transition:transform .24s ease,border-color .24s ease,background .24s ease,box-shadow .24s ease;
-}
-.orbit-node::before{
-  content:attr(data-index);
-  display:grid;
-  place-items:center;
-  width:23px;
-  height:23px;
-  border-radius:50%;
-  color:#073d57;
-  background:#9feaff;
-  font-size:.56rem;
-}
-.orbit-node:hover,
-.orbit-node:focus-visible{
-  border-color:#a9eeff;
-  background:#0c7598;
-  box-shadow:0 12px 32px rgba(0,0,0,.25),0 0 0 5px rgba(115,222,246,.09);
-  outline:none;
-  transform:translateY(-3px) scale(1.03);
-}
-.orbit-node.n1{top:4%;left:50%;transform:translateX(-50%)}
-.orbit-node.n1:hover,.orbit-node.n1:focus-visible{transform:translateX(-50%) translateY(-3px) scale(1.03)}
-.orbit-node.n2{top:28%;right:0}
-.orbit-node.n3{right:5%;bottom:9%}
-.orbit-node.n4{left:5%;bottom:9%}
-.orbit-node.n5{top:28%;left:0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes orbitFlow{to{transform:rotate(360deg)}}
 @keyframes orbitPulse{50%{box-shadow:0 0 0 16px rgba(98,216,243,0),0 0 34px #84e5fa}}
 
-@media(max-width:900px){
-  .service-orbit{
-    grid-template-columns:1fr;
-    gap:12px;
-    margin-top:34px;
-    padding:25px 18px 20px;
-    border-radius:22px;
-  }
-  .orbit-copy{text-align:left}
-  .orbit-copy p{font-size:.9rem;line-height:1.65}
-  .orbit-hint{margin-top:14px}
-  .orbit-stage{min-height:350px}
-  .orbit-ring{width:230px;height:230px}
-  .orbit-core{width:136px;height:136px;padding:17px}
-  .orbit-core strong{font-size:.95rem}
-  .orbit-node{padding:6px 8px 6px 6px;font-size:.59rem}
-  .orbit-node::before{width:20px;height:20px}
-  .orbit-node.n2{right:1%}
-  .orbit-node.n3{right:2%;bottom:10%}
-  .orbit-node.n4{left:2%;bottom:10%}
-  .orbit-node.n5{left:1%}
-}
-@media(max-width:430px){
-  .orbit-stage{min-height:320px}
-  .orbit-ring{width:202px;height:202px}
-  .orbit-core{width:122px;height:122px}
-  .orbit-node{max-width:132px;white-space:normal;line-height:1.15}
-}
-@media(prefers-reduced-motion:reduce){
-  .orbit-ring::before,
-  .orbit-ring::after{animation:none!important}
-}
+
+
+
 </style>
 <style>
 /* =========================================================
@@ -3208,110 +2542,19 @@ header.is-scrolled{
    Sustituye el mapa abstracto por fotografías reales y textos
    derivados únicamente del contenido facilitado.
    ========================================================= */
-.service-showcase{
-  position:relative;
-  display:grid;
-  grid-template-columns:minmax(0,1.18fr) minmax(330px,.82fr);
-  min-height:470px;
-  margin-top:52px;
-  overflow:hidden;
-  border:1px solid #bcdce7;
-  border-radius:30px;
-  background:#052f47;
-  box-shadow:0 28px 72px rgba(3,52,73,.18);
-}
-.showcase-visual{
-  position:relative;
-  min-height:470px;
-  overflow:hidden;
-  background:#061f30;
-}
-.showcase-visual::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg,transparent 56%,rgba(3,34,50,.42)),
-    linear-gradient(180deg,transparent 54%,rgba(2,24,36,.84));
-}
-.showcase-visual img{
-  width:100%;
-  height:100%;
-  min-height:470px;
-  object-fit:cover;
-  filter:saturate(.88) contrast(1.04);
-  transform:scale(1.035);
-  transition:opacity .28s ease,transform .65s ease,filter .28s ease;
-}
-.showcase-visual.is-switching img{
-  opacity:.22;
-  filter:saturate(.4) blur(3px);
-  transform:scale(1.07);
-}
-.showcase-scan{
-  position:absolute;
-  z-index:3;
-  top:0;
-  bottom:0;
-  left:-10%;
-  width:2px;
-  background:#a3ecff;
-  box-shadow:0 0 16px 5px rgba(119,222,247,.4);
-  animation:showcaseScan 5.4s ease-in-out infinite;
-  pointer-events:none;
-}
-.showcase-scan::after{
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:52px;
-  height:100%;
-  background:linear-gradient(90deg,transparent,rgba(151,232,250,.13));
-}
-.showcase-corner{
-  position:absolute;
-  z-index:4;
-  width:54px;
-  height:54px;
-  pointer-events:none;
-}
-.showcase-corner.c1{
-  top:20px;
-  left:20px;
-  border-top:2px solid #9aeaff;
-  border-left:2px solid #9aeaff;
-}
-.showcase-corner.c2{
-  right:20px;
-  bottom:20px;
-  border-right:2px solid #9aeaff;
-  border-bottom:2px solid #9aeaff;
-}
-.showcase-caption{
-  position:absolute;
-  z-index:5;
-  left:30px;
-  bottom:28px;
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-  max-width:calc(100% - 60px);
-  color:#fff;
-}
-.showcase-caption small{
-  color:#9beaff;
-  font-family:'Sora',sans-serif;
-  font-size:.63rem;
-  font-weight:800;
-  letter-spacing:.15em;
-}
-.showcase-caption strong{
-  font-family:'Sora',sans-serif;
-  font-size:clamp(1.35rem,2.3vw,2.2rem);
-  line-height:1.1;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .showcase-panel{
   position:relative;
   display:flex;
@@ -3336,7 +2579,7 @@ header.is-scrolled{
 .showcase-panel>small{
   margin-bottom:10px;
   color:#9beaff;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.66rem;
   font-weight:800;
   letter-spacing:.16em;
@@ -3359,55 +2602,12 @@ header.is-scrolled{
   opacity:.2;
   transform:translateY(5px);
 }
-.showcase-tabs{
-  display:grid;
-  gap:8px;
-}
-.showcase-tabs button{
-  display:grid;
-  grid-template-columns:38px 1fr;
-  align-items:center;
-  gap:11px;
-  width:100%;
-  min-height:53px;
-  padding:8px 13px 8px 9px;
-  border:1px solid rgba(173,228,241,.2);
-  border-radius:13px;
-  color:rgba(240,252,255,.78);
-  background:rgba(255,255,255,.055);
-  font-family:'Sora',sans-serif;
-  font-size:.75rem;
-  font-weight:700;
-  text-align:left;
-  cursor:pointer;
-  transition:transform .22s ease,border-color .22s ease,background .22s ease,color .22s ease;
-}
-.showcase-tabs button span{
-  display:grid;
-  place-items:center;
-  width:38px;
-  height:35px;
-  border-radius:9px;
-  color:#8fe4f8;
-  background:rgba(111,215,239,.1);
-  font-size:.62rem;
-}
-.showcase-tabs button:hover,
-.showcase-tabs button:focus-visible{
-  border-color:rgba(159,234,251,.58);
-  color:#fff;
-  outline:none;
-  transform:translateX(4px);
-}
-.showcase-tabs button[aria-selected="true"]{
-  color:#073d57;
-  border-color:#9deaff;
-  background:#fff;
-}
-.showcase-tabs button[aria-selected="true"] span{
-  color:#073d57;
-  background:#dff7fd;
-}
+
+
+
+
+
+
 @keyframes showcaseScan{
   0%,12%{left:-10%;opacity:0}
   20%{opacity:1}
@@ -3415,94 +2615,44 @@ header.is-scrolled{
   88%,100%{left:110%;opacity:0}
 }
 @media(max-width:900px){
-  .service-showcase{
-    grid-template-columns:1fr;
-    min-height:0;
-    margin-top:34px;
-    border-radius:22px;
-  }
-  .showcase-visual{min-height:280px}
-  .showcase-visual img{min-height:280px;aspect-ratio:16/10}
+  
+  
+  
   .showcase-panel{padding:28px 20px 24px}
   .showcase-panel::before{top:21px;right:20px}
   .showcase-panel>p{min-height:0;margin-bottom:20px;font-size:.9rem}
-  .showcase-tabs button{min-height:49px}
-  .showcase-caption{left:20px;bottom:18px}
+  
+  
 }
-@media(prefers-reduced-motion:reduce){
-  .showcase-scan{animation:none!important;left:50%;opacity:.38}
-  .showcase-visual img{transform:none}
-}
+
 </style>
 <style>
 /* V13 · MARCO ESTABLE PARA LAS TRES FOTOGRAFÍAS */
 @media(min-width:901px){
-  .service-showcase{
-    height:470px;
-    min-height:470px;
-  }
-  .showcase-visual,
+  
+  
   .showcase-panel{
     height:470px;
     min-height:0;
   }
-  .showcase-visual img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    min-height:0;
-    aspect-ratio:auto;
-    object-fit:cover;
-  }
+  
 }
 @media(max-width:900px){
-  .service-showcase{height:auto}
-  .showcase-visual{
-    height:280px;
-    min-height:280px;
-  }
-  .showcase-visual img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%!important;
-    min-height:0!important;
-    aspect-ratio:auto!important;
-    object-fit:cover;
-  }
+  
+  
+  
   .showcase-panel{min-height:355px}
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ProfessionalService",
-  "name":"Termoelectra",
-  "telephone":"+34 651 09 73 93",
-  "email":"info@termoelectra.es",
-  "description":"Empresa de frío industrial, cámaras frigoríficas y refrigeración comercial con instalación, reparación, mantenimiento y SAT de frío industrial.",
-  "serviceType":[
-    "Instalación de frío industrial",
-    "Mantenimiento y reparación de frío industrial",
-    "Instalación y montaje de cámaras frigoríficas",
-    "Reparación y SAT de cámaras frigoríficas",
-    "Mantenimiento de cámaras frigoríficas",
-    "Instalación y mantenimiento de refrigeración comercial"
-  ]
-}
-</script>
 <link href="../assets/shared-header.css" rel="stylesheet"/>
 <style>
 /* ===== PATCH: ancho completo (feedback del cliente — diseño full width) ===== */
 :root{--page-max:min(1780px,96vw)}
 .wrap,
-.hero-inner,
 .carousel-head,
 .foot-grid,
 .foot-bottom{max-width:var(--page-max)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "name": "Termoelectra", "url": "https://termoelectra.es/refrigeracion", "telephone": "+34651097393", "email": "info@termoelectra.es", "description": "Empresa de frío industrial y refrigeración comercial. Instalación, reparación y mantenimiento de cámaras frigoríficas industriales y comerciales con SAT de frío industrial."}</script>
 <style>
 /* ===== PATCH 2: dinamismo, centrado de imágenes y sangrado a borde ===== */
 #scrollProgress{position:fixed;top:0;left:0;height:3px;width:0;z-index:1400;background:linear-gradient(90deg,#c22033,#0a8ac2);pointer-events:none}
@@ -3535,14 +2685,14 @@ header.is-scrolled{
   .gallery.reveal.in a:nth-child(7){transition-delay:.42s}
   .gallery.reveal.in a:nth-child(8){transition-delay:.49s}
 
-  .cert,.step{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
-  .cert:hover,.step:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(11,58,102,.16)}
+  .step{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .step:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(11,58,102,.16)}
 
-  .btn-primary{position:relative;overflow:hidden}
-  .btn-primary::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);transition:left .7s ease}
-  .btn-primary:hover::after{left:130%}
+  
+  
+  
 
-  .hero-title .hl{animation:hlGlow 5.5s ease-in-out infinite}
+  
   @keyframes hlGlow{0%,100%{text-shadow:0 0 0 rgba(120,220,255,0)}50%{text-shadow:0 0 26px rgba(120,220,255,.45)}}
 
   .slide .cap{transition:transform .5s ease}
@@ -3569,11 +2719,11 @@ header.is-scrolled{
 </style>
 <style>
 /* ===== PATCH 4: encuadres completos sin franjas blancas ===== */
-.hero-title .w:first-child{display:block}
-.hero-title{max-width:900px}
-.hero-title .w.hl{animation:wordUp .7s cubic-bezier(.2,.7,.2,1) forwards}
-.hero-title .w:nth-child(2){animation-delay:.3s}
-.hero-title .w:nth-child(3){animation-delay:.42s}
+
+
+
+
+
 
 .slide.fit-complete{isolation:isolate;background:#073e59}
 .slide.fit-complete::before{
@@ -3581,9 +2731,9 @@ header.is-scrolled{
   background-position:center;background-size:cover;background-repeat:no-repeat;
   filter:blur(20px) saturate(.75);opacity:.48;transform:scale(1.08);
 }
-.slide-industrial::before{background-image:url('../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp')}
-.slide-freezing::before{background-image:url('../imagenes-cliente-nuevas/n8-camara-congelacion.webp')}
-.slide-commercial::before{background-image:url('camara-comercial.webp')}
+.slide-industrial::before{background-image:url("../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp")}
+.slide-freezing::before{background-image:url("../imagenes-cliente-nuevas/n8-camara-congelacion.webp")}
+.slide-commercial::before{background-image:url("camara-comercial.webp")}
 .slide.fit-complete img{
   position:relative;z-index:1;display:block;width:100%;height:330px;
   padding:10px;object-fit:contain;filter:saturate(.94) contrast(1.03);
@@ -3614,7 +2764,7 @@ header.is-scrolled{
   background:#073e59;
 }
 @media(max-width:760px){
-  .hero-title{max-width:100%}
+  
   .slide.fit-complete img{height:150px;padding:6px}
   .slide.fit-complete:first-child img{height:210px}
   #comercial + .alt .gallery{columns:2 145px}
@@ -3631,8 +2781,8 @@ header.is-scrolled{
 .carousel-head .eyebrow-sec{justify-content:center}
 .carousel-head h2{max-width:940px;margin-inline:auto;font-size:clamp(2.3rem,4.6vw,4.2rem)}
 .carousel-head p{max-width:760px;margin-inline:auto}
-.hero-inner{max-width:900px;margin-inline:auto;text-align:center}
-.hero-btns{justify-content:center}
+
+
 .svc{gap:42px;margin-bottom:24px;grid-template-columns:minmax(0,1fr) minmax(340px,.82fr)}
 .svc.rev{grid-template-columns:minmax(340px,.82fr) minmax(0,1fr)}
 .svc-media,.svc-media.fit-complete{min-height:500px;margin:0!important;border:0;border-radius:24px;background:transparent!important;box-shadow:0 18px 48px rgba(5,49,74,.13)}
@@ -3661,9 +2811,9 @@ header.is-scrolled{
   display:block;width:auto;height:auto!important;margin:0;aspect-ratio:4/3;
   grid-column:auto!important;grid-row:auto!important;border:0;border-radius:20px;background:transparent!important;
 }
-#comercial + .alt .gallery a.g-wide{grid-column:auto!important;aspect-ratio:4/3}
+
 #comercial + .alt .gallery a img{width:100%;height:100%!important;object-fit:cover;background:transparent!important}
-#comercial + .alt .gallery a.g-wide img{object-position:center}
+
 #comercial + .alt .gallery.reveal a{opacity:1!important;transform:none!important}
 @media(max-width:1000px){
   .svc,.svc.rev{grid-template-columns:1fr 1fr;gap:28px}
@@ -3682,11 +2832,11 @@ header.is-scrolled{
   .svc-media img,.svc-media.fit-complete img{min-height:0}
   .svc-body{padding:28px 4px 10px}
   #comercial + .alt .gallery{grid-template-columns:1fr 1fr}
-  #comercial + .alt .gallery a.g-wide{grid-column:auto!important}
+  
 }
 @media(max-width:430px){
   #comercial + .alt .gallery{grid-template-columns:1fr}
-  #comercial + .alt .gallery a.g-wide{grid-column:auto!important}
+  
 }
 </style>
 <style>
@@ -3717,7 +2867,7 @@ header.is-scrolled{
   display:block;
   margin-bottom:8px;
   color:#0d97c2;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.64rem;
   font-weight:800;
   letter-spacing:.14em;
@@ -3770,7 +2920,7 @@ header.is-scrolled{
   display:block;
   margin-bottom:7px;
   color:#9beaff;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.62rem;
   font-weight:800;
   letter-spacing:.14em;
@@ -3806,7 +2956,7 @@ header.is-scrolled{
   display:block;
   margin-top:7px;
   color:rgba(241,251,255,.76);
-  font-family:'Lato',sans-serif;
+  font-family:"Lato",sans-serif;
   font-size:.78rem;
   font-weight:400;
   line-height:1.45;
@@ -3823,10 +2973,7 @@ header.is-scrolled{
   overflow:hidden;
   background:#fff!important;
 }
-.svc-media.media-mosaic.duo{
-  grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
-  grid-template-rows:minmax(0,1fr);
-}
+
 .svc-media.media-mosaic.media-stack{
   grid-template-columns:minmax(0,1fr);
   grid-template-rows:minmax(0,1.15fr) minmax(0,.85fr);
@@ -3903,7 +3050,7 @@ header.is-scrolled{
   border-radius:999px;
   color:#fff;
   background:#073e59;
-  font-family:'Sora',sans-serif;
+  font-family:"Sora",sans-serif;
   font-size:.82rem;
   font-weight:800;
   cursor:pointer;
@@ -3972,12 +3119,11 @@ header.is-scrolled{
   .carousel{padding-top:8px;padding-bottom:48px}
   .slide,.slide.fit-complete{aspect-ratio:16/11}
   .slide .cap{padding:62px 18px 16px}
-  .svc-media.media-mosaic,
-  .svc-media.media-mosaic.duo{
+  .svc-media.media-mosaic{
     grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
     grid-template-rows:repeat(2,minmax(0,1fr));
   }
-  .media-mosaic.duo figure:first-child{grid-row:1/-1}
+  
   .svc-media.media-mosaic.media-stack{
     grid-template-columns:minmax(0,1fr);
     grid-template-rows:minmax(0,1.15fr) minmax(0,.85fr);
@@ -4000,7 +3146,7 @@ header.is-scrolled{
 </style>
 <style>
 /* ===== AJUSTE SOLICITADO: servicios full width, zig-zag y CTA compacto ===== */
-.snow,.snow i{display:none!important}
+
 
 /* Frío industrial: texto a la izquierda y fotografía a la derecha, de borde a borde. */
 #industrial .svc{
@@ -4058,7 +3204,7 @@ header.is-scrolled{
 #contacto .compact-contact h2{margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.8rem)}
 #contacto .compact-contact p{margin:0;color:#d9eef5;font-size:.98rem}
 .compact-contact-form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end}
-.compact-field label{display:block;margin:0 0 7px;color:#e1f7fc;font-family:'Sora',sans-serif;font-size:.76rem;font-weight:700}
+.compact-field label{display:block;margin:0 0 7px;color:#e1f7fc;font-family:"Sora",sans-serif;font-size:.76rem;font-weight:700}
 .compact-field input{
   width:100%;height:52px;padding:0 15px;border:1px solid rgba(255,255,255,.4);
   border-radius:12px;background:#fff;color:var(--tinta);outline:none;font:inherit;
@@ -4066,7 +3212,7 @@ header.is-scrolled{
 .compact-field input:focus{border-color:#8ce6f7;box-shadow:0 0 0 4px rgba(123,220,242,.2)}
 .compact-submit{
   height:52px;padding:0 24px;border:0;border-radius:12px;
-  background:#fff;color:var(--azul);font-family:'Sora',sans-serif;font-weight:800;cursor:pointer;
+  background:#fff;color:var(--azul);font-family:"Sora",sans-serif;font-weight:800;cursor:pointer;
 }
 .compact-submit:hover{background:#dff7fc}
 
@@ -4097,7 +3243,7 @@ header.is-scrolled{
 <style>
 /* ===== AJUSTE 2: amplitud útil, menos espacios laterales y CTA compacto ===== */
 @media(min-width:1001px){
-  .nav,.hero-inner,.wrap,.carousel-head,.foot-grid,.foot-bottom{
+  .nav,.wrap,.carousel-head,.foot-grid,.foot-bottom{
     width:calc(100% - 64px)!important;max-width:1680px!important;margin-left:auto!important;margin-right:auto!important;
   }
   .wrap{padding-left:0!important;padding-right:0!important}
@@ -4145,13 +3291,13 @@ header.is-scrolled{
 @media(prefers-reduced-motion:reduce){.compact-contact::before,.compact-contact::after{animation:none!important}}
 
 @media(max-width:1000px){
-  .nav,.hero-inner,.wrap,.carousel-head,.foot-grid,.foot-bottom{width:calc(100% - 36px)!important;max-width:none!important}
+  .nav,.wrap,.carousel-head,.foot-grid,.foot-bottom{width:calc(100% - 36px)!important;max-width:none!important}
   #contacto>.wrap{width:calc(100% - 36px)!important}
   #contacto .compact-contact{padding:26px 92px 26px 26px!important;grid-template-columns:1fr!important}
   .compact-contact-form{grid-template-columns:1fr 1fr auto!important}
 }
 @media(max-width:760px){
-  .nav,.hero-inner,.wrap,.carousel-head,.foot-grid,.foot-bottom{width:calc(100% - 24px)!important}
+  .nav,.wrap,.carousel-head,.foot-grid,.foot-bottom{width:calc(100% - 24px)!important}
   .wrap{padding-left:0!important;padding-right:0!important}
   #contacto{padding:24px 0!important}
   #contacto>.wrap{width:calc(100% - 24px)!important;padding:0!important}
@@ -5036,15 +4182,15 @@ header.is-scrolled{
 :root{--content-wide:clamp(1180px,92vw,1640px);--safe-side:clamp(18px,3vw,54px)}
 html,body{max-width:100%;overflow-x:hidden}
 .unified-hero{min-height:clamp(690px,82vh,860px)}
-.unified-hero__inner,.unified-hero .shell,.unified-nav{
+.unified-hero__inner,.unified-hero .shell{
   width:min(var(--content-wide),calc(100% - (var(--safe-side) * 2)))!important;
   max-width:none!important;
 }
-.unified-hero__grid{gap:clamp(28px,4vw,72px)!important}
+
 .unified-hero h1{font-size:clamp(3.25rem,6.1vw,6.65rem)!important;line-height:.91!important;text-wrap:balance}
 .unified-hero__copy>p{max-width:760px!important;font-size:clamp(1rem,1.22vw,1.2rem)!important}
-.unified-hero__panel{width:min(100%,350px)!important;align-self:center!important}
-.unified-strip{width:min(var(--content-wide),calc(100% - (var(--safe-side) * 2)))!important;max-width:none!important}
+
+
 
 /* Contenedores: amplios pero legibles; desaparecen los vacíos excesivos */
 .shell,.wrap,.section>.shell,.carousel-head,.foot-grid,.foot-bottom{
@@ -5058,48 +4204,45 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Fotografías: proporción estable y sin deformaciones */
 img{image-rendering:auto}
-.service-card img,.area-card img,.detail-media img,.svc-media img,.slide img,.gallery img,.case-card img{
+.detail-media img,.svc-media img,.slide img,.gallery img{
   object-fit:cover;
 }
-.service-card,.detail-card,.svc-media,.slide,.gallery a{isolation:isolate}
+.detail-card,.svc-media,.slide,.gallery a{isolation:isolate}
 
 /* Tarjetas y bloques: sombras más sobrias y bordes consistentes */
-.service-card,.detail-card,.explorer,.contact-box,.cta-final,.unified-strip,.unified-hero__panel{
+.detail-card,.contact-box{
   box-shadow:0 18px 50px rgba(4,38,58,.12)!important;
 }
 
 /* Evita saltos o desbordes en textos largos y botones */
 h1,h2,h3,p,a,button,label{overflow-wrap:anywhere}
-.btn,.unified-btn,.nav-links a{white-space:nowrap}
+.nav-links a{white-space:nowrap}
 
 /* Formularios compactos: no cambia sus campos ni su función */
-.compact-contact,.contact-compact,.contact-box,.cta-final{
+.compact-contact,.contact-box{
   min-height:0!important;
 }
-.compact-contact__inner,.contact-compact__inner{
-  width:min(1480px,calc(100% - (var(--safe-side) * 2)))!important;
-  max-width:none!important;
-}
+
 
 /* Móvil y tablet */
 @media(max-width:1100px){
   .unified-hero{min-height:auto;padding-bottom:52px!important}
-  .unified-hero__grid{grid-template-columns:minmax(0,1fr) minmax(270px,320px)!important}
+  
   .unified-hero h1{font-size:clamp(3rem,7.2vw,5.2rem)!important}
 }
 @media(max-width:820px){
   :root{--safe-side:18px}
-  .unified-hero__grid{grid-template-columns:1fr!important}
-  .unified-hero__panel{width:100%!important;max-width:none!important}
+  
+  
   .unified-hero h1{font-size:clamp(2.65rem,12vw,4.5rem)!important}
-  .unified-strip{grid-template-columns:1fr 1fr!important}
+  
   .section{padding-block:68px}
-  .btn,.unified-btn{white-space:normal;text-align:center}
+  
 }
 @media(max-width:560px){
-  .unified-strip{grid-template-columns:1fr!important}
-  .unified-hero__actions,.hero-actions,.hero-btns,.btns{display:grid!important;grid-template-columns:1fr!important}
-  .unified-hero__actions a,.hero-actions a,.hero-btns a,.btns a{width:100%!important}
+  
+  .unified-hero__actions{display:grid!important;grid-template-columns:1fr!important}
+  .unified-hero__actions a{width:100%!important}
   .section{padding-block:56px}
 }
 
@@ -5113,7 +4256,7 @@ h1,h2,h3,p,a,button,label{overflow-wrap:anywhere}
 .slide{flex-basis:clamp(300px,31vw,520px)!important}
 .gallery{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 @media(max-width:900px){.svc{grid-template-columns:1fr!important}.svc.rev .svc-media{order:0!important}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:560px){.gallery{grid-template-columns:1fr!important}.g-big,.g-wide{grid-column:auto!important;grid-row:auto!important}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr!important}}
 </style><style id="client-v9-final">
 /* =========================================================
    AJUSTES VISIBLES SOLICITADOS POR CLIENTE · V9
@@ -7278,19 +6421,39 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
   }
 }
 </style>
+<!-- PENDIENTE DE DATOS DEL CLIENTE (Bernardo): para posicionar en el pack local de Google
+     hacen falta razón social, NIF, domicilio y horario reales. En cuanto los tengas, añade
+     dentro del nodo HVACBusiness de abajo (y en legal/aviso-legal.html):
+
+     "legalName": "Razón social S.L.",
+     "vatID": "B00000000",
+     "address": { "@type": "PostalAddress", "streetAddress": "Calle y número",
+                  "postalCode": "00000", "addressLocality": "Localidad",
+                  "addressRegion": "Provincia", "addressCountry": "ES" },
+     "geo": { "@type": "GeoCoordinates", "latitude": 0.000000, "longitude": 0.000000 },
+     "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification",
+       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+       "opens": "08:00", "closes": "18:00" }],
+     "sameAs": ["https://www.google.com/maps/place/...", "perfiles sociales si los hay"]
+
+     NO se han inventado estos valores: un domicilio falso en el schema perjudica el SEO local. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"HVACBusiness","@id":"https://termoelectra.es/#business","name":"Termoelectra","url":"https://termoelectra.es/","logo":{"@type":"ImageObject","@id":"https://termoelectra.es/#logo","url":"https://termoelectra.es/assets/logo-termoelectra.webp","width":483,"height":180},"image":"https://termoelectra.es/assets/og-termoelectra.jpg","telephone":"+34651097393","email":"info@termoelectra.es","priceRange":"$$","currenciesAccepted":"EUR","areaServed":{"@type":"Country","name":"España"},"contactPoint":[{"@type":"ContactPoint","telephone":"+34651097393","contactType":"customer service","areaServed":"ES","availableLanguage":["es"]}],"description":"Empresa de refrigeración y climatización industrial y comercial. Instalación, reparación y mantenimiento de frío industrial, cámaras frigoríficas y climatización comercial con servicio técnico.","knowsAbout":["Frío industrial","Cámaras frigoríficas","Refrigeración comercial","Climatización comercial","Aire acondicionado","Aerotermia","Servicio técnico de refrigeración"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación de frío industrial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación y montaje de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparación y SAT de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento de cámaras frigoríficas","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Instalación de climatización comercial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparación de climatización comercial","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento de climatización","provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"}}}]},{"@type":"WebSite","@id":"https://termoelectra.es/#website","url":"https://termoelectra.es/","name":"Termoelectra","inLanguage":"es-ES","publisher":{"@id":"https://termoelectra.es/#business"}},{"@type":"WebPage","@id":"https://termoelectra.es/refrigeracion/#webpage","url":"https://termoelectra.es/refrigeracion/","name":"Refrigeración Industrial y Comercial | Termoelectra","description":"Empresa de frío industrial, cámaras frigoríficas y refrigeración comercial con instalación, reparación, mantenimiento y SAT de frío industrial.","inLanguage":"es-ES","isPartOf":{"@id":"https://termoelectra.es/#website"},"about":{"@id":"https://termoelectra.es/#business"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://termoelectra.es/assets/og-refrigeracion.jpg"},"breadcrumb":{"@id":"https://termoelectra.es/refrigeracion/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://termoelectra.es/refrigeracion/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://termoelectra.es/"},{"@type":"ListItem","position":2,"name":"Refrigeración","item":"https://termoelectra.es/refrigeracion/"}]},{"@type":"Service","@id":"https://termoelectra.es/refrigeracion/#service","name":"Frío industrial y cámaras frigoríficas","serviceType":["Instalación de frío industrial","Mantenimiento y reparación de frío industrial","Instalación y montaje de cámaras frigoríficas","Reparación y SAT de cámaras frigoríficas","Mantenimiento de cámaras frigoríficas","Instalación y mantenimiento de refrigeración comercial"],"provider":{"@id":"https://termoelectra.es/#business"},"areaServed":{"@type":"Country","name":"España"},"description":"Empresa de frío industrial, cámaras frigoríficas y refrigeración comercial con instalación, reparación, mantenimiento y SAT de frío industrial."}]}</script>
+<style>@media (max-width:700px){.unified-hero--refrigeracion{--hero-image:url("hero-operarios-960w.webp")!important}}</style>
+<style>.skip-link{position:fixed;z-index:2000;left:12px;top:-100px;padding:12px 16px;background:#fff;color:#073b57;border-radius:10px;font-weight:800;transition:top .2s ease}.skip-link:focus{top:12px}</style>
 </head>
 <body class="te-refrigeracion">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="te-progress" aria-hidden="true"></div>
 <div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
 <header class="shared-header te-v11-header" id="siteHeader">
   <nav aria-label="Navegación principal" class="nav shared-nav te-v11-nav">
-    <a aria-label="Termoelectra, inicio" class="shared-brand te-v11-brand" href="../index.html">
+    <a aria-label="Termoelectra, inicio" class="shared-brand te-v11-brand" href="../">
       <img alt="Termoelectra" class="nav-logo shared-logo te-v11-logo" decoding="async" height="157" loading="eager" src="../assets/logo-termoelectra.webp" width="420"/>
     </a>
     <div class="nav-links shared-nav-links te-v11-navlinks" id="navLinks">
-      <a href="../index.html">home</a>
-      <a aria-current="page" class="is-current" href="./index.html">refrigeración</a>
-      <a href="../climatizacion/index.html">climatización</a>
+      <a href="../">home</a>
+      <a aria-current="page" class="is-current" href="./">refrigeración</a>
+      <a href="../climatizacion/">climatización</a>
       <a class="nav-cta shared-contact te-v11-contact" href="#contacto">contacto</a>
     </div>
     <button aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú" class="burger shared-menu te-v11-menu" id="burger" type="button"><span></span><span></span><span></span></button>
@@ -7299,7 +6462,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <nav class="pagenav" aria-label="Secciones de esta página"><div class="pagenav__inner"><a href="#industrial">Frío industrial</a><a href="#camaras">Cámaras</a><a href="#comercial">Comercial</a><a href="#contacto">Contacto</a></div><span class="pagenav__bar" aria-hidden="true"></span></nav>
 
 <div class="menu-overlay shared-menu-overlay" id="overlay"></div>
-<section aria-labelledby="hero-title" class="unified-hero unified-hero--refrigeracion" style="--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%">
+<section aria-labelledby="hero-title" class="unified-hero unified-hero--refrigeracion" style="--hero-image:url('../climatizacion/climatizacion-assets/climatizacion-interior.webp');--hero-position:center 42%" id="contenido">
 <div aria-hidden="true" class="unified-hero__flow"><i></i><i></i><i></i></div>
 <div aria-hidden="true" class="unified-hero__glow"></div>
 <div class="unified-hero__inner">
@@ -7352,10 +6515,10 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <p class="seo-detail reveal"><strong>Empresa de Frío Industrial:</strong> cada proyecto se revisa para concretar si requiere instalación de frío industrial, mantenimiento de frío industrial, reparación de frío industrial o atención del SAT de frío industrial. Así, el servicio queda vinculado a las características reales de cada sistema de refrigeración industrial.</p>
 </div>
 <div class="svc-media media-mosaic industrial-mosaic reveal d2">
-<figure><img alt="Equipos de una instalación de refrigeración industrial" decoding="async" height="900" loading="eager" src="../assets/industrial-real.webp" width="1280"/></figure>
-<figure><img alt="Sala de máquinas de refrigeración industrial del archivo de Termoelectra" decoding="async" height="1600" loading="lazy" src="archivo-sala-maquinas-azul.webp" width="1200"/></figure>
-<figure><img alt="Unidades condensadoras de refrigeración instaladas en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-condensadores-cubierta.webp" width="1600"/></figure>
-<figure><img alt="Bombas y tuberías de una instalación de frío industrial" decoding="async" height="1200" loading="lazy" src="archivo-bombas-industriales.webp" width="1600"/></figure>
+<figure><img alt="Equipos de una instalación de refrigeración industrial" decoding="async" height="900" loading="eager" src="../assets/industrial-real.webp" srcset="../assets/industrial-real-400w.webp 400w, ../assets/industrial-real-640w.webp 640w, ../assets/industrial-real-960w.webp 960w, ../assets/industrial-real.webp 1280w" sizes="(max-width: 700px) 97vw, 747px" width="1280"/></figure>
+<figure><img alt="Sala de máquinas de refrigeración industrial del archivo de Termoelectra" decoding="async" height="1600" loading="lazy" src="archivo-sala-maquinas-azul.webp" srcset="archivo-sala-maquinas-azul-400w.webp 400w, archivo-sala-maquinas-azul-640w.webp 640w, archivo-sala-maquinas-azul-960w.webp 960w, archivo-sala-maquinas-azul.webp 1200w" sizes="(max-width: 700px) 51vw, 407px" width="1200"/></figure>
+<figure><img alt="Unidades condensadoras de refrigeración instaladas en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-condensadores-cubierta.webp" srcset="archivo-condensadores-cubierta-400w.webp 400w, archivo-condensadores-cubierta-640w.webp 640w, archivo-condensadores-cubierta.webp 1600w" sizes="(max-width: 700px) 43vw, 333px" width="1600"/></figure>
+<figure><img alt="Bombas y tuberías de una instalación de frío industrial" decoding="async" height="1200" loading="lazy" src="archivo-bombas-industriales.webp" srcset="archivo-bombas-industriales-400w.webp 400w, archivo-bombas-industriales-640w.webp 640w, archivo-bombas-industriales.webp 1600w" sizes="(max-width: 700px) 43vw, 333px" width="1600"/></figure>
 <span class="tag">Refrigeración Industrial</span>
 </div>
 </div>
@@ -7380,7 +6543,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 </div>
 <div class="cold-system-media" data-active="camara" id="coldSystemMedia">
-<img alt="Representación visual del recorrido de un sistema frigorífico" decoding="async" height="900" loading="lazy" src="ciclo-frigorifico-3d.webp" width="1600"/>
+<img alt="Representación visual del recorrido de un sistema frigorífico" decoding="async" height="900" loading="lazy" src="ciclo-frigorifico-3d.webp" srcset="ciclo-frigorifico-3d-400w.webp 400w, ciclo-frigorifico-3d-640w.webp 640w, ciclo-frigorifico-3d-960w.webp 960w, ciclo-frigorifico-3d-1280w.webp 1280w, ciclo-frigorifico-3d.webp 1600w" sizes="(max-width: 700px) 89vw, 789px" width="1600"/>
 <button aria-label="Seleccionar cámara" class="cold-node n1 is-active" data-system-step="camara" type="button"><span>Cámara</span></button>
 <button aria-label="Seleccionar compresión" class="cold-node n2" data-system-step="compresion" type="button"><span>Compresión</span></button>
 <button aria-label="Seleccionar condensación" class="cold-node n3" data-system-step="condensacion" type="button"><span>Condensación</span></button>
@@ -7415,9 +6578,9 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 <div class="carousel">
 <div class="track" id="track">
-<div class="slide fit-complete slide-industrial"><img alt="Técnico revisando equipos dentro de una cámara frigorífica industrial" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" width="1600"/><span class="cap"><small>Industrial</small><strong>Cámara Frigorífica Industrial</strong><span>Instalación y montaje de cámaras frigoríficas industriales.</span></span></div>
-<div class="slide fit-complete slide-freezing"><img alt="Interior de una cámara de congelación con estanterías y evaporador" decoding="async" height="1123" loading="lazy" src="../imagenes-cliente-nuevas/n8-camara-congelacion.webp" width="1600"/><span class="cap"><small>Congelación</small><strong>Cámara de Congelación</strong><span>Solución incluida dentro de los proyectos de cámaras frigoríficas.</span></span></div>
-<div class="slide fit-complete slide-commercial"><img alt="Cámara frigorífica comercial con puertas de vidrio" decoding="async" height="1120" loading="lazy" src="camara-comercial.webp" width="1600"/><span class="cap"><small>Comercial</small><strong>Cámara Frigorífica Comercial</strong><span>Instalación de cámaras frigoríficas para espacios comerciales.</span></span></div>
+<div class="slide fit-complete slide-industrial"><img alt="Técnico revisando equipos dentro de una cámara frigorífica industrial" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" srcset="../imagenes-cliente-nuevas/n3-tecnico-hosteleria-400w.webp 400w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-640w.webp 640w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-960w.webp 960w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-1280w.webp 1280w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp 1600w" sizes="(max-width: 700px) 94vw, 424px" width="1600"/><span class="cap"><small>Industrial</small><strong>Cámara Frigorífica Industrial</strong><span>Instalación y montaje de cámaras frigoríficas industriales.</span></span></div>
+<div class="slide fit-complete slide-freezing"><img alt="Interior de una cámara de congelación con estanterías y evaporador" decoding="async" height="1123" loading="lazy" src="../imagenes-cliente-nuevas/n8-camara-congelacion.webp" srcset="../imagenes-cliente-nuevas/n8-camara-congelacion-400w.webp 400w, ../imagenes-cliente-nuevas/n8-camara-congelacion-640w.webp 640w, ../imagenes-cliente-nuevas/n8-camara-congelacion-960w.webp 960w, ../imagenes-cliente-nuevas/n8-camara-congelacion-1280w.webp 1280w, ../imagenes-cliente-nuevas/n8-camara-congelacion.webp 1600w" sizes="(max-width: 700px) 87vw, 424px" width="1600"/><span class="cap"><small>Congelación</small><strong>Cámara de Congelación</strong><span>Solución incluida dentro de los proyectos de cámaras frigoríficas.</span></span></div>
+<div class="slide fit-complete slide-commercial"><img alt="Cámara frigorífica comercial con puertas de vidrio" decoding="async" height="1120" loading="lazy" src="camara-comercial.webp" srcset="camara-comercial-400w.webp 400w, camara-comercial-640w.webp 640w, camara-comercial-960w.webp 960w, camara-comercial-1280w.webp 1280w, camara-comercial.webp 1600w" sizes="(max-width: 700px) 87vw, 424px" width="1600"/><span class="cap"><small>Comercial</small><strong>Cámara Frigorífica Comercial</strong><span>Instalación de cámaras frigoríficas para espacios comerciales.</span></span></div>
 </div>
 </div>
 </section>
@@ -7426,8 +6589,8 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <div class="svc reveal" id="instalacion-camaras-frigorificas">
 <div class="svc-media fit-complete media-mosaic media-triptych">
 <figure><img alt="Cámara frigorífica industrial con estanterías" decoding="async" height="314" loading="lazy" src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" width="600"/></figure>
-<figure><img alt="Técnico realizando una revisión en una instalación de refrigeración industrial" decoding="async" height="1001" loading="lazy" src="../assets/refrigeracion-instalacion-tecnica.webp" width="1600"/></figure>
-<figure><img alt="Evaporador de una instalación frigorífica industrial" decoding="async" height="1600" loading="lazy" src="archivo-evaporador-industrial.webp" width="1200"/></figure>
+<figure><img alt="Técnico realizando una revisión en una instalación de refrigeración industrial" decoding="async" height="1001" loading="lazy" src="../assets/refrigeracion-instalacion-tecnica.webp" srcset="../assets/refrigeracion-instalacion-tecnica-400w.webp 400w, ../assets/refrigeracion-instalacion-tecnica-640w.webp 640w, ../assets/refrigeracion-instalacion-tecnica.webp 1600w" sizes="(max-width: 700px) 48vw, 340px" width="1600"/></figure>
+<figure><img alt="Evaporador de una instalación frigorífica industrial" decoding="async" height="1600" loading="lazy" src="archivo-evaporador-industrial.webp" srcset="archivo-evaporador-industrial-400w.webp 400w, archivo-evaporador-industrial-640w.webp 640w, archivo-evaporador-industrial.webp 1200w" sizes="(max-width: 700px) 48vw, 340px" width="1200"/></figure>
 <span aria-hidden="true" class="media-index">01</span>
 <span aria-hidden="true" class="media-scan"></span>
 <span class="tag">Instalación de cámaras frigoríficas</span>
@@ -7449,9 +6612,9 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 <div class="svc rev reveal" id="reparacion-camaras-frigorificas">
 <div class="svc-media fit-complete media-mosaic media-triptych">
-<figure><img alt="Sala de máquinas de una instalación de refrigeración" decoding="async" height="1050" loading="lazy" src="sala-maquinas.webp" width="1400"/></figure>
-<figure><img alt="Técnico de Termoelectra reparando un equipo de refrigeración profesional" decoding="async" height="1920" loading="lazy" src="camara-industrial.webp" width="1080"/></figure>
-<figure><img alt="Herramientas y equipos para servicio técnico de refrigeración" decoding="async" height="1600" loading="lazy" src="archivo-sat-herramientas.webp" width="960"/></figure>
+<figure><img alt="Sala de máquinas de una instalación de refrigeración" decoding="async" height="1050" loading="lazy" src="sala-maquinas.webp" srcset="sala-maquinas-400w.webp 400w, sala-maquinas-640w.webp 640w, sala-maquinas-960w.webp 960w, sala-maquinas-1280w.webp 1280w, sala-maquinas.webp 1400w" sizes="(max-width: 700px) 97vw, 686px" width="1400"/></figure>
+<figure><img alt="Técnico de Termoelectra reparando un equipo de refrigeración profesional" decoding="async" height="1920" loading="lazy" src="camara-industrial.webp" srcset="camara-industrial-400w.webp 400w, camara-industrial-640w.webp 640w, camara-industrial.webp 1065w" sizes="(max-width: 700px) 44vw, 340px" width="1080"/></figure>
+<figure><img alt="Herramientas y equipos para servicio técnico de refrigeración" decoding="async" height="1600" loading="lazy" src="archivo-sat-herramientas.webp" srcset="archivo-sat-herramientas-400w.webp 400w, archivo-sat-herramientas-640w.webp 640w, archivo-sat-herramientas.webp 960w" sizes="(max-width: 700px) 44vw, 340px" width="960"/></figure>
 <span aria-hidden="true" class="media-index">02</span>
 <span aria-hidden="true" class="media-scan"></span>
 <span class="tag">Servicio técnico de cámara frigorífica</span>
@@ -7476,9 +6639,9 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 <div class="svc reveal" id="mantenimiento-camaras-frigorificas">
 <div class="svc-media fit-complete media-mosaic media-triptych">
-<figure><img alt="Panel de control de una instalación frigorífica" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" width="1600"/></figure>
-<figure><img alt="Mantenimiento preventivo de cámaras de refrigeración" decoding="async" height="1600" loading="lazy" src="mantenimiento.webp" width="1200"/></figure>
-<figure><img alt="Equipos y herramientas utilizados en el servicio técnico de refrigeración" decoding="async" height="2000" loading="lazy" src="sat-reparacion.webp" width="1200"/></figure>
+<figure><img alt="Panel de control de una instalación frigorífica" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" srcset="archivo-control-refrigeracion-400w.webp 400w, archivo-control-refrigeracion-640w.webp 640w, archivo-control-refrigeracion-960w.webp 960w, archivo-control-refrigeracion-1280w.webp 1280w, archivo-control-refrigeracion.webp 1600w" sizes="(max-width: 700px) 97vw, 686px" width="1600"/></figure>
+<figure><img alt="Mantenimiento preventivo de cámaras de refrigeración" decoding="async" height="1600" loading="lazy" src="mantenimiento.webp" srcset="mantenimiento-400w.webp 400w, mantenimiento-640w.webp 640w, mantenimiento.webp 1200w" sizes="(max-width: 700px) 48vw, 340px" width="1200"/></figure>
+<figure><img alt="Equipos y herramientas utilizados en el servicio técnico de refrigeración" decoding="async" height="2000" loading="lazy" src="sat-reparacion.webp" srcset="sat-reparacion-400w.webp 400w, sat-reparacion-640w.webp 640w, sat-reparacion.webp 1200w" sizes="(max-width: 700px) 48vw, 340px" width="1200"/></figure>
 <span aria-hidden="true" class="media-index">03</span>
 <span aria-hidden="true" class="media-scan"></span>
 <span class="tag">Mantenimiento preventivo y correctivo</span>
@@ -7503,7 +6666,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <div class="wrap">
 <div class="svc rev">
 <div class="svc-media media-mosaic media-stack reveal">
-<figure><img alt="Cámara frigorífica comercial con puertas de vidrio instalada por Termoelectra" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" width="1600"/></figure>
+<figure><img alt="Cámara frigorífica comercial con puertas de vidrio instalada por Termoelectra" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" srcset="../imagenes-cliente-nuevas/n4-camara-comercial-real-400w.webp 400w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-640w.webp 640w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-960w.webp 960w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-1280w.webp 1280w, ../imagenes-cliente-nuevas/n4-camara-comercial-real.webp 1600w" sizes="(max-width: 700px) 96vw, 658px" width="1600"/></figure>
 <figure><img alt="Instalación de refrigeración con seguimiento técnico" decoding="async" height="314" loading="lazy" src="galeria-tablet.webp" width="600"/></figure>
 <span class="tag">Equipos de Refrigeración Comercial</span>
 </div>
@@ -7529,22 +6692,22 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <h2 class="sec-title reveal d1">Nuestro Equipo de Refrigeración y Frío Industrial</h2>
 <p class="sec-lead reveal d2">Así trabaja nuestro equipo técnico en instalaciones de Refrigeración, Frío Industrial y Cámaras Frigoríficas. Haz clic en cualquier imagen para ampliarla.</p>
 <div class="gallery reveal" id="galleryWork">
-<a class="g-portrait" data-lb="tecnica-real.webp"><img alt="Técnica de Termoelectra realizando un servicio de mantenimiento en un restaurante" decoding="async" height="1604" loading="lazy" src="tecnica-real.webp" width="1200"/></a>
-<a class="g-tall" data-lb="galeria-condensadores.webp"><img alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" decoding="async" height="1785" loading="lazy" src="galeria-condensadores.webp" width="1000"/></a>
-<a class="g-square" data-lb="galeria-valvulas.webp"><img alt="Técnico de Termoelectra en un almacén frigorífico industrial" decoding="async" height="1100" loading="lazy" src="galeria-valvulas.webp" width="1100"/></a>
+<a class="g-portrait" data-lb="tecnica-real.webp"><img alt="Técnica de Termoelectra realizando un servicio de mantenimiento en un restaurante" decoding="async" height="1604" loading="lazy" src="tecnica-real.webp" srcset="tecnica-real-400w.webp 400w, tecnica-real-640w.webp 640w, tecnica-real-960w.webp 960w, tecnica-real.webp 1200w" sizes="(max-width: 700px) 94vw, 334px" width="1200"/></a>
+<a class="g-tall" data-lb="galeria-condensadores.webp"><img alt="Técnico de Termoelectra revisando unidades condensadoras en cubierta" decoding="async" height="1785" loading="lazy" src="galeria-condensadores.webp" srcset="galeria-condensadores-400w.webp 400w, galeria-condensadores-640w.webp 640w, galeria-condensadores.webp 1000w" sizes="(max-width: 700px) 94vw, 334px" width="1000"/></a>
+<a class="g-square" data-lb="galeria-valvulas.webp"><img alt="Técnico de Termoelectra en un almacén frigorífico industrial" decoding="async" height="1100" loading="lazy" src="galeria-valvulas.webp" srcset="galeria-valvulas-400w.webp 400w, galeria-valvulas-640w.webp 640w, galeria-valvulas-960w.webp 960w, galeria-valvulas.webp 1100w" sizes="(max-width: 700px) 94vw, 334px" width="1100"/></a>
 <a class="g-landscape-wide" data-lb="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp"><img alt="Cámara frigorífica industrial con estanterías y control técnico" decoding="async" height="314" loading="lazy" src="../imagenes-cliente-nuevas/n7-camara-industrial-pallets.webp" width="600"/></a>
-<a class="g-portrait" data-lb="galeria-revision-tecnica.webp"><img alt="Técnicos de Termoelectra revisando el panel de control de una instalación" decoding="async" height="1500" loading="lazy" src="galeria-revision-tecnica.webp" width="1000"/></a>
-<a class="g-square" data-lb="../imagenes-cliente-nuevas/n1-camara-nave.webp"><img alt="Técnico de Termoelectra interviniendo en un equipo de refrigeración de una nave" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n1-camara-nave.webp" width="1600"/></a>
-<a class="g-landscape" data-lb="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp"><img alt="Cámara frigorífica comercial con puertas de vidrio" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" width="1600"/></a>
-<a class="g-square" data-lb="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp"><img alt="Técnico de Termoelectra comprobando una cámara frigorífica industrial" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape-wide" data-lb="equipo-termoelectra.webp"><img alt="Equipo técnico de Termoelectra" decoding="async" height="788" loading="lazy" src="equipo-termoelectra.webp" width="1400"/></a>
-<a class="gallery-extra g-portrait" data-lb="archivo-sala-maquinas-azul.webp"><img alt="Sala de máquinas de refrigeración industrial" decoding="async" height="1600" loading="lazy" src="archivo-sala-maquinas-azul.webp" width="1200"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-condensadores-cubierta.webp"><img alt="Condensadores de refrigeración instalados en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-condensadores-cubierta.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-bombas-industriales.webp"><img alt="Bombas y tuberías de una instalación industrial" decoding="async" height="1200" loading="lazy" src="archivo-bombas-industriales.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-conductos-cubierta.webp"><img alt="Conductos técnicos instalados en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-conductos-cubierta.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-tuberias-industriales.webp"><img alt="Tuberías aisladas de una instalación frigorífica industrial" decoding="async" height="1200" loading="lazy" src="archivo-tuberias-industriales.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-unidad-industrial.webp"><img alt="Unidad de refrigeración industrial del archivo de Termoelectra" decoding="async" height="1200" loading="lazy" src="archivo-unidad-industrial.webp" width="1600"/></a>
-<a class="gallery-extra g-landscape" data-lb="archivo-control-refrigeracion.webp"><img alt="Panel de control de una instalación de refrigeración" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" width="1600"/></a>
+<a class="g-portrait" data-lb="galeria-revision-tecnica.webp"><img alt="Técnicos de Termoelectra revisando el panel de control de una instalación" decoding="async" height="1500" loading="lazy" src="galeria-revision-tecnica.webp" srcset="galeria-revision-tecnica-400w.webp 400w, galeria-revision-tecnica-640w.webp 640w, galeria-revision-tecnica.webp 1000w" sizes="(max-width: 700px) 94vw, 334px" width="1000"/></a>
+<a class="g-square" data-lb="../imagenes-cliente-nuevas/n1-camara-nave.webp"><img alt="Técnico de Termoelectra interviniendo en un equipo de refrigeración de una nave" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n1-camara-nave.webp" srcset="../imagenes-cliente-nuevas/n1-camara-nave-400w.webp 400w, ../imagenes-cliente-nuevas/n1-camara-nave-640w.webp 640w, ../imagenes-cliente-nuevas/n1-camara-nave-960w.webp 960w, ../imagenes-cliente-nuevas/n1-camara-nave-1280w.webp 1280w, ../imagenes-cliente-nuevas/n1-camara-nave.webp 1600w" sizes="(max-width: 700px) 94vw, 334px" width="1600"/></a>
+<a class="g-landscape" data-lb="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp"><img alt="Cámara frigorífica comercial con puertas de vidrio" decoding="async" height="1120" loading="lazy" src="../imagenes-cliente-nuevas/n4-camara-comercial-real.webp" srcset="../imagenes-cliente-nuevas/n4-camara-comercial-real-400w.webp 400w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-640w.webp 640w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-960w.webp 960w, ../imagenes-cliente-nuevas/n4-camara-comercial-real-1280w.webp 1280w, ../imagenes-cliente-nuevas/n4-camara-comercial-real.webp 1600w" sizes="(max-width: 700px) 96vw, 658px" width="1600"/></a>
+<a class="g-square" data-lb="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp"><img alt="Técnico de Termoelectra comprobando una cámara frigorífica industrial" decoding="async" height="1600" loading="lazy" src="../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp" srcset="../imagenes-cliente-nuevas/n3-tecnico-hosteleria-400w.webp 400w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-640w.webp 640w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-960w.webp 960w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria-1280w.webp 1280w, ../imagenes-cliente-nuevas/n3-tecnico-hosteleria.webp 1600w" sizes="(max-width: 700px) 94vw, 424px" width="1600"/></a>
+<a class="gallery-extra g-landscape-wide" data-lb="equipo-termoelectra.webp"><img alt="Equipo técnico de Termoelectra" decoding="async" height="788" loading="lazy" src="equipo-termoelectra.webp" srcset="equipo-termoelectra-400w.webp 400w, equipo-termoelectra-640w.webp 640w, equipo-termoelectra-960w.webp 960w, equipo-termoelectra-1280w.webp 1280w, equipo-termoelectra.webp 1400w" sizes="(max-width: 700px) 97vw, 700px" width="1400"/></a>
+<a class="gallery-extra g-portrait" data-lb="archivo-sala-maquinas-azul.webp"><img alt="Sala de máquinas de refrigeración industrial" decoding="async" height="1600" loading="lazy" src="archivo-sala-maquinas-azul.webp" srcset="archivo-sala-maquinas-azul-400w.webp 400w, archivo-sala-maquinas-azul-640w.webp 640w, archivo-sala-maquinas-azul-960w.webp 960w, archivo-sala-maquinas-azul.webp 1200w" sizes="(max-width: 700px) 51vw, 407px" width="1200"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-condensadores-cubierta.webp"><img alt="Condensadores de refrigeración instalados en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-condensadores-cubierta.webp" srcset="archivo-condensadores-cubierta-400w.webp 400w, archivo-condensadores-cubierta-640w.webp 640w, archivo-condensadores-cubierta.webp 1600w" sizes="(max-width: 700px) 43vw, 333px" width="1600"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-bombas-industriales.webp"><img alt="Bombas y tuberías de una instalación industrial" decoding="async" height="1200" loading="lazy" src="archivo-bombas-industriales.webp" srcset="archivo-bombas-industriales-400w.webp 400w, archivo-bombas-industriales-640w.webp 640w, archivo-bombas-industriales.webp 1600w" sizes="(max-width: 700px) 43vw, 333px" width="1600"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-conductos-cubierta.webp"><img alt="Conductos técnicos instalados en cubierta" decoding="async" height="1200" loading="lazy" src="archivo-conductos-cubierta.webp" srcset="archivo-conductos-cubierta-400w.webp 400w, archivo-conductos-cubierta-640w.webp 640w, archivo-conductos-cubierta-960w.webp 960w, archivo-conductos-cubierta-1280w.webp 1280w, archivo-conductos-cubierta.webp 1600w" sizes="(max-width: 700px) 97vw, 700px" width="1600"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-tuberias-industriales.webp"><img alt="Tuberías aisladas de una instalación frigorífica industrial" decoding="async" height="1200" loading="lazy" src="archivo-tuberias-industriales.webp" srcset="archivo-tuberias-industriales-400w.webp 400w, archivo-tuberias-industriales-640w.webp 640w, archivo-tuberias-industriales-960w.webp 960w, archivo-tuberias-industriales-1280w.webp 1280w, archivo-tuberias-industriales.webp 1600w" sizes="(max-width: 700px) 97vw, 700px" width="1600"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-unidad-industrial.webp"><img alt="Unidad de refrigeración industrial del archivo de Termoelectra" decoding="async" height="1200" loading="lazy" src="archivo-unidad-industrial.webp" srcset="archivo-unidad-industrial-400w.webp 400w, archivo-unidad-industrial-640w.webp 640w, archivo-unidad-industrial-960w.webp 960w, archivo-unidad-industrial-1280w.webp 1280w, archivo-unidad-industrial.webp 1600w" sizes="(max-width: 700px) 97vw, 700px" width="1600"/></a>
+<a class="gallery-extra g-landscape" data-lb="archivo-control-refrigeracion.webp"><img alt="Panel de control de una instalación de refrigeración" decoding="async" height="1200" loading="lazy" src="archivo-control-refrigeracion.webp" srcset="archivo-control-refrigeracion-400w.webp 400w, archivo-control-refrigeracion-640w.webp 640w, archivo-control-refrigeracion-960w.webp 960w, archivo-control-refrigeracion-1280w.webp 1280w, archivo-control-refrigeracion.webp 1600w" sizes="(max-width: 700px) 97vw, 686px" width="1600"/></a>
 </div>
 <button aria-controls="galleryWork" aria-expanded="false" class="gallery-toggle" id="galleryToggle" type="button">Ver más fotografías</button>
 </div>
@@ -7566,7 +6729,12 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <label for="cf-tel">Teléfono</label>
 <input autocomplete="tel" id="cf-tel" inputmode="tel" name="telefono" placeholder="Teléfono" required="" type="tel"/>
 </div>
+<div class="te-consent">
+<input id="refrigerationContactFormConsent" name="consentimiento" required="" type="checkbox"/>
+<label for="refrigerationContactFormConsent">He leído y acepto la <a href="../legal/privacidad.html" rel="noopener" target="_blank">Política de Privacidad</a> y autorizo el tratamiento de mis datos para recibir respuesta a mi consulta.</label>
+</div>
 <button class="compact-submit" id="cfSend" type="submit">Enviar</button>
+<p aria-live="polite" class="te-form-status" id="refrigerationContactFormStatus" role="status"></p>
 </form>
 <div aria-hidden="true" class="contact-motion">
 <span class="motion-stream stream-one"></span>
@@ -7582,7 +6750,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <footer>
 <div class="foot-grid">
 <div>
-<img alt="Termoelectra" class="foot-logo-real" decoding="async" height="157" loading="eager" src="footer-logo.webp" width="420"/>
+<img alt="Termoelectra" class="foot-logo-real" decoding="async" height="157" loading="eager" src="../assets/logo-termoelectra.webp" width="420"/>
 <p>Servicios de refrigeración, frío industrial y climatización. Instalación, reparación y mantenimiento con servicio técnico.</p>
 </div>
 <div>
@@ -7599,15 +6767,15 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <ul>
 <li><a href="mailto:info@termoelectra.es">info@termoelectra.es</a></li>
 <li>Disponibilidad según consulta</li>
-<li><a href="tel:651097393">651 09 73 93</a></li>
+<li><a href="tel:+34651097393">651 09 73 93</a></li>
 <li><a class="foot-wa" href="https://wa.me/34651097393"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Enviar WhatsApp</a></li>
 </ul>
 </div>
 </div>
-<div class="foot-bottom">© 2025 Termoelectra Refrigeración · Aviso Legal · Política de Cookies · Política de Privacidad</div>
+<div class="foot-bottom">© 2026 Termoelectra Refrigeración · <a href="../legal/aviso-legal.html">Aviso Legal</a> · <a href="../legal/cookies.html">Política de Cookies</a> · <a href="../legal/privacidad.html">Política de Privacidad</a></div>
 </footer>
 <div aria-label="Acciones rápidas" class="mobile-actions">
-<a class="mobile-call" href="tel:651097393">
+<a class="mobile-call" href="tel:+34651097393">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"></path></svg>
     Llamar
   </a>
@@ -7619,7 +6787,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 <div aria-label="Galería de proyectos" aria-modal="true" class="lb" id="lb" role="dialog">
 <button aria-label="Cerrar imagen" class="lb-close" id="lbClose">×</button>
 <button class="lb-nav lb-prev" id="lbPrev">‹</button>
-<img alt="" decoding="async" id="lbImg" src=""/>
+<img alt="" decoding="async" id="lbImg" loading="lazy" src=""/>
 <button class="lb-nav lb-next" id="lbNext">›</button>
 <div aria-live="polite" class="lb-meta">
 <span class="lb-count" id="lbCount"></span>
@@ -7627,6 +6795,7 @@ html:not(.te-motion-ok) .reveal,html:not(.te-motion-ok) .te-motion-item{opacity:
 </div>
 </div>
 <script>
+
 const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks'),overlay=document.getElementById('overlay');
 function toggleMenu(open){
   navLinks.classList.toggle('open',open);
@@ -7642,8 +6811,8 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleM
 const pageHeader=document.querySelector('header');
 const scrollProgress=document.getElementById('scrollProgress');
 const heroEl=document.querySelector('.unified-hero');
-const homeNav=navLinks.querySelector('a[href="../index.html"]');
-const refrigerationNav=navLinks.querySelector('a[href="./index.html"]');
+const homeNav=navLinks.querySelector('a[href="../"]');
+const refrigerationNav=navLinks.querySelector('a[href="./"]');
 const contactNav=navLinks.querySelector('a[href="#contacto"]');
 const industrialSection=document.getElementById('industrial');
 const contactSection=document.getElementById('contacto');
@@ -7905,17 +7074,6 @@ document.querySelectorAll('.step-toggle').forEach(toggle=>{
 
 // Formulario compacto -> WhatsApp
 const WA_NUM='34651097393';
-document.getElementById('refrigerationContactForm').addEventListener('submit',event=>{
-  event.preventDefault();
-  const n=document.getElementById('cf-nombre').value.trim();
-  const t=document.getElementById('cf-tel').value.trim();
-  if(!n||!t){alert('Por favor indica tu nombre y teléfono.');return}
-  const msg=`Hola Termoelectra, quiero solicitar información sobre refrigeración.
-
-Nombre: ${n}
-Teléfono: ${t}`;
-  window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank','noopener');
-});
 
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
 const lbCount=document.getElementById('lbCount'),lbCaption=document.getElementById('lbCaption');
@@ -7930,7 +7088,7 @@ items.forEach((it,i)=>{
 });
 function openLb(){
   const sourceImage=items[idx].querySelector('img');
-  const sourceUrl=sourceImage?.currentSrc||sourceImage?.src||items[idx].dataset.lb;
+  const sourceUrl=items[idx].dataset.lb||sourceImage?.getAttribute('src')||sourceImage?.currentSrc;
   lbImg.removeAttribute('width');
   lbImg.removeAttribute('height');
   lbImg.src=sourceUrl;
@@ -7941,9 +7099,9 @@ function openLb(){
   document.body.style.overflow='hidden';
 }
 function closeLb(){lb.classList.remove('on');document.body.style.overflow=''}
-document.getElementById('lbClose').addEventListener('click',closeLb);
-document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();idx=(idx+1)%items.length;openLb()});
-document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();idx=(idx-1+items.length)%items.length;openLb()});
+document.getElementById('lbClose')?.addEventListener('click',closeLb);
+document.getElementById('lbNext')?.addEventListener('click',e=>{e.stopPropagation();idx=(idx+1)%items.length;openLb()});
+document.getElementById('lbPrev')?.addEventListener('click',e=>{e.stopPropagation();idx=(idx-1+items.length)%items.length;openLb()});
 lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
 addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight'){idx=(idx+1)%items.length;openLb()}if(e.key==='ArrowLeft'){idx=(idx-1+items.length)%items.length;openLb()}});
 
@@ -8233,5 +7391,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   [].slice.call(document.querySelectorAll('.te-open,.te-w,.te-dim')).forEach(unclip);
 })();
 </script>
+<script defer="" src="../assets/te-contact.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){window.TEContact&&window.TEContact.init({form:"refrigerationContactForm",name:"cf-nombre",phone:"cf-tel",ctx:" sobre refrigeración"});});</script>
 </body>
 </html>
