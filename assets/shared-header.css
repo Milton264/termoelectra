@@ -403,3 +403,67 @@
     @keyframes te-progress-grow{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
   }
 }
+
+
+/* ======================================================================
+   Respaldo de efectos de scroll para navegadores sin `animation-timeline`
+   (Safari y Firefox: ~1 de cada 5 visitantes). Sin él no se ejecuta ninguno
+   de los efectos del sitio. Reutiliza exactamente los mismos @keyframes,
+   disparados por IntersectionObserver en lugar de por la posición de scroll.
+   Chrome y Edge no pasan por aquí: siguen usando el motor nativo.
+   ====================================================================== */
+@media (prefers-reduced-motion: no-preference){
+
+  /* El estado inicial solo se aplica a lo que el JS ha marcado como preparado.
+     Si el script no llega a ejecutarse, el contenido se ve con normalidad. */
+  html.te-io .reveal.te-io-prep,
+  html.te-io .te-stagger > *.te-io-prep,
+  html.te-io .te-zoom.te-io-prep{ opacity:0; }
+  html.te-io .reveal.te-io-prep{ transform:translateY(28px); }
+  html.te-io .te-stagger > *.te-io-prep{ transform:translateY(16px); }
+  html.te-io .te-zoom.te-io-prep{ transform:scale(.965); }
+  html.te-io .te-open.te-io-prep{ clip-path:inset(14% 10% 14% 10% round 26px); }
+  html.te-io .te-open.te-io-prep > img,
+  html.te-io .te-open.te-io-prep img{ transform:scale(1.12); }
+
+  /* Al entrar en pantalla se ejecutan los mismos fotogramas clave */
+  html.te-io .te-io-in{ opacity:1; }
+  html.te-io .reveal.te-io-in{
+    animation:teReveal .72s cubic-bezier(.22,.61,.36,1) both;
+  }
+  html.te-io .reveal.d1.te-io-in{ animation-delay:.10s }
+  html.te-io .reveal.d2.te-io-in{ animation-delay:.20s }
+  html.te-io .reveal.d3.te-io-in{ animation-delay:.30s }
+  html.te-io .reveal.delay.te-io-in{ animation-delay:.15s }
+
+  html.te-io .te-stagger > *.te-io-in{
+    animation:teRevealSoft .62s cubic-bezier(.22,.61,.36,1) both;
+    animation-delay:calc(var(--te-i,0) * .085s);
+  }
+  html.te-io .te-zoom.te-io-in{
+    animation:teZoomIn .78s cubic-bezier(.22,.61,.36,1) both;
+  }
+  html.te-io .te-open.te-io-in{
+    animation:teOpen .95s cubic-bezier(.2,.7,.2,1) both;
+  }
+  html.te-io .te-open.te-io-in > img,
+  html.te-io .te-open.te-io-in img{
+    animation:teSettle 1.15s cubic-bezier(.2,.7,.2,1) both;
+  }
+  html.te-io .te-words .te-w > span.te-io-in{
+    animation:teWordUp .7s cubic-bezier(.22,.61,.36,1) both;
+    animation-delay:calc(var(--te-w,0) * .045s);
+  }
+  html.te-io .te-dim.te-io-in{
+    animation:teLight .9s cubic-bezier(.2,.7,.2,1) both;
+  }
+}
+
+/* Si el visitante pide movimiento reducido, todo aparece ya en su sitio */
+@media (prefers-reduced-motion: reduce){
+  html.te-io .reveal, html.te-io .te-stagger > *, html.te-io .te-zoom{
+    opacity:1!important; transform:none!important;
+  }
+  html.te-io .te-open{ clip-path:none!important; }
+  html.te-io .te-open img{ transform:none!important; }
+}
